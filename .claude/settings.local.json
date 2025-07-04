@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rg:*)",
+      "Bash(npm run format:*)",
+      "Bash(npm run dev:*)",
+      "Bash(pkill:*)",
+      "Bash(npm run build:*)",
+      "Bash(cp:*)",
+      "Bash(ls:*)",
+      "WebFetch(domain:escholarship.org)",
+      "WebFetch(domain:cloud.google.com)",
+      "Bash(python3 -m pip install:*)",
+      "Bash(apt list:*)",
+      "Bash(chmod:*)",
+      "Bash(./extract_slides.sh)",
+      "Bash(for:*)",
+      "Bash(do echo \"Compressing $file...\")",
+      "Bash(convert:*)",
+      "Bash(done)",
+      "Bash(python3:*)",
+      "Bash(reset)",
+      "Bash(printf '\\033[0m')",
+      "Bash(npm run lint)",
+      "Bash(timeout 10 npm run dev)",
+      "Bash(grep:*)",
+      "WebFetch(domain:nucleusresearch.com)",
+      "Bash(npm test)",
+      "Bash(mv:*)",
+      "WebFetch(domain:cloudonair.withgoogle.com)",
+      "WebFetch(domain:tray.ai)",
+      "WebFetch(domain:hello.dremio.com)"
+    ],
+    "deny": []
+  }
+}

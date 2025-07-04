@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Unlock AI-Ready Data with the Intelligent Iceberg Lakehouse",
+    "event": "Dremio Webinar",
+    "location": "Virtual Event",
+    "date": "June 24, 2025",
+    "description": "Exploring advanced data lakehouse architectures and AI integration patterns for modern analytics workloads.",
+    "slidesUrl": "/dremio-presentation-title.png",
+    "videoUrl": "",
+    "status": "upcoming"
+  },
+  {
+    "title": "Nucleus Research: Unlock the Power of Unified Analytics and Drive Customer Value with Google Cloud Analytics",
+    "event": "BrightTALK Webinar",
+    "location": "Virtual Event",
+    "date": "June 19, 2025",
+    "description": "Demonstrating how unified analytics platforms can drive customer value through advanced AI and machine learning capabilities.",
+    "slidesUrl": "/google-analytics-webinar-title.png",
+    "videoUrl": "",
+    "status": "upcoming"
+  },
+  {
+    "title": "BigQuery Data Analytics and AI Integration",
+    "event": "Google BigQuery Webinar",
+    "location": "Virtual Event",
+    "date": "TBD 2025",
+    "description": "Exploring advanced BigQuery analytics capabilities and AI/ML integration patterns for modern data-driven organizations.",
+    "slidesUrl": "/bigquery-webinar-title.png",
+    "videoUrl": "",
+    "status": "upcoming"
+  },
+  {
+    "title": "The ROI of Tray.AI: Maximizing Automation Value",
+    "event": "Tray.AI Webinar",
+    "location": "Virtual Event",
+    "date": "TBD 2025",
+    "description": "Analyzing the return on investment and business value of intelligent automation platforms in enterprise environments.",
+    "slidesUrl": "/tray-ai-webinar-title.png",
+    "videoUrl": "",
+    "status": "upcoming"
+  },
+  {
+    "title": "Nucleus Generative AI: Transforming Enterprise Operations",
+    "event": "Oracle Global Leaders Conference",
+    "location": "Miami, FL",
+    "date": "February 1, 2024",
+    "description": "Presented insights on how generative AI is revolutionizing enterprise operations and driving digital transformation initiatives across industries.",
+    "slidesUrl": "/oracle-generative-ai-title.png",
+    "videoUrl": "",
+    "status": "past"
+  }
+]

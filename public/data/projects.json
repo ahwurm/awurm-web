@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Wald Accumulator Model for Simple Anticipatory Decisions",
+    "description": "A computational model for timing choices in anticipatory response tasks, developed as part of research at the UF Cognition and Decision Modeling Lab. Implements hierarchical Bayesian modeling techniques to analyze decision-making processes.",
+    "technologies": [
+      "R",
+      "rstan",
+      "MCMC Sampling",
+      "Hierarchical Bayesian Modeling",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "status": "Research Project",
+    "url": "/research-papers/wurm-2021-timing-anticipatory-decisions.pdf",
+    "screenshot": "/research-figures/response-distributions.png"
+  },
+  {
+    "name": "Nucleus AI Tool",
+    "description": "RAG application using OpenAI and Pinecone alongside over 20 years of ROI reports from Nucleus Research to provide answers to end-user inquiries",
+    "technologies": ["Python", "OpenAI", "Pinecone"],
+    "status": "Completed",
+    "url": "https://nucleusresearch.com/ai/",
+    "screenshot": "/app-screenshots/nucleus-ai-tool.png"
+  }
+]
