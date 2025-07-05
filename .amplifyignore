@@ -1,0 +1,29 @@
+# Amplify ignore file
+# Files and directories to ignore during Amplify build
+
+# Next.js build directories that might confuse framework detection
+.next/
+node_modules/
+
+# Git files
+.git/
+.gitignore
+
+# Documentation files
+*.md
+README*
+
+# Development files
+.env*
+.vscode/
+.idea/
+
+# Cache and temporary files
+*.log
+.DS_Store
+Thumbs.db
+
+# Test files
+__tests__/
+*.test.*
+coverage/
