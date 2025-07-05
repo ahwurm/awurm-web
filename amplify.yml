@@ -1,7 +1,6 @@
 version: 1
 appRoot: .
 frontend:
-  framework: web
   phases:
     preBuild:
       commands:
