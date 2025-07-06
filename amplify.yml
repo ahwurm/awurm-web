@@ -6,13 +6,12 @@ frontend:
         - npm ci
     build:
       commands:
-        - npm run build:static
+        - npm run build
   artifacts:
-    baseDirectory: out
+    baseDirectory: .next
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
       - .next/cache/**/*
-  framework: web
