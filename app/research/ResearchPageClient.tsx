@@ -237,11 +237,11 @@ export default function ResearchPageClient({
                   <p className="text-white/80 mb-4 leading-relaxed">
                     {paper.abstract}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-white/60 font-medium">
+                  <div className="academic-research__meta-actions">
+                    <span className="academic-research__meta text-sm text-white/60 font-medium">
                       {paper.year} • {paper.venue}
                     </span>
-                    <div className="flex gap-3">
+                    <div className="academic-research__actions flex gap-3">
                       {paper.url && (
                         <a
                           href={paper.url}

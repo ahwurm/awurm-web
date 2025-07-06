@@ -73,15 +73,15 @@ export default function SpeakingPage() {
           <div className="space-y-6">
             {/* Upcoming Events */}
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-4 border-accent/50 hover:border-accent/70">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
+              <div className="speaking__item">
+                <div className="speaking__thumbnail flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
                   <img
                     src="/dremio-presentation-title.png"
                     alt="Dremio Presentation Preview"
                     className="w-full h-auto object-contain"
                   />
                 </div>
-                <div className="flex-1">
+                <div className="speaking__content flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-sm text-white/60 font-medium">
                       June 24, 2025
@@ -109,15 +109,15 @@ export default function SpeakingPage() {
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-4 border-accent/50 hover:border-accent/70">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
+              <div className="speaking__item">
+                <div className="speaking__thumbnail flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
                   <img
                     src="/google-analytics-webinar-title.png"
                     alt="Google Analytics Webinar Preview"
                     className="w-full h-auto object-contain"
                   />
                 </div>
-                <div className="flex-1">
+                <div className="speaking__content flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-sm text-white/60 font-medium">
                       June 19, 2025
@@ -147,15 +147,15 @@ export default function SpeakingPage() {
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-4 border-accent/50 hover:border-accent/70">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
+              <div className="speaking__item">
+                <div className="speaking__thumbnail flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
                   <img
                     src="/oracle-generative-ai-title.png"
                     alt="Oracle Generative AI Presentation Preview"
                     className="w-full h-auto object-contain"
                   />
                 </div>
-                <div className="flex-1">
+                <div className="speaking__content flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-sm text-white/60 font-medium">
                       February 1, 2024
@@ -183,15 +183,15 @@ export default function SpeakingPage() {
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-4 border-accent/50 hover:border-accent/70">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
+              <div className="speaking__item">
+                <div className="speaking__thumbnail flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
                   <img
                     src="/tray-ai-webinar-title.png"
                     alt="Tray.AI Webinar Preview"
                     className="w-full h-auto object-contain"
                   />
                 </div>
-                <div className="flex-1">
+                <div className="speaking__content flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-sm text-white/60 font-medium">
                       July 8, 2023
@@ -219,15 +219,15 @@ export default function SpeakingPage() {
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-4 border-accent/50 hover:border-accent/70">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
+              <div className="speaking__item">
+                <div className="speaking__thumbnail flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
                   <img
                     src="/bigquery-webinar-title.png"
                     alt="BigQuery Webinar Preview"
                     className="w-full h-auto object-contain"
                   />
                 </div>
-                <div className="flex-1">
+                <div className="speaking__content flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-sm text-white/60 font-medium">
                       December 1, 2022

@@ -14,6 +14,7 @@ interface NavItem {
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState('home')
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
 
@@ -95,6 +96,7 @@ const Navigation = () => {
     href: string
   ) => {
     e.preventDefault()
+    setIsMobileMenuOpen(false) // Close mobile menu when clicking nav item
     const targetSection = document.querySelector(href)
     if (targetSection) {
       targetSection.scrollIntoView({
@@ -102,6 +104,10 @@ const Navigation = () => {
         block: 'start',
       })
     }
+  }
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
   return (
@@ -112,7 +118,9 @@ const Navigation = () => {
             A. WURM
           </Link>
         </div>
-        <ul className="nav__menu" id="nav-menu">
+
+        {/* Desktop Navigation */}
+        <ul className="nav__menu nav__menu--desktop" id="nav-menu">
           {navItems.map((item) => (
             <li key={item.href} className="nav__item">
               {item.isExternal ? (
@@ -136,6 +144,52 @@ const Navigation = () => {
             </li>
           ))}
         </ul>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          className="nav__mobile-toggle"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle mobile menu"
+          aria-expanded={isMobileMenuOpen}
+        >
+          <span className={`hamburger ${isMobileMenuOpen ? 'hamburger--open' : ''}`}>
+            <span className="hamburger__line"></span>
+            <span className="hamburger__line"></span>
+            <span className="hamburger__line"></span>
+          </span>
+        </button>
+
+        {/* Mobile Navigation Menu */}
+        <div className={`nav__mobile-menu ${isMobileMenuOpen ? 'nav__mobile-menu--open' : ''}`}>
+          <div className="nav__mobile-overlay" onClick={() => setIsMobileMenuOpen(false)}></div>
+          <div className="nav__mobile-content">
+            <ul className="nav__mobile-list">
+              {navItems.map((item) => (
+                <li key={item.href} className="nav__mobile-item">
+                  {item.isExternal ? (
+                    <Link
+                      href={item.href}
+                      className={`nav__mobile-link ${activeSection === item.section ? 'active' : ''}`}
+                      data-section={item.section}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className={`nav__mobile-link ${activeSection === item.section ? 'active' : ''}`}
+                      data-section={item.section}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                    >
+                      {item.label}
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
   )
