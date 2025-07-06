@@ -3,9 +3,9 @@ import './globals.css'
 import Navigation from '@/components/Navigation'
 
 export const metadata: Metadata = {
-  title: 'Alexander H. Wurm | Principal Analyst & AI Researcher',
+  title: 'Alexander H. Wurm | Principal Analyst & Researcher',
   description:
-    'Principal Analyst and Researcher specializing in AI, machine learning, and data analytics. Academic research in cognitive science and decision modeling at University of Florida.',
+    'Principal Analyst and Researcher specializing in AI, data science, analytics, and data management. Academic research in cognitive science and decision modeling at University of Florida.',
   keywords:
     'artificial intelligence, machine learning, data analytics, cognitive science, decision modeling, research, google cloud, vertex ai',
   authors: [{ name: 'Alexander H. Wurm' }],
