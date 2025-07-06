@@ -234,13 +234,6 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Copyright */}
-          <div className="text-center">
-            <p className="text-white/70">
-              &copy; 2024 Alexander H. Wurm. All rights reserved. • Crafted with
-              attention to detail and modern web standards
-            </p>
-          </div>
         </div>
       </div>
 
