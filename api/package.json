@@ -1,0 +1,16 @@
+{
+  "name": "awurm-contact-api",
+  "version": "1.0.0",
+  "description": "Lambda function for handling contact form submissions",
+  "main": "contact-handler.js",
+  "scripts": {
+    "build": "npm install --production && zip -r function.zip .",
+    "deploy": "aws lambda update-function-code --function-name awurm-contact-handler --zip-file fileb://function.zip"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1472.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

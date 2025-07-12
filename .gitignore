@@ -37,3 +37,7 @@ next-env.d.ts
 # AWS Amplify
 amplify/
 .amplify/
+
+# Lambda deployment
+api/node_modules
+api/function.zip

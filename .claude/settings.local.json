@@ -29,7 +29,11 @@
       "Bash(mv:*)",
       "WebFetch(domain:cloudonair.withgoogle.com)",
       "WebFetch(domain:tray.ai)",
-      "WebFetch(domain:hello.dremio.com)"
+      "WebFetch(domain:hello.dremio.com)",
+      "WebFetch(domain:docs.aws.amazon.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(find:*)",
+      "Bash(test:*)"
     ],
     "deny": []
   }

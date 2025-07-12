@@ -1,4 +1,5 @@
 import InteractiveFeatures from '@/components/InteractiveFeatures'
+import ContactForm from '@/components/ContactForm'
 
 export default function ContactPage() {
   return (
@@ -77,7 +78,7 @@ export default function ContactPage() {
 
           {/* Contact Information Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            {/* Contact Details */}
+            {/* Contact Form */}
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg shadow-lg border-4 border-accent/50">
               <h2 className="text-2xl font-semibold mb-6 text-white flex items-center">
                 <svg
@@ -96,79 +97,7 @@ export default function ContactPage() {
                 Get in Touch
               </h2>
 
-              <div className="space-y-6">
-                <div className="flex items-center">
-                  <svg
-                    className="w-5 h-5 mr-4 text-accent flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <div>
-                    <p className="text-white/70 text-sm">Email</p>
-                    <a
-                      href="mailto:ahwurm1@gmail.com"
-                      className="text-white hover:text-accent transition-colors font-medium"
-                    >
-                      ahwurm1@gmail.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center">
-                  <svg
-                    className="w-5 h-5 mr-4 text-accent flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  <div>
-                    <p className="text-white/70 text-sm">Phone</p>
-                    <a
-                      href="tel:+14073619694"
-                      className="text-white hover:text-accent transition-colors font-medium"
-                    >
-                      (407) 361-9694
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center">
-                  <svg
-                    className="w-5 h-5 mr-4 text-accent flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"
-                    />
-                  </svg>
-                  <div>
-                    <p className="text-white/70 text-sm">Role</p>
-                    <p className="text-white font-medium">
-                      Principal Analyst & Researcher
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <ContactForm />
             </div>
 
             {/* Social Links */}

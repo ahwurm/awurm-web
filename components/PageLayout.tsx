@@ -91,13 +91,26 @@ export default function PageLayout({ children }: PageLayoutProps) {
                 <h4>Alexander H. Wurm</h4>
                 <p>Principal Analyst & Researcher</p>
                 <div className="footer__contact">
-                  <div className="footer__contact-item">
-                    <strong>Email:</strong> ahwurm1@gmail.com
-                  </div>
-                  <div className="footer__contact-item">
-                    <strong>Phone:</strong> (407) 361-9694
-                  </div>
-                  <div className="footer__social">
+                  <Link 
+                    href="/contact" 
+                    className="inline-flex items-center px-6 py-3 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    <svg
+                      className="w-5 h-5 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    Contact Me
+                  </Link>
+                  <div className="footer__social mt-4">
                     <a
                       href="https://www.linkedin.com/in/alexander-w-374705132/"
                       target="_blank"
