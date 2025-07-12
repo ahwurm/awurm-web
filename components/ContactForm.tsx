@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState, FormEvent, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 
 export default function ContactForm() {
@@ -13,6 +13,30 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isInitialized, setIsInitialized] = useState(false)
+
+  useEffect(() => {
+    // Debug logging to check environment variables
+    console.log('EmailJS Environment Variables:', {
+      service: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      template: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+      key: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    })
+
+    // Initialize EmailJS once on component mount
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    if (publicKey) {
+      try {
+        emailjs.init(publicKey)
+        setIsInitialized(true)
+        console.log('EmailJS initialized successfully')
+      } catch (error) {
+        console.error('Failed to initialize EmailJS:', error)
+      }
+    } else {
+      console.error('EmailJS public key not found in environment variables')
+    }
+  }, [])
 
   const validateField = (name: string, value: string): string | null => {
     if (!value.trim()) {
@@ -71,13 +95,23 @@ export default function ContactForm() {
     setIsSubmitting(true)
 
     try {
-      // Initialize EmailJS with public key
-      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '')
+      // Check if EmailJS is initialized
+      if (!isInitialized) {
+        throw new Error('Email service is not initialized. Please check configuration.')
+      }
+
+      // Check if all required environment variables are present
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      
+      if (!serviceId || !templateId) {
+        throw new Error('Email service configuration is incomplete.')
+      }
 
       // Send email using EmailJS
       const response = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+        serviceId,
+        templateId,
         {
           from_name: formData.name,
           from_email: formData.email,
