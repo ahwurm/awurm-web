@@ -1,7 +1,76 @@
-import { getProjectsData } from '@/lib/data'
+'use client'
 
-export default async function ProjectsPage() {
-  const projects = await getProjectsData()
+import { useEffect, useState } from 'react'
+
+interface Project {
+  name: string
+  description: string
+  technologies: string[]
+  status: string
+  url?: string
+  screenshot?: string
+}
+
+const projects: Project[] = [
+  {
+    name: "Wald Accumulator Model for Simple Anticipatory Decisions",
+    description: "A computational model for timing choices in anticipatory response tasks, developed as part of research at the UF Cognition and Decision Modeling Lab. Implements hierarchical Bayesian modeling techniques to analyze decision-making processes.",
+    technologies: [
+      "R",
+      "rstan",
+      "MCMC Sampling",
+      "Hierarchical Bayesian Modeling",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    status: "Research Project",
+    url: "/research-papers/wurm-2021-timing-anticipatory-decisions.pdf",
+    screenshot: "/research-figures/response-distributions.png"
+  },
+  {
+    name: "Nucleus AI Tool",
+    description: "RAG application using OpenAI and Pinecone alongside over 20 years of ROI reports from Nucleus Research to provide answers to end-user inquiries",
+    technologies: ["Python", "OpenAI", "Pinecone"],
+    status: "Completed",
+    url: "https://nucleusresearch.com/ai/",
+    screenshot: "/app-screenshots/nucleus-ai-tool.png"
+  }
+]
+
+export default function ProjectsPage() {
+  const [selectedProject, setSelectedProject] = useState<string | null>(null)
+  const [showModal, setShowModal] = useState(false)
+
+  const handleProjectClick = (project: Project) => {
+    if (project.name === 'Nucleus AI Tool') {
+      setSelectedProject(project.name)
+      setShowModal(true)
+    } else if (project.url) {
+      window.open(project.url, '_blank', 'noopener,noreferrer')
+    }
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+    setSelectedProject(null)
+  }
+
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && showModal) {
+        closeModal()
+      }
+    }
+
+    if (showModal) {
+      document.addEventListener('keydown', handleEscape)
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [showModal])
 
   return (
     <section
@@ -86,24 +155,33 @@ export default async function ProjectsPage() {
 
                 <div className="flex items-center justify-end">
                   <div className="flex gap-3">
-                    <a
-                      href={project.url || '#'}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      download={
-                        project.name ===
+                    {project.name === 'Nucleus AI Tool' ? (
+                      <button
+                        onClick={() => handleProjectClick(project)}
+                        className="bg-accent text-primary px-4 py-2 rounded-md hover:bg-accent-hover transition-colors font-medium"
+                      >
+                        View Screenshots →
+                      </button>
+                    ) : (
+                      <a
+                        href={project.url || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download={
+                          project.name ===
+                          'Wald Accumulator Model for Simple Anticipatory Decisions'
+                            ? 'wurm-2021-timing-anticipatory-decisions.pdf'
+                            : undefined
+                        }
+                        className="bg-accent text-primary px-4 py-2 rounded-md hover:bg-accent-hover transition-colors font-medium"
+                      >
+                        {project.name ===
                         'Wald Accumulator Model for Simple Anticipatory Decisions'
-                          ? 'wurm-2021-timing-anticipatory-decisions.pdf'
-                          : undefined
-                      }
-                      className="bg-accent text-primary px-4 py-2 rounded-md hover:bg-accent-hover transition-colors font-medium"
-                    >
-                      {project.name ===
-                      'Wald Accumulator Model for Simple Anticipatory Decisions'
-                        ? 'Download Paper'
-                        : 'View Project'}{' '}
-                      →
-                    </a>
+                          ? 'Download Paper'
+                          : 'View Project'}{' '}
+                        →
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -115,6 +193,44 @@ export default async function ProjectsPage() {
       {/* Background Glow Effects */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-hover/20 rounded-full blur-3xl" />
+
+      {/* Screenshot Modal */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80">
+          <div className="relative max-w-4xl w-full max-h-[90vh] overflow-hidden rounded-lg bg-primary-hover/95 backdrop-blur-sm border-4 border-accent/50">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-semibold text-white">
+                  Nucleus AI Tool Screenshots
+                </h2>
+                <button
+                  onClick={closeModal}
+                  className="text-white/70 hover:text-white transition-colors text-2xl"
+                  aria-label="Close modal"
+                >
+                  ×
+                </button>
+              </div>
+              <div className="space-y-4 max-h-[70vh] overflow-y-auto">
+                <div className="rounded-lg overflow-hidden border-2 border-accent/30">
+                  <img
+                    src="/app-screenshots/nucleus-ai-tool-1.png"
+                    alt="Nucleus AI Tool Screenshot 1"
+                    className="w-full"
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden border-2 border-accent/30">
+                  <img
+                    src="/app-screenshots/nucleus-ai-tool-2.png"
+                    alt="Nucleus AI Tool Screenshot 2"
+                    className="w-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

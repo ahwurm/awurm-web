@@ -33,7 +33,8 @@
       "WebFetch(domain:docs.aws.amazon.com)",
       "WebFetch(domain:github.com)",
       "Bash(find:*)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "WebFetch(domain:www.linkedin.com)"
     ],
     "deny": []
   }

@@ -69,66 +69,159 @@ export default function AboutPage() {
               About
             </h1>
           </div>
-          {/* Bio Widget with UF Background */}
-          <div className="relative bg-white/10 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-4 border-accent/50 hover:border-accent/70 overflow-hidden">
-            {/* UF Banner Background */}
-            <div
-              className="absolute inset-0 bg-cover bg-center opacity-10"
-              style={{ backgroundImage: "url('/uf-banner.jpg')" }}
-            ></div>
+          
+          {/* Two Column Layout */}
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left Column - Resume */}
+            <div className="lg:w-2/5">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-4 border-accent/50 hover:border-accent/70 p-6">
+                {/* Resume Content */}
+                <div className="space-y-6 text-white">
+                  {/* Header */}
+                  <div className="text-center pb-4 border-b border-accent/30">
+                    <h2 className="text-2xl font-bold mb-1">Alexander H. Wurm</h2>
+                  </div>
 
-            {/* Content */}
-            <div className="relative z-10 p-8">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-semibold mb-4 text-white">
-                  Alexander H. Wurm
-                </h2>
-              </div>
+                  {/* Experience */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-accent mb-3">Professional Experience</h3>
+                    <div className="space-y-4">
+                      <div>
+                        <div className="flex justify-between items-start mb-1">
+                          <h4 className="font-semibold">Industry Analyst</h4>
+                          <span className="text-sm text-white/70">Jun 2021 - Present</span>
+                        </div>
+                        <p className="text-sm text-white/80 mb-1">Nucleus Research | Miami, FL</p>
+                        <ul className="text-sm text-white/70 space-y-1 list-disc list-inside">
+                          <li>Analyze ROI and business value of enterprise analytics platforms</li>
+                          <li>Author research reports on data management and AI technologies</li>
+                          <li>Advise Fortune 500 companies on technology investments</li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <div className="flex justify-between items-start mb-1">
+                          <h4 className="font-semibold">Research Assistant</h4>
+                          <span className="text-sm text-white/70">Aug 2020 - Aug 2021</span>
+                        </div>
+                        <p className="text-sm text-white/80 mb-1">University of Florida | Gainesville, FL</p>
+                        <ul className="text-sm text-white/70 space-y-1 list-disc list-inside">
+                          <li>Developed computational models for timing in anticipatory decisions</li>
+                          <li>Implemented hierarchical Bayesian models using R and Stan</li>
+                          <li>Published peer-reviewed research in cognitive science</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
 
-              {/* First Paragraph with SpaceX Photo */}
-              <div className="flex flex-col lg:flex-row items-start gap-6 mb-8">
-                <div className="flex-1">
-                  <div className="bg-white/15 backdrop-blur-sm rounded-lg p-6 border-2 border-accent/40 shadow-lg">
-                    <p className="text-lg text-white leading-relaxed">
-                      Alexander H. Wurm is a Principal Analyst at Nucleus
-                      Research, where he covers analytics and data management
-                      technologies. With expertise spanning cognitive science,
-                      decision modeling, and enterprise analytics platforms, he
-                      bridges the gap between academic research and practical
-                      business solutions.
-                    </p>
+                  {/* Education */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-accent mb-3">Education</h3>
+                    <div className="space-y-3">
+                      <div>
+                        <h4 className="font-semibold">B.A. Economics</h4>
+                        <p className="text-sm text-white/80">University of Florida | 2017 - 2021</p>
+                        <p className="text-sm text-white/70">Dean's List</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">B.S. Behavioral Cognitive Neuroscience</h4>
+                        <p className="text-sm text-white/80">University of Florida | 2017 - 2021</p>
+                        <p className="text-sm text-white/70">Summa Cum Laude</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Skills */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-accent mb-3">Technical Skills</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {['Python', 'R', 'SQL', 'JavaScript', 'TypeScript', 'Stan', 'MCMC', 'Bayesian Modeling', 'Rust'].map((skill) => (
+                        <span key={skill} className="px-3 py-1 bg-accent/20 text-sm rounded-full text-white/80">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Download Link */}
+                  <div className="pt-4 text-center">
+                    <a
+                      href="/AW_Resume2025_web.pdf"
+                      download="Alexander_Wurm_Resume.pdf"
+                      className="inline-block bg-accent text-primary px-6 py-2 rounded-md hover:bg-accent-hover transition-colors font-medium text-sm"
+                    >
+                      Download Full Resume →
+                    </a>
                   </div>
                 </div>
-                <div className="flex-shrink-0">
-                  <img
-                    src="/spacex-photo.jpg"
-                    alt="SpaceX Visit"
-                    className="rounded-lg border-2 border-accent/50 shadow-lg"
-                    style={{ width: '200px' }}
-                  />
-                </div>
               </div>
+            </div>
 
-              {/* Second Paragraph with C&DM Logo */}
-              <div className="flex flex-col lg:flex-row-reverse items-start gap-6">
-                <div className="flex-1">
-                  <div className="bg-white/15 backdrop-blur-sm rounded-lg p-6 border-2 border-accent/40 shadow-lg">
-                    <p className="text-lg text-white leading-relaxed">
-                      Alexander previously conducted research at the University
-                      of Florida&apos;s Cognition and Decision Modeling Lab,
-                      where he published work on timing in anticipatory
-                      decisions and developed computational models for
-                      understanding human decision-making processes.
-                    </p>
+            {/* Right Column - Bio Content */}
+            <div className="lg:w-3/5">
+              <div className="relative bg-white/10 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-4 border-accent/50 hover:border-accent/70 overflow-hidden">
+                {/* Content */}
+                <div className="relative z-10 p-8">
+                  {/* Mobile: Images side by side */}
+                  <div className="flex lg:hidden justify-center gap-4 mb-6">
+                    <img
+                      src="/spacex-photo.jpg"
+                      alt="SpaceX Visit"
+                      className="rounded-lg border-2 border-accent/50 shadow-lg w-[120px] h-[120px] object-cover"
+                    />
+                    <img
+                      src="/cdm-lab-logo.png"
+                      alt="Cognition & Decision Modeling Laboratory"
+                      className="rounded-lg border-2 border-accent/50 shadow-lg w-[120px] h-[120px] object-contain"
+                    />
                   </div>
-                </div>
-                <div className="flex-shrink-0">
-                  <img
-                    src="/cdm-lab-logo.png"
-                    alt="Cognition & Decision Modeling Laboratory"
-                    className="rounded-lg border-2 border-accent/50 shadow-lg"
-                    style={{ width: '200px' }}
-                  />
+
+                  {/* First Paragraph with SpaceX Photo (desktop layout) */}
+                  <div className="flex flex-col lg:flex-row items-start gap-6 mb-8">
+                    <div className="hidden lg:block flex-shrink-0 order-1 lg:order-none">
+                      <img
+                        src="/spacex-photo.jpg"
+                        alt="SpaceX Visit"
+                        className="rounded-lg border-2 border-accent/50 shadow-lg"
+                        style={{ width: '200px' }}
+                      />
+                    </div>
+                    <div className="flex-1 order-2 lg:order-none">
+                      <div className="bg-white/15 backdrop-blur-sm rounded-lg p-6 border-2 border-accent/40 shadow-lg">
+                        <p className="text-lg text-white leading-relaxed">
+                          Alexander H. Wurm is a Principal Analyst at Nucleus
+                          Research, where he covers analytics and data management
+                          technologies. With expertise spanning cognitive science,
+                          decision modeling, and enterprise analytics platforms, he
+                          bridges the gap between academic research and practical
+                          business solutions.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Second Paragraph with C&DM Logo (desktop layout) */}
+                  <div className="flex flex-col lg:flex-row items-start gap-6">
+                    <div className="flex-1">
+                      <div className="bg-white/15 backdrop-blur-sm rounded-lg p-6 border-2 border-accent/40 shadow-lg">
+                        <p className="text-lg text-white leading-relaxed">
+                          Alexander previously conducted research at the University
+                          of Florida&apos;s Cognition and Decision Modeling Lab,
+                          where he published work on timing in anticipatory
+                          decisions and developed computational models for
+                          understanding human decision-making processes.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden lg:block flex-shrink-0">
+                      <img
+                        src="/cdm-lab-logo.png"
+                        alt="Cognition & Decision Modeling Laboratory"
+                        className="rounded-lg border-2 border-accent/50 shadow-lg"
+                        style={{ width: '200px' }}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

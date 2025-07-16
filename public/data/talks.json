@@ -1,5 +1,25 @@
 [
   {
+    "title": "The ROI Conversation: Framing Data Projects for Executive Buy-In",
+    "event": "Teradata Conference",
+    "location": "Virtual Event",
+    "date": "July 15, 2025",
+    "description": "Strategic approach to communicating data project value and ROI to executives for successful project approval and funding.",
+    "slidesUrl": "/teradata-roi-title.png",
+    "videoUrl": "https://teradata.cventevents.com/event/96d97fdb-50dc-4adf-87f1-dea2e55aa873/summary?RefId=Digest",
+    "status": "upcoming"
+  },
+  {
+    "title": "How Yext cut integration costs by 60% and delivered faster with fewer tools",
+    "event": "Tray.ai Webinar",
+    "location": "Virtual Event",
+    "date": "July 10, 2025",
+    "description": "Case study presentation demonstrating how Yext achieved significant cost reduction and efficiency gains through strategic integration optimization.",
+    "slidesUrl": "/tray-ai-yext-title.png",
+    "videoUrl": "https://tray.ai/webinars/yext-integrations-cost-reduction",
+    "status": "upcoming"
+  },
+  {
     "title": "Unlock AI-Ready Data with the Intelligent Iceberg Lakehouse",
     "event": "Dremio Webinar",
     "location": "Virtual Event",

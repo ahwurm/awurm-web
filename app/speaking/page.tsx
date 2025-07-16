@@ -76,6 +76,76 @@ export default function SpeakingPage() {
               <div className="speaking__item">
                 <div className="speaking__thumbnail flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
                   <img
+                    src="/teradata-roi-slide2.png"
+                    alt="Teradata Presentation Preview"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <div className="speaking__content flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-sm text-white/60 font-medium">
+                      July 15, 2025
+                    </span>
+                  </div>
+                  <h2 className="text-2xl font-semibold mb-2 text-white">
+                    The ROI Conversation: Framing Data Projects for Executive Buy-In
+                  </h2>
+                  <p className="text-white/80 mb-3 leading-relaxed">
+                    Strategic approach to communicating data project value and ROI to executives for successful project approval and funding.
+                  </p>
+                  <div className="flex items-center justify-end">
+                    <a
+                      href="https://teradata.cventevents.com/event/96d97fdb-50dc-4adf-87f1-dea2e55aa873/summary?RefId=Digest"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-accent text-primary px-4 py-2 rounded-md hover:bg-accent-hover transition-colors font-medium"
+                    >
+                      View Details →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-4 border-accent/50 hover:border-accent/70">
+              <div className="speaking__item">
+                <div className="speaking__thumbnail flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
+                  <img
+                    src="/tray-ai-yext-slide2.png"
+                    alt="Tray.ai Yext Webinar Preview"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <div className="speaking__content flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-sm text-white/60 font-medium">
+                      July 10, 2025
+                    </span>
+                  </div>
+                  <h2 className="text-2xl font-semibold mb-2 text-white">
+                    How Yext cut integration costs by 60% and delivered faster with fewer tools
+                  </h2>
+                  <p className="text-white/80 mb-3 leading-relaxed">
+                    Case study presentation demonstrating how Yext achieved significant cost reduction and efficiency gains through strategic integration optimization.
+                  </p>
+                  <div className="flex items-center justify-end">
+                    <a
+                      href="https://tray.ai/webinars/yext-integrations-cost-reduction"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-accent text-primary px-4 py-2 rounded-md hover:bg-accent-hover transition-colors font-medium"
+                    >
+                      View Details →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-4 border-accent/50 hover:border-accent/70">
+              <div className="speaking__item">
+                <div className="speaking__thumbnail flex-shrink-0 w-48 rounded-lg overflow-hidden border-2 border-accent/30">
+                  <img
                     src="/dremio-presentation-title.png"
                     alt="Dremio Presentation Preview"
                     className="w-full h-auto object-contain"
