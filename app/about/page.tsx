@@ -121,7 +121,7 @@ export default function AboutPage() {
                       <div>
                         <h4 className="font-semibold">B.A. Economics</h4>
                         <p className="text-sm text-white/80">University of Florida | 2017 - 2021</p>
-                        <p className="text-sm text-white/70">Dean's List</p>
+                        <p className="text-sm text-white/70">Dean&apos;s List</p>
                       </div>
                       <div>
                         <h4 className="font-semibold">B.S. Behavioral Cognitive Neuroscience</h4>
