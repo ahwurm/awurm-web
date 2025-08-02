@@ -20,6 +20,7 @@ export default function ResearchPageClient({
 }: Props) {
   const [activeType, setActiveType] = useState<ResearchType>('academic')
   const [selectedYear, setSelectedYear] = useState<number | null>(null)
+  const [selectedResearchType, setSelectedResearchType] = useState<string | null>(null)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -52,30 +53,31 @@ export default function ResearchPageClient({
   const industryYears = Array.from(
     new Set(industryResearch.map((r) => r.year))
   ).sort((a, b) => b - a)
-  const filteredIndustryResearch = selectedYear
-    ? industryResearch.filter((r) => r.year === selectedYear)
-    : industryResearch
+  
+  const industryTypes = Array.from(
+    new Set(industryResearch.map((r) => r.type))
+  ).sort()
+  
+  let filteredIndustryResearch = industryResearch
+  if (selectedYear) {
+    filteredIndustryResearch = filteredIndustryResearch.filter((r) => r.year === selectedYear)
+  }
+  if (selectedResearchType) {
+    filteredIndustryResearch = filteredIndustryResearch.filter((r) => r.type === selectedResearchType)
+  }
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case 'ROI Case Study':
+      case 'ROI Study':
         return 'bg-green-100 text-green-800'
-      case 'Technology Value Matrix':
-        return 'bg-blue-100 text-blue-800'
-      case 'Predictions':
-        return 'bg-purple-100 text-purple-800'
-      case 'Hot Companies':
-        return 'bg-orange-100 text-orange-800'
       case 'ROI Guidebook':
         return 'bg-emerald-100 text-emerald-800'
-      case 'Partnership Announcement':
-        return 'bg-cyan-100 text-cyan-800'
-      case 'M&A Analysis':
-        return 'bg-red-100 text-red-800'
-      case 'Solution Analysis':
-        return 'bg-indigo-100 text-indigo-800'
-      case 'Benefit Case Study':
-        return 'bg-teal-100 text-teal-800'
+      case 'Surveys':
+        return 'bg-blue-100 text-blue-800'
+      case 'Announcement':
+        return 'bg-purple-100 text-purple-800'
+      case 'Research Note':
+        return 'bg-gray-100 text-gray-800'
       default:
         return 'bg-gray-100 text-gray-800'
     }
@@ -154,8 +156,37 @@ export default function ResearchPageClient({
           {/* Research Controls - Responsive Single Line */}
           <div className="max-w-7xl mx-auto mb-8 px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4">
-              {/* Year Filter Dropdown - Left aligned with content on desktop */}
-              <div className="order-2 sm:order-1 sm:self-start">
+              {/* Filters - Left aligned with content on desktop */}
+              <div className="order-2 sm:order-1 sm:self-start flex gap-2">
+                {/* Type Filter Dropdown - Only show for industry research */}
+                {activeType === 'industry' && (
+                  <select
+                    value={selectedResearchType || ''}
+                    onChange={(e) =>
+                      setSelectedResearchType(
+                        e.target.value === '' ? null : e.target.value
+                      )
+                    }
+                    className="bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all"
+                  >
+                    <option value="" className="bg-primary text-white">
+                      All Types
+                    </option>
+                    {industryTypes.map((type) => (
+                      <option
+                        key={type}
+                        value={type}
+                        className="bg-primary text-white"
+                      >
+                        {type} (
+                        {industryResearch.filter((r) => r.type === type).length}
+                        )
+                      </option>
+                    ))}
+                  </select>
+                )}
+                
+                {/* Year Filter Dropdown */}
                 <select
                   value={selectedYear || ''}
                   onChange={(e) =>
