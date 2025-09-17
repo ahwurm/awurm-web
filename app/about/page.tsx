@@ -73,7 +73,7 @@ export default function AboutPage() {
           {/* Two Column Layout */}
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Left Column - Resume */}
-            <div className="lg:w-2/5">
+            <div className="lg:w-[44.444%]">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-4 border-accent/50 hover:border-accent/70 p-6">
                 {/* Resume Content */}
                 <div className="space-y-6 text-white">
@@ -88,51 +88,26 @@ export default function AboutPage() {
                     <div className="space-y-4">
                       <div>
                         <div className="flex justify-between items-start mb-1">
-                          <h4 className="font-semibold">Principal Analyst</h4>
-                          <span className="text-sm text-white/70">Jun 2024 - Present</span>
+                          <h4 className="font-semibold">Nucleus Research</h4>
+                          <span className="text-sm text-white/70">Jun 2021 - Present</span>
                         </div>
-                        <p className="text-sm text-white/80 mb-1">Nucleus Research | Remote</p>
+                        <p className="text-sm text-white/80 mb-1">Research Analyst → Senior Analyst → Principal Analyst | Miami, FL</p>
                         <ul className="text-sm text-white/70 space-y-1 list-disc list-inside">
-                          <li>Lead research coverage for enterprise analytics and data management platforms</li>
-                          <li>Author ROI case studies demonstrating 400-800% returns for Fortune 500 companies</li>
-                          <li>Deliver keynote presentations at major industry conferences</li>
+                          <li>Oversee a team of research analysts covering data management, analytics, data science, and emerging AI markets</li>
+                          <li>Presented research findings for Google, Oracle, Databricks, Teradata, Dremio, and more in live sessions and webinars</li>
+                          <li>Quoted in press releases and publications such as TechTarget, Silicon Angle, SHRM, and The Financial Post</li>
                         </ul>
                       </div>
 
                       <div>
                         <div className="flex justify-between items-start mb-1">
-                          <h4 className="font-semibold">Senior Analyst</h4>
-                          <span className="text-sm text-white/70">Aug 2023 - Jun 2024</span>
+                          <h4 className="font-semibold">UF Cognitive Modeling Laboratory</h4>
+                          <span className="text-sm text-white/70">Jan 2020 - May 2021</span>
                         </div>
-                        <p className="text-sm text-white/80 mb-1">Nucleus Research | Remote</p>
+                        <p className="text-sm text-white/80 mb-1">Research Assistant | Gainesville, FL</p>
                         <ul className="text-sm text-white/70 space-y-1 list-disc list-inside">
-                          <li>Expanded coverage to include AI/ML platforms and cloud data warehouses</li>
-                          <li>Developed methodology for evaluating generative AI business applications</li>
-                        </ul>
-                      </div>
-
-                      <div>
-                        <div className="flex justify-between items-start mb-1">
-                          <h4 className="font-semibold">Analyst</h4>
-                          <span className="text-sm text-white/70">Jun 2021 - Aug 2023</span>
-                        </div>
-                        <p className="text-sm text-white/80 mb-1">Nucleus Research | Remote</p>
-                        <ul className="text-sm text-white/70 space-y-1 list-disc list-inside">
-                          <li>Published 50+ research reports on data & analytics technologies</li>
-                          <li>Conducted primary research through executive interviews and product evaluations</li>
-                        </ul>
-                      </div>
-
-                      <div>
-                        <div className="flex justify-between items-start mb-1">
-                          <h4 className="font-semibold">Research Assistant</h4>
-                          <span className="text-sm text-white/70">Aug 2020 - Aug 2021</span>
-                        </div>
-                        <p className="text-sm text-white/80 mb-1">University of Florida | Gainesville, FL</p>
-                        <ul className="text-sm text-white/70 space-y-1 list-disc list-inside">
-                          <li>Developed computational models for timing in anticipatory decisions</li>
-                          <li>Implemented hierarchical Bayesian models using R and Stan</li>
-                          <li>Published peer-reviewed research in cognitive science</li>
+                          <li>Developed experimental designs using JavaScript, CSS and HTML</li>
+                          <li>Used hierarchical Bayesian regression in RStudio to model individual's response times and map latent variables involved in human decision making</li>
                         </ul>
                       </div>
                     </div>
@@ -157,14 +132,12 @@ export default function AboutPage() {
 
                   {/* Skills */}
                   <div>
-                    <h3 className="text-lg font-semibold text-accent mb-3">Technical Skills</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {['Python', 'R', 'SQL', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Stan', 'MCMC', 'Bayesian Modeling', 'Git', 'AWS'].map((skill) => (
-                        <span key={skill} className="px-3 py-1 bg-accent/20 text-sm rounded-full text-white/80">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
+                    <h3 className="text-lg font-semibold text-accent mb-3">AI, Analytics, and Modeling Skills</h3>
+                    <ul className="text-sm text-white/70 space-y-1 list-disc list-inside">
+                      <li>Proficient with emerging AI development tools including Claude Code, LangChain, and vector databases like Pinecone</li>
+                      <li>Data engineering and data science experience with Python, R and SQL</li>
+                      <li>Proficient in Bayesian Regression, Hierarchical Bayesian, XGBoost methods</li>
+                    </ul>
                   </div>
 
                   {/* Download Link */}
@@ -182,7 +155,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right Column - Bio Content */}
-            <div className="lg:w-3/5">
+            <div className="lg:w-[55.556%]">
               <div className="relative bg-white/10 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-4 border-accent/50 hover:border-accent/70 overflow-hidden">
                 {/* Content */}
                 <div className="relative z-10 p-8">
@@ -218,8 +191,7 @@ export default function AboutPage() {
                           technologies. With expertise spanning cognitive science,
                           decision modeling, and enterprise analytics platforms, he
                           bridges the gap between academic research and practical
-                          business solutions, authoring ROI case studies that demonstrate
-                          400-800% returns for Fortune 500 companies.
+                          business solutions.
                         </p>
                       </div>
                     </div>
