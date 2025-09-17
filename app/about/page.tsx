@@ -88,17 +88,41 @@ export default function AboutPage() {
                     <div className="space-y-4">
                       <div>
                         <div className="flex justify-between items-start mb-1">
-                          <h4 className="font-semibold">Industry Analyst</h4>
-                          <span className="text-sm text-white/70">Jun 2021 - Present</span>
+                          <h4 className="font-semibold">Principal Analyst</h4>
+                          <span className="text-sm text-white/70">Jun 2024 - Present</span>
                         </div>
-                        <p className="text-sm text-white/80 mb-1">Nucleus Research | Miami, FL</p>
+                        <p className="text-sm text-white/80 mb-1">Nucleus Research | Remote</p>
                         <ul className="text-sm text-white/70 space-y-1 list-disc list-inside">
-                          <li>Analyze ROI and business value of enterprise analytics platforms</li>
-                          <li>Author research reports on data management and AI technologies</li>
-                          <li>Advise Fortune 500 companies on technology investments</li>
+                          <li>Lead research coverage for enterprise analytics and data management platforms</li>
+                          <li>Author ROI case studies demonstrating 400-800% returns for Fortune 500 companies</li>
+                          <li>Deliver keynote presentations at major industry conferences</li>
                         </ul>
                       </div>
-                      
+
+                      <div>
+                        <div className="flex justify-between items-start mb-1">
+                          <h4 className="font-semibold">Senior Analyst</h4>
+                          <span className="text-sm text-white/70">Aug 2023 - Jun 2024</span>
+                        </div>
+                        <p className="text-sm text-white/80 mb-1">Nucleus Research | Remote</p>
+                        <ul className="text-sm text-white/70 space-y-1 list-disc list-inside">
+                          <li>Expanded coverage to include AI/ML platforms and cloud data warehouses</li>
+                          <li>Developed methodology for evaluating generative AI business applications</li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <div className="flex justify-between items-start mb-1">
+                          <h4 className="font-semibold">Analyst</h4>
+                          <span className="text-sm text-white/70">Jun 2021 - Aug 2023</span>
+                        </div>
+                        <p className="text-sm text-white/80 mb-1">Nucleus Research | Remote</p>
+                        <ul className="text-sm text-white/70 space-y-1 list-disc list-inside">
+                          <li>Published 50+ research reports on data & analytics technologies</li>
+                          <li>Conducted primary research through executive interviews and product evaluations</li>
+                        </ul>
+                      </div>
+
                       <div>
                         <div className="flex justify-between items-start mb-1">
                           <h4 className="font-semibold">Research Assistant</h4>
@@ -135,7 +159,7 @@ export default function AboutPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-accent mb-3">Technical Skills</h3>
                     <div className="flex flex-wrap gap-2">
-                      {['Python', 'R', 'SQL', 'JavaScript', 'TypeScript', 'Stan', 'MCMC', 'Bayesian Modeling', 'Rust'].map((skill) => (
+                      {['Python', 'R', 'SQL', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Stan', 'MCMC', 'Bayesian Modeling', 'Git', 'AWS'].map((skill) => (
                         <span key={skill} className="px-3 py-1 bg-accent/20 text-sm rounded-full text-white/80">
                           {skill}
                         </span>
@@ -190,11 +214,12 @@ export default function AboutPage() {
                       <div className="bg-white/15 backdrop-blur-sm rounded-lg p-6 border-2 border-accent/40 shadow-lg">
                         <p className="text-lg text-white leading-relaxed">
                           Alexander H. Wurm is a Principal Analyst at Nucleus
-                          Research, where he covers analytics and data management
+                          Research, where he leads coverage of analytics and data management
                           technologies. With expertise spanning cognitive science,
                           decision modeling, and enterprise analytics platforms, he
                           bridges the gap between academic research and practical
-                          business solutions.
+                          business solutions, authoring ROI case studies that demonstrate
+                          400-800% returns for Fortune 500 companies.
                         </p>
                       </div>
                     </div>
