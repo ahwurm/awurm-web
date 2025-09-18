@@ -107,7 +107,7 @@ export default function AboutPage() {
                         <p className="text-sm text-white/80 mb-1">Research Assistant | Gainesville, FL</p>
                         <ul className="text-sm text-white/70 space-y-1 list-disc list-inside">
                           <li>Developed experimental designs using JavaScript, CSS and HTML</li>
-                          <li>Used hierarchical Bayesian regression in RStudio to model individual's response times and map latent variables involved in human decision making</li>
+                          <li>Used hierarchical Bayesian regression in RStudio to model individual&apos;s response times and map latent variables involved in human decision making</li>
                         </ul>
                       </div>
                     </div>
