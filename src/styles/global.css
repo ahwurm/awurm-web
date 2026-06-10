@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* Phase 0 placeholder — full token set lands in Phase 1 (design system). */
+@theme {
+  --color-bg: oklch(98% 0.005 95);
+  --color-ink: oklch(24% 0.035 257);
+}
+
+@layer base {
+  html {
+    @apply bg-bg text-ink antialiased;
+  }
+}

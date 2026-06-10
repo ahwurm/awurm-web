@@ -1,4 +1,4 @@
-import { type IndustryResearch } from './data'
+import { type IndustryResearch } from './types'
 
 /**
  * Converts a research title to a URL slug

@@ -1,10 +1,11 @@
+import { describe, it, expect } from 'vitest'
 import {
   generateNucleusResearchUrl,
   hasValidNucleusLink,
   getResearchExternalLink,
   getNucleusResearchUrl,
-} from '../research-utils'
-import { type IndustryResearch } from '../data'
+} from './research-utils'
+import { type IndustryResearch } from './types'
 
 describe('Research Utilities', () => {
   describe('generateNucleusResearchUrl', () => {
