@@ -24,4 +24,5 @@ export interface IndustryResearch {
   summary: string
   pdfUrl?: string
   nucleusUrl?: string
+  primaryVendor?: string
 }

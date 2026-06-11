@@ -79,6 +79,7 @@ const industryResearch = defineCollection({
     summary: z.string(),
     pdfUrl: z.string().optional(), // dead links to never-published /references PDFs — kept, never rendered
     nucleusUrl: z.string().optional(), // overrides the slug-generated link (research-utils)
+    primaryVendor: z.string().optional(), // vault-derived single primary vendor (logo lookup)
   }),
 });
 

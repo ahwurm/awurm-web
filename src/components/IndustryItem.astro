@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Tag from './Tag.astro';
 import { getNucleusResearchUrl } from '../lib/research-utils';
 import { ledgerNo } from '../lib/ledger';
@@ -10,6 +11,15 @@ interface Props {
 }
 const { entry, index } = Astro.props;
 const url = getNucleusResearchUrl(entry);
+
+// Primary-vendor favicon (build-time asset; downloaded from each vendor's site).
+const vendorIcons = import.meta.glob<{ default: ImageMetadata }>('../assets/vendors/*.png', {
+  eager: true,
+});
+const vendorIcon = entry.primaryVendor
+  ? vendorIcons[`../assets/vendors/${entry.primaryVendor}.png`]?.default
+  : undefined;
+const vendorName = entry.vendors.find((v) => v.toLowerCase().replace(/[^a-z0-9]+/g, '-') === entry.primaryVendor) ?? entry.primaryVendor;
 // NOTE: entry.pdfUrl points at never-published /references PDFs — kept in data, never rendered.
 // NOTE: the root element must stay display:block — the research filters toggle
 // the `hidden` attribute and a display utility would override it (the card's
@@ -23,8 +33,19 @@ const url = getNucleusResearchUrl(entry);
   data-no={ledgerNo(index)}
 >
   <div class="flex h-full flex-col p-5">
-    <div class="meta flex items-baseline justify-between gap-3 text-dim">
-      <span>{ledgerNo(index)} · {entry.publishDate}</span>
+    <div class="meta flex items-center justify-between gap-3 text-dim">
+      <span class="flex items-center gap-2">
+        {vendorIcon && (
+          <Image
+            src={vendorIcon}
+            alt={vendorName ? `${vendorName} logo` : 'Vendor logo'}
+            width={32}
+            height={32}
+            class="h-4 w-4 rounded-[2px]"
+          />
+        )}
+        <span>{ledgerNo(index)} · {entry.publishDate}</span>
+      </span>
       <Tag type={entry.type} class="shrink-0" />
     </div>
     <h3 class="font-display mt-3 text-[1.08rem] font-semibold leading-snug tracking-tight">
