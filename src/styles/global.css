@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@fontsource-variable/source-serif-4";
+@import "@fontsource-variable/source-serif-4/opsz.css";
 @import "@fontsource-variable/inter";
 @import "@fontsource-variable/jetbrains-mono";
 
@@ -11,20 +11,27 @@
  *   1. [data-theme="dark"]            — explicit toggle / stored preference
  *   2. @media (prefers-color-scheme)  — no-JS fallback only
  * If you change a dark token, change it in BOTH blocks.
+ *
+ * Design language: paper as a measurement instrument. Warm paper + a fine
+ * measurement grid; navy ink; gold is reserved as the "decision/commit" color.
  */
 @theme {
   --font-display: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
-  /* Light (warm paper + navy ink + bronze accent) */
-  --color-bg: oklch(98% 0.005 95);
-  --color-surface: oklch(100% 0 0);
-  --color-surface-2: oklch(96% 0.005 95);
-  --color-edge: oklch(89% 0.008 95);
-  --color-ink: oklch(24% 0.035 257);
-  --color-dim: oklch(46% 0.025 257);
-  --color-accent: oklch(54% 0.105 85);
+  /* Light (warm paper + navy ink + gold commit color) */
+  --color-bg: oklch(97.8% 0.008 92);
+  --color-surface: oklch(99.4% 0.004 95);
+  --color-surface-2: oklch(96% 0.008 92);
+  --color-edge: oklch(87% 0.012 92);
+  --color-ink: oklch(23% 0.035 257);
+  --color-dim: oklch(45% 0.025 257);
+  --color-accent: oklch(52% 0.105 85);
+
+  /* Measurement grid hairlines (ink at very low alpha) */
+  --color-grid-minor: oklch(30% 0.04 257 / 0.05);
+  --color-grid-major: oklch(30% 0.04 257 / 0.1);
 
   /* Constant across themes */
   --color-accent-fill: oklch(76% 0.125 92); /* ~#D4AF37 gold */
@@ -45,10 +52,12 @@
   --color-bg: oklch(17.5% 0.035 257);
   --color-surface: oklch(21% 0.035 257);
   --color-surface-2: oklch(24% 0.035 257);
-  --color-edge: oklch(29.5% 0.03 257);
+  --color-edge: oklch(31% 0.03 257);
   --color-ink: oklch(94.5% 0.01 90);
   --color-dim: oklch(71% 0.02 257);
   --color-accent: oklch(80% 0.115 92);
+  --color-grid-minor: oklch(90% 0.01 90 / 0.045);
+  --color-grid-major: oklch(90% 0.01 90 / 0.09);
   --color-tag-roi: oklch(78% 0.07 155);
   --color-tag-guide: oklch(78% 0.07 185);
   --color-tag-survey: oklch(78% 0.07 240);
@@ -63,10 +72,12 @@
     --color-bg: oklch(17.5% 0.035 257);
     --color-surface: oklch(21% 0.035 257);
     --color-surface-2: oklch(24% 0.035 257);
-    --color-edge: oklch(29.5% 0.03 257);
+    --color-edge: oklch(31% 0.03 257);
     --color-ink: oklch(94.5% 0.01 90);
     --color-dim: oklch(71% 0.02 257);
     --color-accent: oklch(80% 0.115 92);
+    --color-grid-minor: oklch(90% 0.01 90 / 0.045);
+    --color-grid-major: oklch(90% 0.01 90 / 0.09);
     --color-tag-roi: oklch(78% 0.07 155);
     --color-tag-guide: oklch(78% 0.07 185);
     --color-tag-survey: oklch(78% 0.07 240);
@@ -84,14 +95,26 @@
     @apply bg-bg text-ink antialiased;
   }
 
+  /* The measurement grid: ~24px minor / 120px major hairlines, full page. */
   body {
     @apply font-sans text-[16.5px] leading-relaxed;
+    background-image:
+      linear-gradient(to right, var(--color-grid-major) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-grid-major) 1px, transparent 1px),
+      linear-gradient(to right, var(--color-grid-minor) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-grid-minor) 1px, transparent 1px);
+    background-size:
+      120px 120px,
+      120px 120px,
+      24px 24px,
+      24px 24px;
   }
 
   h1,
   h2,
   h3 {
     font-family: var(--font-display);
+    font-optical-sizing: auto;
   }
 
   ::selection {
@@ -115,13 +138,21 @@
   @apply mx-auto w-full max-w-[1200px] px-6;
 }
 
-/* Research type tag — color driven by --tag (see Tag.astro) */
+/* Mono metadata voice: labels, axes, dates, counts, nav. Pair with
+   `uppercase` or `lowercase` per use. */
+@utility meta {
+  font-family: var(--font-mono);
+  font-size: 0.6975rem;
+  letter-spacing: 0.08em;
+  font-weight: 450;
+}
+
+/* DEPRECATED (removed with the ledger components pass): pill tag + rise-in */
 .tag {
   color: var(--tag, var(--color-dim));
   background: color-mix(in oklab, var(--tag, var(--color-dim)) 10%, transparent);
   border: 1px solid color-mix(in oklab, var(--tag, var(--color-dim)) 30%, transparent);
 }
-
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -132,9 +163,76 @@
     transform: translateY(0);
   }
 }
-
 .rise-in {
   @media (prefers-reduced-motion: no-preference) {
     animation: rise-in 0.5s ease-out both;
+  }
+}
+
+/* Research type tag → threshold marker: colored tick + mono label */
+.threshold {
+  color: var(--tag, var(--color-dim));
+}
+.threshold::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 0.75em;
+  margin-right: 0.5em;
+  vertical-align: -0.08em;
+  background: var(--tag, var(--color-dim));
+}
+
+/* Gold-ruled "finding" line (roiClaim callouts) */
+.finding {
+  border-left: 2px solid var(--color-accent-fill);
+  padding-left: 0.75rem;
+}
+
+/*
+ * Sections accumulate in: a thin baseline rule draws across (scaleX),
+ * then content rises from it (clip-path reveal), staggered via --acc-i.
+ * JS (Base.astro) adds .acc-wait up front and .acc-in on intersection;
+ * without JS or with reduced motion nothing is ever hidden.
+ */
+.acc-rule {
+  height: 2px;
+  background: var(--color-ink);
+  transform-origin: left;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .acc-wait .acc-rule {
+    transform: scaleX(0);
+  }
+  .acc-wait .acc-body {
+    clip-path: inset(-1px -1px 100% -1px);
+  }
+  .acc-in .acc-rule {
+    transform: scaleX(1);
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  .acc-in .acc-body {
+    clip-path: inset(-1px -1px -1px -1px);
+    transition: clip-path 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition-delay: calc(0.08s + var(--acc-i, 0) * 0.08s);
+  }
+}
+
+/* Hero text stamps in when the winning trace commits (HeroAccumulator). */
+.stamp {
+  --st: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .stamp-wait .stamp {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  .stamp-go .stamp {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.26s ease-out,
+      transform 0.26s cubic-bezier(0.2, 0.9, 0.3, 1);
+    transition-delay: calc(var(--st) * 60ms);
   }
 }
