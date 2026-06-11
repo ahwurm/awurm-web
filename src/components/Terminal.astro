@@ -1,0 +1,204 @@
+---
+/**
+ * Interactive hero terminal. Server-renders a completed `whoami` + `ls`
+ * session (SEO / no-JS / reduced-motion all see this), then JS replays it
+ * with a typewriter and attaches a real prompt: ls, projects, research,
+ * talks, about, resume, contact, theme, clear, help (+ an easter egg or
+ * two) actually work. Navigation commands navigate; print commands print.
+ */
+import { profile } from '../data/profile';
+
+const whoamiOut = [
+  `${profile.name} — AI · data · decision science`,
+  `${profile.title} @ Nucleus Research. I build AI tools.`,
+];
+const lsEntries = [
+  ['projects/', '/projects/'],
+  ['research/', '/research/'],
+  ['speaking/', '/speaking/'],
+  ['about/', '/about/'],
+  ['resume.pdf', '/AW_Resume2025_web.pdf'],
+] as const;
+---
+
+<div class="term" id="hero-term" data-email={profile.email}>
+  <div class="term-bar">
+    <span aria-hidden="true" class="flex gap-1.5">
+      <i class="h-2.5 w-2.5 rounded-full border border-edge"></i>
+      <i class="h-2.5 w-2.5 rounded-full border border-edge"></i>
+      <i class="h-2.5 w-2.5 rounded-full bg-accent/70"></i>
+    </span>
+    <span class="ml-2">alex@awurm:~</span>
+    <span class="ml-auto hidden sm:inline">bash — 80×24</span>
+  </div>
+  <div class="term-body" id="term-body" aria-live="polite">
+    <div id="term-static">
+      <p><span class="t-prompt">$</span> <span class="t-cmd">whoami</span></p>
+      {whoamiOut.map((l) => <p class="t-out">{l}</p>)}
+      <p class="mt-3"><span class="t-prompt">$</span> <span class="t-cmd">ls</span></p>
+      <p class="t-out flex flex-wrap gap-x-5 gap-y-1">
+        {lsEntries.map(([label, href]) => <a href={href}>{label}</a>)}
+      </p>
+      <p class="mt-3 t-out">
+        type <span class="t-hi">help</span> to look around <span class="t-cursor" aria-hidden="true"></span>
+      </p>
+    </div>
+    <form id="term-form" class="mt-1 hidden items-baseline gap-2" autocomplete="off">
+      <label for="term-input" class="t-prompt shrink-0">$</label>
+      <input
+        id="term-input"
+        class="term-input"
+        type="text"
+        spellcheck="false"
+        autocapitalize="off"
+        aria-label="Terminal command input"
+      />
+    </form>
+  </div>
+</div>
+
+<script>
+  const term = document.getElementById('hero-term')!;
+  const body = document.getElementById('term-body')!;
+  const staticBlock = document.getElementById('term-static')!;
+  const form = document.getElementById('term-form') as HTMLFormElement;
+  const input = document.getElementById('term-input') as HTMLInputElement;
+  const email = term.dataset.email!;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const el = (html: string) => {
+    const d = document.createElement('div');
+    d.innerHTML = html;
+    return d;
+  };
+  const print = (html: string) => {
+    form.before(el(html));
+    body.scrollTop = body.scrollHeight;
+  };
+  const promptLine = (cmd: string) =>
+    `<p class="mt-3"><span class="t-prompt">$</span> <span class="t-cmd"></span></p>`;
+
+  const DIRS: Record<string, string> = {
+    projects: '/projects/',
+    research: '/research/',
+    speaking: '/speaking/',
+    talks: '/speaking/',
+    about: '/about/',
+  };
+
+  const HELP = [
+    ['ls', 'list pages'],
+    ['cd &lt;page&gt;', 'go there (projects, research, speaking, about)'],
+    ['whoami', 'who is this guy'],
+    ['resume', 'open the resume pdf'],
+    ['contact', 'email me'],
+    ['theme', 'toggle dark/light'],
+    ['clear', 'clean up'],
+  ];
+
+  const LS_HTML =
+    '<p class="t-out flex flex-wrap gap-x-5 gap-y-1">' +
+    Object.entries({ 'projects/': '/projects/', 'research/': '/research/', 'speaking/': '/speaking/', 'about/': '/about/', 'resume.pdf': '/AW_Resume2025_web.pdf' })
+      .map(([l, h]) => `<a href="${h}">${l}</a>`)
+      .join(' ') +
+    '</p>';
+
+  function run(raw: string) {
+    const line = raw.trim();
+    const lineEl = el(promptLine(line));
+    lineEl.querySelector('.t-cmd')!.textContent = line; // textContent: never inject user input as HTML
+    form.before(lineEl);
+    if (!line) return;
+    const [cmd, ...args] = line.toLowerCase().split(/\s+/);
+    const arg = (args[0] ?? '').replace(/\/$/, '');
+
+    if (cmd === 'help' || cmd === '?') {
+      print(
+        '<div class="t-out">' +
+          HELP.map(([c, d]) => `<p><span class="t-hi">${c}</span> — ${d}</p>`).join('') +
+          '</div>'
+      );
+    } else if (cmd === 'ls' || cmd === 'dir') {
+      print(LS_HTML);
+    } else if (cmd === 'whoami') {
+      print(
+        `<p class="t-out">Alexander H. Wurm — <span class="t-hi">AI · data · decision science</span></p>` +
+          `<p class="t-out">Principal Analyst @ Nucleus Research. I build AI tools.</p>`
+      );
+    } else if (cmd === 'cd' || DIRS[cmd]) {
+      const target = cmd === 'cd' ? DIRS[arg] : DIRS[cmd];
+      if (target) {
+        print(`<p class="t-out">→ ${target}</p>`);
+        setTimeout(() => location.assign(target), reduced ? 0 : 250);
+      } else {
+        const p = el('<p class="t-out"></p>');
+        p.firstElementChild!.textContent = arg ? `cd: no such directory: ${arg}` : 'cd: missing operand';
+        form.before(p);
+      }
+    } else if (cmd === 'resume' || line.toLowerCase() === 'cat resume.pdf' || cmd === 'open') {
+      print('<p class="t-out">→ resume.pdf</p>');
+      setTimeout(() => location.assign('/AW_Resume2025_web.pdf'), reduced ? 0 : 250);
+    } else if (cmd === 'contact' || cmd === 'email' || cmd === 'mail') {
+      print(`<p class="t-out">→ <a href="mailto:${email}">${email}</a></p>`);
+    } else if (cmd === 'theme') {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      try {
+        localStorage.setItem('theme', next);
+      } catch {}
+      print(`<p class="t-out">theme → ${next}</p>`);
+    } else if (cmd === 'clear' || cmd === 'cls') {
+      Array.from(body.children).forEach((n) => n.id !== 'term-form' && n.remove());
+    } else if (cmd === 'sudo') {
+      if (line.includes('hire')) {
+        print(
+          `<p class="t-out"><span class="t-hi">Permission granted.</span> → <a href="mailto:${email}?subject=Let%27s%20talk">${email}</a></p>`
+        );
+      } else print(`<p class="t-out">${'alex is not in the sudoers file. This incident will be reported.'}</p>`);
+    } else if (cmd === 'pwd') {
+      print('<p class="t-out">/home/alex/awurm.com</p>');
+    } else if (cmd === 'exit') {
+      print('<p class="t-out">there is no escape. try <span class="t-hi">ls</span></p>');
+    } else {
+      const p = el(`<p class="t-out"><span class="t-echo"></span> — try <span class="t-hi">help</span></p>`);
+      p.querySelector('.t-echo')!.textContent = `command not found: ${cmd}`;
+      form.before(p);
+    }
+  }
+
+  // history
+  const hist: string[] = [];
+  let hi = 0;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = input.value;
+    if (v.trim()) {
+      hist.push(v);
+      hi = hist.length;
+    }
+    input.value = '';
+    run(v);
+    body.scrollTop = body.scrollHeight;
+  });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp') {
+      if (hi > 0) input.value = hist[--hi] ?? '';
+      e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+      input.value = hist[++hi] ?? '';
+      if (hi > hist.length) hi = hist.length;
+      e.preventDefault();
+    }
+  });
+
+  // Enable the live prompt (the static cursor line gets removed).
+  form.classList.remove('hidden');
+  form.classList.add('flex');
+  staticBlock.querySelector('.t-cursor')?.parentElement?.remove();
+
+  // Clicking anywhere in the terminal focuses the input (but never steal initial focus).
+  term.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).closest('a')) return;
+    input.focus({ preventScroll: true });
+  });
+</script>

@@ -7,6 +7,7 @@ import SocialLinks from '../components/SocialLinks.astro';
 import IndustryItem from '../components/IndustryItem.astro';
 import TalkCard from '../components/TalkCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import Terminal from '../components/Terminal.astro';
 import { profile } from '../data/profile';
 import { site } from '../data/site';
 import { ledgerIndices } from '../lib/ledger';
@@ -25,35 +26,33 @@ const talks = (await getCollection('talks'))
   .slice(0, 2);
 
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
-
-const [firstName, ...rest] = profile.name.split(' ');
-const lastName = rest.pop();
 ---
 
 <Base title={site.title} description={site.description} ogImage="/og/home.png">
-  <!-- Hero: pure typography, full editorial scale -->
-  <section class="container-site pb-20 pt-14 sm:pb-28 sm:pt-24">
-    <p class="kicker text-accent">AI · Data · Decision Science</p>
-    <h1 class="display-tight mt-6 font-semibold" aria-label={profile.name}>
-      <span class="block text-[clamp(3.2rem,9.5vw,7.6rem)]">{firstName}</span>
-      <span class="block text-[clamp(3.2rem,9.5vw,7.6rem)]">{lastName}<span class="text-accent">.</span></span>
-    </h1>
-    <div class="mt-12 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
-      <p class="max-w-[42ch] font-display text-[clamp(1.3rem,2.1vw,1.6rem)] font-medium leading-[1.4]">
+  <!-- Hero: name + a real terminal -->
+  <section class="container-site grid items-center gap-x-12 gap-y-10 pb-16 pt-12 sm:pt-16 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:pb-24">
+    <div>
+      <p class="kicker text-accent">// ai · data · decision science</p>
+      <h1 class="display-tight mt-5 font-semibold">
+        <span class="block text-[clamp(2.9rem,7vw,5.3rem)]">Alexander</span>
+        <span class="block text-[clamp(2.9rem,7vw,5.3rem)]">Wurm<span class="text-accent">_</span></span>
+      </h1>
+      <p class="mt-6 max-w-[46ch] text-[1.05rem] leading-relaxed text-dim">
         {profile.oneLiner}
       </p>
-      <div class="flex shrink-0 flex-col items-start gap-6">
-        <div class="flex flex-wrap items-center gap-3">
-          <Button href="/projects/">View projects</Button>
-          <Button href={profile.socials.github} variant="outline" external>GitHub ↗</Button>
-        </div>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <Button href="/projects/">view projects</Button>
+        <Button href={profile.socials.github} variant="outline" external>github ↗</Button>
+      </div>
+      <div class="mt-7">
         <SocialLinks />
       </div>
     </div>
+    <Terminal />
   </section>
 
   <!-- Projects -->
-  <Section num="01" title="Projects" sub="Selected software and research projects.">
+  <Section num="01" title="projects" sub="Selected software and research projects.">
     <div class="mt-8">
       {projects.map((project) => <ProjectCard project={project} />)}
     </div>
@@ -62,13 +61,13 @@ const lastName = rest.pop();
   <!-- Research -->
   <Section
     num="02"
-    title="Research"
+    title="research"
     sub="Peer-reviewed work in decision science, and ongoing industry research at Nucleus."
   >
-    <div class="mt-12 grid items-start gap-x-14 gap-y-10 lg:grid-cols-[2fr_3fr]">
+    <div class="mt-10 grid items-start gap-x-14 gap-y-10 lg:grid-cols-[2fr_3fr]">
       <article>
-        <p class="kicker text-dim">Academic highlight · {highlight.data.year}</p>
-        <h3 class="display-tight mt-4 text-[1.6rem] font-semibold leading-[1.15]">
+        <p class="kicker text-dim">academic_highlight · {highlight.data.year}</p>
+        <h3 class="mt-4 font-sans text-[1.25rem] font-semibold leading-snug tracking-tight">
           <a
             href={highlight.data.url}
             target="_blank"
@@ -77,9 +76,9 @@ const lastName = rest.pop();
           >
         </h3>
         <p class="mt-3 text-sm text-dim">{highlight.data.authors}</p>
-        <p class="mt-1.5 text-sm italic text-dim">{highlight.data.venue}</p>
+        <p class="meta mt-2 text-dim">{highlight.data.venue}</p>
         <p class="mt-6">
-          <a href="/research/" class="link-rule text-[0.95rem] font-medium">All academic research</a>
+          <a href="/research/" class="link-rule meta">cd /research →</a>
         </p>
       </article>
       <div>
@@ -87,8 +86,8 @@ const lastName = rest.pop();
           {industry.map((entry) => <IndustryItem entry={entry.data} index={indices.get(entry.id)!} />)}
         </div>
         <p class="mt-7">
-          <a href="/research/?tab=industry" class="link-rule text-[0.95rem] font-medium">
-            Browse the industry research archive — {industryAll.length} notes
+          <a href="/research/?tab=industry" class="link-rule meta">
+            cd /research --tab=industry → {industryAll.length} notes
           </a>
         </p>
       </div>
@@ -96,12 +95,12 @@ const lastName = rest.pop();
   </Section>
 
   <!-- Speaking -->
-  <Section num="03" title="Speaking" sub={profile.speakingIntro}>
-    <div class="mt-12 grid gap-10 sm:grid-cols-2">
+  <Section num="03" title="speaking" sub={profile.speakingIntro}>
+    <div class="mt-10 grid gap-10 sm:grid-cols-2">
       {talks.map((talk) => <TalkCard talk={talk} variant="featured" />)}
     </div>
-    <p class="mt-10">
-      <a href="/speaking/" class="link-rule text-[0.95rem] font-medium">All speaking engagements</a>
+    <p class="mt-9">
+      <a href="/speaking/" class="link-rule meta">cd /speaking →</a>
     </p>
   </Section>
 </Base>

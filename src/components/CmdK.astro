@@ -1,0 +1,148 @@
+---
+/**
+ * Cmd+K command palette: jump to any page, talk, project, or action.
+ * Vanilla JS dialog; items are inlined at build time. Opens with
+ * Cmd/Ctrl+K (or the nav button), arrows + enter, esc closes.
+ */
+import { getCollection } from 'astro:content';
+import { profile } from '../data/profile';
+
+const talks = (await getCollection('talks')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+
+const items = [
+  { label: 'Home', hint: 'page', href: '/' },
+  { label: 'Projects', hint: 'page', href: '/projects/' },
+  { label: 'Research', hint: 'page', href: '/research/' },
+  { label: 'Industry research archive', hint: 'page', href: '/research/?tab=industry' },
+  { label: 'Speaking', hint: 'page', href: '/speaking/' },
+  { label: 'About', hint: 'page', href: '/about/' },
+  { label: 'Contact', hint: 'action', href: '/about/#contact' },
+  { label: 'Resume (PDF)', hint: 'file', href: '/AW_Resume2025_web.pdf' },
+  { label: 'GitHub', hint: 'link', href: profile.socials.github },
+  { label: 'LinkedIn', hint: 'link', href: profile.socials.linkedin },
+  { label: 'Toggle theme', hint: 'action', href: '#theme' },
+  ...projects.map((p) => ({ label: p.data.name, hint: 'project', href: '/projects/' })),
+  ...talks.map((t) => ({ label: t.data.title, hint: 'talk', href: '/speaking/' })),
+];
+---
+
+<div
+  id="cmdk"
+  class="palette-backdrop fixed inset-0 z-[70] hidden items-start justify-center p-4 pt-[14vh]"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Command palette"
+>
+  <div class="term w-full max-w-xl shadow-2xl" data-cmdk-panel>
+    <div class="flex items-baseline gap-2 border-b border-edge px-4 py-3">
+      <span class="t-prompt meta" aria-hidden="true">&gt;</span>
+      <input
+        id="cmdk-input"
+        class="term-input"
+        type="text"
+        placeholder="type to jump…"
+        spellcheck="false"
+        autocomplete="off"
+        aria-label="Search commands"
+      />
+      <kbd class="meta text-dim">esc</kbd>
+    </div>
+    <ul id="cmdk-list" class="max-h-[46vh] overflow-y-auto p-1.5" role="listbox"></ul>
+  </div>
+</div>
+
+<script is:inline define:vars={{ items }}>
+  const root = document.getElementById('cmdk');
+  const input = document.getElementById('cmdk-input');
+  const list = document.getElementById('cmdk-list');
+  let sel = 0;
+  let view = items;
+
+  const render = () => {
+    list.innerHTML = '';
+    view.slice(0, 12).forEach((it, i) => {
+      const li = document.createElement('li');
+      li.setAttribute('role', 'option');
+      li.className =
+        'flex cursor-pointer items-baseline justify-between gap-4 rounded px-3 py-2 font-mono text-[0.82rem]' +
+        (i === sel ? ' bg-surface-2 text-ink' : ' text-dim');
+      const l = document.createElement('span');
+      l.textContent = it.label;
+      const h = document.createElement('span');
+      h.className = 'meta opacity-70';
+      h.textContent = it.hint;
+      li.append(l, h);
+      li.addEventListener('click', () => go(it));
+      li.addEventListener('mousemove', () => {
+        sel = i;
+        render();
+      });
+      list.append(li);
+    });
+    if (!view.length) {
+      const li = document.createElement('li');
+      li.className = 'px-3 py-2 font-mono text-[0.82rem] text-dim';
+      li.textContent = 'no matches';
+      list.append(li);
+    }
+  };
+
+  const open = () => {
+    root.classList.remove('hidden');
+    root.classList.add('flex');
+    input.value = '';
+    view = items;
+    sel = 0;
+    render();
+    input.focus();
+  };
+  const close = () => {
+    root.classList.add('hidden');
+    root.classList.remove('flex');
+  };
+  const go = (it) => {
+    if (it.href === '#theme') {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      try {
+        localStorage.setItem('theme', next);
+      } catch {}
+      close();
+      return;
+    }
+    close();
+    if (/^https?:/.test(it.href)) window.open(it.href, '_blank', 'noopener');
+    else location.assign(it.href);
+  };
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    view = q ? items.filter((it) => it.label.toLowerCase().includes(q)) : items;
+    sel = 0;
+    render();
+  });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') {
+      sel = Math.min(sel + 1, Math.min(view.length, 12) - 1);
+      render();
+      e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+      sel = Math.max(sel - 1, 0);
+      render();
+      e.preventDefault();
+    } else if (e.key === 'Enter' && view[sel]) {
+      go(view[sel]);
+    } else if (e.key === 'Escape') close();
+  });
+  root.addEventListener('click', (e) => {
+    if (!e.target.closest('[data-cmdk-panel]')) close();
+  });
+  addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      root.classList.contains('hidden') ? open() : close();
+    }
+  });
+  document.getElementById('cmdk-open')?.addEventListener('click', open);
+</script>

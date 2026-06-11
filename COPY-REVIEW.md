@@ -160,3 +160,11 @@ not biography. Approve or edit before merge.
     Sources: Nucleus AI Tool RAG app (nucleusresearch.com/ai), Wald accumulator model,
     Smart Capital Tracker (github.com/ahwurm/13f-dashboard-hosted), Nucleus team page.
 18. Link labels recased (sentence case), no factual changes.
+
+## v4 dev-native reskin (2026-06-11)
+
+19. **Terminal hero session** — `whoami` prints: "Alexander H. Wurm — AI · data ·
+    decision science" / "Principal Analyst @ Nucleus Research. I build AI tools."
+    Same verified facts as the hero one-liner (items 16-17). All other terminal
+    strings (help text, easter eggs, 404 session) are UI microcopy, no biographical claims.
+20. **Hero kicker** — "// ai · data · decision science" (item 16 restyled).

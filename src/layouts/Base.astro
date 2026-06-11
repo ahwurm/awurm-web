@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import CmdK from '../components/CmdK.astro';
 import { site } from '../data/site';
 
 interface Props {
@@ -22,23 +23,21 @@ const ogImageAbs = new URL(ogImage, Astro.site);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script is:inline>
-      // Pre-paint theme: stored preference, else system. Keep inline so there is no flash.
+      // Pre-paint theme: stored preference, else DARK (site default). Inline so there is no flash.
       (() => {
         let t;
         try {
           t = localStorage.getItem('theme');
         } catch {}
-        if (t !== 'dark' && t !== 'light')
-          t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.dataset.theme = t;
+        document.documentElement.dataset.theme = t === 'light' ? 'light' : 'dark';
       })();
     </script>
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9f8f5" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#061120" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f8" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16181d" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -68,6 +67,7 @@ const ogImageAbs = new URL(ogImage, Astro.site);
       <slot />
     </main>
     <Footer />
+    <CmdK />
     <script>
       // Sections accumulate in on first view. Only below-the-fold sections are
       // armed (never hide content already on screen); no-JS / reduced motion

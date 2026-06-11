@@ -23,9 +23,12 @@ const { title, sub, num, id, class: className = '' } = Astro.props;
     {
       title && (
         <div class="acc-title mt-7 flex items-baseline justify-between gap-6">
-          <h2 class="display-tight text-[clamp(2.1rem,4.6vw,3.4rem)] font-semibold">{title}</h2>
+          <h2 class="display-tight text-[clamp(1.8rem,3.8vw,2.6rem)] font-semibold">
+            <span class="text-accent" aria-hidden="true">##</span>
+            {title}
+          </h2>
           {num && (
-            <span class="kicker text-dim" aria-hidden="true">
+            <span class="meta text-dim" aria-hidden="true">
               {num}
             </span>
           )}

@@ -7,31 +7,37 @@ const isActive = (href: string) => path === href || path.startsWith(href);
 ---
 
 <header class="sticky top-0 z-50 border-b border-edge bg-bg/90 backdrop-blur">
-  <nav class="container-site flex h-16 items-center justify-between gap-3" aria-label="Main">
+  <nav class="container-site flex h-14 items-center justify-between gap-3" aria-label="Main">
     <a
       href="/"
-      class="font-display text-[1.05rem] font-semibold tracking-tight text-ink transition-colors duration-150 hover:text-accent"
+      class="meta font-semibold text-ink transition-colors duration-150 hover:text-accent"
+      aria-label="Home"
     >
-      <span class="sm:hidden" aria-label={site.name}>A.W<span class="text-accent">.</span></span>
-      <span class="hidden sm:inline">{site.name}<span class="text-accent">.</span></span>
+      <span class="t-prompt">~</span><span class="hidden sm:inline">/alex.wurm</span><span class="sm:hidden">/aw</span>
     </a>
-    <div
-      class="flex items-center gap-3 font-sans text-[10px] font-semibold uppercase tracking-[0.06em] sm:gap-7 sm:text-[0.72rem] sm:tracking-[0.14em]"
-    >
+    <div class="flex items-center gap-3 font-mono text-[11px] tracking-[0.01em] sm:gap-6 sm:text-[0.75rem]">
       {
         site.nav.map(({ label, href }) => (
           <a
             href={href}
             aria-current={isActive(href) ? 'page' : undefined}
             class:list={[
-              'transition-colors duration-150',
+              'lowercase transition-colors duration-150',
               isActive(href) ? 'text-accent' : 'text-dim hover:text-ink',
             ]}
           >
-            {label}
+            {label.toLowerCase()}
           </a>
         ))
       }
+      <button
+        id="cmdk-open"
+        type="button"
+        aria-label="Open command palette"
+        class="meta hidden items-center gap-1 rounded border border-edge px-2 py-1 text-dim transition-colors hover:border-accent hover:text-ink sm:flex"
+      >
+        ⌘K
+      </button>
       <ThemeToggle />
     </div>
   </nav>

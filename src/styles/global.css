@@ -1,87 +1,90 @@
 @import "tailwindcss";
-@import "@fontsource-variable/fraunces/opsz.css";
 @import "@fontsource-variable/inter";
 @import "@fontsource-variable/jetbrains-mono";
 
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@custom-variant dark (&:where(html:not([data-theme="light"]), html:not([data-theme="light"]) *));
 
 /*
- * Theme tokens. Light values live in @theme (the :root defaults);
- * dark values are overridden in TWO places that must stay in sync:
- *   1. [data-theme="dark"]            — explicit toggle / stored preference
- *   2. @media (prefers-color-scheme)  — no-JS fallback only
- * If you change a dark token, change it in BOTH blocks.
+ * Theme tokens. DARK is the default (:root); light is the override:
+ *   1. [data-theme="light"]            — explicit toggle / stored preference
+ *   2. @media (prefers-color-scheme: light) — no-JS fallback only
+ * If you change a light token, change it in BOTH blocks.
  *
- * Design language: warm editorial. Cream paper, near-black ink, one
- * confident vermilion. Fraunces carries the voice at display scale;
- * mono appears only on small data moments.
+ * Design language: dev-native. Deep charcoal, muted terminal green,
+ * amber for numbers/highlights. JetBrains Mono carries headings and UI;
+ * Inter is reserved for reading prose.
  */
 @theme {
-  --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "JetBrains Mono Variable", ui-monospace, monospace;
 
-  /* Light (cream paper + warm near-black ink + vermilion) */
-  --color-bg: oklch(97.4% 0.011 85);
-  --color-surface: oklch(99.1% 0.006 85);
-  --color-surface-2: oklch(95.2% 0.013 85);
-  --color-edge: oklch(86% 0.014 80);
-  --color-ink: oklch(22% 0.012 55);
-  --color-dim: oklch(45% 0.014 55);
-  --color-accent: oklch(53% 0.095 45);
+  /* Dark (default): charcoal + terminal green + amber */
+  --color-bg: oklch(15.5% 0.012 250);
+  --color-surface: oklch(18.5% 0.013 250);
+  --color-surface-2: oklch(22.5% 0.014 250);
+  --color-edge: oklch(29% 0.015 250);
+  --color-ink: oklch(92.5% 0.006 145);
+  --color-dim: oklch(66% 0.012 250);
+  --color-accent: oklch(78% 0.125 152);
+  --color-amber: oklch(80% 0.115 85);
 
-  /* Constant across themes: vermilion fill for primary actions/marks */
-  --color-accent-fill: oklch(56% 0.1 45);
-  --color-accent-ink: oklch(98% 0.008 85);
+  --color-accent-fill: oklch(78% 0.125 152);
+  --color-accent-ink: oklch(17% 0.03 152);
 
-  /* Muted research type-tag hues */
-  --color-tag-roi: oklch(46% 0.07 155);
-  --color-tag-guide: oklch(46% 0.07 200);
-  --color-tag-survey: oklch(46% 0.07 250);
-  --color-tag-announce: oklch(46% 0.07 310);
+  /* Research type-tag hues */
+  --color-tag-roi: oklch(78% 0.09 152);
+  --color-tag-guide: oklch(78% 0.08 200);
+  --color-tag-survey: oklch(78% 0.08 250);
+  --color-tag-announce: oklch(78% 0.08 310);
 
-  /* Form validation errors (AA on bg/surface in each theme) */
+  --color-error: oklch(72% 0.15 25);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: oklch(97.6% 0.003 250);
+  --color-surface: oklch(99.2% 0.002 250);
+  --color-surface-2: oklch(94.5% 0.005 250);
+  --color-edge: oklch(86.5% 0.007 250);
+  --color-ink: oklch(23% 0.015 250);
+  --color-dim: oklch(46% 0.014 250);
+  --color-accent: oklch(46% 0.11 152);
+  --color-amber: oklch(55% 0.12 80);
+  --color-accent-fill: oklch(50% 0.115 152);
+  --color-accent-ink: oklch(98% 0.003 250);
+  --color-tag-roi: oklch(45% 0.08 155);
+  --color-tag-guide: oklch(45% 0.07 200);
+  --color-tag-survey: oklch(45% 0.07 250);
+  --color-tag-announce: oklch(45% 0.07 310);
   --color-error: oklch(46% 0.16 25);
 }
 
-[data-theme="dark"] {
-  color-scheme: dark;
-  --color-bg: oklch(16.5% 0.009 55);
-  --color-surface: oklch(19.5% 0.01 55);
-  --color-surface-2: oklch(23% 0.011 55);
-  --color-edge: oklch(31% 0.012 55);
-  --color-ink: oklch(94% 0.013 85);
-  --color-dim: oklch(70% 0.013 70);
-  --color-accent: oklch(73% 0.09 50);
-  --color-tag-roi: oklch(78% 0.07 155);
-  --color-tag-guide: oklch(78% 0.07 200);
-  --color-tag-survey: oklch(78% 0.07 250);
-  --color-tag-announce: oklch(78% 0.07 310);
-  --color-error: oklch(75% 0.13 25);
-}
-
-/* No-JS fallback: mirror of the [data-theme="dark"] block above. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --color-bg: oklch(16.5% 0.009 55);
-    --color-surface: oklch(19.5% 0.01 55);
-    --color-surface-2: oklch(23% 0.011 55);
-    --color-edge: oklch(31% 0.012 55);
-    --color-ink: oklch(94% 0.013 85);
-    --color-dim: oklch(70% 0.013 70);
-    --color-accent: oklch(73% 0.09 50);
-    --color-tag-roi: oklch(78% 0.07 155);
-    --color-tag-guide: oklch(78% 0.07 200);
-    --color-tag-survey: oklch(78% 0.07 250);
-    --color-tag-announce: oklch(78% 0.07 310);
-    --color-error: oklch(75% 0.13 25);
+/* No-JS fallback: mirror of the [data-theme="light"] block above. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]):not([data-theme="light"]) {
+    color-scheme: light;
+    --color-bg: oklch(97.6% 0.003 250);
+    --color-surface: oklch(99.2% 0.002 250);
+    --color-surface-2: oklch(94.5% 0.005 250);
+    --color-edge: oklch(86.5% 0.007 250);
+    --color-ink: oklch(23% 0.015 250);
+    --color-dim: oklch(46% 0.014 250);
+    --color-accent: oklch(46% 0.11 152);
+    --color-amber: oklch(55% 0.12 80);
+    --color-accent-fill: oklch(50% 0.115 152);
+    --color-accent-ink: oklch(98% 0.003 250);
+    --color-tag-roi: oklch(45% 0.08 155);
+    --color-tag-guide: oklch(45% 0.07 200);
+    --color-tag-survey: oklch(45% 0.07 250);
+    --color-tag-announce: oklch(45% 0.07 310);
+    --color-error: oklch(46% 0.16 25);
   }
 }
 
 @layer base {
   :root {
-    color-scheme: light;
+    color-scheme: dark;
   }
 
   html {
@@ -89,15 +92,14 @@
   }
 
   body {
-    @apply font-sans text-[1.0625rem] leading-relaxed;
+    @apply font-sans text-[1rem] leading-relaxed;
   }
 
   h1,
   h2,
   h3 {
-    font-family: var(--font-display);
-    font-optical-sizing: auto;
-    font-weight: 540;
+    font-family: var(--font-mono);
+    letter-spacing: -0.02em;
   }
 
   ::selection {
@@ -118,35 +120,34 @@
 }
 
 @utility container-site {
-  @apply mx-auto w-full max-w-[1140px] px-6 sm:px-10;
+  @apply mx-auto w-full max-w-[1080px] px-5 sm:px-8;
 }
 
-/* Mono data voice — used sparingly: dates, counts, tags, figure captions. */
+/* Mono data voice: dates, counts, tags, captions. */
 @utility meta {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   font-weight: 440;
 }
 
-/* Editorial kicker: small caps sans for section numbers / labels. */
+/* Mono label: section markers, nav, kickers. */
 @utility kicker {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-weight: 560;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-/* Display headline helper: Fraunces, tight, optically sized. */
+/* Display headline: mono at scale. */
 @utility display-tight {
-  font-family: var(--font-display);
-  font-optical-sizing: auto;
-  letter-spacing: -0.018em;
-  line-height: 0.98;
+  font-family: var(--font-mono);
+  letter-spacing: -0.035em;
+  line-height: 1.02;
 }
 
-/* Underlined editorial link: hairline that thickens to vermilion. */
+/* Editorial link: hairline underline that goes green. */
 .link-rule {
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -159,38 +160,37 @@
 .link-rule:hover {
   color: var(--color-accent);
   text-decoration-color: var(--color-accent);
-  text-decoration-thickness: 2px;
 }
 
-/* Research type tag: small colored dot + mono label. */
+/* Research type tag: [bracketed] mono label in its hue. */
 .threshold {
+  font-family: var(--font-mono);
   color: var(--tag, var(--color-dim));
 }
 .threshold::before {
-  content: "";
-  display: inline-block;
-  width: 0.45em;
-  height: 0.45em;
-  border-radius: 9999px;
-  margin-right: 0.55em;
-  vertical-align: 0.08em;
-  background: var(--tag, var(--color-dim));
+  content: "[";
+  opacity: 0.6;
+}
+.threshold::after {
+  content: "]";
+  opacity: 0.6;
 }
 
-/* Vermilion-ruled "finding" line (roiClaim callouts) */
+/* Green-ruled "finding" line (roiClaim callouts) */
 .finding {
-  border-left: 2px solid var(--color-accent-fill);
+  border-left: 2px solid var(--color-accent);
   padding-left: 0.75rem;
+  color: var(--color-ink);
 }
 
-/* "Let the model decide": the chosen ledger row flashes warm */
+/* "Let the model decide": the chosen row flashes green */
 .row-hit {
   animation: row-hit 2.4s ease-out both;
 }
 @keyframes row-hit {
   0%,
   30% {
-    background-color: color-mix(in oklab, var(--color-accent-fill) 14%, transparent);
+    background-color: color-mix(in oklab, var(--color-accent) 12%, transparent);
   }
   100% {
     background-color: transparent;
@@ -199,14 +199,31 @@
 @media (prefers-reduced-motion: reduce) {
   .row-hit {
     animation: none;
-    background-color: color-mix(in oklab, var(--color-accent-fill) 14%, transparent);
+    background-color: color-mix(in oklab, var(--color-accent) 12%, transparent);
+  }
+}
+
+/* List rows get a prompt marker on hover: `>` slides in. */
+.row-prompt {
+  position: relative;
+}
+.row-prompt::before {
+  content: ">";
+  position: absolute;
+  left: -1.1em;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+@media (hover: hover) {
+  .row-prompt:hover::before {
+    opacity: 1;
   }
 }
 
 /*
- * Sections settle in: a hairline draws across, content rises from it.
- * JS (Base.astro) adds .acc-wait up front and .acc-in on intersection;
- * without JS or with reduced motion nothing is ever hidden.
+ * Sections settle in (unchanged mechanism; see Base.astro IO + self-heal).
  */
 .acc-rule {
   height: 1px;
@@ -219,11 +236,11 @@
   }
   .acc-wait .acc-title {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(12px);
   }
   .acc-wait .acc-body {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(16px);
   }
   .acc-in .acc-rule {
     transform: scaleX(1);
@@ -245,4 +262,88 @@
       transform 0.45s cubic-bezier(0.22, 0.8, 0.3, 1);
     transition-delay: calc(0.14s + var(--acc-i, 0) * 0.07s);
   }
+}
+
+/* Terminal */
+.term {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  background: var(--color-surface);
+  border: 1px solid var(--color-edge);
+  border-radius: 6px;
+}
+.term-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--color-edge);
+  color: var(--color-dim);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+.term-body {
+  padding: 1rem 1.25rem 1.1rem;
+  overflow-x: auto;
+}
+.term .t-prompt {
+  color: var(--color-accent);
+  user-select: none;
+}
+.term .t-cmd {
+  color: var(--color-ink);
+  font-weight: 560;
+}
+.term .t-out {
+  color: var(--color-dim);
+}
+.term .t-hi {
+  color: var(--color-ink);
+}
+.term .t-num {
+  color: var(--color-amber);
+}
+.term a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in oklab, var(--color-accent) 45%, transparent);
+}
+.term a:hover {
+  text-decoration-color: var(--color-accent);
+}
+.term-input {
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: var(--color-ink);
+  font: inherit;
+  font-weight: 560;
+  width: 100%;
+  caret-color: var(--color-accent);
+}
+.t-cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  vertical-align: -0.15em;
+  background: var(--color-accent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .t-cursor {
+    animation: t-blink 1.1s steps(1) infinite;
+  }
+}
+@keyframes t-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Command palette */
+.palette-backdrop {
+  background: color-mix(in oklab, var(--color-bg) 55%, transparent);
+  backdrop-filter: blur(2px);
 }

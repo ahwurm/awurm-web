@@ -1,60 +1,38 @@
 ---
 import Base from '../layouts/Base.astro';
 import Button from '../components/Button.astro';
-
-// Static failed trial (scripts/hero-fig.mjs): three traces, no first passage.
-const svgAlt =
-  'Drift-diffusion trial with three evidence traces that wander but never reach the decision boundary a = 1.2.';
 ---
 
 <Base title="Page not found — Alexander H. Wurm" description="Page not found." noindex>
-  <section class="container-site flex flex-col items-center py-16 text-center sm:py-20">
-    <p class="meta uppercase text-accent">error · 404</p>
-    <h1 class="mt-3 text-4xl font-semibold tracking-tight">Page not found</h1>
-    <p class="mt-3 max-w-md text-dim">
-      The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
-    </p>
-
-    <figure class="plate mt-10 w-full max-w-xl">
-      <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
-      <svg viewBox="0 0 560 350" class="block h-auto w-full" role="img" aria-label={svgAlt} fill="none">
-        <path d="M 46 26 V 281.6 H 546" stroke="var(--color-dim)" stroke-opacity="0.75" vector-effect="non-scaling-stroke"></path>
-        <path
-          d="M 46 281.6 v 5 M 212.7 281.6 v 5 M 379.3 281.6 v 5 M 546 281.6 v 5"
-          stroke="var(--color-dim)"
-          stroke-opacity="0.75"
-          vector-effect="non-scaling-stroke"></path>
-        <line x1="46" y1="65.6" x2="546" y2="65.6" stroke="var(--color-dim)" stroke-dasharray="6 5" vector-effect="non-scaling-stroke"></line>
-        <g class="fig-label" fill="var(--color-dim)">
-          <text x="546" y="59" text-anchor="end">a = 1.2</text>
-          <text x="46" y="299">0</text>
-          <text x="212.7" y="299" text-anchor="middle">200</text>
-          <text x="379.3" y="299" text-anchor="middle">400</text>
-          <text x="546" y="299" text-anchor="end">600</text>
-          <text x="296" y="316" text-anchor="middle">time (ms)</text>
-          <text x="17" y="153.8" text-anchor="middle" transform="rotate(-90 17 153.8)">evidence</text>
-        </g>
-        <polyline points="46.0,281.6 51.0,291.2 56.0,282.1 61.0,283.0 66.0,279.4 71.0,271.5 76.0,259.3 81.0,256.2 86.0,252.3 91.0,266.8 96.0,290.8 101.0,282.7 106.0,298.2 111.0,297.6 116.0,287.9 121.0,289.7 126.0,271.9 131.0,261.9 136.0,260.9 141.0,248.0 146.0,272.5 151.0,285.4 156.0,287.7 161.0,289.0 166.0,286.8 171.0,292.6 176.0,289.2 181.0,274.0 186.0,274.1 191.0,277.9 196.0,268.5 201.0,275.7 206.0,289.6 211.0,299.1 216.0,299.4 221.0,303.4 226.0,293.5 231.0,302.9 236.0,291.3 241.0,293.7 246.0,277.2 251.0,293.4 256.0,297.9 261.0,303.6 266.0,297.5 271.0,265.3 276.0,250.6 281.0,262.8 286.0,272.1 291.0,278.7 296.0,264.5 301.0,257.4 306.0,255.9 311.0,250.9 316.0,273.2 321.0,270.9 326.0,288.9 331.0,274.8 336.0,265.9 341.0,263.7 346.0,262.4 351.0,246.2 356.0,226.1 361.0,231.8 366.0,225.5 371.0,223.5 376.0,221.3 381.0,219.4 386.0,245.3 391.0,253.6 396.0,247.3 401.0,247.0 406.0,265.6 411.0,273.2 416.0,268.7 421.0,290.0 426.0,296.9 431.0,281.6 436.0,295.6 441.0,286.2 446.0,298.9 451.0,294.9 456.0,279.3 461.0,278.0 466.0,292.9 471.0,281.2 476.0,270.8 481.0,292.0 486.0,278.1 491.0,273.3 496.0,276.0 501.0,281.1 506.0,279.8 511.0,275.4 516.0,276.5 521.0,271.0 526.0,275.6 531.0,253.1 536.0,245.4 541.0,230.1 546.0,224.3" stroke="var(--color-ink)" stroke-opacity="0.55" stroke-width="1.4" stroke-linejoin="round" vector-effect="non-scaling-stroke"></polyline>
-        <polyline points="46.0,281.6 51.0,264.9 56.0,248.2 61.0,243.9 66.0,230.5 71.0,225.3 76.0,201.4 81.0,220.5 86.0,205.7 91.0,214.7 96.0,221.0 101.0,225.4 106.0,234.8 111.0,228.0 116.0,206.4 121.0,192.2 126.0,205.7 131.0,205.0 136.0,194.7 141.0,178.0 146.0,181.2 151.0,184.0 156.0,175.6 161.0,174.0 166.0,166.0 171.0,156.1 176.0,157.4 181.0,170.5 186.0,183.2 191.0,184.9 196.0,188.6 201.0,202.0 206.0,209.0 211.0,211.2 216.0,194.7 221.0,183.4 226.0,192.7 231.0,203.4 236.0,217.6 241.0,218.6 246.0,215.1 251.0,203.6 256.0,227.3 261.0,232.1 266.0,220.6 271.0,214.0 276.0,206.7 281.0,206.4 286.0,191.4 291.0,198.1 296.0,201.2 301.0,214.5 306.0,207.8 311.0,214.0 316.0,209.3 321.0,203.0 326.0,203.9 331.0,205.2 336.0,209.1 341.0,217.0 346.0,209.0 351.0,217.4 356.0,225.9 361.0,205.8 366.0,196.1 371.0,197.3 376.0,185.5 381.0,195.4 386.0,207.5 391.0,200.3 396.0,190.7 401.0,193.9 406.0,196.8 411.0,169.6 416.0,166.7 421.0,158.9 426.0,178.9 431.0,162.4 436.0,153.8 441.0,174.2 446.0,186.5 451.0,185.4 456.0,182.3 461.0,172.2 466.0,178.6 471.0,182.5 476.0,173.3 481.0,184.7 486.0,176.6 491.0,174.6 496.0,193.8 501.0,179.7 506.0,185.1 511.0,184.4 516.0,177.7 521.0,165.8 526.0,156.7 531.0,153.8 536.0,159.2 541.0,154.4 546.0,143.1" stroke="var(--color-ink)" stroke-opacity="0.42" stroke-width="1.4" stroke-linejoin="round" vector-effect="non-scaling-stroke"></polyline>
-        <polyline points="46.0,281.6 51.0,279.2 56.0,279.1 61.0,292.1 66.0,284.6 71.0,288.2 76.0,269.7 81.0,259.8 86.0,260.0 91.0,262.2 96.0,273.9 101.0,274.9 106.0,276.8 111.0,288.1 116.0,271.2 121.0,263.3 126.0,283.7 131.0,286.3 136.0,269.2 141.0,268.6 146.0,256.4 151.0,257.4 156.0,253.4 161.0,265.7 166.0,274.0 171.0,268.3 176.0,274.5 181.0,262.4 186.0,264.5 191.0,258.7 196.0,250.7 201.0,239.0 206.0,247.9 211.0,262.1 216.0,280.6 221.0,287.4 226.0,273.9 231.0,284.0 236.0,280.5 241.0,284.7 246.0,293.0 251.0,294.6 256.0,299.3 261.0,289.7 266.0,270.7 271.0,274.7 276.0,276.0 281.0,260.7 286.0,246.8 291.0,249.8 296.0,266.3 301.0,262.4 306.0,264.3 311.0,252.3 316.0,249.1 321.0,255.2 326.0,235.1 331.0,232.0 336.0,220.9 341.0,207.2 346.0,195.3 351.0,198.9 356.0,201.8 361.0,200.6 366.0,199.2 371.0,202.7 376.0,199.8 381.0,216.0 386.0,214.1 391.0,203.7 396.0,202.8 401.0,188.6 406.0,177.8 411.0,168.7 416.0,167.4 421.0,195.7 426.0,197.3 431.0,197.4 436.0,199.0 441.0,198.3 446.0,204.9 451.0,191.4 456.0,178.1 461.0,190.7 466.0,197.5 471.0,186.8 476.0,180.4 481.0,188.4 486.0,180.7 491.0,194.0 496.0,197.4 501.0,220.1 506.0,221.6 511.0,222.3 516.0,242.0 521.0,247.3 526.0,247.2 531.0,247.3 536.0,247.6 541.0,258.1 546.0,246.0" stroke="var(--color-ink)" stroke-opacity="0.32" stroke-width="1.4" stroke-linejoin="round" vector-effect="non-scaling-stroke"></polyline>
-      </svg>
-      <figcaption class="meta lowercase mt-3 text-left text-dim">
-        fig. 0 — no decision reached. boundary not crossed.
-      </figcaption>
-    </figure>
-
-    <div class="mt-9 flex flex-wrap justify-center gap-3">
-      <Button href="/">Go to homepage</Button>
-      <Button href="/research/" variant="outline">Browse research</Button>
+  <section class="container-site flex flex-col items-center py-20 sm:py-28">
+    <div class="term w-full max-w-xl">
+      <div class="term-bar">
+        <span aria-hidden="true" class="flex gap-1.5">
+          <i class="h-2.5 w-2.5 rounded-full border border-edge"></i>
+          <i class="h-2.5 w-2.5 rounded-full border border-edge"></i>
+          <i class="h-2.5 w-2.5 rounded-full bg-error/70"></i>
+        </span>
+        <span class="ml-2">alex@awurm:~</span>
+      </div>
+      <div class="term-body">
+        <p><span class="t-prompt">$</span> <span class="t-cmd" id="nf-path">cd …</span></p>
+        <p class="t-out"><span class="text-error">bash: cd:</span> no such file or directory</p>
+        <p class="mt-3"><span class="t-prompt">$</span> <span class="t-cmd">echo $?</span></p>
+        <p class="t-out"><span class="t-num">404</span></p>
+        <p class="mt-3 t-out">
+          try <a href="/">cd ~</a> or <a href="/research/">cd /research</a>
+          <span class="t-cursor" aria-hidden="true"></span>
+        </p>
+      </div>
+    </div>
+    <div class="mt-8 flex gap-3">
+      <Button href="/">go home</Button>
+      <Button href="/research/" variant="outline">browse research</Button>
     </div>
   </section>
+  <script>
+    // Echo the actually-requested path into the failed cd (textContent — never HTML).
+    const el = document.getElementById('nf-path');
+    if (el) el.textContent = `cd ${location.pathname}`;
+  </script>
 </Base>
-
-<style>
-  .fig-label {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-  }
-</style>
