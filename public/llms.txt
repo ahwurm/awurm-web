@@ -1,0 +1,24 @@
+# Alexander H. Wurm
+
+Personal site of Alexander H. Wurm, Principal Analyst at Nucleus Research, where he
+leads coverage of analytics and data management technologies. Background in cognitive
+science and decision modeling at the University of Florida.
+
+## Pages
+
+- https://awurm.com/ — overview
+- https://awurm.com/research/ — academic publications; industry research archive at /research/?tab=industry
+- https://awurm.com/speaking/ — webinars and conference talks
+- https://awurm.com/projects/ — software and research projects
+- https://awurm.com/about/ — bio, experience, education, contact
+
+## Facts
+
+- Title: Principal Analyst, Nucleus Research (Miami, FL; Jun 2021–present; progression: Research Analyst → Senior Analyst → Principal Analyst)
+- Previously: Research Assistant, UF Cognitive Modeling Laboratory (Jan 2020–May 2021)
+- Education: B.A. Economics (Dean's List) and B.S. Behavioral Cognitive Neuroscience (Summa Cum Laude), University of Florida, 2017–2021
+- Publication: "A model of timing in simple anticipatory decisions" — Wurm, Sokratous, Hawkins, Kvam — Proceedings of the Annual Meeting of the Cognitive Science Society, Vol. 43 (2021) — https://escholarship.org/uc/item/2fd149qd
+- Preprint: "Why am I always late? Modeling the cognitive mechanisms underlying anticipatory timing under uncertainty" — Sokratous, Hawkins, Wurm, Kvam — PsyArXiv — https://doi.org/10.31234/osf.io/v2gkc
+- Email: ahwurm1@gmail.com
+- LinkedIn: https://www.linkedin.com/in/alexander-w-374705132/
+- GitHub: https://github.com/ahwurm
