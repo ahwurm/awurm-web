@@ -15,7 +15,7 @@ const url = getNucleusResearchUrl(entry);
 // the `hidden` attribute and a display utility would override it.
 ---
 
-<article class="border-b border-edge py-5" data-year={entry.year} data-type={entry.type}>
+<article class="border-b border-edge py-5" data-year={entry.year} data-type={entry.type} data-no={ledgerNo(index)}>
   <div class="grid gap-x-6 gap-y-1.5 sm:grid-cols-[7.25rem_minmax(0,1fr)]">
     <div class="meta flex gap-x-4 text-dim sm:flex-col sm:gap-y-1.5">
       <span>{ledgerNo(index)}</span>

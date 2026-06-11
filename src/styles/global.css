@@ -184,6 +184,26 @@
   padding-left: 0.75rem;
 }
 
+/* "Let the model decide": the chosen ledger row flashes gold */
+.row-hit {
+  animation: row-hit 2.4s ease-out both;
+}
+@keyframes row-hit {
+  0%,
+  30% {
+    background-color: color-mix(in oklab, var(--color-accent-fill) 22%, transparent);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .row-hit {
+    animation: none;
+    background-color: color-mix(in oklab, var(--color-accent-fill) 22%, transparent);
+  }
+}
+
 /*
  * Sections accumulate in: a thin baseline rule draws across (scaleX),
  * then content rises from it (clip-path reveal), staggered via --acc-i.
