@@ -3523,8 +3523,8 @@
       "Cloud analytics ROI framework",
       "Enterprise data platform value"
     ],
-    "roiClaim": null,
-    "summary": "ROI guidebook for Teradata VantageCloud implementation and value realization.",
+    "roiClaim": "427% ROI with an 11-month payback",
+    "summary": "Organizations using Teradata VantageCloud achieved an average ROI of 427% over three years, with an average annual benefit of $7.9 million and a payback period of 11 months, based on Nucleus ROI assessments of customers across healthcare, insurance, and telecommunications.",
     "pdfUrl": "/references/z71 - ROI Guidebook - Teradata VantageCloud.pdf"
   },
   {
@@ -3665,5 +3665,113 @@
     "roiClaim": null,
     "summary": "Comprehensive analysis of Application Performance Monitoring vendors and market positioning for 2025.",
     "pdfUrl": "/references/z97 - APM Technology Value Matrix 2025.pdf"
+  },
+  {
+    "title": "iPaaS Technology Value Matrix 2025",
+    "documentId": "",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q2",
+    "publishDate": "2025-04-28",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "Automation"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of integration platform as a service (iPaaS) vendors and market positioning for 2025. Customer interviews showed rapid adoption of AI capabilities, with usability differentiators shifting to AI tools, copilot, and agentic experiences."
+  },
+  {
+    "title": "Embedded Analytics Technology Value Matrix 2025",
+    "documentId": "",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-10-28",
+    "technologies": [
+      "Embedded Analytics",
+      "BI",
+      "Analytics"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of embedded analytics vendors and market positioning for 2025. Leaders in this year's Value Matrix include Domo, Looker, Oracle, Power BI, Tableau, and ThoughtSpot."
+  },
+  {
+    "title": "Boomi ROI case study - Regional Bank",
+    "documentId": "",
+    "type": "ROI Study",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-03",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "Automation"
+    ],
+    "vendors": [
+      "Boomi"
+    ],
+    "roiClaim": "97% ROI with a 9.9-month payback",
+    "summary": "A regional bank saw a 97% ROI with a payback period of 9.9 months after deploying the Boomi Enterprise Platform to automate core operations, including loan processing, customer onboarding, and account maintenance.",
+    "nucleusUrl": "https://boomi.com/blog/nucleus-research-alex-wurm-boomi-roi-case-study/"
+  },
+  {
+    "title": "Oracle AI Database drives 87 percent faster data refresh",
+    "documentId": "26074",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q2",
+    "publishDate": "2026-04-22",
+    "technologies": [
+      "Database",
+      "AI",
+      "Data Management"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "roiClaim": null,
+    "summary": "Nucleus interviewed Oracle AI Database customers and found that consolidating transactional, analytical, and integration workloads onto Oracle's converged data platform reduces the data latency, operational overhead, and redundant infrastructure of running AI workloads across fragmented or single-purpose database systems."
+  },
+  {
+    "title": "Databricks compute cost savings exceed the lakehouse market average",
+    "documentId": "26082",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q2",
+    "publishDate": "2026-04-29",
+    "technologies": [
+      "Lakehouse",
+      "Analytics",
+      "Cloud"
+    ],
+    "vendors": [
+      "Databricks"
+    ],
+    "roiClaim": null,
+    "summary": "Nucleus reviewed data from multiple lakehouse deployments and found that 85.1 percent of Databricks customers reduced infrastructure and compute costs by a greater extent than the lakehouse market average."
+  },
+  {
+    "title": "BI and Analytics Technology Value Matrix 2026",
+    "documentId": "26096",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q2",
+    "publishDate": "2026-05-26",
+    "technologies": [
+      "BI",
+      "Analytics"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of BI and analytics vendors and market positioning for 2026. Leaders in this year's Value Matrix include Domo, Microsoft, Oracle, Qlik, Tableau, and ThoughtSpot."
   }
 ]

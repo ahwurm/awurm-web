@@ -1,11 +1,23 @@
 ---
+// Phase 2 placeholder: forces full content-layer validation at build. Replaced by the real home page in Phase 3.
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+
+const talks = await getCollection('talks');
+const projects = await getCollection('projects');
+const publications = await getCollection('publications');
+const industry = await getCollection('industryResearch');
 ---
 
 <Base
   title="Alexander H. Wurm | Principal Analyst & Researcher"
   description="Principal Analyst and Researcher specializing in AI, data science, analytics, and data management."
 >
-  <h1>Alexander H. Wurm</h1>
-  <p>Scaffold placeholder — real pages land in Phase 3.</p>
+  <section class="container-site py-16">
+    <h1 class="text-3xl font-semibold">Alexander H. Wurm</h1>
+    <p class="mt-3 text-dim">
+      Content layer: {talks.length} talks · {projects.length} projects · {publications.length} publications ·
+      {industry.length} industry research entries.
+    </p>
+  </section>
 </Base>
