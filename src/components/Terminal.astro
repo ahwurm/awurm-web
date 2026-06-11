@@ -10,7 +10,7 @@ import { profile } from '../data/profile';
 
 const whoamiOut = [
   `${profile.name} — AI · data · decision science`,
-  `${profile.title} @ Nucleus Research. I build AI tools.`,
+  'Curiosity-led builder and researcher.',
 ];
 const lsEntries = [
   ['projects/', '/projects/'],
@@ -123,7 +123,7 @@ const lsEntries = [
     } else if (cmd === 'whoami') {
       print(
         `<p class="t-out">Alexander H. Wurm — <span class="t-hi">AI · data · decision science</span></p>` +
-          `<p class="t-out">Principal Analyst @ Nucleus Research. I build AI tools.</p>`
+          `<p class="t-out">Curiosity-led builder and researcher.</p>`
       );
     } else if (cmd === 'cd' || DIRS[cmd]) {
       const target = cmd === 'cd' ? DIRS[arg] : DIRS[cmd];

@@ -67,7 +67,7 @@ const html = (c) => `<!doctype html>
       <div class="line"><span class="p">$</span> <span class="cmd">${c.cmd}</span></div>
       <div class="name">Alexander H. Wurm</div>
       <div class="meta">AI · data · decision science</div>
-      <div class="sub">Principal Analyst @ Nucleus Research. I build AI tools.</div>
+      <div class="sub">Curiosity-led builder and researcher.</div>
       <div class="line" style="margin-top:22px"><span class="p">$</span><span class="cursor"></span></div>
     </div>
   </div>

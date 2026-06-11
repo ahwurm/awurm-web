@@ -15,7 +15,7 @@ const past = talks.filter((t) => !isUpcoming(t.data.date));
 const byYear = groupByYear(past, (t) => t.data.date);
 
 const description =
-  'Speaking engagements by Alexander H. Wurm — research presentations and webinars for Google, Oracle, Databricks, Teradata, Dremio, and more.';
+  'Talks and webinars by Alexander H. Wurm.';
 ---
 
 <Base title="Speaking — Alexander H. Wurm" description={description} ogImage="/og/speaking.png">
@@ -36,8 +36,8 @@ const description =
     )
   }
 
-  <Section title="Talks">
-    <div class="mt-4 space-y-10">
+  <Section>
+    <div class="-mt-8 space-y-10 sm:-mt-12">
       {
         byYear.map(([year, yearTalks]) => (
           <div>

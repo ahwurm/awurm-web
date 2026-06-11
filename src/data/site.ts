@@ -1,10 +1,10 @@
 export const site = {
   url: 'https://awurm.com',
   name: 'Alexander H. Wurm',
-  title: 'Alexander H. Wurm | Principal Analyst & Researcher',
+  title: 'Alexander H. Wurm — builder & researcher',
   // Verbatim from the old app/layout.tsx metadata.
   description:
-    'Principal Analyst and Researcher specializing in AI, data science, analytics, and data management. Academic research in cognitive science and decision modeling at University of Florida.',
+    'Curiosity-led builder and researcher — AI, data science, analytics, and decision modeling. Personal site of Alexander H. Wurm.',
   nav: [
     { label: 'Research', href: '/research/' },
     { label: 'Speaking', href: '/speaking/' },

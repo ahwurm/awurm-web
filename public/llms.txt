@@ -1,6 +1,6 @@
 # Alexander H. Wurm
 
-Personal site of Alexander H. Wurm, Principal Analyst at Nucleus Research, where he
+Personal site of Alexander H. Wurm, a curiosity-led builder and researcher, who
 leads coverage of analytics and data management technologies. Background in cognitive
 science and decision modeling at the University of Florida.
 
