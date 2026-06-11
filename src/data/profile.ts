@@ -12,7 +12,7 @@ export const profile = {
   // Old hero tagline, verbatim.
   tagline: 'Advancing decision science through computational modeling and enterprise technology research',
   // ASSEMBLED: old tagline converted to a first-person sentence (COPY-REVIEW #1).
-  oneLiner: 'I advance decision science through computational modeling and enterprise technology research.',
+  oneLiner: 'I build AI tools — RAG apps, decision models, open-source software — and cover the data & AI platform market as a Principal Analyst at Nucleus Research.',
   email: 'ahwurm1@gmail.com',
   socials: {
     linkedin: 'https://www.linkedin.com/in/alexander-w-374705132/',

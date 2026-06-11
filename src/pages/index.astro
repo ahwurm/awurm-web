@@ -33,7 +33,7 @@ const lastName = rest.pop();
 <Base title={site.title} description={site.description} ogImage="/og/home.png">
   <!-- Hero: pure typography, full editorial scale -->
   <section class="container-site pb-20 pt-14 sm:pb-28 sm:pt-24">
-    <p class="kicker text-accent">{profile.role}</p>
+    <p class="kicker text-accent">AI · Data · Decision Science</p>
     <h1 class="display-tight mt-6 font-semibold" aria-label={profile.name}>
       <span class="block text-[clamp(3.2rem,9.5vw,7.6rem)]">{firstName}</span>
       <span class="block text-[clamp(3.2rem,9.5vw,7.6rem)]">{lastName}<span class="text-accent">.</span></span>
@@ -44,17 +44,24 @@ const lastName = rest.pop();
       </p>
       <div class="flex shrink-0 flex-col items-start gap-6">
         <div class="flex flex-wrap items-center gap-3">
-          <Button href="/research/">Explore research</Button>
-          <Button href="/about/" variant="outline">About me</Button>
+          <Button href="/projects/">View projects</Button>
+          <Button href={profile.socials.github} variant="outline" external>GitHub ↗</Button>
         </div>
         <SocialLinks />
       </div>
     </div>
   </section>
 
+  <!-- Projects -->
+  <Section num="01" title="Projects" sub="Selected software and research projects.">
+    <div class="mt-8">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </Section>
+
   <!-- Research -->
   <Section
-    num="01"
+    num="02"
     title="Research"
     sub="Peer-reviewed work in decision science, and ongoing industry research at Nucleus."
   >
@@ -89,19 +96,12 @@ const lastName = rest.pop();
   </Section>
 
   <!-- Speaking -->
-  <Section num="02" title="Speaking" sub={profile.speakingIntro}>
+  <Section num="03" title="Speaking" sub={profile.speakingIntro}>
     <div class="mt-12 grid gap-10 sm:grid-cols-2">
       {talks.map((talk) => <TalkCard talk={talk} variant="featured" />)}
     </div>
     <p class="mt-10">
       <a href="/speaking/" class="link-rule text-[0.95rem] font-medium">All speaking engagements</a>
     </p>
-  </Section>
-
-  <!-- Projects -->
-  <Section num="03" title="Projects" sub="Selected software and research projects.">
-    <div class="mt-8">
-      {projects.map((project) => <ProjectCard project={project} />)}
-    </div>
   </Section>
 </Base>

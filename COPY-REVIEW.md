@@ -149,3 +149,14 @@ not biography. Approve or edit before merge.
 
 28. **OG cards**: serif name + mono page label (lowercased existing labels);
     figure annotations `a = 1.2`, `rt = 487 ms`, `evidence → boundary`.
+
+## v3 editorial reskin (2026-06-11)
+
+16. **Hero kicker** — "AI · Data · Decision Science" — descriptive triad of verified
+    coverage/work domains (Nucleus team page; CDM Lab publications), not a job title.
+17. **Hero one-liner (revised for AI-dev positioning, per Alex's direction)** —
+    "I build AI tools — RAG apps, decision models, open-source software — and cover
+    the data & AI platform market as a Principal Analyst at Nucleus Research."
+    Sources: Nucleus AI Tool RAG app (nucleusresearch.com/ai), Wald accumulator model,
+    Smart Capital Tracker (github.com/ahwurm/13f-dashboard-hosted), Nucleus team page.
+18. Link labels recased (sentence case), no factual changes.
