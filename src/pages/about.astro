@@ -25,8 +25,9 @@ const description =
   <script type="application/ld+json" set:html={JSON.stringify(profilePageJsonLd())} slot="head" is:inline />
 
   <!-- Bio -->
-  <section class="container-site rise-in py-12 sm:py-16">
-    <h1 class="text-4xl font-semibold tracking-tight">About</h1>
+  <section class="container-site py-12 sm:py-16">
+    <h1 class="text-[clamp(2.5rem,5vw,3.5rem)] font-semibold leading-none tracking-tight">About</h1>
+    <div class="acc-rule mt-5" aria-hidden="true"></div>
     <div class="mt-8 grid items-start gap-10 lg:grid-cols-[3fr_2fr]">
       <div class="space-y-5 text-[17px] leading-relaxed">
         {profile.bio.map((para) => <p>{para}</p>)}
@@ -53,13 +54,13 @@ const description =
           src={spacexPhoto}
           alt="SpaceX Visit"
           width={640}
-          class="w-1/2 rounded-xl border border-edge object-cover lg:w-full"
+          class="w-1/2 rounded-[3px] border border-edge object-cover lg:w-full"
         />
         <Image
           src={cdmLogo}
           alt="Cognition & Decision Modeling Laboratory"
           width={400}
-          class="w-1/2 self-start rounded-xl border border-edge bg-white object-contain p-3 lg:w-56"
+          class="w-1/2 self-start rounded-[3px] border border-edge bg-white object-contain p-3 lg:w-56"
         />
       </div>
     </div>
@@ -67,22 +68,26 @@ const description =
 
   <!-- Experience -->
   <Section banded title="Experience">
-    <div class="mt-8 space-y-5">
+    <div class="mt-4">
       {
         profile.experience.map((job) => (
-          <Card>
-            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-              <h3 class="text-xl font-semibold tracking-tight">{job.org}</h3>
-              <p class="font-mono text-xs text-dim">{job.period}</p>
+          <div class="border-b border-edge py-6">
+            <div class="grid gap-x-6 gap-y-1.5 sm:grid-cols-[10.5rem_minmax(0,1fr)]">
+              <p class="meta pt-1.5 text-dim">{job.period}</p>
+              <div>
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                  <h3 class="text-xl font-semibold tracking-tight">{job.org}</h3>
+                  <p class="meta lowercase text-dim">{job.location}</p>
+                </div>
+                <p class="mt-1 text-sm font-medium text-accent">{job.role}</p>
+                <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-dim">
+                  {job.bullets.map((b) => (
+                    <li>{b}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <p class="mt-1 text-sm font-medium text-accent">{job.role}</p>
-            <p class="mt-0.5 text-sm text-dim">{job.location}</p>
-            <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-dim">
-              {job.bullets.map((b) => (
-                <li>{b}</li>
-              ))}
-            </ul>
-          </Card>
+          </div>
         ))
       }
     </div>
@@ -95,9 +100,8 @@ const description =
         profile.education.map((ed) => (
           <Card>
             <h3 class="text-lg font-semibold tracking-tight">{ed.degree}</h3>
-            <p class="mt-1 text-sm text-dim">
-              {ed.school} · {ed.period}
-            </p>
+            <p class="mt-1.5 text-sm text-dim">{ed.school}</p>
+            <p class="meta mt-1 text-dim">{ed.period}</p>
             <p class="mt-1 text-sm font-medium text-accent">{ed.honors}</p>
           </Card>
         ))

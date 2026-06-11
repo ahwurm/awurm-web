@@ -8,23 +8,33 @@ const isActive = (href: string) => path === href || path.startsWith(href);
 
 <header class="sticky top-0 z-50 border-b border-edge bg-bg/85 backdrop-blur">
   <nav class="container-site flex h-14 items-center justify-between gap-3" aria-label="Main">
-    <a href="/" class="font-display text-[15px] font-semibold tracking-tight text-ink transition-colors duration-150 hover:text-accent sm:text-base">
+    <a
+      href="/"
+      class="font-display text-[15px] font-semibold tracking-tight text-ink transition-colors duration-150 hover:text-accent sm:text-base"
+    >
       <span class="sm:hidden" aria-label={site.name}>AW</span>
       <span class="hidden sm:inline">{site.name}</span>
     </a>
-    <div class="flex items-center gap-4 text-sm sm:gap-7">
+    <div class="meta flex items-center gap-2.5 lowercase sm:gap-4">
       {
-        site.nav.map(({ label, href }) => (
-          <a
-            href={href}
-            aria-current={isActive(href) ? 'page' : undefined}
-            class:list={[
-              'transition-colors duration-150',
-              isActive(href) ? 'font-medium text-accent' : 'text-dim hover:text-ink',
-            ]}
-          >
-            {label}
-          </a>
+        site.nav.map(({ label, href }, i) => (
+          <>
+            {i > 0 && (
+              <span class="select-none text-dim/50" aria-hidden="true">
+                /
+              </span>
+            )}
+            <a
+              href={href}
+              aria-current={isActive(href) ? 'page' : undefined}
+              class:list={[
+                'transition-colors duration-150',
+                isActive(href) ? 'text-accent' : 'text-dim hover:text-ink',
+              ]}
+            >
+              {label}
+            </a>
+          </>
         ))
       }
       <ThemeToggle />

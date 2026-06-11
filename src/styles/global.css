@@ -147,23 +147,6 @@
   font-weight: 450;
 }
 
-/* DEPRECATED (last usages removed with the chrome pass): rise-in */
-@keyframes rise-in {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.rise-in {
-  @media (prefers-reduced-motion: no-preference) {
-    animation: rise-in 0.5s ease-out both;
-  }
-}
-
 /* Research type tag → threshold marker: colored tick + mono label */
 .threshold {
   color: var(--tag, var(--color-dim));

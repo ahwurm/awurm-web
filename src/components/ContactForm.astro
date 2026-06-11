@@ -17,7 +17,7 @@ const emailjsReady = Boolean(serviceId && templateId && publicKey);
   class="space-y-5"
 >
   <div>
-    <label for="cf-name" class="mb-1.5 block text-sm font-medium">Name</label>
+    <label for="cf-name" class="meta lowercase mb-1.5 block text-dim">Name</label>
     <input
       type="text"
       id="cf-name"
@@ -25,12 +25,12 @@ const emailjsReady = Boolean(serviceId && templateId && publicKey);
       required
       autocomplete="name"
       aria-describedby="cf-name-error"
-      class="w-full rounded-lg border border-edge bg-surface px-4 py-2.5 text-sm transition-colors focus:border-accent"
+      class="w-full rounded-[2px] border border-edge bg-surface px-4 py-2.5 text-sm transition-colors focus:border-accent"
     />
     <p id="cf-name-error" class="mt-1.5 hidden text-sm text-error" data-error></p>
   </div>
   <div>
-    <label for="cf-email" class="mb-1.5 block text-sm font-medium">Email</label>
+    <label for="cf-email" class="meta lowercase mb-1.5 block text-dim">Email</label>
     <input
       type="email"
       id="cf-email"
@@ -38,24 +38,24 @@ const emailjsReady = Boolean(serviceId && templateId && publicKey);
       required
       autocomplete="email"
       aria-describedby="cf-email-error"
-      class="w-full rounded-lg border border-edge bg-surface px-4 py-2.5 text-sm transition-colors focus:border-accent"
+      class="w-full rounded-[2px] border border-edge bg-surface px-4 py-2.5 text-sm transition-colors focus:border-accent"
     />
     <p id="cf-email-error" class="mt-1.5 hidden text-sm text-error" data-error></p>
   </div>
   <div>
-    <label for="cf-subject" class="mb-1.5 block text-sm font-medium">Subject</label>
+    <label for="cf-subject" class="meta lowercase mb-1.5 block text-dim">Subject</label>
     <input
       type="text"
       id="cf-subject"
       name="subject"
       required
       aria-describedby="cf-subject-error"
-      class="w-full rounded-lg border border-edge bg-surface px-4 py-2.5 text-sm transition-colors focus:border-accent"
+      class="w-full rounded-[2px] border border-edge bg-surface px-4 py-2.5 text-sm transition-colors focus:border-accent"
     />
     <p id="cf-subject-error" class="mt-1.5 hidden text-sm text-error" data-error></p>
   </div>
   <div>
-    <label for="cf-message" class="mb-1.5 block text-sm font-medium">Message</label>
+    <label for="cf-message" class="meta lowercase mb-1.5 block text-dim">Message</label>
     <textarea
       id="cf-message"
       name="message"
