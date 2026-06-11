@@ -1,64 +1,40 @@
 # awurm.com
 
-A Next.js 14 website showcasing research papers, applications, and speaking engagements, hosted on AWS Amplify.
+Personal site of Alexander H. Wurm — Principal Analyst at Nucleus Research.
+Static site built with [Astro 5](https://astro.build) + Tailwind 4, deployed to
+GitHub Pages.
 
-## Features
+## Develop
 
-- **Research**: Academic publications and research contributions
-- **Apps**: Innovative applications and software solutions
-- **Talks**: Conference presentations and speaking engagements
-- **Responsive Design**: Mobile-first design with Tailwind CSS
-- **Static Export**: Optimized for AWS Amplify hosting
+```bash
+npm install
+npm run dev        # localhost:4321
+npm run build      # static build → dist/
+npm run preview    # serve dist/
+npm test           # vitest (research-utils)
+npm run og         # regenerate OG cards (needs chromium)
+```
 
-## Tech Stack
+Node ≥ 22 required.
 
-- Next.js 14 (App Router)
-- React 18
-- TypeScript
-- Tailwind CSS
-- AWS Amplify
+## Structure
 
-## Getting Started
+```
+src/
+  content/        # markdown collections: talks/ projects/ publications/
+  data/           # industry-research.json · profile.ts (all bio copy) · site.ts (meta/nav/emailjs)
+  components/     # Astro components (no framework islands — 4 small vanilla scripts)
+  pages/          # index, research, speaking, projects, about, 404, redirect stubs
+  lib/            # research-utils (+ tests), dates, jsonld
+  assets/         # images, optimized at build via astro:assets
+public/           # URL-frozen files (PDFs, pptx), favicons, og/, robots, llms.txt
+scripts/og/       # OG card generator (playwright)
+```
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Copy environment variables:
-   ```bash
-   cp .env.example .env.local
-   ```
-4. Run the development server:
-   ```bash
-   npm run dev
-   ```
-5. Open [http://localhost:3000](http://localhost:3000)
+## Deploy
 
-## Content Management
+Push to `main` → `.github/workflows/deploy.yml` builds and deploys to GitHub Pages
+(custom domain configured in repo Pages settings). All other branches/PRs run
+`ci.yml` (build + tests) without deploying.
 
-Content is managed through JSON files in `/public/data/`:
-
-- `research.json` - Research papers and publications
-- `apps.json` - Applications and software projects
-- `talks.json` - Speaking engagements and presentations
-
-## Deployment
-
-The site is configured for AWS Amplify with automatic builds:
-
-1. Connect your GitHub repository to Amplify
-2. Use the provided `amplify.yml` for build configuration
-3. Set up custom domain `awurm.com` in Amplify console
-
-## Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
-
-## License
-
-MIT
+See `CLAUDE.md` for content-maintenance recipes and `PERSONAL-TODO.md` for open items.
