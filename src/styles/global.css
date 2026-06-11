@@ -35,6 +35,9 @@
   --color-tag-guide: oklch(45% 0.07 185);
   --color-tag-survey: oklch(45% 0.07 240);
   --color-tag-announce: oklch(45% 0.07 300);
+
+  /* Form validation errors (AA on bg/surface in each theme) */
+  --color-error: oklch(48% 0.16 25);
 }
 
 [data-theme="dark"] {
@@ -50,6 +53,7 @@
   --color-tag-guide: oklch(78% 0.07 185);
   --color-tag-survey: oklch(78% 0.07 240);
   --color-tag-announce: oklch(78% 0.07 300);
+  --color-error: oklch(75% 0.13 25);
 }
 
 /* No-JS fallback: mirror of the [data-theme="dark"] block above. */
@@ -67,6 +71,7 @@
     --color-tag-guide: oklch(78% 0.07 185);
     --color-tag-survey: oklch(78% 0.07 240);
     --color-tag-announce: oklch(78% 0.07 300);
+    --color-error: oklch(75% 0.13 25);
   }
 }
 

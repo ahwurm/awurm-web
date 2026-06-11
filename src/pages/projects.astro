@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+
+const description =
+  'Projects by Alexander H. Wurm — Smart Capital Tracker (13F analysis), the Nucleus AI Tool (RAG over 20 years of ROI research), and a Wald accumulator model of anticipatory decisions.';
+---
+
+<Base title="Projects — Alexander H. Wurm" description={description} ogImage="/og/projects.png">
+  <section class="container-site rise-in py-12 sm:py-16">
+    <h1 class="text-4xl font-semibold tracking-tight">Projects</h1>
+    <div class="mt-10 grid gap-5 lg:grid-cols-3">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</Base>

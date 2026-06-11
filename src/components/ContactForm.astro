@@ -1,0 +1,143 @@
+---
+import Button from './Button.astro';
+import { site } from '../data/site';
+import { profile } from '../data/profile';
+
+const { serviceId, templateId, publicKey } = site.emailjs;
+const emailjsReady = Boolean(serviceId && templateId && publicKey);
+---
+
+<form
+  id="contact-form"
+  novalidate
+  data-service={serviceId}
+  data-template={templateId}
+  data-key={publicKey}
+  data-email={profile.email}
+  class="space-y-5"
+>
+  <div>
+    <label for="cf-name" class="mb-1.5 block text-sm font-medium">Name</label>
+    <input
+      type="text"
+      id="cf-name"
+      name="name"
+      required
+      autocomplete="name"
+      aria-describedby="cf-name-error"
+      class="w-full rounded-lg border border-edge bg-surface px-4 py-2.5 text-sm transition-colors focus:border-accent"
+    />
+    <p id="cf-name-error" class="mt-1.5 hidden text-sm text-error" data-error></p>
+  </div>
+  <div>
+    <label for="cf-email" class="mb-1.5 block text-sm font-medium">Email</label>
+    <input
+      type="email"
+      id="cf-email"
+      name="email"
+      required
+      autocomplete="email"
+      aria-describedby="cf-email-error"
+      class="w-full rounded-lg border border-edge bg-surface px-4 py-2.5 text-sm transition-colors focus:border-accent"
+    />
+    <p id="cf-email-error" class="mt-1.5 hidden text-sm text-error" data-error></p>
+  </div>
+  <div>
+    <label for="cf-subject" class="mb-1.5 block text-sm font-medium">Subject</label>
+    <input
+      type="text"
+      id="cf-subject"
+      name="subject"
+      required
+      aria-describedby="cf-subject-error"
+      class="w-full rounded-lg border border-edge bg-surface px-4 py-2.5 text-sm transition-colors focus:border-accent"
+    />
+    <p id="cf-subject-error" class="mt-1.5 hidden text-sm text-error" data-error></p>
+  </div>
+  <div>
+    <label for="cf-message" class="mb-1.5 block text-sm font-medium">Message</label>
+    <textarea
+      id="cf-message"
+      name="message"
+      rows="5"
+      required
+      aria-describedby="cf-message-error"
+      class="w-full resize-y rounded-lg border border-edge bg-surface px-4 py-2.5 text-sm transition-colors focus:border-accent"
+    ></textarea>
+    <p id="cf-message-error" class="mt-1.5 hidden text-sm text-error" data-error></p>
+  </div>
+
+  <p id="cf-status" role="status" aria-live="polite" class="hidden text-sm font-medium"></p>
+
+  <Button type="submit">{emailjsReady ? 'Send message' : 'Send via email'}</Button>
+  {
+    !emailjsReady && (
+      <p class="text-xs text-dim">Opens your email app with the message prefilled.</p>
+    )
+  }
+</form>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+
+  const fieldError = (name: string, value: string): string => {
+    if (!value.trim()) return `${name.charAt(0).toUpperCase() + name.slice(1)} is required`;
+    if (name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return 'Please enter a valid email address';
+    if (name === 'message' && value.trim().length < 10) return 'Message must be at least 10 characters long';
+    return '';
+  };
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+    let invalid = false;
+    for (const name of ['name', 'email', 'subject', 'message']) {
+      const err = fieldError(name, data[name] ?? '');
+      const el = document.getElementById(`cf-${name}-error`)!;
+      el.textContent = err;
+      el.classList.toggle('hidden', !err);
+      if (err && !invalid) {
+        invalid = true;
+        (document.getElementById(`cf-${name}`) as HTMLElement).focus();
+      }
+    }
+    if (invalid) return;
+
+    const { service, template, key, email } = form.dataset;
+    const status = document.getElementById('cf-status')!;
+    const mailto = () => {
+      location.href = `mailto:${email}?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(
+        `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
+      )}`;
+    };
+
+    if (!service || !template || !key) return mailto();
+
+    status.classList.remove('hidden');
+    status.textContent = 'Sending…';
+    try {
+      const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: service,
+          template_id: template,
+          user_id: key,
+          template_params: {
+            from_name: data.name,
+            from_email: data.email,
+            subject: data.subject,
+            message: data.message,
+            to_email: email,
+          },
+        }),
+      });
+      if (!res.ok) throw new Error(`EmailJS ${res.status}`);
+      status.textContent = "Message sent! Thank you for reaching out — I'll get back to you soon.";
+      form.reset();
+    } catch {
+      status.textContent = 'Sending failed — opening your email app instead.';
+      mailto();
+    }
+  });
+</script>

@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import TalkCard from '../components/TalkCard.astro';
+import SpeakerBio from '../components/SpeakerBio.astro';
+import { isUpcoming, groupByYear } from '../lib/dates';
+import { profile } from '../data/profile';
+
+const talks = (await getCollection('talks')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// Upcoming/past derived from date at build time — never stored.
+const upcoming = talks.filter((t) => isUpcoming(t.data.date));
+const past = talks.filter((t) => !isUpcoming(t.data.date));
+const featured = talks.filter((t) => t.data.featured);
+const byYear = groupByYear(past, (t) => t.data.date);
+
+const description =
+  'Speaking engagements by Alexander H. Wurm — research presentations and webinars for Google, Oracle, Databricks, Teradata, Dremio, and more.';
+---
+
+<Base title="Speaking — Alexander H. Wurm" description={description} ogImage="/og/speaking.png">
+  <section class="container-site rise-in py-12 sm:py-16">
+    <h1 class="text-4xl font-semibold tracking-tight">Speaking</h1>
+    <p class="mt-4 max-w-2xl text-dim">{profile.speakingIntro}</p>
+    <p class="mt-2 max-w-2xl text-sm text-dim">
+      For speaking inquiries, <a href="/about/#contact" class="font-medium text-accent hover:underline">get in touch</a>.
+    </p>
+  </section>
+
+  {
+    upcoming.length > 0 && (
+      <Section title="Upcoming">
+        <div class="mt-8 space-y-4">
+          {upcoming.map((talk) => (
+            <TalkCard talk={talk} />
+          ))}
+        </div>
+      </Section>
+    )
+  }
+
+  <Section banded title="Featured talks">
+    <div class="mt-8 grid gap-5 lg:grid-cols-3">
+      {featured.map((talk) => <TalkCard talk={talk} variant="featured" />)}
+    </div>
+  </Section>
+
+  <Section title="Past talks">
+    <div class="mt-4 space-y-10">
+      {
+        byYear.map(([year, yearTalks]) => (
+          <div>
+            <h3 class="font-mono text-sm font-medium text-dim">{year}</h3>
+            <div class="mt-3 space-y-4">
+              {yearTalks.map((talk) => (
+                <TalkCard talk={talk} />
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="mt-12">
+      <SpeakerBio />
+    </div>
+  </Section>
+</Base>

@@ -1,0 +1,88 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '../lib/dates';
+
+interface Props {
+  talk: CollectionEntry<'talks'>;
+  variant?: 'featured' | 'row';
+}
+const { talk, variant = 'row' } = Astro.props;
+const { title, event, format, date, description, image, links } = talk.data;
+
+const actions = [
+  links.video && { href: links.video, label: 'Watch recording ↗', external: true },
+  links.event && { href: links.event, label: 'Event page ↗', external: true },
+  links.slides && { href: links.slides, label: 'Download slides', external: false },
+].filter(Boolean) as { href: string; label: string; external: boolean }[];
+---
+
+{
+  variant === 'featured' ? (
+    <article class="flex flex-col overflow-hidden rounded-xl border border-edge bg-surface">
+      {image && (
+        <Image
+          src={image}
+          alt={`Title slide: ${title}`}
+          width={760}
+          class="aspect-[16/9] w-full border-b border-edge object-cover"
+        />
+      )}
+      <div class="flex flex-1 flex-col p-6">
+        <p class="font-mono text-xs text-dim">
+          {formatDate(date)} · {event}
+        </p>
+        <h3 class="mt-2 text-lg font-semibold leading-snug tracking-tight">{title}</h3>
+        <p class="mt-2 text-sm leading-relaxed text-dim">{description}</p>
+        {actions.length > 0 && (
+          <p class="mt-auto pt-4 text-sm">
+            {actions.map((a) => (
+              <a
+                href={a.href}
+                target={a.external ? '_blank' : undefined}
+                rel={a.external ? 'noopener noreferrer' : undefined}
+                class="mr-4 font-medium text-accent hover:underline"
+              >
+                {a.label}
+              </a>
+            ))}
+          </p>
+        )}
+      </div>
+    </article>
+  ) : (
+    <article class="flex flex-col gap-5 rounded-xl border border-edge bg-surface p-5 sm:flex-row">
+      {image && (
+        <Image
+          src={image}
+          alt={`Title slide: ${title}`}
+          width={400}
+          class="h-fit w-full rounded-lg border border-edge object-cover sm:w-44"
+        />
+      )}
+      <div class="min-w-0 flex-1">
+        <p class="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-dim">
+          <span>{formatDate(date)}</span>
+          <span class="tag rounded-full px-2 py-0.5">{format}</span>
+          <span>{event}</span>
+        </p>
+        <h3 class="mt-2 text-lg font-semibold leading-snug tracking-tight">{title}</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-dim">{description}</p>
+        {actions.length > 0 && (
+          <p class="mt-3 text-sm">
+            {actions.map((a) => (
+              <a
+                href={a.href}
+                target={a.external ? '_blank' : undefined}
+                rel={a.external ? 'noopener noreferrer' : undefined}
+                class="mr-4 font-medium text-accent hover:underline"
+              >
+                {a.label}
+              </a>
+            ))}
+          </p>
+        )}
+      </div>
+    </article>
+  )
+}

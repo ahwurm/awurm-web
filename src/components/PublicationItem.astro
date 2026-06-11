@@ -1,0 +1,46 @@
+---
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Button from './Button.astro';
+
+interface Props {
+  publication: CollectionEntry<'publications'>;
+}
+const { publication } = Astro.props;
+const { title, authors, venue, year, kind, url, pdfUrl } = publication.data;
+const { Content } = await render(publication);
+---
+
+<article class="rounded-xl border border-edge bg-surface p-6">
+  <div class="flex items-start justify-between gap-3">
+    <span class="tag inline-flex items-center rounded-full px-2.5 py-0.5 font-mono text-xs">
+      {kind === 'preprint' ? 'Preprint' : 'Peer-reviewed'}
+    </span>
+    <span class="font-mono text-xs text-dim">{year}</span>
+  </div>
+  <h3 class="mt-3 text-xl font-semibold leading-snug tracking-tight">
+    <a href={url} target="_blank" rel="noopener noreferrer" class="transition-colors duration-150 hover:text-accent">
+      {title}
+    </a>
+  </h3>
+  <p class="mt-1.5 text-sm text-dim">{authors}</p>
+  <p class="mt-1 text-sm text-dim">{venue}</p>
+
+  <details class="group mt-4">
+    <summary class="cursor-pointer text-sm font-medium text-accent hover:underline">Abstract</summary>
+    <div class="mt-2 text-sm leading-relaxed text-dim">
+      <Content />
+    </div>
+  </details>
+
+  <div class="mt-5 flex flex-wrap gap-3">
+    <Button href={url} external>Read {kind === 'preprint' ? 'preprint' : 'paper'} ↗</Button>
+    {
+      pdfUrl && (
+        <Button href={pdfUrl} variant="outline" download="wurm-2021-timing-anticipatory-decisions.pdf">
+          Download PDF
+        </Button>
+      )
+    }
+  </div>
+</article>
