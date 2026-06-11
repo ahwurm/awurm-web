@@ -93,3 +93,59 @@ existing verified facts. Approve or edit before merge (PERSONAL-TODO #8).
 15. **PsyArXiv preprint author line** — "Konstantina Sokratous, Guy Hawkins, Alexander
     Wurm, Peter Kvam" — author order per OSF record; name forms match the existing
     CogSci citation on the old site.
+
+## Reskin microcopy (Evidence Accumulator pass, 2026-06-10)
+
+UI chrome strings only — none state a new fact about Alex. The figure captions
+describe the drift-diffusion model itself (true statements of DDM mechanics),
+not biography. Approve or edit before merge.
+
+16. **Hero readout line** (typed under the name when the live trial commits;
+    template, real measured values):
+    `decision: alexander_h_wurm · rt = <elapsed ms> ms · trials = <n>`
+    Static fallback (no-JS / reduced motion, matches the pre-drawn figure):
+    `decision: alexander_h_wurm · rt = 487 ms · trials = 1`
+
+17. **Hero figure caption**:
+    `fig. 1 — evidence accumulation to boundary; first passage determines response.`
+
+18. **Hero figure a11y**: re-run button aria-label `Re-run trial`; SVG alt
+    "Completed drift-diffusion trial: four evidence traces accumulate over
+    time; the winning trace crosses the decision boundary a = 1.2 at 487 ms."
+
+19. **Research sparkline**: label `notes / quarter`; axis labels `2021` /
+    `2026·q2` (derived from the data); SVG alt "Industry notes per quarter,
+    2021 to 2026; peak N per quarter; current quarter q2 2026." (computed)
+
+20. **Research sample-size annotation** (live count under filters):
+    `n = 164` → with filters e.g. `n = 43 · year = 2024 · type = roi study`
+
+21. **"Let the model decide" button**: `let the model decide →`
+    Screen-reader result announcement: `decision: #163 · rt = 832 ms` (template,
+    real values; reduced-motion variant omits rt).
+
+22. **404 page**: kicker `error · 404`; figure caption
+    `fig. 0 — no decision reached. boundary not crossed.`; SVG alt
+    "Drift-diffusion trial with three evidence traces that wander but never
+    reach the decision boundary a = 1.2."
+
+23. **Footer**: `local time — <live ET clock> ET` (no-JS fallback = build
+    timestamp) · `© 2026 · built static · no trackers` (all true: static Astro
+    build, zero analytics/trackers) · `llms.txt` link label.
+
+24. **Plate captions** (featured talks, templated from existing talk data):
+    `plate <n> — <event lowercased>, <mon yyyy>` e.g.
+    `plate 1 — teradata webinar, jul 2025`.
+
+25. **Publication kind markers**: `[peer-reviewed]` / `[preprint]` replace the
+    "Peer-reviewed" / "Pre-print" pills (same meaning, marginalia form).
+
+26. **Speaking year group headings**: `//2025` (mono prefix form of the year).
+
+27. **Case restyling only** (no wording change, lowercased/monospaced via CSS):
+    nav labels, button labels, link labels ("read research ↗", "abstract",
+    "view screenshots", "github ↗", etc.), research tab labels, type/status
+    tags. The underlying strings in data files are unchanged.
+
+28. **OG cards**: serif name + mono page label (lowercased existing labels);
+    figure annotations `a = 1.2`, `rt = 487 ms`, `evidence → boundary`.
