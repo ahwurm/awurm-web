@@ -8,9 +8,13 @@ import IndustryItem from '../components/IndustryItem.astro';
 import TalkCard from '../components/TalkCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import Terminal from '../components/Terminal.astro';
+import Frame from '../components/Frame.astro';
+import { Image } from 'astro:assets';
 import { profile } from '../data/profile';
 import { site } from '../data/site';
 import { ledgerIndices } from '../lib/ledger';
+import responseFig from '../assets/figures/response-distributions.png';
+import spacexPhoto from '../assets/photos/spacex-photo.jpg';
 
 const publications = await getCollection('publications');
 const highlight = publications.find((p) => p.data.featured) ?? publications[0];
@@ -77,6 +81,14 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
         </h3>
         <p class="mt-3 text-sm text-dim">{highlight.data.authors}</p>
         <p class="meta mt-2 text-dim">{highlight.data.venue}</p>
+        <Frame label="~/figures/response-distributions.png" class="mt-6">
+          <Image
+            src={responseFig}
+            alt="Response time distributions from the anticipatory timing model"
+            width={680}
+            class="w-full bg-white"
+          />
+        </Frame>
         <p class="mt-6">
           <a href="/research/" class="link-rule meta">cd /research →</a>
         </p>
@@ -102,5 +114,25 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
     <p class="mt-9">
       <a href="/speaking/" class="link-rule meta">cd /speaking →</a>
     </p>
+  </Section>
+
+  <!-- About teaser -->
+  <Section num="04" title="about" sub="The person behind the prompt.">
+    <div class="mt-10 grid items-center gap-x-14 gap-y-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,4fr)]">
+      <div>
+        <p class="max-w-[52ch] text-[1.02rem] leading-relaxed text-dim">{profile.bio[0]}</p>
+        <p class="mt-7">
+          <a href="/about/" class="link-rule meta">cd /about →</a>
+        </p>
+      </div>
+      <Frame label="~/photos/starbase.jpg">
+        <Image
+          src={spacexPhoto}
+          alt="Alexander Wurm at SpaceX Starbase"
+          width={880}
+          class="aspect-[4/3] w-full object-cover"
+        />
+      </Frame>
+    </div>
   </Section>
 </Base>

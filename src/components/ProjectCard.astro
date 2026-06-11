@@ -1,56 +1,72 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import Frame from './Frame.astro';
 
 interface Props {
   project: CollectionEntry<'projects'>;
 }
 const { project } = Astro.props;
 const { name, description, technologies, status, url, githubUrl, paperUrl, screenshots } = project.data;
+
+const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const [shot, ...moreShots] = screenshots;
 ---
 
-<article class="border-b border-edge py-6">
-  <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-    <h3 class="font-display text-[1.35rem] font-semibold leading-snug tracking-tight">{name}</h3>
-    <span class="kicker shrink-0 text-dim">{status}</span>
-  </div>
-  <p class="mt-2 max-w-3xl text-sm leading-relaxed text-dim">{description}</p>
-  <p class="meta lowercase mt-3 text-dim" aria-label="Technologies">
-    {technologies.join(' · ')}
-  </p>
-  {
-    screenshots.length > 0 && (
-      <details class="mt-3.5">
-        <summary class="link-rule cursor-pointer text-[0.875rem] font-medium">
-          View screenshot{screenshots.length > 1 ? 's' : ''}
-        </summary>
-        <div class="mt-3 max-w-3xl space-y-3">
-          {screenshots.map((s) => (
-            <Image src={s} alt={`${name} screenshot`} width={1000} class="w-full border border-edge" />
+<article class="border-b border-edge py-8">
+  <div
+    class:list={[
+      'grid items-start gap-x-10 gap-y-5',
+      shot && 'lg:grid-cols-[minmax(0,5fr)_minmax(0,4fr)]',
+    ]}
+  >
+    <div>
+      <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <h3 class="font-display text-[1.35rem] font-semibold leading-snug tracking-tight">{name}</h3>
+        <span class="kicker shrink-0 text-dim">{status}</span>
+      </div>
+      <p class="mt-2 max-w-3xl text-sm leading-relaxed text-dim">{description}</p>
+      <p class="meta lowercase mt-3 text-dim" aria-label="Technologies">
+        {technologies.join(' · ')}
+      </p>
+      <p class="mt-4 flex flex-wrap gap-4">
+        {url && (
+          <a href={url} target="_blank" rel="noopener noreferrer" class="link-rule text-[0.875rem] font-medium">
+            {url.includes('streamlit') ? 'Streamlit app ↗' : 'View project ↗'}
+          </a>
+        )}
+        {githubUrl && (
+          <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="link-rule text-[0.875rem] font-medium">
+            GitHub ↗
+          </a>
+        )}
+        {paperUrl && (
+          <a
+            href={paperUrl}
+            download="wurm-2021-timing-anticipatory-decisions.pdf"
+            class="link-rule text-[0.875rem] font-medium"
+          >
+            Download paper
+          </a>
+        )}
+      </p>
+      {moreShots.length > 0 && (
+        <div class="mt-5 flex max-w-3xl gap-3">
+          {moreShots.map((s) => (
+            <Image
+              src={s}
+              alt={`${name} — additional screenshot`}
+              width={420}
+              class="w-1/2 rounded-[3px] border border-edge object-cover"
+            />
           ))}
         </div>
-      </details>
-    )
-  }
-  <p class="mt-3.5 flex flex-wrap gap-4">
-    {url && (
-      <a href={url} target="_blank" rel="noopener noreferrer" class="link-rule text-[0.875rem] font-medium">
-        {url.includes('streamlit') ? 'Streamlit app ↗' : 'View project ↗'}
-      </a>
+      )}
+    </div>
+    {shot && (
+      <Frame label={`~/${slug}.png`}>
+        <Image src={shot} alt={`${name} screenshot`} width={880} class="w-full" />
+      </Frame>
     )}
-    {githubUrl && (
-      <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="link-rule text-[0.875rem] font-medium">
-        GitHub ↗
-      </a>
-    )}
-    {paperUrl && (
-      <a
-        href={paperUrl}
-        download="wurm-2021-timing-anticipatory-decisions.pdf"
-        class="link-rule text-[0.875rem] font-medium"
-      >
-        Download paper
-      </a>
-    )}
-  </p>
+  </div>
 </article>

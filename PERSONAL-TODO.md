@@ -35,3 +35,11 @@ Items the rebuild could not resolve from public sources. Work through and delete
 8. **Approve assembled copy** — review COPY-REVIEW.md (hero one-liner, speaking intro,
    speaker bio, new research summaries). Edit freely; everything else is verbatim from
    the old site or cited sources.
+
+9. **Image asks (v5 visual pass, 2026-06-11)** — the site now frames an image per
+   talk/project/paper. Most-wanted additions, in order:
+   - Smart Capital Tracker: one dashboard screenshot (only project with no visual)
+   - Any conference/stage/event photos of you presenting (speaking page + about)
+   - 1-2 more personal photos (home about-teaser currently reuses the Starbase
+     photo that also appears on /about)
+   - Confirm the paper↔figure pairing in COPY-REVIEW #18.

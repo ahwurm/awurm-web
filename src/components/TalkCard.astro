@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import Frame from './Frame.astro';
 import { isoDate, monthYearShort } from '../lib/dates';
 
 interface Props {
@@ -24,12 +25,14 @@ const caption = `${event} · ${monthYearShort(date)}`;
   variant === 'featured' ? (
     <article class="flex flex-col">
       {image && (
-        <Image
-          src={image}
-          alt={`Title slide: ${title}`}
-          width={760}
-          class="aspect-[16/9] w-full rounded-[2px] border border-edge object-cover"
-        />
+        <Frame label={`~/talks/${isoDate(date)}-title.png`}>
+          <Image
+            src={image}
+            alt={`Title slide: ${title}`}
+            width={760}
+            class="aspect-[16/9] w-full object-cover"
+          />
+        </Frame>
       )}
       <p class="kicker mt-5 text-dim">{caption}</p>
       <h3 class="font-display mt-2.5 text-[1.35rem] font-semibold leading-[1.2] tracking-tight">{title}</h3>
@@ -51,11 +54,19 @@ const caption = `${event} · ${monthYearShort(date)}`;
     </article>
   ) : (
     <article class="border-b border-edge py-7">
-      <div class="grid items-start gap-x-8 gap-y-3 sm:grid-cols-[7.5rem_minmax(0,1fr)] lg:grid-cols-[7.5rem_minmax(0,1fr)_11rem]">
+      <div class="grid items-start gap-x-8 gap-y-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] lg:grid-cols-[7.5rem_minmax(0,1fr)_13rem]">
         <div class="meta flex gap-x-4 text-dim sm:flex-col sm:gap-y-1.5">
           <span>{isoDate(date)}</span>
           <span class="uppercase">{format}</span>
         </div>
+        {image && (
+          <Image
+            src={image}
+            alt={`Title slide: ${title}`}
+            width={520}
+            class="w-full rounded-[3px] border border-edge object-cover sm:order-last sm:col-start-2 sm:max-w-[22rem] lg:col-start-auto lg:max-w-none"
+          />
+        )}
         <div>
           <p class="kicker text-dim">{event}</p>
           <h3 class="font-display mt-2 text-[1.3rem] font-semibold leading-[1.2] tracking-tight">{title}</h3>
@@ -75,14 +86,6 @@ const caption = `${event} · ${monthYearShort(date)}`;
             </p>
           )}
         </div>
-        {image && (
-          <Image
-            src={image}
-            alt={`Title slide: ${title}`}
-            width={400}
-            class="hidden w-full rounded-[2px] border border-edge object-cover lg:block"
-          />
-        )}
       </div>
     </article>
   )

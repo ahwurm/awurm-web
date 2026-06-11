@@ -168,3 +168,14 @@ not biography. Approve or edit before merge.
     Same verified facts as the hero one-liner (items 16-17). All other terminal
     strings (help text, easter eggs, 404 session) are UI microcopy, no biographical claims.
 20. **Hero kicker** — "// ai · data · decision science" (item 16 restyled).
+
+## v5 image-pass microcopy (2026-06-11)
+
+16. Home about-teaser section sub: "The person behind the prompt." — playful UI copy
+    (shell-prompt pun), not a biographical claim.
+17. Frame labels are filename-style UI chrome (e.g. `~/talks/2025-07-15-title.png`,
+    `~/photos/starbase.jpg`) — decorative paths, not real asset paths.
+18. Research-figure pairing: response-distributions.png shown with the CogSci 2021
+    paper; accumulator-model.png with the PsyArXiv preprint. Both figures are from
+    the old site's research assets for this same research line — CONFIRM pairing
+    (PERSONAL-TODO #9).

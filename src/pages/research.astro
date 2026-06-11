@@ -4,6 +4,22 @@ import Base from '../layouts/Base.astro';
 import PublicationItem from '../components/PublicationItem.astro';
 import IndustryItem from '../components/IndustryItem.astro';
 import { ledgerIndices } from '../lib/ledger';
+import figResponse from '../assets/figures/response-distributions.png';
+import figModel from '../assets/figures/accumulator-model.png';
+
+// Figures from the old site's research assets, paired by paper slug.
+const figures: Record<string, { src: ImageMetadata; label: string; alt: string }> = {
+  '2021-cogsci-timing-anticipatory-decisions': {
+    src: figResponse,
+    label: '~/figures/response-distributions.png',
+    alt: 'Observed vs. model response time distributions for anticipatory decisions',
+  },
+  '2021-psyarxiv-why-am-i-always-late': {
+    src: figModel,
+    label: '~/figures/accumulator-model.png',
+    alt: 'Accumulator model diagram: evidence accumulation to a decision boundary',
+  },
+};
 
 const publications = (await getCollection('publications')).sort(
   (a, b) => Number(b.data.featured) - Number(a.data.featured) || b.data.year - a.data.year
@@ -126,7 +142,7 @@ const description = `Academic publications in decision science and ${industry.le
 
     <!-- Academic panel -->
     <div id="panel-academic" role="tabpanel" aria-labelledby="tab-academic" class="mt-10">
-      {publications.map((p) => <PublicationItem publication={p} />)}
+      {publications.map((p) => <PublicationItem publication={p} figure={figures[p.id]} />)}
     </div>
 
     <!-- Industry panel (statically rendered for SEO; toggled client-side) -->
