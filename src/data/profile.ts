@@ -75,13 +75,9 @@ export const profile = {
     'Proficient in Bayesian Regression, Hierarchical Bayesian, XGBoost methods',
   ],
 
-  // ASSEMBLED: first-person speaking intro from the resume bullet (COPY-REVIEW #4).
-  speakingIntro:
-    'I present research findings for Google, Oracle, Databricks, Teradata, Dremio, and more in live sessions and webinars.',
-
   // ASSEMBLED: third-person speaker bio from existing verified sentences (COPY-REVIEW #5).
   speakerBio:
-    'Alexander H. Wurm is a Principal Analyst at Nucleus Research, where he leads coverage of analytics and data management technologies. He has presented research findings for Google, Oracle, Databricks, Teradata, Dremio, and more in live sessions and webinars. He holds a B.A. in Economics and a B.S. in Behavioral Cognitive Neuroscience from the University of Florida.',
+    'Alexander H. Wurm is a Principal Analyst at Nucleus Research, where he leads coverage of analytics and data management technologies. He holds a B.A. in Economics and a B.S. in Behavioral Cognitive Neuroscience from the University of Florida.',
 
   // Old contact-page subhead, verbatim.
   contactBlurb: "Let's connect and explore opportunities in analytics, research, and enterprise technology",
