@@ -68,5 +68,27 @@ const ogImageAbs = new URL(ogImage, Astro.site);
       <slot />
     </main>
     <Footer />
+    <script>
+      // Sections accumulate in on first view. Only below-the-fold sections are
+      // armed (never hide content already on screen); no-JS / reduced motion
+      // render instantly because .acc-wait styles live behind a motion query.
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries)
+              if (e.isIntersecting) {
+                e.target.classList.add('acc-in');
+                io.unobserve(e.target);
+              }
+          },
+          { rootMargin: '0px 0px -10% 0px' }
+        );
+        for (const el of document.querySelectorAll('[data-acc]')) {
+          if (el.getBoundingClientRect().top < innerHeight * 0.8) continue;
+          el.classList.add('acc-wait');
+          io.observe(el);
+        }
+      }
+    </script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 ---
-// Research type tag. Maps a Nucleus research `type` string to a muted hue token.
+// Research type as a threshold marker: colored tick + mono label (no pill).
+// Maps a Nucleus research `type` string to a muted hue token.
 interface Props {
   type: string;
   class?: string;
@@ -11,13 +12,13 @@ const toneVar: Record<string, string> = {
   'ROI Guidebook': '--color-tag-guide',
   Surveys: '--color-tag-survey',
   Announcement: '--color-tag-announce',
-  // 'Research Note' and anything else falls back to --color-dim via .tag default
+  // 'Research Note' and anything else falls back to --color-dim via .threshold default
 };
 const tone = toneVar[type];
 ---
 
 <span
-  class:list={['tag inline-flex items-center rounded-full px-2.5 py-0.5 font-mono text-xs whitespace-nowrap', className]}
+  class:list={['threshold meta lowercase whitespace-nowrap', className]}
   style={tone ? `--tag: var(${tone})` : undefined}
 >
   {type}

@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import PublicationItem from '../components/PublicationItem.astro';
 import IndustryItem from '../components/IndustryItem.astro';
+import { ledgerIndices } from '../lib/ledger';
 
 const publications = (await getCollection('publications')).sort(
   (a, b) => Number(b.data.featured) - Number(a.data.featured) || b.data.year - a.data.year
@@ -11,6 +12,7 @@ const publications = (await getCollection('publications')).sort(
 const industry = (await getCollection('industryResearch')).sort((a, b) =>
   b.data.publishDate.localeCompare(a.data.publishDate)
 );
+const indices = ledgerIndices(industry);
 
 const count = (pred: (d: (typeof industry)[number]['data']) => boolean) =>
   industry.filter((e) => pred(e.data)).length;
@@ -78,7 +80,7 @@ const description = `Academic publications in decision science and ${industry.le
     <!-- Industry panel (statically rendered for SEO; toggled client-side) -->
     <div id="panel-industry" role="tabpanel" aria-labelledby="tab-industry" class="mt-8" hidden>
       <div id="industry-list" class="grid gap-4 lg:grid-cols-2">
-        {industry.map((entry) => <IndustryItem entry={entry.data} />)}
+        {industry.map((entry) => <IndustryItem entry={entry.data} index={indices.get(entry.id)!} />)}
       </div>
       <p id="industry-empty" class="py-12 text-center text-dim" hidden>No research matches these filters.</p>
     </div>

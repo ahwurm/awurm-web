@@ -9,11 +9,13 @@ interface Props {
 }
 const { href, variant = 'primary', external = false, download, type = 'submit', class: className = '' } = Astro.props;
 
+// Instrument controls: mono lowercase, near-square corners. Gold fill is the
+// "commit" action; everything else stays ink.
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors duration-150';
+  'inline-flex items-center justify-center gap-2 rounded-[2px] px-5 py-2.5 font-mono text-[13px] font-medium lowercase tracking-[0.04em] transition-colors duration-150';
 const styles = {
   primary: 'bg-accent-fill text-accent-ink hover:bg-accent-fill/85',
-  outline: 'border border-edge text-ink hover:border-accent',
+  outline: 'border border-dim/50 text-ink hover:border-accent',
   ghost: 'text-accent hover:bg-surface-2',
 };
 ---

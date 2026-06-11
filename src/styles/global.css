@@ -147,12 +147,7 @@
   font-weight: 450;
 }
 
-/* DEPRECATED (removed with the ledger components pass): pill tag + rise-in */
-.tag {
-  color: var(--tag, var(--color-dim));
-  background: color-mix(in oklab, var(--tag, var(--color-dim)) 10%, transparent);
-  border: 1px solid color-mix(in oklab, var(--tag, var(--color-dim)) 30%, transparent);
-}
+/* DEPRECATED (last usages removed with the chrome pass): rise-in */
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -204,18 +199,63 @@
   .acc-wait .acc-rule {
     transform: scaleX(0);
   }
+  .acc-wait .acc-title {
+    clip-path: inset(100% 0 -2px 0); /* rises up out of the rule */
+  }
   .acc-wait .acc-body {
-    clip-path: inset(-1px -1px 100% -1px);
+    clip-path: inset(-2px -2px 100% -2px); /* reveals down from the rule */
   }
   .acc-in .acc-rule {
     transform: scaleX(1);
     transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
-  .acc-in .acc-body {
-    clip-path: inset(-1px -1px -1px -1px);
-    transition: clip-path 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
-    transition-delay: calc(0.08s + var(--acc-i, 0) * 0.08s);
+  .acc-in .acc-title {
+    clip-path: inset(-2px 0 -2px 0);
+    transition: clip-path 0.32s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition-delay: 0.08s;
   }
+  .acc-in .acc-body {
+    clip-path: inset(-2px -2px -2px -2px);
+    transition: clip-path 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition-delay: calc(0.16s + var(--acc-i, 0) * 0.08s);
+  }
+}
+
+/* Registration marks: frames a figure/plate on the measurement paper */
+.plate {
+  position: relative;
+  padding: 14px;
+}
+.plate > i {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border: 0 solid var(--color-dim);
+  opacity: 0.65;
+}
+.plate > i:nth-of-type(1) {
+  top: 0;
+  left: 0;
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+}
+.plate > i:nth-of-type(2) {
+  top: 0;
+  right: 0;
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+}
+.plate > i:nth-of-type(3) {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 1.5px;
+  border-left-width: 1.5px;
+}
+.plate > i:nth-of-type(4) {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
 }
 
 /* Hero text stamps in when the winning trace commits (HeroAccumulator). */

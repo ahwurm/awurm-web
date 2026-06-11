@@ -9,47 +9,47 @@ const { project } = Astro.props;
 const { name, description, technologies, status, url, githubUrl, paperUrl, screenshots } = project.data;
 ---
 
-<article class="flex flex-col rounded-xl border border-edge bg-surface p-6">
-  <div class="flex items-start justify-between gap-3">
-    <h3 class="text-lg font-semibold leading-snug tracking-tight">{name}</h3>
-    <span class="tag shrink-0 rounded-full px-2.5 py-0.5 font-mono text-xs">{status}</span>
+<article class="border-b border-edge py-6">
+  <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+    <h3 class="text-xl font-semibold leading-snug tracking-tight">{name}</h3>
+    <span class="meta lowercase shrink-0 text-dim">{status}</span>
   </div>
-  <p class="mt-2.5 text-sm leading-relaxed text-dim">{description}</p>
-  <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies">
-    {
-      technologies.map((t) => (
-        <li class="rounded-md border border-edge bg-surface-2 px-2 py-0.5 font-mono text-xs text-dim">{t}</li>
-      ))
-    }
-  </ul>
+  <p class="mt-2 max-w-3xl text-sm leading-relaxed text-dim">{description}</p>
+  <p class="meta lowercase mt-3 text-dim" aria-label="Technologies">
+    {technologies.join(' · ')}
+  </p>
   {
     screenshots.length > 0 && (
-      <details class="mt-4">
-        <summary class="cursor-pointer text-sm font-medium text-accent hover:underline">
-          View screenshot{screenshots.length > 1 ? 's' : ''}
+      <details class="mt-3.5">
+        <summary class="meta lowercase cursor-pointer text-accent hover:underline">
+          view screenshot{screenshots.length > 1 ? 's' : ''}
         </summary>
-        <div class="mt-3 space-y-3">
+        <div class="mt-3 max-w-3xl space-y-3">
           {screenshots.map((s) => (
-            <Image src={s} alt={`${name} screenshot`} width={1000} class="w-full rounded-lg border border-edge" />
+            <Image src={s} alt={`${name} screenshot`} width={1000} class="w-full border border-edge" />
           ))}
         </div>
       </details>
     )
   }
-  <p class="mt-auto flex flex-wrap gap-4 pt-5 text-sm">
+  <p class="mt-3.5 flex flex-wrap gap-4">
     {url && (
-      <a href={url} target="_blank" rel="noopener noreferrer" class="font-medium text-accent hover:underline">
-        {url.includes('streamlit') ? 'Streamlit app ↗' : 'View project ↗'}
+      <a href={url} target="_blank" rel="noopener noreferrer" class="meta lowercase text-accent hover:underline">
+        {url.includes('streamlit') ? 'streamlit app ↗' : 'view project ↗'}
       </a>
     )}
     {githubUrl && (
-      <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="font-medium text-accent hover:underline">
-        GitHub ↗
+      <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="meta lowercase text-accent hover:underline">
+        github ↗
       </a>
     )}
     {paperUrl && (
-      <a href={paperUrl} download="wurm-2021-timing-anticipatory-decisions.pdf" class="font-medium text-accent hover:underline">
-        Download paper
+      <a
+        href={paperUrl}
+        download="wurm-2021-timing-anticipatory-decisions.pdf"
+        class="meta lowercase text-accent hover:underline"
+      >
+        download paper
       </a>
     )}
   </p>
