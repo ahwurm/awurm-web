@@ -1,13 +1,135 @@
 @import "tailwindcss";
+@import "@fontsource-variable/source-serif-4";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
 
-/* Phase 0 placeholder — full token set lands in Phase 1 (design system). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/*
+ * Theme tokens. Light values live in @theme (the :root defaults);
+ * dark values are overridden in TWO places that must stay in sync:
+ *   1. [data-theme="dark"]            — explicit toggle / stored preference
+ *   2. @media (prefers-color-scheme)  — no-JS fallback only
+ * If you change a dark token, change it in BOTH blocks.
+ */
 @theme {
+  --font-display: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Light (warm paper + navy ink + bronze accent) */
   --color-bg: oklch(98% 0.005 95);
+  --color-surface: oklch(100% 0 0);
+  --color-surface-2: oklch(96% 0.005 95);
+  --color-edge: oklch(89% 0.008 95);
   --color-ink: oklch(24% 0.035 257);
+  --color-dim: oklch(46% 0.025 257);
+  --color-accent: oklch(54% 0.105 85);
+
+  /* Constant across themes */
+  --color-accent-fill: oklch(76% 0.125 92); /* ~#D4AF37 gold */
+  --color-accent-ink: oklch(17.5% 0.035 257); /* navy */
+
+  /* Muted research type-tag hues */
+  --color-tag-roi: oklch(45% 0.07 155);
+  --color-tag-guide: oklch(45% 0.07 185);
+  --color-tag-survey: oklch(45% 0.07 240);
+  --color-tag-announce: oklch(45% 0.07 300);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: oklch(17.5% 0.035 257);
+  --color-surface: oklch(21% 0.035 257);
+  --color-surface-2: oklch(24% 0.035 257);
+  --color-edge: oklch(29.5% 0.03 257);
+  --color-ink: oklch(94.5% 0.01 90);
+  --color-dim: oklch(71% 0.02 257);
+  --color-accent: oklch(80% 0.115 92);
+  --color-tag-roi: oklch(78% 0.07 155);
+  --color-tag-guide: oklch(78% 0.07 185);
+  --color-tag-survey: oklch(78% 0.07 240);
+  --color-tag-announce: oklch(78% 0.07 300);
+}
+
+/* No-JS fallback: mirror of the [data-theme="dark"] block above. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-bg: oklch(17.5% 0.035 257);
+    --color-surface: oklch(21% 0.035 257);
+    --color-surface-2: oklch(24% 0.035 257);
+    --color-edge: oklch(29.5% 0.03 257);
+    --color-ink: oklch(94.5% 0.01 90);
+    --color-dim: oklch(71% 0.02 257);
+    --color-accent: oklch(80% 0.115 92);
+    --color-tag-roi: oklch(78% 0.07 155);
+    --color-tag-guide: oklch(78% 0.07 185);
+    --color-tag-survey: oklch(78% 0.07 240);
+    --color-tag-announce: oklch(78% 0.07 300);
+  }
 }
 
 @layer base {
+  :root {
+    color-scheme: light;
+  }
+
   html {
     @apply bg-bg text-ink antialiased;
+  }
+
+  body {
+    @apply font-sans text-[16.5px] leading-relaxed;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background: var(--color-accent-fill);
+    color: var(--color-accent-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@utility container-site {
+  @apply mx-auto w-full max-w-[1200px] px-6;
+}
+
+/* Research type tag — color driven by --tag (see Tag.astro) */
+.tag {
+  color: var(--tag, var(--color-dim));
+  background: color-mix(in oklab, var(--tag, var(--color-dim)) 10%, transparent);
+  border: 1px solid color-mix(in oklab, var(--tag, var(--color-dim)) 30%, transparent);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: rise-in 0.5s ease-out both;
   }
 }

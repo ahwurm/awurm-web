@@ -1,0 +1,24 @@
+---
+// Research type tag. Maps a Nucleus research `type` string to a muted hue token.
+interface Props {
+  type: string;
+  class?: string;
+}
+const { type, class: className = '' } = Astro.props;
+
+const toneVar: Record<string, string> = {
+  'ROI Study': '--color-tag-roi',
+  'ROI Guidebook': '--color-tag-guide',
+  Surveys: '--color-tag-survey',
+  Announcement: '--color-tag-announce',
+  // 'Research Note' and anything else falls back to --color-dim via .tag default
+};
+const tone = toneVar[type];
+---
+
+<span
+  class:list={['tag inline-flex items-center rounded-full px-2.5 py-0.5 font-mono text-xs whitespace-nowrap', className]}
+  style={tone ? `--tag: var(${tone})` : undefined}
+>
+  {type}
+</span>

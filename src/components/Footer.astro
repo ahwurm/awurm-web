@@ -1,0 +1,23 @@
+---
+import { site } from '../data/site';
+import { profile } from '../data/profile';
+import SocialLinks from './SocialLinks.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-edge">
+  <div class="container-site flex flex-col gap-6 py-12 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <p class="font-display font-semibold tracking-tight">{site.name}</p>
+      <p class="mt-1 text-sm text-dim">{profile.title}, Nucleus Research</p>
+    </div>
+    <div class="flex flex-col items-start gap-3 sm:items-end">
+      <SocialLinks />
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-dim">
+        {site.nav.map(({ label, href }) => <a href={href} class="transition-colors duration-150 hover:text-ink">{label}</a>)}
+        <span>© {year}</span>
+      </div>
+    </div>
+  </div>
+</footer>

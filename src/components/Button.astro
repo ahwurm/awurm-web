@@ -1,0 +1,37 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'outline' | 'ghost';
+  external?: boolean;
+  download?: string | boolean;
+  type?: 'submit' | 'button';
+  class?: string;
+}
+const { href, variant = 'primary', external = false, download, type = 'submit', class: className = '' } = Astro.props;
+
+const base =
+  'inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors duration-150';
+const styles = {
+  primary: 'bg-accent-fill text-accent-ink hover:bg-accent-fill/85',
+  outline: 'border border-edge text-ink hover:border-accent',
+  ghost: 'text-accent hover:bg-surface-2',
+};
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      class:list={[base, styles[variant], className]}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+      download={download}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class:list={[base, styles[variant], className]}>
+      <slot />
+    </button>
+  )
+}
