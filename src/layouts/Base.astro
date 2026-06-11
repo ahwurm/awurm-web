@@ -87,6 +87,9 @@ const ogImageAbs = new URL(ogImage, Astro.site);
           if (el.getBoundingClientRect().top < innerHeight * 0.8) continue;
           el.classList.add('acc-wait');
           io.observe(el);
+          // Self-heal: contexts where IO never fires (print, headless capture,
+          // anchor-jump quirks) must not leave content hidden.
+          setTimeout(() => el.classList.add('acc-in'), 2500);
         }
       }
     </script>

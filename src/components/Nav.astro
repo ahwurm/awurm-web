@@ -20,7 +20,7 @@ const isActive = (href: string) => path === href || path.startsWith(href);
         site.nav.map(({ label, href }, i) => (
           <>
             {i > 0 && (
-              <span class="select-none text-dim/50" aria-hidden="true">
+              <span class="hidden select-none text-dim/50 sm:inline" aria-hidden="true">
                 /
               </span>
             )}
