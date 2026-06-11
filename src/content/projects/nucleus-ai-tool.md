@@ -6,6 +6,5 @@ status: Completed
 url: https://nucleusresearch.com/ai/
 screenshots:
   - ../../assets/projects/nucleus-ai-tool-1.png
-  - ../../assets/projects/nucleus-ai-tool-2.png
 order: 4
 ---
