@@ -3464,7 +3464,7 @@
     "type": "Research Note",
     "year": 2025,
     "quarter": "Q1",
-    "publishDate": "2025-02-15",
+    "publishDate": "2025-04-15",
     "technologies": [
       "iPaaS",
       "Integration",
@@ -3686,7 +3686,7 @@
   },
   {
     "title": "Embedded Analytics Technology Value Matrix 2025",
-    "documentId": "",
+    "documentId": "z175",
     "type": "Research Note",
     "year": 2025,
     "quarter": "Q4",
@@ -3703,8 +3703,8 @@
     "summary": "Comprehensive analysis of embedded analytics vendors and market positioning for 2025. Leaders in this year's Value Matrix include Domo, Looker, Oracle, Power BI, Tableau, and ThoughtSpot."
   },
   {
-    "title": "Boomi ROI case study - Regional Bank",
-    "documentId": "",
+    "title": "ROI case study: Boomi at a regional bank",
+    "documentId": "z204",
     "type": "ROI Study",
     "year": 2025,
     "quarter": "Q4",
@@ -3719,7 +3719,7 @@
     ],
     "roiClaim": "97% ROI with a 9.9-month payback",
     "summary": "A regional bank saw a 97% ROI with a payback period of 9.9 months after deploying the Boomi Enterprise Platform to automate core operations, including loan processing, customer onboarding, and account maintenance.",
-    "nucleusUrl": "https://boomi.com/blog/nucleus-research-alex-wurm-boomi-roi-case-study/"
+    "nucleusUrl": "https://nucleusresearch.com/research/single/roi-case-study-boomi-at-a-regional-bank/"
   },
   {
     "title": "Oracle AI Database drives 87 percent faster data refresh",
