@@ -179,3 +179,10 @@ not biography. Approve or edit before merge.
     paper; accumulator-model.png with the PsyArXiv preprint. Both figures are from
     the old site's research assets for this same research line — CONFIRM pairing
     (PERSONAL-TODO #9).
+
+## v6 additions (2026-06-11)
+
+19. LocalHarness project entry — description verbatim from github.com/ahwurm/localharness
+    repo description + localharness.dev meta description.
+20. LocalShift project entry — description verbatim from localharness.dev/localshift meta
+    description + repo description ("Part of the Local__ family").

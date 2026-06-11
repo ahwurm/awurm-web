@@ -12,7 +12,6 @@ const talks = (await getCollection('talks')).sort((a, b) => b.data.date.getTime(
 // Upcoming/past derived from date at build time — never stored.
 const upcoming = talks.filter((t) => isUpcoming(t.data.date));
 const past = talks.filter((t) => !isUpcoming(t.data.date));
-const featured = talks.filter((t) => t.data.featured);
 const byYear = groupByYear(past, (t) => t.data.date);
 
 const description =
@@ -41,13 +40,7 @@ const description =
     )
   }
 
-  <Section banded title="Featured talks">
-    <div class="mt-8 grid gap-5 lg:grid-cols-3">
-      {featured.map((talk, i) => <TalkCard talk={talk} variant="featured" plate={i + 1} />)}
-    </div>
-  </Section>
-
-  <Section title="Past talks">
+  <Section title="Talks">
     <div class="mt-4 space-y-10">
       {
         byYear.map(([year, yearTalks]) => (

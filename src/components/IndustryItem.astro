@@ -12,36 +12,37 @@ const { entry, index } = Astro.props;
 const url = getNucleusResearchUrl(entry);
 // NOTE: entry.pdfUrl points at never-published /references PDFs — kept in data, never rendered.
 // NOTE: the root element must stay display:block — the research filters toggle
-// the `hidden` attribute and a display utility would override it.
+// the `hidden` attribute and a display utility would override it (the card's
+// internal layout lives on the inner div instead).
 ---
 
-<article class="border-b border-edge py-5" data-year={entry.year} data-type={entry.type} data-no={ledgerNo(index)}>
-  <div class="grid gap-x-6 gap-y-1.5 sm:grid-cols-[7.25rem_minmax(0,1fr)]">
-    <div class="meta flex gap-x-4 text-dim sm:flex-col sm:gap-y-1.5">
-      <span>{ledgerNo(index)}</span>
-      <span>{entry.publishDate}</span>
+<article
+  class="rounded-[3px] border border-edge bg-surface"
+  data-year={entry.year}
+  data-type={entry.type}
+  data-no={ledgerNo(index)}
+>
+  <div class="flex h-full flex-col p-5">
+    <div class="meta flex items-baseline justify-between gap-3 text-dim">
+      <span>{ledgerNo(index)} · {entry.publishDate}</span>
+      <Tag type={entry.type} class="shrink-0" />
     </div>
-    <div>
-      <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h3 class="font-display text-[1.2rem] font-semibold leading-snug tracking-tight">
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="transition-colors duration-150 hover:text-accent"
-          >
-            {entry.title}
-          </a>
-        </h3>
-        <Tag type={entry.type} class="shrink-0" />
-      </div>
-      <p class="mt-1.5 max-w-3xl text-sm leading-relaxed text-dim">{entry.summary}</p>
-      {entry.roiClaim && <p class="finding mt-3 text-sm font-medium">{entry.roiClaim}</p>}
-      <p class="mt-2.5">
-        <a href={url} target="_blank" rel="noopener noreferrer" class="link-rule text-[0.875rem] font-medium">
-          Read research ↗
-        </a>
-      </p>
-    </div>
+    <h3 class="font-display mt-3 text-[1.08rem] font-semibold leading-snug tracking-tight">
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="transition-colors duration-150 hover:text-accent"
+      >
+        {entry.title}
+      </a>
+    </h3>
+    <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-dim">{entry.summary}</p>
+    {entry.roiClaim && <p class="finding mt-3 text-sm font-medium">{entry.roiClaim}</p>}
+    <p class="mt-auto pt-3.5">
+      <a href={url} target="_blank" rel="noopener noreferrer" class="link-rule text-[0.875rem] font-medium">
+        Read research ↗
+      </a>
+    </p>
   </div>
 </article>

@@ -5,5 +5,5 @@ technologies: [Python, Streamlit, Pandas, yfinance, Plotly, SEC API, GitHub Acti
 status: Open Source Project
 url: https://smart-capital-tracker.streamlit.app/
 githubUrl: https://github.com/ahwurm/13f-dashboard-hosted
-order: 1
+order: 3
 ---

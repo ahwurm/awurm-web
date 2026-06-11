@@ -152,7 +152,7 @@ const description = `Academic publications in decision science and ${industry.le
         <canvas id="model-race-canvas" class="h-36 w-full"></canvas>
       </div>
       <p id="model-race-live" class="sr-only" role="status" aria-live="polite"></p>
-      <div id="industry-list">
+      <div id="industry-list" class="grid items-stretch gap-4 sm:grid-cols-2">
         {industry.map((entry) => <IndustryItem entry={entry.data} index={indices.get(entry.id)!} />)}
       </div>
       <p id="industry-empty" class="py-12 text-center text-dim" hidden>No research matches these filters.</p>

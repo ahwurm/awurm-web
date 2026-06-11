@@ -6,5 +6,5 @@ status: Research Project
 paperUrl: /research-papers/wurm-2021-timing-anticipatory-decisions.pdf
 screenshots:
   - ../../assets/figures/response-distributions.png
-order: 3
+order: 5
 ---
