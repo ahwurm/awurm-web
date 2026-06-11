@@ -6,45 +6,42 @@ import { isoDate, monthYearShort } from '../lib/dates';
 interface Props {
   talk: CollectionEntry<'talks'>;
   variant?: 'featured' | 'row';
-  plate?: number; // featured only: numbered plate caption
+  plate?: number; // accepted for compatibility; no longer rendered
 }
-const { talk, variant = 'row', plate } = Astro.props;
+const { talk, variant = 'row' } = Astro.props;
 const { title, event, format, date, description, image, links } = talk.data;
 
 const actions = [
-  links.video && { href: links.video, label: 'watch recording ↗', external: true },
-  links.event && { href: links.event, label: 'event page ↗', external: true },
-  links.slides && { href: links.slides, label: 'download slides', external: false },
+  links.video && { href: links.video, label: 'Watch recording ↗', external: true },
+  links.event && { href: links.event, label: 'Event page ↗', external: true },
+  links.slides && { href: links.slides, label: 'Download slides', external: false },
 ].filter(Boolean) as { href: string; label: string; external: boolean }[];
 
-const caption = `${plate ? `plate ${plate} — ` : ''}${event.toLowerCase()}, ${monthYearShort(date)}`;
+const caption = `${event} · ${monthYearShort(date)}`;
 ---
 
 {
   variant === 'featured' ? (
     <article class="flex flex-col">
       {image && (
-        <div class="plate">
-          <i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" />
-          <Image
-            src={image}
-            alt={`Title slide: ${title}`}
-            width={760}
-            class="aspect-[16/9] w-full border border-edge object-cover"
-          />
-        </div>
+        <Image
+          src={image}
+          alt={`Title slide: ${title}`}
+          width={760}
+          class="aspect-[16/9] w-full rounded-[2px] border border-edge object-cover"
+        />
       )}
-      <p class="meta mt-2.5 px-3.5 text-dim">{caption}</p>
-      <h3 class="mt-2.5 px-3.5 text-lg font-semibold leading-snug tracking-tight">{title}</h3>
-      <p class="mt-2 px-3.5 text-sm leading-relaxed text-dim">{description}</p>
+      <p class="kicker mt-5 text-dim">{caption}</p>
+      <h3 class="font-display mt-2.5 text-[1.35rem] font-semibold leading-[1.2] tracking-tight">{title}</h3>
+      <p class="mt-2.5 text-[0.9375rem] leading-relaxed text-dim">{description}</p>
       {actions.length > 0 && (
-        <p class="mt-auto px-3.5 pt-4">
+        <p class="mt-auto flex flex-wrap gap-5 pt-5">
           {actions.map((a) => (
             <a
               href={a.href}
               target={a.external ? '_blank' : undefined}
               rel={a.external ? 'noopener noreferrer' : undefined}
-              class="meta lowercase mr-4 text-accent hover:underline"
+              class="link-rule text-[0.875rem] font-medium"
             >
               {a.label}
             </a>
@@ -53,24 +50,24 @@ const caption = `${plate ? `plate ${plate} — ` : ''}${event.toLowerCase()}, ${
       )}
     </article>
   ) : (
-    <article class="border-b border-edge py-5">
-      <div class="grid items-start gap-x-6 gap-y-3 sm:grid-cols-[7.25rem_minmax(0,1fr)] lg:grid-cols-[7.25rem_minmax(0,1fr)_10rem]">
+    <article class="border-b border-edge py-7">
+      <div class="grid items-start gap-x-8 gap-y-3 sm:grid-cols-[7.5rem_minmax(0,1fr)] lg:grid-cols-[7.5rem_minmax(0,1fr)_11rem]">
         <div class="meta flex gap-x-4 text-dim sm:flex-col sm:gap-y-1.5">
           <span>{isoDate(date)}</span>
-          <span class="lowercase">{format}</span>
+          <span class="uppercase">{format}</span>
         </div>
         <div>
-          <p class="meta lowercase text-dim">{event}</p>
-          <h3 class="mt-1.5 text-lg font-semibold leading-snug tracking-tight">{title}</h3>
-          <p class="mt-1.5 text-sm leading-relaxed text-dim">{description}</p>
+          <p class="kicker text-dim">{event}</p>
+          <h3 class="font-display mt-2 text-[1.3rem] font-semibold leading-[1.2] tracking-tight">{title}</h3>
+          <p class="mt-2 text-[0.9375rem] leading-relaxed text-dim">{description}</p>
           {actions.length > 0 && (
-            <p class="mt-3">
+            <p class="mt-3.5 flex flex-wrap gap-5">
               {actions.map((a) => (
                 <a
                   href={a.href}
                   target={a.external ? '_blank' : undefined}
                   rel={a.external ? 'noopener noreferrer' : undefined}
-                  class="meta lowercase mr-4 text-accent hover:underline"
+                  class="link-rule text-[0.875rem] font-medium"
                 >
                   {a.label}
                 </a>
@@ -83,7 +80,7 @@ const caption = `${plate ? `plate ${plate} — ` : ''}${event.toLowerCase()}, ${
             src={image}
             alt={`Title slide: ${title}`}
             width={400}
-            class="hidden w-full border border-edge object-cover lg:block"
+            class="hidden w-full rounded-[2px] border border-edge object-cover lg:block"
           />
         )}
       </div>

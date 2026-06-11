@@ -1,7 +1,6 @@
 ---
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import Button from './Button.astro';
 
 interface Props {
   publication: CollectionEntry<'publications'>;
@@ -11,34 +10,40 @@ const { title, authors, venue, year, kind, url, pdfUrl } = publication.data;
 const { Content } = await render(publication);
 ---
 
-<article class="rounded-[3px] border border-edge bg-surface p-6">
+<article class="border-b border-edge py-8 first:border-t">
   <div class="flex items-baseline justify-between gap-3">
-    <span class="meta lowercase text-dim">[{kind === 'preprint' ? 'preprint' : 'peer-reviewed'}]</span>
+    <span class="kicker text-dim">{kind === 'preprint' ? 'Preprint' : 'Peer-reviewed'}</span>
     <span class="meta text-dim">{year}</span>
   </div>
-  <h3 class="mt-3 text-xl font-semibold leading-snug tracking-tight">
+  <h3 class="font-display mt-3.5 max-w-3xl text-[1.45rem] font-semibold leading-[1.2] tracking-tight">
     <a href={url} target="_blank" rel="noopener noreferrer" class="transition-colors duration-150 hover:text-accent">
       {title}
     </a>
   </h3>
-  <p class="mt-2 text-sm text-dim">{authors}</p>
-  <p class="meta lowercase mt-2 text-dim">{venue}</p>
+  <p class="mt-2.5 text-sm text-dim">{authors}</p>
+  <p class="mt-1.5 text-sm italic text-dim">{venue}</p>
 
   <details class="group mt-4">
-    <summary class="meta lowercase cursor-pointer text-accent hover:underline">abstract</summary>
-    <div class="mt-2 text-sm leading-relaxed text-dim">
+    <summary class="link-rule cursor-pointer text-[0.875rem] font-medium">Abstract</summary>
+    <div class="mt-3 max-w-3xl text-[0.9375rem] leading-relaxed text-dim">
       <Content />
     </div>
   </details>
 
-  <div class="mt-5 flex flex-wrap gap-3">
-    <Button href={url} external>Read {kind === 'preprint' ? 'preprint' : 'paper'} ↗</Button>
+  <p class="mt-5 flex flex-wrap gap-5">
+    <a href={url} target="_blank" rel="noopener noreferrer" class="link-rule text-[0.875rem] font-medium">
+      Read {kind === 'preprint' ? 'preprint' : 'paper'} ↗
+    </a>
     {
       pdfUrl && (
-        <Button href={pdfUrl} variant="outline" download="wurm-2021-timing-anticipatory-decisions.pdf">
+        <a
+          href={pdfUrl}
+          download="wurm-2021-timing-anticipatory-decisions.pdf"
+          class="link-rule text-[0.875rem] font-medium"
+        >
           Download PDF
-        </Button>
+        </a>
       )
     }
-  </div>
+  </p>
 </article>

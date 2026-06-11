@@ -20,7 +20,7 @@ const builtStamp = `${et({ dateStyle: 'short' })} ${et({ hour: '2-digit', minute
     </div>
     <div class="flex flex-col items-start gap-3 sm:items-end">
       <SocialLinks />
-      <div class="meta flex flex-wrap items-center gap-x-4 gap-y-1.5 lowercase text-dim">
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-1.5 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-dim">
         {
           site.nav.map(({ label, href }) => (
             <a href={href} class="transition-colors duration-150 hover:text-ink">

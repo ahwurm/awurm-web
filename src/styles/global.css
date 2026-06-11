@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@fontsource-variable/source-serif-4/opsz.css";
+@import "@fontsource-variable/fraunces/opsz.css";
 @import "@fontsource-variable/inter";
 @import "@fontsource-variable/jetbrains-mono";
 
@@ -12,56 +12,51 @@
  *   2. @media (prefers-color-scheme)  — no-JS fallback only
  * If you change a dark token, change it in BOTH blocks.
  *
- * Design language: paper as a measurement instrument. Warm paper + a fine
- * measurement grid; navy ink; gold is reserved as the "decision/commit" color.
+ * Design language: warm editorial. Cream paper, near-black ink, one
+ * confident vermilion. Fraunces carries the voice at display scale;
+ * mono appears only on small data moments.
  */
 @theme {
-  --font-display: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
+  --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
-  /* Light (warm paper + navy ink + gold commit color) */
-  --color-bg: oklch(97.8% 0.008 92);
-  --color-surface: oklch(99.4% 0.004 95);
-  --color-surface-2: oklch(96% 0.008 92);
-  --color-edge: oklch(87% 0.012 92);
-  --color-ink: oklch(23% 0.035 257);
-  --color-dim: oklch(45% 0.025 257);
-  --color-accent: oklch(52% 0.105 85);
+  /* Light (cream paper + warm near-black ink + vermilion) */
+  --color-bg: oklch(97.4% 0.011 85);
+  --color-surface: oklch(99.1% 0.006 85);
+  --color-surface-2: oklch(95.2% 0.013 85);
+  --color-edge: oklch(86% 0.014 80);
+  --color-ink: oklch(22% 0.012 55);
+  --color-dim: oklch(45% 0.014 55);
+  --color-accent: oklch(53% 0.185 33);
 
-  /* Measurement grid hairlines (ink at very low alpha) */
-  --color-grid-minor: oklch(30% 0.04 257 / 0.05);
-  --color-grid-major: oklch(30% 0.04 257 / 0.1);
-
-  /* Constant across themes */
-  --color-accent-fill: oklch(76% 0.125 92); /* ~#D4AF37 gold */
-  --color-accent-ink: oklch(17.5% 0.035 257); /* navy */
+  /* Constant across themes: vermilion fill for primary actions/marks */
+  --color-accent-fill: oklch(58% 0.2 33);
+  --color-accent-ink: oklch(98% 0.008 85);
 
   /* Muted research type-tag hues */
-  --color-tag-roi: oklch(45% 0.07 155);
-  --color-tag-guide: oklch(45% 0.07 185);
-  --color-tag-survey: oklch(45% 0.07 240);
-  --color-tag-announce: oklch(45% 0.07 300);
+  --color-tag-roi: oklch(46% 0.07 155);
+  --color-tag-guide: oklch(46% 0.07 200);
+  --color-tag-survey: oklch(46% 0.07 250);
+  --color-tag-announce: oklch(46% 0.07 310);
 
   /* Form validation errors (AA on bg/surface in each theme) */
-  --color-error: oklch(48% 0.16 25);
+  --color-error: oklch(46% 0.16 25);
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
-  --color-bg: oklch(17.5% 0.035 257);
-  --color-surface: oklch(21% 0.035 257);
-  --color-surface-2: oklch(24% 0.035 257);
-  --color-edge: oklch(31% 0.03 257);
-  --color-ink: oklch(94.5% 0.01 90);
-  --color-dim: oklch(71% 0.02 257);
-  --color-accent: oklch(80% 0.115 92);
-  --color-grid-minor: oklch(90% 0.01 90 / 0.045);
-  --color-grid-major: oklch(90% 0.01 90 / 0.09);
+  --color-bg: oklch(16.5% 0.009 55);
+  --color-surface: oklch(19.5% 0.01 55);
+  --color-surface-2: oklch(23% 0.011 55);
+  --color-edge: oklch(31% 0.012 55);
+  --color-ink: oklch(94% 0.013 85);
+  --color-dim: oklch(70% 0.013 70);
+  --color-accent: oklch(70% 0.17 35);
   --color-tag-roi: oklch(78% 0.07 155);
-  --color-tag-guide: oklch(78% 0.07 185);
-  --color-tag-survey: oklch(78% 0.07 240);
-  --color-tag-announce: oklch(78% 0.07 300);
+  --color-tag-guide: oklch(78% 0.07 200);
+  --color-tag-survey: oklch(78% 0.07 250);
+  --color-tag-announce: oklch(78% 0.07 310);
   --color-error: oklch(75% 0.13 25);
 }
 
@@ -69,19 +64,17 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --color-bg: oklch(17.5% 0.035 257);
-    --color-surface: oklch(21% 0.035 257);
-    --color-surface-2: oklch(24% 0.035 257);
-    --color-edge: oklch(31% 0.03 257);
-    --color-ink: oklch(94.5% 0.01 90);
-    --color-dim: oklch(71% 0.02 257);
-    --color-accent: oklch(80% 0.115 92);
-    --color-grid-minor: oklch(90% 0.01 90 / 0.045);
-    --color-grid-major: oklch(90% 0.01 90 / 0.09);
+    --color-bg: oklch(16.5% 0.009 55);
+    --color-surface: oklch(19.5% 0.01 55);
+    --color-surface-2: oklch(23% 0.011 55);
+    --color-edge: oklch(31% 0.012 55);
+    --color-ink: oklch(94% 0.013 85);
+    --color-dim: oklch(70% 0.013 70);
+    --color-accent: oklch(70% 0.17 35);
     --color-tag-roi: oklch(78% 0.07 155);
-    --color-tag-guide: oklch(78% 0.07 185);
-    --color-tag-survey: oklch(78% 0.07 240);
-    --color-tag-announce: oklch(78% 0.07 300);
+    --color-tag-guide: oklch(78% 0.07 200);
+    --color-tag-survey: oklch(78% 0.07 250);
+    --color-tag-announce: oklch(78% 0.07 310);
     --color-error: oklch(75% 0.13 25);
   }
 }
@@ -95,19 +88,8 @@
     @apply bg-bg text-ink antialiased;
   }
 
-  /* The measurement grid: ~24px minor / 120px major hairlines, full page. */
   body {
-    @apply font-sans text-[16.5px] leading-relaxed;
-    background-image:
-      linear-gradient(to right, var(--color-grid-major) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--color-grid-major) 1px, transparent 1px),
-      linear-gradient(to right, var(--color-grid-minor) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--color-grid-minor) 1px, transparent 1px);
-    background-size:
-      120px 120px,
-      120px 120px,
-      24px 24px,
-      24px 24px;
+    @apply font-sans text-[1.0625rem] leading-relaxed;
   }
 
   h1,
@@ -115,6 +97,7 @@
   h3 {
     font-family: var(--font-display);
     font-optical-sizing: auto;
+    font-weight: 540;
   }
 
   ::selection {
@@ -135,46 +118,79 @@
 }
 
 @utility container-site {
-  @apply mx-auto w-full max-w-[1200px] px-6;
+  @apply mx-auto w-full max-w-[1140px] px-6 sm:px-10;
 }
 
-/* Mono metadata voice: labels, axes, dates, counts, nav. Pair with
-   `uppercase` or `lowercase` per use. */
+/* Mono data voice — used sparingly: dates, counts, tags, figure captions. */
 @utility meta {
   font-family: var(--font-mono);
-  font-size: 0.6975rem;
-  letter-spacing: 0.08em;
-  font-weight: 450;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  font-weight: 440;
 }
 
-/* Research type tag → threshold marker: colored tick + mono label */
+/* Editorial kicker: small caps sans for section numbers / labels. */
+@utility kicker {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Display headline helper: Fraunces, tight, optically sized. */
+@utility display-tight {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.018em;
+  line-height: 0.98;
+}
+
+/* Underlined editorial link: hairline that thickens to vermilion. */
+.link-rule {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--color-edge);
+  transition:
+    text-decoration-color 0.15s ease,
+    color 0.15s ease;
+}
+.link-rule:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+}
+
+/* Research type tag: small colored dot + mono label. */
 .threshold {
   color: var(--tag, var(--color-dim));
 }
 .threshold::before {
   content: "";
   display: inline-block;
-  width: 3px;
-  height: 0.75em;
-  margin-right: 0.5em;
-  vertical-align: -0.08em;
+  width: 0.45em;
+  height: 0.45em;
+  border-radius: 9999px;
+  margin-right: 0.55em;
+  vertical-align: 0.08em;
   background: var(--tag, var(--color-dim));
 }
 
-/* Gold-ruled "finding" line (roiClaim callouts) */
+/* Vermilion-ruled "finding" line (roiClaim callouts) */
 .finding {
   border-left: 2px solid var(--color-accent-fill);
   padding-left: 0.75rem;
 }
 
-/* "Let the model decide": the chosen ledger row flashes gold */
+/* "Let the model decide": the chosen ledger row flashes warm */
 .row-hit {
   animation: row-hit 2.4s ease-out both;
 }
 @keyframes row-hit {
   0%,
   30% {
-    background-color: color-mix(in oklab, var(--color-accent-fill) 22%, transparent);
+    background-color: color-mix(in oklab, var(--color-accent-fill) 14%, transparent);
   }
   100% {
     background-color: transparent;
@@ -183,19 +199,18 @@
 @media (prefers-reduced-motion: reduce) {
   .row-hit {
     animation: none;
-    background-color: color-mix(in oklab, var(--color-accent-fill) 22%, transparent);
+    background-color: color-mix(in oklab, var(--color-accent-fill) 14%, transparent);
   }
 }
 
 /*
- * Sections accumulate in: a thin baseline rule draws across (scaleX),
- * then content rises from it (clip-path reveal), staggered via --acc-i.
+ * Sections settle in: a hairline draws across, content rises from it.
  * JS (Base.astro) adds .acc-wait up front and .acc-in on intersection;
  * without JS or with reduced motion nothing is ever hidden.
  */
 .acc-rule {
-  height: 2px;
-  background: var(--color-ink);
+  height: 1px;
+  background: var(--color-edge);
   transform-origin: left;
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -203,79 +218,31 @@
     transform: scaleX(0);
   }
   .acc-wait .acc-title {
-    clip-path: inset(100% 0 -2px 0); /* rises up out of the rule */
+    opacity: 0;
+    transform: translateY(14px);
   }
   .acc-wait .acc-body {
-    clip-path: inset(-2px -2px 100% -2px); /* reveals down from the rule */
+    opacity: 0;
+    transform: translateY(18px);
   }
   .acc-in .acc-rule {
     transform: scaleX(1);
-    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
   .acc-in .acc-title {
-    clip-path: inset(-2px 0 -2px 0);
-    transition: clip-path 0.32s cubic-bezier(0.25, 0.1, 0.25, 1);
-    transition-delay: 0.08s;
-  }
-  .acc-in .acc-body {
-    clip-path: inset(-2px -2px -2px -2px);
-    transition: clip-path 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
-    transition-delay: calc(0.16s + var(--acc-i, 0) * 0.08s);
-  }
-}
-
-/* Registration marks: frames a figure/plate on the measurement paper */
-.plate {
-  position: relative;
-  padding: 14px;
-}
-.plate > i {
-  position: absolute;
-  width: 11px;
-  height: 11px;
-  border: 0 solid var(--color-dim);
-  opacity: 0.65;
-}
-.plate > i:nth-of-type(1) {
-  top: 0;
-  left: 0;
-  border-top-width: 1.5px;
-  border-left-width: 1.5px;
-}
-.plate > i:nth-of-type(2) {
-  top: 0;
-  right: 0;
-  border-top-width: 1.5px;
-  border-right-width: 1.5px;
-}
-.plate > i:nth-of-type(3) {
-  bottom: 0;
-  left: 0;
-  border-bottom-width: 1.5px;
-  border-left-width: 1.5px;
-}
-.plate > i:nth-of-type(4) {
-  bottom: 0;
-  right: 0;
-  border-bottom-width: 1.5px;
-  border-right-width: 1.5px;
-}
-
-/* Hero text stamps in when the winning trace commits (HeroAccumulator). */
-.stamp {
-  --st: 0;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .stamp-wait .stamp {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  .stamp-go .stamp {
     opacity: 1;
     transform: none;
     transition:
-      opacity 0.26s ease-out,
-      transform 0.26s cubic-bezier(0.2, 0.9, 0.3, 1);
-    transition-delay: calc(var(--st) * 60ms);
+      opacity 0.4s ease-out,
+      transform 0.4s cubic-bezier(0.22, 0.8, 0.3, 1);
+    transition-delay: 0.08s;
+  }
+  .acc-in .acc-body {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.45s ease-out,
+      transform 0.45s cubic-bezier(0.22, 0.8, 0.3, 1);
+    transition-delay: calc(0.14s + var(--acc-i, 0) * 0.07s);
   }
 }

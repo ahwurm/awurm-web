@@ -1,18 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Button from '../components/Button.astro';
 import Section from '../components/Section.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import IndustryItem from '../components/IndustryItem.astro';
-import HeroAccumulator from '../components/HeroAccumulator.astro';
 import TalkCard from '../components/TalkCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { profile } from '../data/profile';
 import { site } from '../data/site';
 import { ledgerIndices } from '../lib/ledger';
-import headshot from '../assets/photos/headshot.jpg';
 
 const publications = await getCollection('publications');
 const highlight = publications.find((p) => p.data.featured) ?? publications[0];
@@ -28,55 +25,43 @@ const talks = (await getCollection('talks'))
   .slice(0, 2);
 
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+
+const [firstName, ...rest] = profile.name.split(' ');
+const lastName = rest.pop();
 ---
 
 <Base title={site.title} description={site.description} ogImage="/og/home.png">
-  <!-- Hero: the methods figure runs the trial; the copy is its output -->
-  <section
-    class="container-site grid items-center gap-x-12 gap-y-10 pb-16 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,500px)] lg:pb-24 lg:pt-16"
-  >
-    <div id="hero-copy" class="order-2 lg:order-1">
-      <p class="stamp meta uppercase text-dim" style="--st: 0">{profile.role}</p>
-      <h1
-        class="stamp mt-3 text-balance text-[clamp(2.6rem,6.5vw,5.5rem)] font-semibold leading-[1.04] tracking-[-0.015em]"
-        style="--st: 1"
-      >
-        {profile.name}
-      </h1>
-      <p class="stamp meta mt-4 min-h-[1.25rem] tracking-[0.02em] text-dim" style="--st: 2" id="hero-readout">
-        <span class="sr-only" id="hero-readout-sr">decision: alexander_h_wurm · rt = 487 ms · trials = 1</span>
-        <span aria-hidden="true" id="hero-readout-vis">decision: alexander_h_wurm · rt = 487 ms · trials = 1</span>
+  <!-- Hero: pure typography, full editorial scale -->
+  <section class="container-site pb-20 pt-14 sm:pb-28 sm:pt-24">
+    <p class="kicker text-accent">{profile.role}</p>
+    <h1 class="display-tight mt-6 font-semibold" aria-label={profile.name}>
+      <span class="block text-[clamp(3.2rem,9.5vw,7.6rem)]">{firstName}</span>
+      <span class="block text-[clamp(3.2rem,9.5vw,7.6rem)]">{lastName}<span class="text-accent">.</span></span>
+    </h1>
+    <div class="mt-12 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+      <p class="max-w-[42ch] font-display text-[clamp(1.3rem,2.1vw,1.6rem)] font-medium leading-[1.4]">
+        {profile.oneLiner}
       </p>
-      <p class="stamp mt-6 max-w-xl text-pretty text-lg text-dim" style="--st: 3">{profile.oneLiner}</p>
-      <div class="stamp mt-8 flex flex-wrap items-center gap-3" style="--st: 4">
-        <Button href="/research/">Explore research</Button>
-        <Button href="/projects/" variant="outline">View projects</Button>
-      </div>
-      <div class="stamp mt-9 flex items-center gap-4" style="--st: 5">
-        <Image
-          src={headshot}
-          alt={profile.name}
-          width={160}
-          class="h-13 w-13 rounded-[3px] border border-edge object-cover"
-          loading="eager"
-        />
+      <div class="flex shrink-0 flex-col items-start gap-6">
+        <div class="flex flex-wrap items-center gap-3">
+          <Button href="/research/">Explore research</Button>
+          <Button href="/about/" variant="outline">About me</Button>
+        </div>
         <SocialLinks />
       </div>
     </div>
-    <!-- Pre-paint: hide the copy only when JS will actually run the trial -->
-    <script is:inline>
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
-        document.getElementById('hero-copy').classList.add('stamp-wait');
-    </script>
-    <HeroAccumulator class="order-1 w-full lg:order-2" />
   </section>
 
-  <!-- Research band -->
-  <Section banded title="Research" sub="Peer-reviewed work in decision science, and ongoing industry research at Nucleus.">
-    <div class="mt-10 grid items-start gap-x-10 gap-y-8 lg:grid-cols-[2fr_3fr]">
-      <article class="flex flex-col rounded-[3px] border border-edge bg-surface p-6">
-        <p class="meta lowercase text-dim">academic highlight · {highlight.data.year}</p>
-        <h3 class="mt-3 text-xl font-semibold leading-snug tracking-tight">
+  <!-- Research -->
+  <Section
+    num="01"
+    title="Research"
+    sub="Peer-reviewed work in decision science, and ongoing industry research at Nucleus."
+  >
+    <div class="mt-12 grid items-start gap-x-14 gap-y-10 lg:grid-cols-[2fr_3fr]">
+      <article>
+        <p class="kicker text-dim">Academic highlight · {highlight.data.year}</p>
+        <h3 class="display-tight mt-4 text-[1.6rem] font-semibold leading-[1.15]">
           <a
             href={highlight.data.url}
             target="_blank"
@@ -84,38 +69,38 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
             class="transition-colors duration-150 hover:text-accent">{highlight.data.title}</a
           >
         </h3>
-        <p class="mt-2 text-sm text-dim">{highlight.data.authors}</p>
-        <p class="meta lowercase mt-2 text-dim">{highlight.data.venue}</p>
-        <p class="mt-auto pt-5">
-          <a href="/research/" class="meta lowercase text-accent hover:underline">all academic research →</a>
+        <p class="mt-3 text-sm text-dim">{highlight.data.authors}</p>
+        <p class="mt-1.5 text-sm italic text-dim">{highlight.data.venue}</p>
+        <p class="mt-6">
+          <a href="/research/" class="link-rule text-[0.95rem] font-medium">All academic research</a>
         </p>
       </article>
       <div>
         <div class="-mt-5">
           {industry.map((entry) => <IndustryItem entry={entry.data} index={indices.get(entry.id)!} />)}
         </div>
-        <p class="mt-5">
-          <a href="/research/?tab=industry" class="meta lowercase text-accent hover:underline">
-            browse the industry research archive →
+        <p class="mt-7">
+          <a href="/research/?tab=industry" class="link-rule text-[0.95rem] font-medium">
+            Browse the industry research archive — {industryAll.length} notes
           </a>
         </p>
       </div>
     </div>
   </Section>
 
-  <!-- Speaking band -->
-  <Section title="Speaking" sub={profile.speakingIntro}>
-    <div class="mt-10 grid gap-8 sm:grid-cols-2">
-      {talks.map((talk, i) => <TalkCard talk={talk} variant="featured" plate={i + 1} />)}
+  <!-- Speaking -->
+  <Section num="02" title="Speaking" sub={profile.speakingIntro}>
+    <div class="mt-12 grid gap-10 sm:grid-cols-2">
+      {talks.map((talk) => <TalkCard talk={talk} variant="featured" />)}
     </div>
-    <p class="mt-8">
-      <a href="/speaking/" class="meta lowercase text-accent hover:underline">all speaking engagements →</a>
+    <p class="mt-10">
+      <a href="/speaking/" class="link-rule text-[0.95rem] font-medium">All speaking engagements</a>
     </p>
   </Section>
 
-  <!-- Projects band -->
-  <Section banded title="Projects" sub="Selected software and research projects.">
-    <div class="mt-6">
+  <!-- Projects -->
+  <Section num="03" title="Projects" sub="Selected software and research projects.">
+    <div class="mt-8">
       {projects.map((project) => <ProjectCard project={project} />)}
     </div>
   </Section>

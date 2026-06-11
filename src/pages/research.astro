@@ -51,7 +51,7 @@ const description = `Academic publications in decision science and ${industry.le
 <Base title="Research — Alexander H. Wurm" description={description} ogImage="/og/research.png">
   <section class="container-site py-12 sm:py-16">
     <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
-      <h1 class="text-[clamp(2.5rem,5vw,3.5rem)] font-semibold leading-none tracking-tight">Research</h1>
+      <h1 class="display-tight text-[clamp(2.8rem,6vw,4.4rem)] font-semibold">Research</h1>
       <div class="hidden sm:block">
         <p class="meta lowercase text-dim">notes / quarter</p>
         <svg width={SW} height="56" viewBox={`0 0 ${SW} 56`} role="img" aria-label={sparkAlt} fill="none" class="mt-1.5">
@@ -68,7 +68,11 @@ const description = `Academic publications in decision science and ${industry.le
 
     <!-- Controls -->
     <div class="mt-7 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-      <div role="tablist" aria-label="Research type" class="meta flex w-fit gap-7 lowercase">
+      <div
+        role="tablist"
+        aria-label="Research type"
+        class="flex w-fit gap-7 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.14em]"
+      >
         <a
           id="tab-academic"
           href="/research/"
@@ -112,16 +116,16 @@ const description = `Academic publications in decision science and ${industry.le
         <button
           id="model-decide"
           type="button"
-          class="meta lowercase cursor-pointer rounded-[2px] border border-dim/50 px-3 py-2 text-ink transition-colors hover:border-accent disabled:cursor-not-allowed disabled:opacity-45"
+          class="cursor-pointer rounded-full border border-ink/35 px-4 py-2 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-45"
           hidden
         >
-          let the model decide →
+          Let the model decide →
         </button>
       </div>
     </div>
 
     <!-- Academic panel -->
-    <div id="panel-academic" role="tabpanel" aria-labelledby="tab-academic" class="mt-8 space-y-5">
+    <div id="panel-academic" role="tabpanel" aria-labelledby="tab-academic" class="mt-10">
       {publications.map((p) => <PublicationItem publication={p} />)}
     </div>
 

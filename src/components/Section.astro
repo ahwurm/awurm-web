@@ -1,26 +1,39 @@
 ---
 /**
- * Page section that "accumulates in": a 2px baseline rule draws across,
- * the title rises out of it, and the body reveals below it (see global.css
- * .acc-* rules; the IntersectionObserver lives in Base.astro). Without JS
- * or with reduced motion everything renders instantly.
+ * Editorial section: hairline rule, then a numbered kicker row and a large
+ * serif title; content settles in below (see global.css .acc-* rules; the
+ * IntersectionObserver lives in Base.astro). Without JS or with reduced
+ * motion everything renders instantly. `banded` is accepted for backwards
+ * compatibility but the editorial layout keeps one continuous paper.
  */
 interface Props {
   title?: string;
   sub?: string;
+  num?: string;
   banded?: boolean;
   id?: string;
   class?: string;
 }
-const { title, sub, banded = false, id, class: className = '' } = Astro.props;
+const { title, sub, num, id, class: className = '' } = Astro.props;
 ---
 
-<section id={id} class:list={[banded && 'border-y border-edge bg-surface-2/60', className]}>
-  <div class="container-site py-16 sm:py-20" data-acc>
-    {title && <h2 class="acc-title text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>}
-    {title && <div class="acc-rule mt-4" aria-hidden="true"></div>}
+<section id={id} class:list={[className]}>
+  <div class="container-site py-16 sm:py-24" data-acc>
+    {title && <div class="acc-rule" aria-hidden="true" />}
+    {
+      title && (
+        <div class="acc-title mt-7 flex items-baseline justify-between gap-6">
+          <h2 class="display-tight text-[clamp(2.1rem,4.6vw,3.4rem)] font-semibold">{title}</h2>
+          {num && (
+            <span class="kicker text-dim" aria-hidden="true">
+              {num}
+            </span>
+          )}
+        </div>
+      )
+    }
     <div class="acc-body">
-      {sub && <p class="mt-4 max-w-2xl text-dim">{sub}</p>}
+      {sub && <p class="mt-5 max-w-[58ch] text-[1.0625rem] leading-relaxed text-dim">{sub}</p>}
       <slot />
     </div>
   </div>
