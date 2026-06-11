@@ -31,24 +31,27 @@ existing verified facts. Approve or edit before merge (PERSONAL-TODO #8).
 
 ## Industry research entries (new JSON entries — summaries from listed sources)
 
-6. **iPaaS Technology Value Matrix 2025** — summary sentence 1 follows the existing
-   Value Matrix house template ("Comprehensive analysis of … vendors and market
-   positioning"); sentence 2 assembled from boomi.com/blog/alex-wurm-on-nucleus-value-matrix-2025/
-   ("customers eagerly want iPaaS products to be AI-driven… the differentiators are
-   those AI tools, the co-pilot experiences, the agentic experiences").
-   publishDate 2025-04-28 = the source blog's publish date (the matrix is described
-   there as "newly released"; Nucleus' own release date not public).
+6. **iPaaS Technology Value Matrix 2025** — the dataset ALREADY contained this report
+   (z58) — same trap as the Teradata guidebook (#12), so the planned "new entry" was
+   merged into z58 instead of appended. Summary sentence 2 assembled from
+   boomi.com/blog/alex-wurm-on-nucleus-value-matrix-2025/ ("customers eagerly want
+   iPaaS products to be AI-driven… the differentiators are those AI tools, the
+   co-pilot experiences, the agentic experiences"). publishDate corrected
+   2025-02-15 → **2025-04-15** per the report page
+   (nucleusresearch.com/research/single/ipaas-technology-value-matrix-2025/, doc Z58).
 
 7. **Embedded Analytics Technology Value Matrix 2025** — house template + Leaders list
-   verbatim from PR Newswire 302596584 (Oct 28, 2025).
+   verbatim from PR Newswire 302596584 (Oct 28, 2025). documentId **z175** per the
+   report page (nucleusresearch.com/research/single/embedded-analytics-technology-value-matrix-2025/).
 
-8. **Boomi ROI case study - Regional Bank** — title assembled following the existing
-   "{Vendor} ROI case study - {Customer}" convention (bank unnamed in source); summary
-   near-verbatim from boomi.com/blog/nucleus-research-alex-wurm-boomi-roi-case-study/
-   ("a regional bank saw a 97% ROI with a payback period of 9.9 months after deploying
-   the Boomi Enterprise Platform to automate core operations, including loan
-   processing, customer onboarding, and account maintenance"). Links to the Boomi blog
-   via nucleusUrl (real Nucleus report id/slug unknown).
+8. **ROI case study: Boomi at a regional bank** — exact Nucleus title, documentId
+   **z204**, and link verified at
+   nucleusresearch.com/research/single/roi-case-study-boomi-at-a-regional-bank/
+   (Dec 3, 2025). Summary near-verbatim from
+   boomi.com/blog/nucleus-research-alex-wurm-boomi-roi-case-study/ ("a regional bank
+   saw a 97% ROI with a payback period of 9.9 months after deploying the Boomi
+   Enterprise Platform to automate core operations, including loan processing,
+   customer onboarding, and account maintenance").
 
 9. **Oracle AI Database drives 87 percent faster data refresh** (26074) — summary
    condensed from the report's public abstract at
@@ -70,8 +73,10 @@ existing verified facts. Approve or edit before merge (PERSONAL-TODO #8).
     ("average ROI of 427% over three years, with an average annual benefit of
     $7.9 million and a payback period of just 11 months… customers across healthcare,
     insurance, and telecommunications"). The plan listed this as a 7th new entry; the
-    guidebook already existed in the dataset as z71 (Feb 22, 2025), so the verified
-    figures were merged into it instead of appending a duplicate title.
+    guidebook already existed in the dataset as z71, so the verified figures were
+    merged into it instead of appending a duplicate title. publishDate corrected
+    2025-02-22 → **2025-05-19** per the report page
+    (nucleusresearch.com/research/single/roi-guidebook-teradata-vantagecloud/).
 
 ## Talk metadata corrections (verified)
 

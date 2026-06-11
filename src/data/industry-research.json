@@ -3463,7 +3463,7 @@
     "documentId": "z58",
     "type": "Research Note",
     "year": 2025,
-    "quarter": "Q1",
+    "quarter": "Q2",
     "publishDate": "2025-04-15",
     "technologies": [
       "iPaaS",
@@ -3478,7 +3478,7 @@
       "Next-generation iPaaS"
     ],
     "roiClaim": null,
-    "summary": "Comprehensive analysis of iPaaS technology vendors and market positioning for 2025.",
+    "summary": "Comprehensive analysis of iPaaS technology vendors and market positioning for 2025. Customer interviews showed rapid adoption of AI capabilities, with usability differentiators shifting to AI tools, copilot, and agentic experiences.",
     "pdfUrl": "/references/z58 - iPaaS Technology Value Matrix 2025.pdf"
   },
   {
@@ -3509,8 +3509,8 @@
     "documentId": "z71",
     "type": "ROI Guidebook",
     "year": 2025,
-    "quarter": "Q1",
-    "publishDate": "2025-02-22",
+    "quarter": "Q2",
+    "publishDate": "2025-05-19",
     "technologies": [
       "Data Platform",
       "Cloud",
@@ -3665,24 +3665,6 @@
     "roiClaim": null,
     "summary": "Comprehensive analysis of Application Performance Monitoring vendors and market positioning for 2025.",
     "pdfUrl": "/references/z97 - APM Technology Value Matrix 2025.pdf"
-  },
-  {
-    "title": "iPaaS Technology Value Matrix 2025",
-    "documentId": "",
-    "type": "Research Note",
-    "year": 2025,
-    "quarter": "Q2",
-    "publishDate": "2025-04-28",
-    "technologies": [
-      "iPaaS",
-      "Integration",
-      "Automation"
-    ],
-    "vendors": [
-      "Multiple"
-    ],
-    "roiClaim": null,
-    "summary": "Comprehensive analysis of integration platform as a service (iPaaS) vendors and market positioning for 2025. Customer interviews showed rapid adoption of AI capabilities, with usability differentiators shifting to AI tools, copilot, and agentic experiences."
   },
   {
     "title": "Embedded Analytics Technology Value Matrix 2025",
