@@ -186,3 +186,11 @@ not biography. Approve or edit before merge.
     repo description + localharness.dev meta description.
 20. LocalShift project entry — description verbatim from localharness.dev/localshift meta
     description + repo description ("Part of the Local__ family").
+
+## v8 batch (2026-06-11 evening, per Alex's live notes)
+21. DeepL talk description — condensed from deepl.com event page copy (80–90% cost-cut claim is the page's own headline figure).
+22. Qlik talk description — condensed from pages.qlik.com event meta (70% savings figure is the page's own).
+23. Publication merge per Alex: preprint entry retitled to the CogSci paper title, kicker label "Annual Proceedings of the Cognitive Science Society" (his wording), preprint DOI + local PDF.
+24. Two house reports added from his vault + report pages (Top Ten Predictions 2026, Hot Companies 2026) — summaries from page meta descriptions.
+25. DeepL title-card image is GENERATED (site-styled slide; the page's own og:image is a generic DeepL logo). Qlik card is the event's real og:image.
+26. Vault reconciliation (his /tmp/research.7z, declared source of truth): 20 type fixes, 60 primaryVendor fixes, market[] taxonomy added to 191 entries, Databricks id 26082→26057, x24 restored.

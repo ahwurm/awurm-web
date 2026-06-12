@@ -9,7 +9,7 @@ export const site = {
     { label: 'Research', href: '/research/' },
     { label: 'Speaking', href: '/speaking/' },
     { label: 'Projects', href: '/projects/' },
-    { label: 'About', href: '/about/' },
+    { label: 'Contact', href: '/contact/' },
   ],
   // PERSONAL-TODO: fill these to enable the contact form (EmailJS).
   // While any value is empty the form falls back to a prefilled mailto link.

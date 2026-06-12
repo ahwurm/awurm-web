@@ -8,7 +8,6 @@ export const personJsonLd = () => ({
   name: profile.name,
   jobTitle: profile.title,
   worksFor: { '@type': 'Organization', name: 'Nucleus Research' },
-  email: `mailto:${profile.email}`,
   url: site.url,
   sameAs: [profile.socials.linkedin, profile.socials.github],
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'University of Florida' },

@@ -1,5 +1,33 @@
 ---
-import RedirectStub from '../components/RedirectStub.astro';
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import Button from '../components/Button.astro';
+import { profile } from '../data/profile';
+import { profilePageJsonLd } from '../lib/jsonld';
 ---
 
-<RedirectStub to="/about/#contact" label="the contact section" />
+<Base
+  title="Contact — Alexander H. Wurm"
+  description="Get in touch with Alexander H. Wurm."
+  ogImage="/og/contact.png"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(profilePageJsonLd())} slot="head" is:inline />
+  <section class="container-site py-12 sm:py-16">
+    <h1 class="display-tight text-[clamp(2.8rem,6vw,4.4rem)] font-semibold"><span class="text-accent">~/</span>contact</h1>
+    <div class="acc-rule mt-5" aria-hidden="true"></div>
+    <div class="mt-10 grid items-start gap-x-16 gap-y-10 lg:grid-cols-[3fr_2fr]">
+      <ContactForm />
+      <aside>
+        <p class="kicker text-dim">elsewhere</p>
+        <div class="mt-4"><SocialLinks /></div>
+        <p class="kicker mt-8 text-dim">resume</p>
+        <div class="mt-4">
+          <Button href="/AW_Resume2025_web.pdf" variant="outline" download="Alexander_Wurm_Resume.pdf">
+            download resume
+          </Button>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>

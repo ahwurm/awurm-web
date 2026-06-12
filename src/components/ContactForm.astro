@@ -13,7 +13,7 @@ const emailjsReady = Boolean(serviceId && templateId && publicKey);
   data-service={serviceId}
   data-template={templateId}
   data-key={publicKey}
-  data-email={profile.email}
+  data-linkedin={profile.socials.linkedin}
   class="space-y-5"
 >
   <div>
@@ -69,12 +69,7 @@ const emailjsReady = Boolean(serviceId && templateId && publicKey);
 
   <p id="cf-status" role="status" aria-live="polite" class="hidden text-sm font-medium"></p>
 
-  <Button type="submit">{emailjsReady ? 'Send message' : 'Send via email'}</Button>
-  {
-    !emailjsReady && (
-      <p class="text-xs text-dim">Opens your email app with the message prefilled.</p>
-    )
-  }
+  <Button type="submit">Send message</Button>
 </form>
 
 <script>
@@ -103,15 +98,22 @@ const emailjsReady = Boolean(serviceId && templateId && publicKey);
     }
     if (invalid) return;
 
-    const { service, template, key, email } = form.dataset;
+    const { service, template, key, linkedin } = form.dataset;
     const status = document.getElementById('cf-status')!;
-    const mailto = () => {
-      location.href = `mailto:${email}?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(
-        `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
-      )}`;
+    const fallback = () => {
+      status.classList.remove('hidden');
+      status.innerHTML = '';
+      status.append('The form is not wired up yet — reach me on ');
+      const a = document.createElement('a');
+      a.href = linkedin!;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.className = 'text-accent underline';
+      a.textContent = 'LinkedIn';
+      status.append(a, ' instead.');
     };
 
-    if (!service || !template || !key) return mailto();
+    if (!service || !template || !key) return fallback();
 
     status.classList.remove('hidden');
     status.textContent = 'Sending…';
@@ -128,7 +130,6 @@ const emailjsReady = Boolean(serviceId && templateId && publicKey);
             from_email: data.email,
             subject: data.subject,
             message: data.message,
-            to_email: email,
           },
         }),
       });
@@ -136,8 +137,7 @@ const emailjsReady = Boolean(serviceId && templateId && publicKey);
       status.textContent = "Message sent! Thank you for reaching out — I'll get back to you soon.";
       form.reset();
     } catch {
-      status.textContent = 'Sending failed — opening your email app instead.';
-      mailto();
+      fallback();
     }
   });
 </script>

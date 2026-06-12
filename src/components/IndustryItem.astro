@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import Tag from './Tag.astro';
 import { getNucleusResearchUrl } from '../lib/research-utils';
-import { ledgerNo } from '../lib/ledger';
 import type { IndustryResearch } from '../lib/types';
 
 interface Props {
@@ -30,7 +29,7 @@ const vendorName = entry.vendors.find((v) => v.toLowerCase().replace(/[^a-z0-9]+
   class="rounded-[3px] border border-edge bg-surface"
   data-year={entry.year}
   data-type={entry.type}
-  data-no={ledgerNo(index)}
+  data-no={entry.documentId.toUpperCase()}
 >
   <div class="flex h-full flex-col p-5">
     <div class="meta flex items-center justify-between gap-3 text-dim">
@@ -44,7 +43,7 @@ const vendorName = entry.vendors.find((v) => v.toLowerCase().replace(/[^a-z0-9]+
             class="h-4 w-4 rounded-[2px]"
           />
         )}
-        <span>{ledgerNo(index)} · {entry.publishDate}</span>
+        <span>{entry.documentId.toUpperCase()} · {entry.publishDate}</span>
       </span>
       <Tag type={entry.type} class="shrink-0" />
     </div>

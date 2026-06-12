@@ -25,4 +25,5 @@ export interface IndustryResearch {
   pdfUrl?: string
   nucleusUrl?: string
   primaryVendor?: string
+  market?: string[]
 }

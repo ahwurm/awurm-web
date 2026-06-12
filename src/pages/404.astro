@@ -1,38 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
 import Button from '../components/Button.astro';
+import Terminal from '../components/Terminal.astro';
 ---
 
 <Base title="Page not found — Alexander H. Wurm" description="Page not found." noindex>
   <section class="container-site flex flex-col items-center py-20 sm:py-28">
-    <div class="term w-full max-w-xl">
-      <div class="term-bar">
-        <span aria-hidden="true" class="flex gap-1.5">
-          <i class="h-2.5 w-2.5 rounded-full border border-edge"></i>
-          <i class="h-2.5 w-2.5 rounded-full border border-edge"></i>
-          <i class="h-2.5 w-2.5 rounded-full bg-error/70"></i>
-        </span>
-        <span class="ml-2">alex@awurm:~</span>
-      </div>
-      <div class="term-body">
-        <p><span class="t-prompt">$</span> <span class="t-cmd" id="nf-path">cd …</span></p>
-        <p class="t-out"><span class="text-error">bash: cd:</span> no such file or directory</p>
-        <p class="mt-3"><span class="t-prompt">$</span> <span class="t-cmd">echo $?</span></p>
-        <p class="t-out"><span class="t-num">404</span></p>
-        <p class="mt-3 t-out">
-          try <a href="/">cd ~</a> or <a href="/research/">cd /research</a>
-          <span class="t-cursor" aria-hidden="true"></span>
-        </p>
-      </div>
-    </div>
+    <Terminal intro="notfound" class="w-full max-w-xl" />
     <div class="mt-8 flex gap-3">
       <Button href="/">go home</Button>
       <Button href="/research/" variant="outline">browse research</Button>
     </div>
   </section>
-  <script>
-    // Echo the actually-requested path into the failed cd (textContent — never HTML).
-    const el = document.getElementById('nf-path');
-    if (el) el.textContent = `cd ${location.pathname}`;
-  </script>
 </Base>

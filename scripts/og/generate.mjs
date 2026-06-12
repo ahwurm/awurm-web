@@ -13,7 +13,7 @@ const cards = [
   { name: 'research', cmd: 'cd /research', out: true },
   { name: 'speaking', cmd: 'cd /speaking', out: true },
   { name: 'projects', cmd: 'cd /projects', out: true },
-  { name: 'about', cmd: 'cd /about', out: true },
+  { name: 'contact', cmd: 'cd /contact', out: true },
 ];
 
 const INK = '#e9ebec';

@@ -10,7 +10,7 @@ science and decision modeling at the University of Florida.
 - https://awurm.com/research/ — academic publications; industry research archive at /research/?tab=industry
 - https://awurm.com/speaking/ — webinars and conference talks
 - https://awurm.com/projects/ — software and research projects
-- https://awurm.com/about/ — bio, experience, education, contact
+- https://awurm.com/contact/ — bio, experience, education, contact
 
 ## Facts
 
@@ -19,6 +19,5 @@ science and decision modeling at the University of Florida.
 - Education: B.A. Economics (Dean's List) and B.S. Behavioral Cognitive Neuroscience (Summa Cum Laude), University of Florida, 2017–2021
 - Publication: "A model of timing in simple anticipatory decisions" — Wurm, Sokratous, Hawkins, Kvam — Proceedings of the Annual Meeting of the Cognitive Science Society, Vol. 43 (2021) — https://escholarship.org/uc/item/2fd149qd
 - Preprint: "Why am I always late? Modeling the cognitive mechanisms underlying anticipatory timing under uncertainty" — Sokratous, Hawkins, Wurm, Kvam — PsyArXiv — https://doi.org/10.31234/osf.io/v2gkc
-- Email: ahwurm1@gmail.com
 - LinkedIn: https://www.linkedin.com/in/alexander-w-374705132/
 - GitHub: https://github.com/ahwurm

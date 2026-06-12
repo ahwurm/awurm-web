@@ -26,8 +26,19 @@ const lastName = rest.pop();
           {profile.oneLiner}
         </p>
         <div class="mt-9 flex flex-wrap items-center gap-3">
-          <Button href="/research/">explore research</Button>
+          <button
+            id="decide-home"
+            type="button"
+            class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-[4px] bg-accent-fill px-5 py-2.5 font-mono text-[0.8rem] font-medium lowercase tracking-[0.02em] text-accent-ink transition-colors duration-150 hover:opacity-90 disabled:cursor-wait disabled:opacity-70"
+          >
+            decide for me →
+          </button>
+          <Button href="/research/" variant="outline">explore research</Button>
           <Button href="/projects/" variant="outline">explore projects</Button>
+        </div>
+        <div id="decide-fig" class="mt-7 hidden max-w-md">
+          <canvas id="decide-canvas" class="h-32 w-full"></canvas>
+          <p class="meta mt-1.5 text-dim">fig. — first trace to the boundary picks your page.</p>
         </div>
         <div class="mt-8">
           <SocialLinks />
@@ -44,4 +55,39 @@ const lastName = rest.pop();
       </Frame>
     </div>
   </section>
+
+  <script>
+    import { createRace } from '../lib/accumulator';
+
+    const btn = document.getElementById('decide-home') as HTMLButtonElement | null;
+    const fig = document.getElementById('decide-fig');
+    const canvas = document.getElementById('decide-canvas') as HTMLCanvasElement | null;
+    const DESTS: [string, string][] = [
+      ['research', '/research/'],
+      ['projects', '/projects/'],
+      ['speaking', '/speaking/'],
+      ['contact', '/contact/'],
+    ];
+    let busy = false;
+    btn?.addEventListener('click', () => {
+      if (busy || !canvas || !fig) return;
+      busy = true;
+      btn.disabled = true;
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        location.assign(DESTS[Math.floor(Math.random() * DESTS.length)][1]);
+        return;
+      }
+      fig.classList.remove('hidden');
+      const race = createRace(canvas, {
+        n: DESTS.length,
+        labels: DESTS.map(([l]) => l),
+        maxMs: 1900,
+        axes: false,
+        onCommit: (winner) => {
+          setTimeout(() => location.assign(DESTS[winner][1]), 420);
+        },
+      });
+      race.start();
+    });
+  </script>
 </Base>

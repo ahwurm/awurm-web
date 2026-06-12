@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) =>
-        !/\/(404|contact|talks|apps|applications)\/?$/.test(new URL(page).pathname),
+        !/\/(404|about|talks|apps|applications)\/?$/.test(new URL(page).pathname),
     }),
   ],
   vite: { plugins: [tailwindcss()] },

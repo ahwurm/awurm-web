@@ -9,7 +9,7 @@ interface Props {
   figure?: { src: ImageMetadata; label: string; alt: string };
 }
 const { publication, figure } = Astro.props;
-const { title, authors, venue, year, kind, url, pdfUrl } = publication.data;
+const { title, authors, venue, year, kind, label, url, pdfUrl } = publication.data;
 const { Content } = await render(publication);
 ---
 
@@ -19,7 +19,7 @@ const { Content } = await render(publication);
   >
     <div>
       <div class="flex items-baseline justify-between gap-3">
-        <span class="kicker text-dim">{kind === 'preprint' ? 'Preprint' : 'Peer-reviewed'}</span>
+        <span class="kicker text-dim">{label ?? (kind === 'preprint' ? 'Preprint' : 'Peer-reviewed')}</span>
         <span class="meta text-dim">{year}</span>
       </div>
       <h3 class="font-display mt-3.5 max-w-3xl text-[1.45rem] font-semibold leading-[1.2] tracking-tight">
