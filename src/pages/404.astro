@@ -1,13 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
 import Button from '../components/Button.astro';
-import Terminal from '../components/Terminal.astro';
 ---
 
 <Base title="Page not found — Alexander H. Wurm" description="Page not found." noindex>
-  <section class="container-site flex flex-col items-center py-20 sm:py-28">
-    <Terminal intro="notfound" class="w-full max-w-xl" />
-    <div class="mt-8 flex gap-3">
+  <section class="container-site flex flex-col items-center py-24 text-center sm:py-32">
+    <p class="kicker text-error">error · 404</p>
+    <h1 class="display-tight mt-4 text-[clamp(2.2rem,5vw,3.4rem)] font-semibold">Page not found</h1>
+    <p class="mt-4 max-w-md text-dim">
+      The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
+    </p>
+    <div class="mt-9 flex gap-3">
       <Button href="/">go home</Button>
       <Button href="/research/" variant="outline">browse research</Button>
     </div>
