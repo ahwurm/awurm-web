@@ -1,6 +1,7 @@
 ---
 title: "Nucleus Research: Unlock the Power of Unified Analytics and Drive Customer Value with Google Cloud Analytics"
 event: BrightTALK Webinar
+vendors: [google]
 format: webinar
 location: Virtual Event
 date: 2025-06-19

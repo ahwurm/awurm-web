@@ -1,6 +1,7 @@
 ---
 title: "Building the business case for AI-native translation"
 event: DeepL Webinar
+vendors: [deepl]
 format: webinar
 location: Virtual
 date: 2026-04-16

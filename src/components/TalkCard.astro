@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import Frame from './Frame.astro';
 import { isoDate, monthYearShort } from '../lib/dates';
 
 interface Props {
@@ -10,7 +9,7 @@ interface Props {
   plate?: number; // accepted for compatibility; no longer rendered
 }
 const { talk, variant = 'row' } = Astro.props;
-const { title, event, format, date, description, image, links } = talk.data;
+const { title, event, format, date, description, links, vendors } = talk.data;
 
 const actions = [
   links.video && { href: links.video, label: 'Watch recording ↗', external: true },
@@ -18,23 +17,24 @@ const actions = [
   links.slides && { href: links.slides, label: 'Download slides', external: false },
 ].filter(Boolean) as { href: string; label: string; external: boolean }[];
 
+// Participant vendor logos (build-time assets, same set as the research cards).
+const vendorIcons = import.meta.glob<{ default: ImageMetadata }>('../assets/vendors/*.png', { eager: true });
+const icons = vendors
+  .map((v) => ({ slug: v, img: vendorIcons[`../assets/vendors/${v}.png`]?.default }))
+  .filter((x) => x.img);
+
 const caption = `${event} · ${monthYearShort(date)}`;
 ---
 
 {
   variant === 'featured' ? (
     <article class="flex flex-col">
-      {image && (
-        <Frame label={`~/talks/${isoDate(date)}-title.png`}>
-          <Image
-            src={image}
-            alt={`Title slide: ${title}`}
-            width={760}
-            class="aspect-[16/9] w-full object-cover"
-          />
-        </Frame>
-      )}
-      <p class="kicker mt-5 text-dim">{caption}</p>
+      <div class="flex items-center gap-2.5">
+        {icons.map(({ slug, img }) => (
+          <Image src={img!} alt={`${slug} logo`} width={40} height={40} class="h-5 w-5 rounded-[2px]" />
+        ))}
+        <p class="kicker text-dim">{caption}</p>
+      </div>
       <h3 class="font-display mt-2.5 text-[1.35rem] font-semibold leading-[1.2] tracking-tight text-accent">{title}</h3>
       <p class="mt-2.5 text-[0.9375rem] leading-relaxed text-dim">{description}</p>
       {actions.length > 0 && (
@@ -54,21 +54,18 @@ const caption = `${event} · ${monthYearShort(date)}`;
     </article>
   ) : (
     <article class="border-b border-edge py-7">
-      <div class="grid items-start gap-x-8 gap-y-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] lg:grid-cols-[7.5rem_minmax(0,1fr)_13rem]">
+      <div class="grid items-start gap-x-8 gap-y-4 sm:grid-cols-[7.5rem_minmax(0,1fr)]">
         <div class="meta flex gap-x-4 text-dim sm:flex-col sm:gap-y-1.5">
           <span>{isoDate(date)}</span>
           <span class="uppercase">{format}</span>
         </div>
-        {image && (
-          <Image
-            src={image}
-            alt={`Title slide: ${title}`}
-            width={520}
-            class="w-full rounded-[3px] border border-edge object-cover sm:order-last sm:col-start-2 sm:max-w-[22rem] lg:col-start-auto lg:max-w-none"
-          />
-        )}
         <div>
-          <p class="kicker text-dim">{event}</p>
+          <div class="flex items-center gap-2.5">
+            {icons.map(({ slug, img }) => (
+              <Image src={img!} alt={`${slug} logo`} width={40} height={40} class="h-5 w-5 rounded-[2px]" />
+            ))}
+            <p class="kicker text-dim">{event}</p>
+          </div>
           <h3 class="font-display mt-2 text-[1.3rem] font-semibold leading-[1.2] tracking-tight text-accent">{title}</h3>
           <p class="mt-2 text-[0.9375rem] leading-relaxed text-dim">{description}</p>
           {actions.length > 0 && (

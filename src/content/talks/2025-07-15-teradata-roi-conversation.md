@@ -1,6 +1,7 @@
 ---
 title: "The ROI Conversation: Framing Data Projects for Executive Buy-In"
 event: Teradata Webinar
+vendors: [teradata]
 format: webinar
 location: Virtual Event
 date: 2025-07-15

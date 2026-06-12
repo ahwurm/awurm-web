@@ -1,6 +1,7 @@
 ---
 title: "Qlik Insider: The Real ROI of the Open Lakehouse"
 event: Qlik Webinar
+vendors: [qlik]
 format: webinar
 location: Virtual
 date: 2026-04-22

@@ -1,6 +1,7 @@
 ---
 title: "Unlock AI-Ready Data with the Intelligent Iceberg Lakehouse"
 event: Dremio Webinar
+vendors: [dremio]
 format: webinar
 location: Virtual Event
 date: 2025-06-24

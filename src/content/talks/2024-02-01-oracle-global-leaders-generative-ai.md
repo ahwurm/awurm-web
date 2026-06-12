@@ -1,6 +1,7 @@
 ---
 title: "Nucleus Generative AI: Transforming Enterprise Operations"
 event: Oracle Global Leaders Conference
+vendors: [oracle]
 format: conference
 location: Miami, FL
 date: 2024-02-01

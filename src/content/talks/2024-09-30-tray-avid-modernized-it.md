@@ -1,6 +1,7 @@
 ---
 title: "How AVID modernized IT operations with Tray"
 event: Tray.ai Webinar
+vendors: [tray-io]
 format: webinar
 location: Virtual Event
 date: 2024-09-30

@@ -1,6 +1,7 @@
 ---
 title: "BigQuery Data Analytics and AI Integration"
 event: Google BigQuery Webinar
+vendors: [google]
 format: webinar
 location: Virtual Event
 date: 2022-12-01

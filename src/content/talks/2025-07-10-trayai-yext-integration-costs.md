@@ -1,6 +1,7 @@
 ---
 title: "How Yext cut integration costs by 60% and delivered faster with fewer tools"
 event: Tray.ai Webinar
+vendors: [tray-io]
 format: webinar
 location: Virtual Event
 date: 2025-07-10

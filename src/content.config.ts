@@ -21,6 +21,7 @@ const talks = defineCollection({
         })
         .default({}),
       needsVerification: z.string().optional(),
+    vendors: z.array(z.string()).default([]), // participant vendor slugs → logo row
     }),
 });
 
