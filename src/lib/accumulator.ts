@@ -248,6 +248,22 @@ export const createRace = (canvas: HTMLCanvasElement, opts: RaceOpts = {}): Race
       if (traces[0].pts.length * STEP > maxMs - 220) for (const tr of traces) tr.mu *= 1.06;
       crossed = step();
     }
+    // Time's up with no first passage (~1% of trials): force-commit the
+    // leading trace so the figure always resolves and onCommit always fires.
+    if (!crossed && elapsed >= maxMs) {
+      let lead = 0;
+      let best = -Infinity;
+      traces.forEach((tr, i) => {
+        const v = tr.pts[tr.pts.length - 1];
+        if (v > best) {
+          best = v;
+          lead = i;
+        }
+      });
+      winner = lead;
+      crossX = Math.min(elapsed, maxMs);
+      crossed = true;
+    }
     draw();
     if (crossed) {
       active = false;

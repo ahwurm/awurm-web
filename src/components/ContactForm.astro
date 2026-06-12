@@ -91,6 +91,7 @@ const emailjsReady = Boolean(serviceId && templateId && publicKey);
       const el = document.getElementById(`cf-${name}-error`)!;
       el.textContent = err;
       el.classList.toggle('hidden', !err);
+      (document.getElementById(`cf-${name}`) as HTMLElement).setAttribute('aria-invalid', String(Boolean(err)));
       if (err && !invalid) {
         invalid = true;
         (document.getElementById(`cf-${name}`) as HTMLElement).focus();
