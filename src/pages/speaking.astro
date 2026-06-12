@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Section from '../components/Section.astro';
 import TalkCard from '../components/TalkCard.astro';
-import SpeakerBio from '../components/SpeakerBio.astro';
 import { isUpcoming, groupByYear } from '../lib/dates';
 import { profile } from '../data/profile';
 
@@ -50,9 +49,6 @@ const description =
           </div>
         ))
       }
-    </div>
-    <div class="mt-12">
-      <SpeakerBio />
     </div>
   </Section>
 </Base>
