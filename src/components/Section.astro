@@ -1,0 +1,44 @@
+---
+/**
+ * Editorial section: hairline rule, then a numbered kicker row and a large
+ * serif title; content settles in below (see global.css .acc-* rules; the
+ * IntersectionObserver lives in Base.astro). Without JS or with reduced
+ * motion everything renders instantly. `banded` is accepted for backwards
+ * compatibility but the editorial layout keeps one continuous paper.
+ */
+interface Props {
+  title?: string;
+  sub?: string;
+  num?: string;
+  banded?: boolean;
+  tight?: boolean; // reduced top padding (page h1 directly above)
+  id?: string;
+  class?: string;
+}
+const { title, sub, num, tight = false, id, class: className = '' } = Astro.props;
+---
+
+<section id={id} class:list={[className]}>
+  <div class:list={["container-site", tight ? "pb-16 pt-2 sm:pb-24 sm:pt-3" : "py-16 sm:py-24"]} data-acc>
+    {title && <div class="acc-rule" aria-hidden="true" />}
+    {
+      title && (
+        <div class="acc-title mt-7 flex items-baseline justify-between gap-6">
+          <h2 class="display-tight text-[clamp(1.8rem,3.8vw,2.6rem)] font-semibold">
+            <span class="text-accent" aria-hidden="true">##</span>
+            {title}
+          </h2>
+          {num && (
+            <span class="meta text-dim" aria-hidden="true">
+              {num}
+            </span>
+          )}
+        </div>
+      )
+    }
+    <div class="acc-body">
+      {sub && <p class="mt-5 max-w-[58ch] text-[1.0625rem] leading-relaxed text-dim">{sub}</p>}
+      <slot />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,5277 @@
+[
+  {
+    "title": "Azure OpenAI Service equips apps with GPT-3",
+    "documentId": "v179",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-11-19",
+    "technologies": [
+      "AI",
+      "GPT",
+      "Cloud"
+    ],
+    "vendors": [
+      "Microsoft",
+      "OpenAI"
+    ],
+    "keyFindings": [
+      "GPT-3 integration",
+      "AI-powered applications"
+    ],
+    "roiClaim": null,
+    "summary": "Azure OpenAI Service enables applications to leverage GPT-3 capabilities.",
+    "pdfUrl": "/references/v179 - Azure OpenAI Service equips apps with GPT-3.pdf",
+    "primaryVendor": "microsoft",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "Database technology outlook survey",
+    "documentId": "w102",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-06-24",
+    "technologies": [
+      "Database",
+      "Cloud Database",
+      "Analytics"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Database adoption trends",
+      "Technology outlook insights"
+    ],
+    "roiClaim": null,
+    "summary": "Survey insights on database technology outlook and adoption trends.",
+    "pdfUrl": "/references/w102 - Database technology outlook survey.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "SAP expands cloud partnership with IBM",
+    "documentId": "v101",
+    "type": "Announcement",
+    "year": 2021,
+    "quarter": "Q3",
+    "publishDate": "2021-08-02",
+    "technologies": [
+      "Cloud",
+      "Enterprise Software"
+    ],
+    "vendors": [
+      "SAP",
+      "IBM"
+    ],
+    "keyFindings": [
+      "Strategic cloud partnership expansion",
+      "Enhanced enterprise cloud solutions"
+    ],
+    "roiClaim": null,
+    "summary": "SAP and IBM expand their cloud partnership to deliver enhanced enterprise solutions.",
+    "pdfUrl": "/references/v101 - SAP expands cloud partnership with IBM.pdf",
+    "primaryVendor": "ibm",
+    "market": [
+      "erp"
+    ]
+  },
+  {
+    "title": "QAD ROI case study - Noble Biomaterials",
+    "documentId": "v118",
+    "type": "ROI Study",
+    "year": 2021,
+    "quarter": "Q3",
+    "publishDate": "2021-08-02",
+    "technologies": [
+      "ERP",
+      "Manufacturing"
+    ],
+    "vendors": [
+      "QAD"
+    ],
+    "keyFindings": [
+      "Manufacturing efficiency improvements",
+      "Operational cost reduction"
+    ],
+    "roiClaim": null,
+    "summary": "QAD implementation at Noble Biomaterials demonstrates significant ROI in manufacturing operations.",
+    "pdfUrl": "/references/v118 - QAD ROI case study - Noble Biomaterials.pdf",
+    "primaryVendor": "qad",
+    "market": [
+      "erp"
+    ]
+  },
+  {
+    "title": "Salesforce acquires Servicetrace pairing MuleSoft with RPA",
+    "documentId": "v131",
+    "type": "Announcement",
+    "year": 2021,
+    "quarter": "Q3",
+    "publishDate": "2021-08-17",
+    "technologies": [
+      "RPA",
+      "Integration",
+      "Automation"
+    ],
+    "vendors": [
+      "Salesforce",
+      "MuleSoft",
+      "Servicetrace"
+    ],
+    "keyFindings": [
+      "RPA integration capabilities",
+      "Automated workflow solutions"
+    ],
+    "roiClaim": null,
+    "summary": "Salesforce's acquisition of Servicetrace enhances MuleSoft's RPA capabilities.",
+    "pdfUrl": "/references/v131 - Salesforce acquires Servicetrace pairing MuleSoft with RPA.pdf",
+    "primaryVendor": "salesforce",
+    "market": [
+      "rpa",
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Oracle NetSuite slashes operational complexity",
+    "documentId": "v133",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q3",
+    "publishDate": "2021-08-20",
+    "technologies": [
+      "ERP",
+      "Cloud",
+      "Operations"
+    ],
+    "vendors": [
+      "Oracle",
+      "NetSuite"
+    ],
+    "keyFindings": [
+      "Operational complexity reduction",
+      "Cloud ERP benefits"
+    ],
+    "roiClaim": null,
+    "summary": "Oracle NetSuite reduces operational complexity for mid-market businesses.",
+    "pdfUrl": "/references/v133 - Oracle NetSuite slashes operational complexity.pdf",
+    "primaryVendor": "netsuite",
+    "market": [
+      "erp"
+    ]
+  },
+  {
+    "title": "Fivetran ROI case study - Oldcastle Infrastructure",
+    "documentId": "v137",
+    "type": "ROI Study",
+    "year": 2021,
+    "quarter": "Q3",
+    "publishDate": "2021-08-26",
+    "technologies": [
+      "Data Integration",
+      "ETL",
+      "Analytics"
+    ],
+    "vendors": [
+      "Fivetran"
+    ],
+    "keyFindings": [
+      "Data integration efficiency",
+      "Analytics acceleration"
+    ],
+    "roiClaim": null,
+    "summary": "Fivetran implementation at Oldcastle Infrastructure demonstrates ROI in data integration.",
+    "pdfUrl": "/references/v137 - Fivetran ROI case study - Oldcastle Infrastructure.pdf",
+    "primaryVendor": "fivetran",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "IBM announces Telum processor featuring AI acceleration",
+    "documentId": "v144",
+    "type": "Announcement",
+    "year": 2021,
+    "quarter": "Q3",
+    "publishDate": "2021-09-16",
+    "technologies": [
+      "AI",
+      "Processors",
+      "Hardware"
+    ],
+    "vendors": [
+      "IBM"
+    ],
+    "keyFindings": [
+      "AI acceleration capabilities",
+      "Hardware innovation"
+    ],
+    "roiClaim": null,
+    "summary": "IBM's Telum processor introduces AI acceleration for enterprise workloads.",
+    "pdfUrl": "/references/v144 - IBM announces Telum processor featuring AI acceleration.pdf",
+    "primaryVendor": "ibm",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "Connecting finance and operations with CCH Tagetik",
+    "documentId": "v149",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-10-07",
+    "technologies": [
+      "Finance",
+      "Operations",
+      "Integration"
+    ],
+    "vendors": [
+      "CCH Tagetik"
+    ],
+    "keyFindings": [
+      "Finance-operations integration",
+      "Unified reporting"
+    ],
+    "roiClaim": null,
+    "summary": "CCH Tagetik enables seamless integration between finance and operations.",
+    "pdfUrl": "/references/v149 - Connecting finance and operations with CCH Tagetik.pdf",
+    "primaryVendor": "cch-tagetik",
+    "market": [
+      "cpm"
+    ]
+  },
+  {
+    "title": "LCAP Technology Value Matrix 2021",
+    "documentId": "v154",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-10-05",
+    "technologies": [
+      "LCAP",
+      "Low-Code",
+      "Development"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Low-code platform evaluation",
+      "Market positioning"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of Low-Code Application Platform vendors and market positioning.",
+    "pdfUrl": "/references/v154 - LCAP Technology Value Matrix 2021.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "lcap"
+    ]
+  },
+  {
+    "title": "Tableau and dotData empower no-code predictive modeling",
+    "documentId": "v155",
+    "type": "Announcement",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-10-07",
+    "technologies": [
+      "Analytics",
+      "AI",
+      "Predictive Modeling"
+    ],
+    "vendors": [
+      "Tableau",
+      "dotData"
+    ],
+    "keyFindings": [
+      "No-code predictive modeling",
+      "Analytics democratization"
+    ],
+    "roiClaim": null,
+    "summary": "Tableau and dotData partnership enables no-code predictive modeling capabilities.",
+    "pdfUrl": "/references/v155 - Tableau and dotData empower no-code predictive modeling.pdf",
+    "primaryVendor": "tableau",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Domo offers scalable BI and analytics with Domo Sandbox",
+    "documentId": "v157",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-10-07",
+    "technologies": [
+      "BI",
+      "Analytics",
+      "Cloud"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [
+      "Scalable BI solutions",
+      "Sandbox environment benefits"
+    ],
+    "roiClaim": null,
+    "summary": "Domo Sandbox provides scalable BI and analytics capabilities for enterprises.",
+    "pdfUrl": "/references/v157 - Domo offers scalable BI and analytics with Domo Sandbox.pdf",
+    "primaryVendor": "domo",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Oracle HeatWave accelerates MySQL",
+    "documentId": "v158",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-10-26",
+    "technologies": [
+      "Database",
+      "MySQL",
+      "Analytics"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [
+      "MySQL performance acceleration",
+      "Integrated analytics"
+    ],
+    "roiClaim": null,
+    "summary": "Oracle HeatWave significantly accelerates MySQL analytics performance.",
+    "pdfUrl": "/references/v158 - Oracle HeatWave accelerates MySQL.pdf",
+    "primaryVendor": "oracle",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Nucleus Top Ten Predictions for 2022",
+    "documentId": "v161",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-10-11",
+    "technologies": [
+      "Market Trends",
+      "Technology Predictions"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "2022 technology trends",
+      "Market predictions"
+    ],
+    "roiClaim": null,
+    "summary": "Nucleus Research's top ten predictions for technology trends in 2022.",
+    "pdfUrl": "/references/v161 - Nucleus Top Ten Predictions for 2022.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "general"
+    ]
+  },
+  {
+    "title": "OutSystems slashes app development costs",
+    "documentId": "v169",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-10-26",
+    "technologies": [
+      "Low-Code",
+      "Development",
+      "Cost Reduction"
+    ],
+    "vendors": [
+      "OutSystems"
+    ],
+    "keyFindings": [
+      "Development cost reduction",
+      "Low-code efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "OutSystems demonstrates significant cost reductions in application development.",
+    "pdfUrl": "/references/v169 - OutSystems slashes app development costs.pdf",
+    "primaryVendor": "outsystems",
+    "market": [
+      "lcap"
+    ]
+  },
+  {
+    "title": "Embedded Analytics Technology Value Matrix 2021",
+    "documentId": "v171",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-11-02",
+    "technologies": [
+      "Embedded Analytics",
+      "BI",
+      "Analytics"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Embedded analytics market evaluation",
+      "Vendor positioning"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of embedded analytics vendors and market positioning.",
+    "pdfUrl": "/references/v171 - Embedded Analytics Technology Value Matrix 2021.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "embedded-analytics"
+    ]
+  },
+  {
+    "title": "OutSystems unites technology stacks",
+    "documentId": "v173",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-11-08",
+    "technologies": [
+      "Integration",
+      "Technology Stack",
+      "Low-Code"
+    ],
+    "vendors": [
+      "OutSystems"
+    ],
+    "keyFindings": [
+      "Technology stack unification",
+      "Integration benefits"
+    ],
+    "roiClaim": null,
+    "summary": "OutSystems enables unification of diverse technology stacks.",
+    "pdfUrl": "/references/v173 - OutSystems unites technology stacks.pdf",
+    "primaryVendor": "outsystems",
+    "market": [
+      "lcap"
+    ]
+  },
+  {
+    "title": "Alteryx automates BI with Hyper Anna",
+    "documentId": "v174",
+    "type": "Announcement",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-11-08",
+    "technologies": [
+      "BI",
+      "Automation",
+      "Analytics"
+    ],
+    "vendors": [
+      "Alteryx",
+      "Hyper Anna"
+    ],
+    "keyFindings": [
+      "BI automation capabilities",
+      "Analytics efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "Alteryx and Hyper Anna partnership automates business intelligence processes.",
+    "pdfUrl": "/references/v174 - Alteryx automates BI with Hyper Anna.pdf",
+    "primaryVendor": "alteryx",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Six trends in data and analytics for 2022",
+    "documentId": "v178",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-11-19",
+    "technologies": [
+      "Data",
+      "Analytics",
+      "Trends"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Data analytics trends",
+      "2022 market outlook"
+    ],
+    "roiClaim": null,
+    "summary": "Six key trends shaping data and analytics landscape for 2022.",
+    "pdfUrl": "/references/v178 - Six trends in data and analytics for 2022.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "analytics",
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Azure OpenAI Service equips apps with GPT-3",
+    "documentId": "v179",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-11-19",
+    "technologies": [
+      "AI",
+      "GPT",
+      "Cloud"
+    ],
+    "vendors": [
+      "Microsoft",
+      "OpenAI"
+    ],
+    "keyFindings": [
+      "GPT-3 integration",
+      "AI-powered applications"
+    ],
+    "roiClaim": null,
+    "summary": "Azure OpenAI Service enables applications to leverage GPT-3 capabilities.",
+    "pdfUrl": "/references/v179 - Azure OpenAI Service equips apps with GPT-3.pdf",
+    "primaryVendor": "microsoft",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "CPQ Technology Value Matrix 2021",
+    "documentId": "v182",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-11-22",
+    "technologies": [
+      "CPQ",
+      "Sales",
+      "Configuration"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "CPQ market evaluation",
+      "Vendor positioning"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of Configure Price Quote (CPQ) vendors and market positioning.",
+    "pdfUrl": "/references/v182 - CPQ Technology Value Matrix 2021.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "cpq"
+    ]
+  },
+  {
+    "title": "Hot companies to watch in 2022",
+    "documentId": "v185",
+    "type": "Research Note",
+    "year": 2021,
+    "quarter": "Q4",
+    "publishDate": "2021-12-01",
+    "technologies": [
+      "Market Trends",
+      "Emerging Companies"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Emerging technology companies",
+      "2022 market opportunities"
+    ],
+    "roiClaim": null,
+    "summary": "Identification of hot companies to watch in the technology market for 2022.",
+    "pdfUrl": "/references/v185 - Hot companies to watch in 2022.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "general"
+    ]
+  },
+  {
+    "title": "The value of IBM Cloud for Financial Services",
+    "documentId": "w10",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q1",
+    "publishDate": "2022-01-27",
+    "technologies": [
+      "Cloud",
+      "Financial Services"
+    ],
+    "vendors": [
+      "IBM"
+    ],
+    "keyFindings": [
+      "Financial services cloud value",
+      "Compliance capabilities"
+    ],
+    "roiClaim": null,
+    "summary": "IBM Cloud for Financial Services provides specialized value for financial institutions.",
+    "pdfUrl": "/references/w10 - The value of IBM Cloud for Financial Services.pdf",
+    "primaryVendor": "ibm",
+    "market": [
+      "iaas"
+    ]
+  },
+  {
+    "title": "Oracle apps unite via AI-driven Analytics",
+    "documentId": "w2",
+    "type": "Announcement",
+    "year": 2022,
+    "quarter": "Q1",
+    "publishDate": "2022-01-15",
+    "technologies": [
+      "AI",
+      "Analytics",
+      "Enterprise Apps"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [
+      "AI-driven analytics integration",
+      "Application unification"
+    ],
+    "roiClaim": null,
+    "summary": "Oracle applications leverage AI-driven analytics for unified insights.",
+    "pdfUrl": "/references/w2 - Oracle apps unite via AI-driven Analytics.pdf",
+    "primaryVendor": "oracle",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Database and data warehouse trends for 2022",
+    "documentId": "w8",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q1",
+    "publishDate": "2022-01-20",
+    "technologies": [
+      "Database",
+      "Data Warehouse",
+      "Trends"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Database technology trends",
+      "Data warehouse evolution"
+    ],
+    "roiClaim": null,
+    "summary": "Key trends shaping database and data warehouse technologies in 2022.",
+    "pdfUrl": "/references/w8 - Database and data warehouse trends for 2022.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Elastic ROI case study - Multi-line Insurer",
+    "documentId": "w18",
+    "type": "ROI Study",
+    "year": 2022,
+    "quarter": "Q1",
+    "publishDate": "2022-02-15",
+    "technologies": [
+      "Search",
+      "Analytics",
+      "Insurance"
+    ],
+    "vendors": [
+      "Elastic"
+    ],
+    "keyFindings": [
+      "Search analytics ROI",
+      "Insurance use cases"
+    ],
+    "roiClaim": null,
+    "summary": "Elastic implementation at multi-line insurer demonstrates search analytics ROI.",
+    "pdfUrl": "/references/w18 - Elastic ROI case study - Multi-line Insurer.pdf",
+    "primaryVendor": "elastic"
+  },
+  {
+    "title": "Data Warehouse Technology Value Matrix 2022",
+    "documentId": "w21",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q1",
+    "publishDate": "2022-02-20",
+    "technologies": [
+      "Data Warehouse",
+      "Analytics",
+      "Cloud"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Data warehouse market evaluation",
+      "Cloud migration trends"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of data warehouse vendors and market positioning for 2022.",
+    "pdfUrl": "/references/w21 - Data Warehouse Technology Value Matrix 2022.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Alteryx Analytics Cloud makes complex insights easy",
+    "documentId": "w31",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q1",
+    "publishDate": "2022-03-01",
+    "technologies": [
+      "Analytics",
+      "Cloud",
+      "Self-Service"
+    ],
+    "vendors": [
+      "Alteryx"
+    ],
+    "keyFindings": [
+      "Analytics simplification",
+      "Cloud-based insights"
+    ],
+    "roiClaim": null,
+    "summary": "Alteryx Analytics Cloud simplifies complex analytics for business users.",
+    "pdfUrl": "/references/w31 - Alteryx Analytics Cloud makes complex insights easy.pdf",
+    "primaryVendor": "alteryx",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "OneStream cuts the monthly close in half",
+    "documentId": "w39",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q1",
+    "publishDate": "2022-03-15",
+    "technologies": [
+      "Finance",
+      "CPM",
+      "Automation"
+    ],
+    "vendors": [
+      "OneStream"
+    ],
+    "keyFindings": [
+      "Financial close acceleration",
+      "Process automation"
+    ],
+    "roiClaim": "50% reduction in monthly close time",
+    "summary": "OneStream enables 50% reduction in monthly financial close processes.",
+    "pdfUrl": "/references/w39 - OneStream cuts the monthly close in half.pdf",
+    "primaryVendor": "onestream",
+    "market": [
+      "cpm"
+    ]
+  },
+  {
+    "title": "The ROI of Snowflake",
+    "documentId": "w46",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-04-01",
+    "technologies": [
+      "Data Warehouse",
+      "Cloud",
+      "Analytics"
+    ],
+    "vendors": [
+      "Snowflake"
+    ],
+    "keyFindings": [
+      "Data warehouse ROI",
+      "Cloud scalability benefits"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of Snowflake's return on investment for data warehousing.",
+    "pdfUrl": "/references/w46 - The ROI of Snowflake.pdf",
+    "primaryVendor": "snowflake",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Domo's ROI as a data platform",
+    "documentId": "w52",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-04-15",
+    "technologies": [
+      "Data Platform",
+      "BI",
+      "Analytics"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [
+      "Data platform ROI",
+      "Business intelligence value"
+    ],
+    "roiClaim": null,
+    "summary": "Domo's ROI as a comprehensive data platform for business intelligence.",
+    "pdfUrl": "/references/w52 - Domo's ROI as a data platform.pdf",
+    "primaryVendor": "domo",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Elastic ROI case study - Telecom Provider",
+    "documentId": "w56",
+    "type": "ROI Study",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-05-01",
+    "technologies": [
+      "Search",
+      "Analytics",
+      "Telecom"
+    ],
+    "vendors": [
+      "Elastic"
+    ],
+    "keyFindings": [
+      "Telecom search analytics",
+      "Operational efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "Elastic implementation at telecom provider demonstrates search analytics ROI.",
+    "pdfUrl": "/references/w56 - Elastic ROI case study - Telecom Provider.pdf",
+    "primaryVendor": "elastic"
+  },
+  {
+    "title": "Best vendors set to execute on 2022 iPaaS market trends",
+    "documentId": "w57",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-05-05",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "Market Trends"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "iPaaS market trends",
+      "Vendor execution capabilities"
+    ],
+    "roiClaim": null,
+    "summary": "Analysis of vendors best positioned to execute on iPaaS market trends in 2022.",
+    "pdfUrl": "/references/w57 - Best vendors set to execute on 2022 iPaaS market trends.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Red Hat partners with NVIDIA",
+    "documentId": "w67",
+    "type": "Announcement",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-05-20",
+    "technologies": [
+      "AI",
+      "GPU",
+      "Cloud"
+    ],
+    "vendors": [
+      "Red Hat",
+      "NVIDIA"
+    ],
+    "keyFindings": [
+      "AI infrastructure partnership",
+      "GPU acceleration"
+    ],
+    "roiClaim": null,
+    "summary": "Red Hat and NVIDIA partnership enhances AI infrastructure capabilities.",
+    "pdfUrl": "/references/w67 - Red Hat partners with NVIDIA.pdf",
+    "primaryVendor": "red-hat",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "iPaaS Technology Value Matrix 2022",
+    "documentId": "w70",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-05-25",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "Cloud"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "iPaaS market evaluation",
+      "Integration platform positioning"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of iPaaS vendors and market positioning for 2022.",
+    "pdfUrl": "/references/w70 - iPaaS Technology Value Matrix 2022.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "SAS ROI case study - Hospitality Provider",
+    "documentId": "w78",
+    "type": "ROI Study",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-06-01",
+    "technologies": [
+      "Analytics",
+      "Hospitality",
+      "AI"
+    ],
+    "vendors": [
+      "SAS"
+    ],
+    "keyFindings": [
+      "Hospitality analytics ROI",
+      "Customer insights"
+    ],
+    "roiClaim": null,
+    "summary": "SAS implementation at hospitality provider demonstrates analytics ROI.",
+    "pdfUrl": "/references/w78 - SAS ROI case study - Hospitality Provider.pdf",
+    "primaryVendor": "sas",
+    "market": [
+      "marketing-automation"
+    ]
+  },
+  {
+    "title": "Simplify automation with Tray.io",
+    "documentId": "w83",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-06-10",
+    "technologies": [
+      "Automation",
+      "Integration",
+      "Workflow"
+    ],
+    "vendors": [
+      "Tray.io"
+    ],
+    "keyFindings": [
+      "Automation simplification",
+      "Workflow optimization"
+    ],
+    "roiClaim": null,
+    "summary": "Tray.io simplifies enterprise automation and workflow management.",
+    "pdfUrl": "/references/w83 - Simplify automation with Tray.io.pdf",
+    "primaryVendor": "tray-io",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Analytics Technology Value Matrix 2022",
+    "documentId": "w86",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-06-15",
+    "technologies": [
+      "Analytics",
+      "BI",
+      "Data Science"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Analytics market evaluation",
+      "BI platform positioning"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of analytics technology vendors and market positioning for 2022.",
+    "pdfUrl": "/references/w86 - Analytics Technology Value Matrix 2022.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "The ROI of Oracle Integration Cloud",
+    "documentId": "w97",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-06-20",
+    "technologies": [
+      "Integration",
+      "Cloud",
+      "iPaaS"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [
+      "Integration cloud ROI",
+      "iPaaS value proposition"
+    ],
+    "roiClaim": null,
+    "summary": "Oracle Integration Cloud ROI analysis for enterprise integration scenarios.",
+    "pdfUrl": "/references/w97 - The ROI of Oracle Integration Cloud.pdf",
+    "primaryVendor": "oracle",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Run queries over 75 percent faster with BigQuery",
+    "documentId": "w101",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-06-22",
+    "technologies": [
+      "Database",
+      "Analytics",
+      "Cloud"
+    ],
+    "vendors": [
+      "Google"
+    ],
+    "keyFindings": [
+      "Query performance improvement",
+      "Analytics acceleration"
+    ],
+    "roiClaim": "75% faster query performance",
+    "summary": "Google BigQuery delivers 75% faster query performance for analytics workloads.",
+    "pdfUrl": "/references/w101 - Run queries over 75 percent faster with BigQuery.pdf",
+    "primaryVendor": "google",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Database technology outlook survey",
+    "documentId": "w102",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q2",
+    "publishDate": "2022-06-24",
+    "technologies": [
+      "Database",
+      "Survey",
+      "Market Trends"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Database adoption trends",
+      "Technology preferences"
+    ],
+    "roiClaim": null,
+    "summary": "Survey insights on database technology outlook and adoption trends.",
+    "pdfUrl": "/references/w102 - Database technology outlook survey.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Incorta ROI case study - Bank and Financial Services Provider",
+    "documentId": "w108",
+    "type": "ROI Study",
+    "year": 2022,
+    "quarter": "Q3",
+    "publishDate": "2022-07-12",
+    "technologies": [
+      "Analytics",
+      "Banking",
+      "Financial Services"
+    ],
+    "vendors": [
+      "Incorta"
+    ],
+    "keyFindings": [
+      "Banking analytics ROI",
+      "Financial services insights"
+    ],
+    "roiClaim": null,
+    "summary": "Incorta implementation at bank demonstrates analytics ROI for financial services.",
+    "pdfUrl": "/references/w108 - Incorta ROI case study - Bank and Financial Services Provider.pdf",
+    "primaryVendor": "incorta",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Databricks open sources Delta Lake",
+    "documentId": "w117",
+    "type": "Announcement",
+    "year": 2022,
+    "quarter": "Q3",
+    "publishDate": "2022-07-15",
+    "technologies": [
+      "Data Lake",
+      "Open Source",
+      "Analytics"
+    ],
+    "vendors": [
+      "Databricks"
+    ],
+    "keyFindings": [
+      "Open source strategy",
+      "Data lake innovation"
+    ],
+    "roiClaim": null,
+    "summary": "Databricks open sources Delta Lake to accelerate data lake adoption.",
+    "pdfUrl": "/references/w117 - Databricks open sources Delta Lake.pdf",
+    "primaryVendor": "databricks",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Database Technology Value Matrix 2022",
+    "documentId": "w121",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q3",
+    "publishDate": "2022-07-25",
+    "technologies": [
+      "Database",
+      "Cloud",
+      "Analytics"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Database market evaluation",
+      "Cloud database positioning"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of database technology vendors and market positioning for 2022.",
+    "pdfUrl": "/references/w121 - Database Technology Value Matrix 2022.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Zuora launches Secure Data Share with Snowflake",
+    "documentId": "w132",
+    "type": "Announcement",
+    "year": 2022,
+    "quarter": "Q3",
+    "publishDate": "2022-08-05",
+    "technologies": [
+      "Data Sharing",
+      "Subscription",
+      "Analytics"
+    ],
+    "vendors": [
+      "Zuora",
+      "Snowflake"
+    ],
+    "keyFindings": [
+      "Secure data sharing",
+      "Subscription analytics"
+    ],
+    "roiClaim": null,
+    "summary": "Zuora and Snowflake partnership enables secure data sharing for subscription analytics.",
+    "pdfUrl": "/references/w132 - Zuora launches Secure Data Share with Snowflake.pdf",
+    "primaryVendor": "zuora",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Oracle Database empowers innovation in healthcare",
+    "documentId": "w138",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q3",
+    "publishDate": "2022-08-25",
+    "technologies": [
+      "Database",
+      "Healthcare",
+      "Innovation"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [
+      "Healthcare database innovation",
+      "Patient data management"
+    ],
+    "roiClaim": null,
+    "summary": "Oracle Database enables healthcare innovation through advanced data management.",
+    "pdfUrl": "/references/w138 - Oracle Database empowers innovation in healthcare.pdf",
+    "primaryVendor": "oracle",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Teradata launches VantageCloud Lake Edition",
+    "documentId": "w140",
+    "type": "Announcement",
+    "year": 2022,
+    "quarter": "Q3",
+    "publishDate": "2022-08-29",
+    "technologies": [
+      "Data Lake",
+      "Cloud",
+      "Analytics"
+    ],
+    "vendors": [
+      "Teradata"
+    ],
+    "keyFindings": [
+      "Cloud data lake capabilities",
+      "Analytics integration"
+    ],
+    "roiClaim": null,
+    "summary": "Teradata VantageCloud Lake Edition combines data lake and analytics capabilities.",
+    "pdfUrl": "/references/w140 - Teradata launches VantageCloud Lake Edition.pdf",
+    "primaryVendor": "teradata",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Cloudera releases SaaS data lakehouse",
+    "documentId": "w146",
+    "type": "Announcement",
+    "year": 2022,
+    "quarter": "Q3",
+    "publishDate": "2022-09-10",
+    "technologies": [
+      "Data Lakehouse",
+      "SaaS",
+      "Analytics"
+    ],
+    "vendors": [
+      "Cloudera"
+    ],
+    "keyFindings": [
+      "SaaS data lakehouse",
+      "Unified analytics"
+    ],
+    "roiClaim": null,
+    "summary": "Cloudera launches SaaS data lakehouse for unified analytics workloads.",
+    "pdfUrl": "/references/w146 - Cloudera releases SaaS data lakehouse.pdf",
+    "primaryVendor": "cloudera",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Why large enterprises choose Kinaxis",
+    "documentId": "w157",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q3",
+    "publishDate": "2022-09-20",
+    "technologies": [
+      "Supply Chain",
+      "Planning",
+      "Enterprise"
+    ],
+    "vendors": [
+      "Kinaxis"
+    ],
+    "keyFindings": [
+      "Enterprise supply chain planning",
+      "Large enterprise adoption"
+    ],
+    "roiClaim": null,
+    "summary": "Analysis of why large enterprises choose Kinaxis for supply chain planning.",
+    "pdfUrl": "/references/w157 - Why large enterprises choose Kinaxis.pdf",
+    "primaryVendor": "kinaxis",
+    "market": [
+      "scp"
+    ]
+  },
+  {
+    "title": "Databricks lowers enterprise compute costs by 20 percent",
+    "documentId": "w159",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q3",
+    "publishDate": "2022-09-25",
+    "technologies": [
+      "Analytics",
+      "Cloud",
+      "Cost Optimization"
+    ],
+    "vendors": [
+      "Databricks"
+    ],
+    "keyFindings": [
+      "Compute cost reduction",
+      "Analytics optimization"
+    ],
+    "roiClaim": "20% reduction in enterprise compute costs",
+    "summary": "Databricks reduces enterprise compute costs by 20 percent through optimization.",
+    "pdfUrl": "/references/w159 - Databricks lowers enterprise compute costs by 20 percent.pdf",
+    "primaryVendor": "databricks",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Nucleus Top Ten Predictions for 2023",
+    "documentId": "w161",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q4",
+    "publishDate": "2022-10-15",
+    "technologies": [
+      "Market Trends",
+      "Technology Predictions"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "2023 technology trends",
+      "Market predictions"
+    ],
+    "roiClaim": null,
+    "summary": "Nucleus Research's top ten predictions for technology trends in 2023.",
+    "pdfUrl": "/references/w161 - Nucleus Top Ten Predictions for 2023.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "general"
+    ]
+  },
+  {
+    "title": "Adobe Marketo Engage ROI case study - Multinational Conglomerate",
+    "documentId": "w165",
+    "type": "ROI Study",
+    "year": 2022,
+    "quarter": "Q4",
+    "publishDate": "2022-10-20",
+    "technologies": [
+      "Marketing Automation",
+      "CRM",
+      "Enterprise"
+    ],
+    "vendors": [
+      "Adobe",
+      "Marketo"
+    ],
+    "keyFindings": [
+      "Marketing automation ROI",
+      "Enterprise marketing efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "Adobe Marketo Engage ROI case study at multinational conglomerate.",
+    "pdfUrl": "/references/w165 - Adobe Marketo Engage ROI case study - Multinational Conglomerate.pdf",
+    "primaryVendor": "adobe",
+    "market": [
+      "marketing-automation"
+    ]
+  },
+  {
+    "title": "Why businesses embed with Infor Birst",
+    "documentId": "w176",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q4",
+    "publishDate": "2022-11-01",
+    "technologies": [
+      "Embedded Analytics",
+      "BI",
+      "Integration"
+    ],
+    "vendors": [
+      "Infor",
+      "Birst"
+    ],
+    "keyFindings": [
+      "Embedded analytics adoption",
+      "Business integration"
+    ],
+    "roiClaim": null,
+    "summary": "Analysis of why businesses choose Infor Birst for embedded analytics.",
+    "pdfUrl": "/references/w176 - Why businesses embed with Infor Birst.pdf",
+    "primaryVendor": "infor",
+    "market": [
+      "embedded-analytics"
+    ]
+  },
+  {
+    "title": "Infor Birst benefit case study - Financial Services Provider",
+    "documentId": "w182",
+    "type": "ROI Study",
+    "year": 2022,
+    "quarter": "Q4",
+    "publishDate": "2022-11-10",
+    "technologies": [
+      "BI",
+      "Financial Services",
+      "Analytics"
+    ],
+    "vendors": [
+      "Infor",
+      "Birst"
+    ],
+    "keyFindings": [
+      "Financial services BI benefits",
+      "Analytics implementation"
+    ],
+    "roiClaim": null,
+    "summary": "Infor Birst benefit case study at financial services provider.",
+    "pdfUrl": "/references/w182 - Infor Birst benefit case study - Financial Services Provider.pdf",
+    "primaryVendor": "infor",
+    "market": [
+      "embedded-analytics"
+    ]
+  },
+  {
+    "title": "Embedded Analytics Technology Value Matrix 2022",
+    "documentId": "w184",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q4",
+    "publishDate": "2022-11-15",
+    "technologies": [
+      "Embedded Analytics",
+      "BI",
+      "Integration"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Embedded analytics market evaluation",
+      "Integration capabilities"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of embedded analytics vendors and market positioning for 2022.",
+    "pdfUrl": "/references/w184 - Embedded Analytics Technology Value Matrix 2022.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "embedded-analytics"
+    ]
+  },
+  {
+    "title": "Slash data movement costs with Wasabi Cloud Sync Manager",
+    "documentId": "w188",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q4",
+    "publishDate": "2022-11-20",
+    "technologies": [
+      "Cloud Storage",
+      "Data Management",
+      "Cost Optimization"
+    ],
+    "vendors": [
+      "Wasabi"
+    ],
+    "keyFindings": [
+      "Data movement cost reduction",
+      "Cloud storage optimization"
+    ],
+    "roiClaim": null,
+    "summary": "Wasabi Cloud Sync Manager reduces data movement costs for cloud storage.",
+    "pdfUrl": "/references/w188 - Slash data movement costs with Wasabi Cloud Sync Manager.pdf",
+    "primaryVendor": "wasabi",
+    "market": [
+      "iaas"
+    ]
+  },
+  {
+    "title": "Domo ROI case study - Walker Edison",
+    "documentId": "w109",
+    "type": "ROI Study",
+    "year": 2022,
+    "quarter": "Q3",
+    "publishDate": "2022-08-19",
+    "technologies": [
+      "BI",
+      "Analytics",
+      "Retail"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [
+      "Retail analytics ROI",
+      "Business intelligence value"
+    ],
+    "roiClaim": null,
+    "summary": "Domo ROI case study at Walker Edison demonstrates retail analytics value.",
+    "pdfUrl": "/references/w109 - Domo ROI case study - Walker Edison.pdf",
+    "primaryVendor": "domo",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Hot Companies to Watch in 2023",
+    "documentId": "w198",
+    "type": "Research Note",
+    "year": 2022,
+    "quarter": "Q4",
+    "publishDate": "2022-12-01",
+    "technologies": [
+      "Market Trends",
+      "Emerging Companies"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Emerging technology companies",
+      "2023 market opportunities"
+    ],
+    "roiClaim": null,
+    "summary": "Identification of hot companies to watch in the technology market for 2023.",
+    "pdfUrl": "/references/w198 - Hot Companies to Watch in 2023.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "general"
+    ]
+  },
+  {
+    "title": "Product analytics and experimentation unite with Amplitude",
+    "documentId": "x1",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q1",
+    "publishDate": "2023-01-10",
+    "technologies": [
+      "Product Analytics",
+      "Experimentation",
+      "A/B Testing"
+    ],
+    "vendors": [
+      "Amplitude"
+    ],
+    "keyFindings": [
+      "Product analytics integration",
+      "Experimentation capabilities"
+    ],
+    "roiClaim": null,
+    "summary": "Amplitude unites product analytics and experimentation for comprehensive insights.",
+    "pdfUrl": "/references/x1 - Product analytics and experimentation unite with Amplitude.pdf",
+    "primaryVendor": "amplitude",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Oracle ROI case study - Data Science Company",
+    "documentId": "x7",
+    "type": "ROI Study",
+    "year": 2023,
+    "quarter": "Q1",
+    "publishDate": "2023-01-20",
+    "technologies": [
+      "Database",
+      "Data Science",
+      "Analytics"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [
+      "Data science ROI",
+      "Database analytics value"
+    ],
+    "roiClaim": null,
+    "summary": "Oracle ROI case study at data science company demonstrates database analytics value.",
+    "pdfUrl": "/references/x7 - Oracle ROI case study - Data Science Company.pdf",
+    "primaryVendor": "oracle",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Verato ROI case study - Nonprofit Health System",
+    "documentId": "x23",
+    "type": "ROI Study",
+    "year": 2023,
+    "quarter": "Q1",
+    "publishDate": "2023-02-01",
+    "technologies": [
+      "Healthcare",
+      "Data Management",
+      "Patient Matching"
+    ],
+    "vendors": [
+      "Verato"
+    ],
+    "keyFindings": [
+      "Healthcare data management ROI",
+      "Patient matching accuracy"
+    ],
+    "roiClaim": null,
+    "summary": "Verato ROI case study at nonprofit health system demonstrates healthcare data management value.",
+    "pdfUrl": "/references/x23 - Verato ROI case study - Nonprofit Health System.pdf",
+    "primaryVendor": "verato",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Data Warehouse Technology Value Matrix 2023",
+    "documentId": "x32",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q1",
+    "publishDate": "2023-02-15",
+    "technologies": [
+      "Data Warehouse",
+      "Cloud",
+      "Analytics"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Data warehouse market evolution",
+      "Cloud-first strategies"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of data warehouse technology vendors and market positioning for 2023.",
+    "pdfUrl": "/references/x32 - Data Warehouse Technology Value Matrix 2023.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Panoply by SQream benefit case study - Fashion Group",
+    "documentId": "x40",
+    "type": "ROI Study",
+    "year": 2023,
+    "quarter": "Q1",
+    "publishDate": "2023-02-25",
+    "technologies": [
+      "Analytics",
+      "Fashion",
+      "Retail"
+    ],
+    "vendors": [
+      "Panoply",
+      "SQream"
+    ],
+    "keyFindings": [
+      "Fashion analytics benefits",
+      "Retail data insights"
+    ],
+    "roiClaim": null,
+    "summary": "Panoply by SQream benefit case study at fashion group demonstrates retail analytics value.",
+    "pdfUrl": "/references/x40 - Panoply by SQream benefit case study - Fashion Group.pdf",
+    "primaryVendor": "panoply",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Amplitude ROI case study - Education Platform",
+    "documentId": "x48",
+    "type": "ROI Study",
+    "year": 2023,
+    "quarter": "Q1",
+    "publishDate": "2023-03-05",
+    "technologies": [
+      "Product Analytics",
+      "Education",
+      "User Engagement"
+    ],
+    "vendors": [
+      "Amplitude"
+    ],
+    "keyFindings": [
+      "Education platform analytics ROI",
+      "User engagement insights"
+    ],
+    "roiClaim": null,
+    "summary": "Amplitude ROI case study at education platform demonstrates product analytics value.",
+    "pdfUrl": "/references/x48 - Amplitude ROI case study - Education Platform.pdf",
+    "primaryVendor": "amplitude",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Accelerate model development with Amazon SageMaker",
+    "documentId": "x50",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q1",
+    "publishDate": "2023-03-10",
+    "technologies": [
+      "Machine Learning",
+      "AI",
+      "Cloud"
+    ],
+    "vendors": [
+      "Amazon"
+    ],
+    "keyFindings": [
+      "ML model development acceleration",
+      "AI platform capabilities"
+    ],
+    "roiClaim": null,
+    "summary": "Amazon SageMaker accelerates machine learning model development and deployment.",
+    "pdfUrl": "/references/x50 - Accelerate model development with Amazon SageMaker.pdf",
+    "primaryVendor": "aws",
+    "market": [
+      "dsml"
+    ]
+  },
+  {
+    "title": "SAP Datasphere powers 1.3X faster data access",
+    "documentId": "x64",
+    "type": "Announcement",
+    "year": 2023,
+    "quarter": "Q2",
+    "publishDate": "2023-04-01",
+    "technologies": [
+      "Data Platform",
+      "Performance",
+      "Enterprise"
+    ],
+    "vendors": [
+      "SAP"
+    ],
+    "keyFindings": [
+      "Data access acceleration",
+      "Enterprise data performance"
+    ],
+    "roiClaim": "1.3X faster data access",
+    "summary": "SAP Datasphere delivers 1.3X faster data access for enterprise workloads.",
+    "pdfUrl": "/references/x64 - SAP Datasphere powers 1.3X faster data access.pdf",
+    "primaryVendor": "sap",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Qlik and Talend unite for data warehouse modernization",
+    "documentId": "x75",
+    "type": "Announcement",
+    "year": 2023,
+    "quarter": "Q2",
+    "publishDate": "2023-04-15",
+    "technologies": [
+      "Data Warehouse",
+      "Integration",
+      "Modernization"
+    ],
+    "vendors": [
+      "Qlik",
+      "Talend"
+    ],
+    "keyFindings": [
+      "Data warehouse modernization",
+      "Integration partnership"
+    ],
+    "roiClaim": null,
+    "summary": "Qlik and Talend partnership accelerates data warehouse modernization initiatives.",
+    "pdfUrl": "/references/x75 - Qlik and Talend unite for data warehouse modernization.pdf",
+    "primaryVendor": "qlik",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Analytics Technology Value Matrix 2023",
+    "documentId": "x77",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q2",
+    "publishDate": "2023-04-20",
+    "technologies": [
+      "Analytics",
+      "BI",
+      "AI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Analytics market evolution",
+      "AI integration trends"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of analytics technology vendors and market positioning for 2023.",
+    "pdfUrl": "/references/x77 - Analytics Technology Value Matrix 2023.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "ROI Guidebook - Informatica iPaaS",
+    "documentId": "x84",
+    "type": "ROI Guidebook",
+    "year": 2023,
+    "quarter": "Q2",
+    "publishDate": "2023-05-01",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "Cloud"
+    ],
+    "vendors": [
+      "Informatica"
+    ],
+    "keyFindings": [
+      "iPaaS ROI framework",
+      "Integration platform value"
+    ],
+    "roiClaim": null,
+    "summary": "ROI guidebook for Informatica iPaaS implementation and value realization.",
+    "pdfUrl": "/references/x84 - ROI Guidebook - Informatica iPaaS.pdf",
+    "primaryVendor": "informatica",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Wasabi and Veeam - Cost-efficient cloud storage and recovery",
+    "documentId": "x97",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q2",
+    "publishDate": "2023-05-15",
+    "technologies": [
+      "Cloud Storage",
+      "Backup",
+      "Recovery"
+    ],
+    "vendors": [
+      "Wasabi",
+      "Veeam"
+    ],
+    "keyFindings": [
+      "Cost-efficient cloud storage",
+      "Backup and recovery optimization"
+    ],
+    "roiClaim": null,
+    "summary": "Wasabi and Veeam partnership delivers cost-efficient cloud storage and recovery solutions.",
+    "pdfUrl": "/references/x97 - Wasabi and Veeam - Cost-efficient cloud storage and recovery.pdf",
+    "primaryVendor": "veeam",
+    "market": [
+      "iaas"
+    ]
+  },
+  {
+    "title": "iPaaS Technology Value Matrix 2023",
+    "documentId": "x99",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q2",
+    "publishDate": "2023-05-20",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "Cloud"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "iPaaS market maturity",
+      "Integration platform evolution"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of iPaaS technology vendors and market positioning for 2023.",
+    "pdfUrl": "/references/x99 - iPaaS Technology Value Matrix 2023.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Informatica ROI case study - Paycor",
+    "documentId": "x100",
+    "type": "ROI Study",
+    "year": 2023,
+    "quarter": "Q2",
+    "publishDate": "2023-05-25",
+    "technologies": [
+      "Data Integration",
+      "HR",
+      "Cloud"
+    ],
+    "vendors": [
+      "Informatica"
+    ],
+    "keyFindings": [
+      "HR data integration ROI",
+      "Cloud integration benefits"
+    ],
+    "roiClaim": null,
+    "summary": "Informatica ROI case study at Paycor demonstrates HR data integration value.",
+    "pdfUrl": "/references/x100 - Informatica ROI case study - Paycor.pdf",
+    "primaryVendor": "informatica",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Informatica World highlights cloud partnerships",
+    "documentId": "x103",
+    "type": "Announcement",
+    "year": 2023,
+    "quarter": "Q2",
+    "publishDate": "2023-06-01",
+    "technologies": [
+      "Cloud",
+      "Integration",
+      "Partnerships"
+    ],
+    "vendors": [
+      "Informatica"
+    ],
+    "keyFindings": [
+      "Cloud partnership strategy",
+      "Integration ecosystem"
+    ],
+    "roiClaim": null,
+    "summary": "Informatica World event highlights cloud partnerships and integration ecosystem.",
+    "pdfUrl": "/references/x103 - Informatica World highlights cloud partnerships.pdf",
+    "primaryVendor": "informatica",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Tray.io ROI case study - Auctane",
+    "documentId": "x112",
+    "type": "ROI Study",
+    "year": 2023,
+    "quarter": "Q2",
+    "publishDate": "2023-06-10",
+    "technologies": [
+      "Automation",
+      "Integration",
+      "E-commerce"
+    ],
+    "vendors": [
+      "Tray.io"
+    ],
+    "keyFindings": [
+      "E-commerce automation ROI",
+      "Integration efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "Tray.io ROI case study at Auctane demonstrates e-commerce automation value.",
+    "pdfUrl": "/references/x112 - Tray.io ROI case study - Auctane.pdf",
+    "primaryVendor": "tray-io",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Alteryx highlights AI and ROI at Inspire 2023",
+    "documentId": "x115",
+    "type": "Announcement",
+    "year": 2023,
+    "quarter": "Q2",
+    "publishDate": "2023-06-15",
+    "technologies": [
+      "AI",
+      "Analytics",
+      "ROI"
+    ],
+    "vendors": [
+      "Alteryx"
+    ],
+    "keyFindings": [
+      "AI analytics integration",
+      "ROI measurement"
+    ],
+    "roiClaim": null,
+    "summary": "Alteryx Inspire 2023 event highlights AI integration and ROI measurement.",
+    "pdfUrl": "/references/x115 - Alteryx highlights AI and ROI at Inspire 2023.pdf",
+    "primaryVendor": "alteryx",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "LogicMonitor ROI case study - Loyola University Maryland",
+    "documentId": "x121",
+    "type": "ROI Study",
+    "year": 2023,
+    "quarter": "Q3",
+    "publishDate": "2023-07-01",
+    "technologies": [
+      "Monitoring",
+      "IT Operations",
+      "Education"
+    ],
+    "vendors": [
+      "LogicMonitor"
+    ],
+    "keyFindings": [
+      "IT monitoring ROI",
+      "Educational institution efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "LogicMonitor ROI case study at Loyola University Maryland demonstrates IT monitoring value.",
+    "pdfUrl": "/references/x121 - LogicMonitor ROI case study - Loyola University Maryland.pdf",
+    "primaryVendor": "logicmonitor",
+    "market": [
+      "iaas"
+    ]
+  },
+  {
+    "title": "Domo ROI case study - Regional One Health",
+    "documentId": "x123",
+    "type": "ROI Study",
+    "year": 2023,
+    "quarter": "Q3",
+    "publishDate": "2023-07-05",
+    "technologies": [
+      "BI",
+      "Healthcare",
+      "Analytics"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [
+      "Healthcare BI ROI",
+      "Analytics-driven decisions"
+    ],
+    "roiClaim": null,
+    "summary": "Domo ROI case study at Regional One Health demonstrates healthcare BI value.",
+    "pdfUrl": "/references/x123 - Domo ROI case study - Regional One Health.pdf",
+    "primaryVendor": "domo",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Teradata reinforces multi-cloud and partner strategy",
+    "documentId": "x133",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q3",
+    "publishDate": "2023-07-15",
+    "technologies": [
+      "Multi-Cloud",
+      "Analytics",
+      "Partnerships"
+    ],
+    "vendors": [
+      "Teradata"
+    ],
+    "keyFindings": [
+      "Multi-cloud strategy",
+      "Partner ecosystem"
+    ],
+    "roiClaim": null,
+    "summary": "Teradata reinforces multi-cloud and partner strategy for analytics platforms.",
+    "pdfUrl": "/references/x133 - Teradata reinforces multi-cloud and partner strategy.pdf",
+    "primaryVendor": "teradata",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Domo's unified analytics and ETL",
+    "documentId": "x143",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q3",
+    "publishDate": "2023-07-25",
+    "technologies": [
+      "Analytics",
+      "ETL",
+      "Data Pipeline"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [
+      "Unified analytics platform",
+      "ETL integration"
+    ],
+    "roiClaim": null,
+    "summary": "Domo's unified analytics and ETL capabilities streamline data pipeline management.",
+    "pdfUrl": "/references/x143 - Domo's unified analytics and ETL.pdf",
+    "primaryVendor": "domo",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Alteryx ROI case study - Manufacturer",
+    "documentId": "x144",
+    "type": "ROI Study",
+    "year": 2023,
+    "quarter": "Q3",
+    "publishDate": "2023-07-30",
+    "technologies": [
+      "Analytics",
+      "Manufacturing",
+      "Process Optimization"
+    ],
+    "vendors": [
+      "Alteryx"
+    ],
+    "keyFindings": [
+      "Manufacturing analytics ROI",
+      "Process optimization"
+    ],
+    "roiClaim": null,
+    "summary": "Alteryx ROI case study at manufacturer demonstrates analytics value in manufacturing.",
+    "pdfUrl": "/references/x144 - Alteryx ROI case study - Manufacturer.pdf",
+    "primaryVendor": "alteryx",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Treblle ROI case study - Autopix",
+    "documentId": "x151",
+    "type": "ROI Study",
+    "year": 2023,
+    "quarter": "Q3",
+    "publishDate": "2023-08-05",
+    "technologies": [
+      "API Management",
+      "Monitoring",
+      "Development"
+    ],
+    "vendors": [
+      "Treblle"
+    ],
+    "keyFindings": [
+      "API management ROI",
+      "Development efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "Treblle ROI case study at Autopix demonstrates API management value.",
+    "pdfUrl": "/references/x151 - Treblle ROI case study - Autopix.pdf",
+    "primaryVendor": "treblle",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Elevating healthcare with Oracle ADW and Analytics Cloud",
+    "documentId": "x159",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q3",
+    "publishDate": "2023-08-15",
+    "technologies": [
+      "Healthcare",
+      "Data Warehouse",
+      "Analytics"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [
+      "Healthcare data analytics",
+      "Clinical insights"
+    ],
+    "roiClaim": null,
+    "summary": "Oracle ADW and Analytics Cloud elevate healthcare through advanced data analytics.",
+    "pdfUrl": "/references/x159 - Elevating healthcare with Oracle ADW and Analytics Cloud.pdf",
+    "primaryVendor": "oracle",
+    "market": [
+      "analytics",
+      "database"
+    ]
+  },
+  {
+    "title": "ROI Guidebook - Databricks Lakehouse",
+    "documentId": "x165",
+    "type": "ROI Guidebook",
+    "year": 2023,
+    "quarter": "Q3",
+    "publishDate": "2023-08-25",
+    "technologies": [
+      "Data Lakehouse",
+      "Analytics",
+      "ML"
+    ],
+    "vendors": [
+      "Databricks"
+    ],
+    "keyFindings": [
+      "Lakehouse ROI framework",
+      "Unified analytics value"
+    ],
+    "roiClaim": null,
+    "summary": "ROI guidebook for Databricks Lakehouse implementation and value realization.",
+    "pdfUrl": "/references/x165 - ROI Guidebook - Databricks Lakehouse.pdf",
+    "primaryVendor": "databricks",
+    "market": [
+      "dsml",
+      "analytics"
+    ]
+  },
+  {
+    "title": "Boomi's value in financial services",
+    "documentId": "x170",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q3",
+    "publishDate": "2023-09-01",
+    "technologies": [
+      "Integration",
+      "Financial Services",
+      "iPaaS"
+    ],
+    "vendors": [
+      "Boomi"
+    ],
+    "keyFindings": [
+      "Financial services integration",
+      "iPaaS value"
+    ],
+    "roiClaim": null,
+    "summary": "Boomi's integration platform delivers value in financial services sector.",
+    "pdfUrl": "/references/x170 - Boomi's value in financial services.pdf",
+    "primaryVendor": "boomi",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Nucleus Top Ten Predictions for 2024",
+    "documentId": "x180",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-10-15",
+    "technologies": [
+      "Market Trends",
+      "Technology Predictions",
+      "AI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "2024 technology trends",
+      "AI market evolution"
+    ],
+    "roiClaim": null,
+    "summary": "Nucleus Research's top ten predictions for technology trends in 2024.",
+    "pdfUrl": "/references/x180 - Nucleus Top Ten Predictions for 2024.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "general"
+    ]
+  },
+  {
+    "title": "Boomi World Tour emphasizes AI enablement",
+    "documentId": "x185",
+    "type": "Announcement",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-10-20",
+    "technologies": [
+      "AI",
+      "Integration",
+      "Automation"
+    ],
+    "vendors": [
+      "Boomi"
+    ],
+    "keyFindings": [
+      "AI-enabled integration",
+      "Automation capabilities"
+    ],
+    "roiClaim": null,
+    "summary": "Boomi World Tour emphasizes AI enablement in integration and automation.",
+    "pdfUrl": "/references/x185 - Boomi World Tour emphasizes AI enablement.pdf",
+    "primaryVendor": "boomi",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Teradata empowers geospatial analytics",
+    "documentId": "x188",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-10-25",
+    "technologies": [
+      "Geospatial",
+      "Analytics",
+      "Location Intelligence"
+    ],
+    "vendors": [
+      "Teradata"
+    ],
+    "keyFindings": [
+      "Geospatial analytics capabilities",
+      "Location-based insights"
+    ],
+    "roiClaim": null,
+    "summary": "Teradata empowers geospatial analytics for location-based business insights.",
+    "pdfUrl": "/references/x188 - Teradata empowers geospatial analytics.pdf",
+    "primaryVendor": "teradata",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Embedded Analytics Technology Value Matrix 2023",
+    "documentId": "x190",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-10-30",
+    "technologies": [
+      "Embedded Analytics",
+      "BI",
+      "Integration"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Embedded analytics evolution",
+      "Integration capabilities"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of embedded analytics vendors and market positioning for 2023.",
+    "pdfUrl": "/references/x190 - Embedded Analytics Technology Value Matrix 2023.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "embedded-analytics"
+    ]
+  },
+  {
+    "title": "Oracle CloudWorld 2023 updates",
+    "documentId": "x194",
+    "type": "Announcement",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-11-05",
+    "technologies": [
+      "Cloud",
+      "Database",
+      "AI"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [
+      "Cloud platform updates",
+      "AI integration"
+    ],
+    "roiClaim": null,
+    "summary": "Oracle CloudWorld 2023 updates highlight cloud platform and AI integration advances.",
+    "pdfUrl": "/references/x194 - Oracle CloudWorld 2023 updates.pdf",
+    "primaryVendor": "oracle",
+    "market": [
+      "erp"
+    ]
+  },
+  {
+    "title": "Dataiku accelerates AI project delivery",
+    "documentId": "x196",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-11-10",
+    "technologies": [
+      "AI",
+      "Machine Learning",
+      "Data Science"
+    ],
+    "vendors": [
+      "Dataiku"
+    ],
+    "keyFindings": [
+      "AI project acceleration",
+      "Data science workflow optimization"
+    ],
+    "roiClaim": null,
+    "summary": "Dataiku accelerates AI project delivery through streamlined data science workflows.",
+    "pdfUrl": "/references/x196 - Dataiku accelerates AI project delivery.pdf",
+    "primaryVendor": "dataiku",
+    "market": [
+      "dsml"
+    ]
+  },
+  {
+    "title": "Driving revenue growth with Domo Everywhere",
+    "documentId": "x198",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-11-15",
+    "technologies": [
+      "Embedded Analytics",
+      "Revenue Growth",
+      "BI"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [
+      "Revenue growth through embedded analytics",
+      "BI monetization"
+    ],
+    "roiClaim": null,
+    "summary": "Domo Everywhere drives revenue growth through embedded analytics capabilities.",
+    "pdfUrl": "/references/x198 - Driving revenue growth with Domo Everywhere.pdf",
+    "primaryVendor": "domo",
+    "market": [
+      "embedded-analytics"
+    ]
+  },
+  {
+    "title": "Hot Companies to Watch in 2024",
+    "documentId": "x211",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-12-01",
+    "technologies": [
+      "Market Trends",
+      "Emerging Companies",
+      "AI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Emerging AI companies",
+      "2024 market opportunities"
+    ],
+    "roiClaim": null,
+    "summary": "Identification of hot companies to watch in the technology market for 2024.",
+    "pdfUrl": "/references/x211 - Hot Companies to Watch in 2024.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "Data integration returns $3.03 for every dollar spent",
+    "documentId": "x213",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-12-05",
+    "technologies": [
+      "Data Integration",
+      "ROI",
+      "Analytics"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Data integration ROI metrics",
+      "Investment returns"
+    ],
+    "roiClaim": "$3.03 return per dollar invested",
+    "summary": "Data integration technology delivers $3.03 return for every dollar invested.",
+    "pdfUrl": "/references/x213 - Data integration returns $3.03 for every dollar spent.pdf",
+    "primaryVendor": "own"
+  },
+  {
+    "title": "Extending insights with Oracle Fusion HCM Analytics",
+    "documentId": "x214",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-12-08",
+    "technologies": [
+      "HCM",
+      "Analytics",
+      "HR"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [
+      "HR analytics insights",
+      "Workforce optimization"
+    ],
+    "roiClaim": null,
+    "summary": "Oracle Fusion HCM Analytics extends insights for workforce optimization.",
+    "pdfUrl": "/references/x214 - Extending insights with Oracle Fusion HCM Analytics.pdf",
+    "primaryVendor": "oracle",
+    "market": [
+      "hcm",
+      "analytics"
+    ]
+  },
+  {
+    "title": "How to build the best analytics stack",
+    "documentId": "x216",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-12-12",
+    "technologies": [
+      "Analytics",
+      "Architecture",
+      "Best Practices"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Analytics architecture best practices",
+      "Technology stack optimization"
+    ],
+    "roiClaim": null,
+    "summary": "Best practices guide for building optimal analytics technology stacks.",
+    "pdfUrl": "/references/x216 - How to build the best analytics stack.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Analytics technology returns $6.20 for every dollar spent",
+    "documentId": "x217",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-12-15",
+    "technologies": [
+      "Analytics",
+      "ROI",
+      "BI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Analytics ROI metrics",
+      "Investment returns"
+    ],
+    "roiClaim": "$6.20 return per dollar invested",
+    "summary": "Analytics technology delivers $6.20 return for every dollar invested.",
+    "pdfUrl": "/references/x217 - Analytics technology returns $6.20 for every dollar spent.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Rivery ROI case study - Software Company",
+    "documentId": "x220",
+    "type": "ROI Study",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-12-18",
+    "technologies": [
+      "Data Integration",
+      "ETL",
+      "Software"
+    ],
+    "vendors": [
+      "Rivery"
+    ],
+    "keyFindings": [
+      "Software company data integration ROI",
+      "ETL efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "Rivery ROI case study at software company demonstrates data integration value.",
+    "pdfUrl": "/references/x220 - Rivery ROI case study - Software Company.pdf",
+    "primaryVendor": "rivery",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "iPaaS technology returns $3.76 for every dollar spent",
+    "documentId": "x224",
+    "type": "Research Note",
+    "year": 2023,
+    "quarter": "Q4",
+    "publishDate": "2023-12-22",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "ROI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "iPaaS ROI metrics",
+      "Integration platform returns"
+    ],
+    "roiClaim": "$3.76 return per dollar invested",
+    "summary": "iPaaS technology delivers $3.76 return for every dollar invested.",
+    "pdfUrl": "/references/x224 - iPaaS technology returns $3.76 for every dollar spent.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Assessing the value of Data Management Technology",
+    "documentId": "y3",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q1",
+    "publishDate": "2024-01-05",
+    "technologies": [
+      "Data Management",
+      "Value Assessment",
+      "Enterprise"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Data management value framework",
+      "Enterprise data strategy"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive assessment of data management technology value for enterprises.",
+    "pdfUrl": "/references/y3 - Assessing the value of Data Management Technology.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "data-governance"
+    ]
+  },
+  {
+    "title": "Reduce ongoing costs with Snowflake",
+    "documentId": "y12",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q1",
+    "publishDate": "2024-01-15",
+    "technologies": [
+      "Data Warehouse",
+      "Cost Optimization",
+      "Cloud"
+    ],
+    "vendors": [
+      "Snowflake"
+    ],
+    "keyFindings": [
+      "Data warehouse cost reduction",
+      "Cloud optimization"
+    ],
+    "roiClaim": null,
+    "summary": "Snowflake reduces ongoing costs through efficient data warehouse operations.",
+    "pdfUrl": "/references/y12 - Reduce ongoing costs with Snowflake.pdf",
+    "primaryVendor": "snowflake",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "The value of Zoho's embedded analytics and BI software",
+    "documentId": "y14",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q1",
+    "publishDate": "2024-01-18",
+    "technologies": [
+      "Embedded Analytics",
+      "BI",
+      "Integration"
+    ],
+    "vendors": [
+      "Zoho"
+    ],
+    "keyFindings": [
+      "Embedded analytics value",
+      "BI integration benefits"
+    ],
+    "roiClaim": null,
+    "summary": "Zoho's embedded analytics and BI software delivers integrated business intelligence value.",
+    "pdfUrl": "/references/y14 - The value of Zoho's embedded analytics and BI software.pdf",
+    "primaryVendor": "zoho",
+    "market": [
+      "analytics",
+      "embedded-analytics"
+    ]
+  },
+  {
+    "title": "Analytics buying intentions survey",
+    "documentId": "y16",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q1",
+    "publishDate": "2024-01-20",
+    "technologies": [
+      "Analytics",
+      "Market Research",
+      "Buying Intentions"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Analytics buying trends",
+      "Market demand patterns"
+    ],
+    "roiClaim": null,
+    "summary": "Survey insights on analytics buying intentions and market trends.",
+    "pdfUrl": "/references/y16 - Analytics buying intentions survey.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Data Platform Technology Value Matrix 2024",
+    "documentId": "y19",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q1",
+    "publishDate": "2024-01-25",
+    "technologies": [
+      "Data Platform",
+      "Analytics",
+      "AI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Data platform market evolution",
+      "AI integration capabilities"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of data platform technology vendors and market positioning for 2024.",
+    "pdfUrl": "/references/y19 - Data Platform Technology Value Matrix 2024.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Own Data Platform ROI case study - Education provider",
+    "documentId": "y24",
+    "type": "ROI Study",
+    "year": 2024,
+    "quarter": "Q1",
+    "publishDate": "2024-01-30",
+    "technologies": [
+      "Data Platform",
+      "Education",
+      "Analytics"
+    ],
+    "vendors": [
+      "Own"
+    ],
+    "keyFindings": [
+      "Education data platform ROI",
+      "Academic analytics value"
+    ],
+    "roiClaim": null,
+    "summary": "Own Data Platform ROI case study at education provider demonstrates academic analytics value.",
+    "pdfUrl": "/references/y24 - Own Data Platform ROI case study - Education provider.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "data-governance"
+    ]
+  },
+  {
+    "title": "Zoho Analytics ROI case study - Sparex",
+    "documentId": "y28",
+    "type": "ROI Study",
+    "year": 2024,
+    "quarter": "Q1",
+    "publishDate": "2024-02-02",
+    "technologies": [
+      "Analytics",
+      "BI",
+      "SMB"
+    ],
+    "vendors": [
+      "Zoho"
+    ],
+    "keyFindings": [
+      "SMB analytics ROI",
+      "Business intelligence value"
+    ],
+    "roiClaim": null,
+    "summary": "Zoho Analytics ROI case study at Sparex demonstrates SMB analytics value.",
+    "pdfUrl": "/references/y28 - Zoho Analytics ROI case study - Sparex.pdf",
+    "primaryVendor": "zoho",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "NVIDIA reduces transformer-based compute challenges",
+    "documentId": "y30",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q1",
+    "publishDate": "2024-02-05",
+    "technologies": [
+      "AI",
+      "GPU",
+      "Transformers"
+    ],
+    "vendors": [
+      "NVIDIA"
+    ],
+    "keyFindings": [
+      "AI compute optimization",
+      "Transformer efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "NVIDIA reduces transformer-based compute challenges through GPU optimization.",
+    "pdfUrl": "/references/y30 - NVIDIA reduces transformer-based compute challenges.pdf",
+    "primaryVendor": "nvidia",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "Databricks ROI case study - Texas Rangers",
+    "documentId": "y33",
+    "type": "ROI Study",
+    "year": 2024,
+    "quarter": "Q1",
+    "publishDate": "2024-02-08",
+    "technologies": [
+      "Data Lakehouse",
+      "Sports Analytics",
+      "ML"
+    ],
+    "vendors": [
+      "Databricks"
+    ],
+    "keyFindings": [
+      "Sports analytics ROI",
+      "Fan engagement insights"
+    ],
+    "roiClaim": null,
+    "summary": "Databricks ROI case study at Texas Rangers demonstrates sports analytics value.",
+    "pdfUrl": "/references/y33 - Databricks ROI case study - Texas Rangers.pdf",
+    "primaryVendor": "databricks",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "The value of Amazon Relational Database Service",
+    "documentId": "y37",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q1",
+    "publishDate": "2024-02-12",
+    "technologies": [
+      "Database",
+      "Cloud",
+      "RDS"
+    ],
+    "vendors": [
+      "Amazon"
+    ],
+    "keyFindings": [
+      "Managed database value",
+      "Cloud database benefits"
+    ],
+    "roiClaim": null,
+    "summary": "Amazon RDS delivers value through managed relational database services.",
+    "pdfUrl": "/references/y37 - The value of Amazon Relational Database Service.pdf",
+    "primaryVendor": "aws",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "iPaaS Technology Value Matrix 2024",
+    "documentId": "y41",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q1",
+    "publishDate": "2024-02-15",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "AI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "iPaaS market maturity",
+      "AI-powered integration"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of iPaaS technology vendors and market positioning for 2024.",
+    "pdfUrl": "/references/y41 - iPaaS Technology Value Matrix 2024.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Domo extends the value of Magic ETL with Cloud Amplifier",
+    "documentId": "y44",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q1",
+    "publishDate": "2024-02-18",
+    "technologies": [
+      "ETL",
+      "Cloud",
+      "Data Pipeline"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [
+      "ETL performance enhancement",
+      "Cloud acceleration"
+    ],
+    "roiClaim": null,
+    "summary": "Domo extends Magic ETL value through Cloud Amplifier performance enhancement.",
+    "pdfUrl": "/references/y44 - Domo extends the value of Magic ETL with Cloud Amplifier.pdf",
+    "primaryVendor": "domo",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Boomi World extends data, application, and AI management",
+    "documentId": "y57",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-03-05",
+    "technologies": [
+      "Integration",
+      "AI",
+      "Data Management"
+    ],
+    "vendors": [
+      "Boomi"
+    ],
+    "keyFindings": [
+      "AI-powered integration",
+      "Data management capabilities"
+    ],
+    "roiClaim": null,
+    "summary": "Boomi World extends data, application, and AI management capabilities.",
+    "pdfUrl": "/references/y57 - Boomi World extends data, application, and AI management.pdf",
+    "primaryVendor": "boomi",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "BI and Analytics Technology Value Matrix 2024",
+    "documentId": "y58",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-03-10",
+    "technologies": [
+      "BI",
+      "Analytics",
+      "AI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "BI market evolution",
+      "AI-enhanced analytics"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of BI and analytics technology vendors and market positioning for 2024.",
+    "pdfUrl": "/references/y58 - BI and Analytics Technology Value Matrix 2024.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Tray.io ROI case study - AVID Property Group",
+    "documentId": "y62",
+    "type": "ROI Study",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-03-15",
+    "technologies": [
+      "Automation",
+      "Real Estate",
+      "Integration"
+    ],
+    "vendors": [
+      "Tray.io"
+    ],
+    "keyFindings": [
+      "Real estate automation ROI",
+      "Property management efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "Tray.io ROI case study at AVID Property Group demonstrates real estate automation value.",
+    "pdfUrl": "/references/y62 - Tray.io ROI case study - AVID Property Group.pdf",
+    "primaryVendor": "tray-io",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Domo ROI case study - Manulife",
+    "documentId": "y82",
+    "type": "ROI Study",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-04-01",
+    "technologies": [
+      "BI",
+      "Insurance",
+      "Analytics"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [
+      "Insurance analytics ROI",
+      "Financial services BI"
+    ],
+    "roiClaim": null,
+    "summary": "Domo ROI case study at Manulife demonstrates insurance analytics value.",
+    "pdfUrl": "/references/y82 - Domo ROI case study - Manulife.pdf",
+    "primaryVendor": "domo",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Boomi accelerates time to live for connected services",
+    "documentId": "y101",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-04-15",
+    "technologies": [
+      "Integration",
+      "Connected Services",
+      "API"
+    ],
+    "vendors": [
+      "Boomi"
+    ],
+    "keyFindings": [
+      "Service integration acceleration",
+      "API connectivity"
+    ],
+    "roiClaim": null,
+    "summary": "Boomi accelerates time to live for connected services through integration platform.",
+    "pdfUrl": "/references/y101 - Boomi accelerates time to live for connected services.pdf",
+    "primaryVendor": "boomi",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Accelerate reporting with Power BI",
+    "documentId": "y104",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-04-18",
+    "technologies": [
+      "BI",
+      "Reporting",
+      "Analytics"
+    ],
+    "vendors": [
+      "Microsoft"
+    ],
+    "keyFindings": [
+      "Reporting acceleration",
+      "Self-service BI"
+    ],
+    "roiClaim": null,
+    "summary": "Microsoft Power BI accelerates reporting through self-service analytics capabilities.",
+    "pdfUrl": "/references/y104 - Accelerate reporting with Power BI.pdf",
+    "primaryVendor": "microsoft",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Informatica - Reducing TCO with MDM modernization",
+    "documentId": "y108",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-04-22",
+    "technologies": [
+      "MDM",
+      "Data Management",
+      "TCO"
+    ],
+    "vendors": [
+      "Informatica"
+    ],
+    "keyFindings": [
+      "MDM cost reduction",
+      "Data management efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "Informatica reduces TCO through master data management modernization.",
+    "pdfUrl": "/references/y108 - Informatica - Reducing TCO with MDM modernization.pdf",
+    "primaryVendor": "informatica",
+    "market": [
+      "data-governance"
+    ]
+  },
+  {
+    "title": "Reducing costs with PowerCenter modernization",
+    "documentId": "y112",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-04-25",
+    "technologies": [
+      "ETL",
+      "Modernization",
+      "Cost Reduction"
+    ],
+    "vendors": [
+      "Informatica"
+    ],
+    "keyFindings": [
+      "ETL modernization benefits",
+      "Infrastructure cost savings"
+    ],
+    "roiClaim": null,
+    "summary": "PowerCenter modernization reduces costs through ETL infrastructure optimization.",
+    "pdfUrl": "/references/y112 - Reducing costs with PowerCenter modernization.pdf",
+    "primaryVendor": "informatica",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "ROI Guidebook - Informatica Cloud Data Integration services",
+    "documentId": "y113",
+    "type": "ROI Guidebook",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-04-28",
+    "technologies": [
+      "Data Integration",
+      "Cloud",
+      "ROI"
+    ],
+    "vendors": [
+      "Informatica"
+    ],
+    "keyFindings": [
+      "Cloud integration ROI framework",
+      "Data integration value"
+    ],
+    "roiClaim": null,
+    "summary": "ROI guidebook for Informatica Cloud Data Integration services implementation.",
+    "pdfUrl": "/references/y113 - ROI Guidebook - Informatica Cloud Data Integration services.pdf",
+    "primaryVendor": "informatica",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Informatica ROI case study - Healthcare Provider",
+    "documentId": "y114",
+    "type": "ROI Study",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-05-01",
+    "technologies": [
+      "Data Integration",
+      "Healthcare",
+      "Patient Data"
+    ],
+    "vendors": [
+      "Informatica"
+    ],
+    "keyFindings": [
+      "Healthcare data integration ROI",
+      "Patient care improvement"
+    ],
+    "roiClaim": null,
+    "summary": "Informatica ROI case study at healthcare provider demonstrates patient data integration value.",
+    "pdfUrl": "/references/y114 - Informatica ROI case study - Healthcare Provider.pdf",
+    "primaryVendor": "informatica",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Improving executive performance with Domo",
+    "documentId": "y119",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-05-05",
+    "technologies": [
+      "Executive Dashboards",
+      "BI",
+      "Performance"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [
+      "Executive dashboard value",
+      "Performance management"
+    ],
+    "roiClaim": null,
+    "summary": "Domo improves executive performance through comprehensive business intelligence dashboards.",
+    "pdfUrl": "/references/y119 - Improving executive performance with Domo.pdf",
+    "primaryVendor": "domo",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Improving performance and reducing costs with InterSystems",
+    "documentId": "y120",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-05-08",
+    "technologies": [
+      "Database",
+      "Performance",
+      "Healthcare"
+    ],
+    "vendors": [
+      "InterSystems"
+    ],
+    "keyFindings": [
+      "Database performance optimization",
+      "Healthcare efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "InterSystems improves performance and reduces costs through database optimization.",
+    "pdfUrl": "/references/y120 - Improving performance and reducing costs with InterSystems.pdf",
+    "primaryVendor": "intersystems",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Informatica ROI case study - Insurance Provider",
+    "documentId": "y123",
+    "type": "ROI Study",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-05-12",
+    "technologies": [
+      "Data Integration",
+      "Insurance",
+      "Risk Management"
+    ],
+    "vendors": [
+      "Informatica"
+    ],
+    "keyFindings": [
+      "Insurance data integration ROI",
+      "Risk assessment improvement"
+    ],
+    "roiClaim": null,
+    "summary": "Informatica ROI case study at insurance provider demonstrates risk management data integration value.",
+    "pdfUrl": "/references/y123 - Informatica ROI case study - Insurance Provider.pdf",
+    "primaryVendor": "informatica",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Driving ROI with data streaming",
+    "documentId": "y126",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q2",
+    "publishDate": "2024-05-15",
+    "technologies": [
+      "Data Streaming",
+      "Real-time Analytics",
+      "ROI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Real-time data ROI",
+      "Streaming analytics value"
+    ],
+    "roiClaim": null,
+    "summary": "Data streaming drives ROI through real-time analytics and decision-making capabilities.",
+    "pdfUrl": "/references/y126 - Driving ROI with data streaming.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Oracle Fusion Data Intelligence Platform ROI case study - Investment Bank",
+    "documentId": "y136",
+    "type": "ROI Study",
+    "year": 2024,
+    "quarter": "Q3",
+    "publishDate": "2024-06-01",
+    "technologies": [
+      "Data Intelligence",
+      "Banking",
+      "Financial Services"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [
+      "Investment banking analytics ROI",
+      "Financial intelligence"
+    ],
+    "roiClaim": null,
+    "summary": "Oracle Fusion Data Intelligence Platform ROI case study at investment bank demonstrates financial analytics value.",
+    "pdfUrl": "/references/y136 - Oracle Fusion Data Intelligence Platform ROI case study - Investment Bank.pdf",
+    "primaryVendor": "oracle",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Data warehousing returns $3.44 per dollar invested",
+    "documentId": "y137",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q3",
+    "publishDate": "2024-06-05",
+    "technologies": [
+      "Data Warehouse",
+      "ROI",
+      "Analytics"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Data warehouse ROI metrics",
+      "Analytics investment returns"
+    ],
+    "roiClaim": "$3.44 return per dollar invested",
+    "summary": "Data warehousing technology delivers $3.44 return for every dollar invested.",
+    "pdfUrl": "/references/y137 - Data warehousing returns $3.44 per dollar invested.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Automate 67 percent of tax processes with Alteryx",
+    "documentId": "y138",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q3",
+    "publishDate": "2024-06-08",
+    "technologies": [
+      "Tax Automation",
+      "Process Automation",
+      "Analytics"
+    ],
+    "vendors": [
+      "Alteryx"
+    ],
+    "keyFindings": [
+      "Tax process automation",
+      "Compliance efficiency"
+    ],
+    "roiClaim": "67% automation of tax processes",
+    "summary": "Alteryx automates 67 percent of tax processes through advanced analytics and automation.",
+    "pdfUrl": "/references/y138 - Automate 67 percent of tax processes with Alteryx.pdf",
+    "primaryVendor": "alteryx",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "BI and AI innovation with Zoho Analytics",
+    "documentId": "y144",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q3",
+    "publishDate": "2024-06-15",
+    "technologies": [
+      "BI",
+      "AI",
+      "Analytics Innovation"
+    ],
+    "vendors": [
+      "Zoho"
+    ],
+    "keyFindings": [
+      "AI-powered BI",
+      "Analytics innovation"
+    ],
+    "roiClaim": null,
+    "summary": "Zoho Analytics delivers BI and AI innovation through advanced analytics capabilities.",
+    "pdfUrl": "/references/y144 - BI and AI innovation with Zoho Analytics.pdf",
+    "primaryVendor": "zoho",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Informatica - Reducing TCO with Informatica iPaaS",
+    "documentId": "y145",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q3",
+    "publishDate": "2024-06-18",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "TCO"
+    ],
+    "vendors": [
+      "Informatica"
+    ],
+    "keyFindings": [
+      "iPaaS cost reduction",
+      "Integration efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "Informatica reduces TCO through iPaaS integration platform optimization.",
+    "pdfUrl": "/references/y145 - Informatica - Reducing TCO with Informatica iPaaS.pdf",
+    "primaryVendor": "informatica",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Unifying integration with Informatica IDMC",
+    "documentId": "y147",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q3",
+    "publishDate": "2024-06-22",
+    "technologies": [
+      "Integration",
+      "Data Management",
+      "Cloud"
+    ],
+    "vendors": [
+      "Informatica"
+    ],
+    "keyFindings": [
+      "Unified integration platform",
+      "Data management consolidation"
+    ],
+    "roiClaim": null,
+    "summary": "Informatica IDMC unifies integration and data management capabilities.",
+    "pdfUrl": "/references/y147 - Unifying integration with Informatica IDMC.pdf",
+    "primaryVendor": "informatica",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Nucleus Top Ten Predictions for 2025",
+    "documentId": "y153",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q4",
+    "publishDate": "2024-10-15",
+    "technologies": [
+      "Market Trends",
+      "AI",
+      "Technology Predictions"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "2025 technology trends",
+      "AI market evolution"
+    ],
+    "roiClaim": null,
+    "summary": "Nucleus Research's top ten predictions for technology trends in 2025.",
+    "pdfUrl": "/references/y153 - Nucleus Top Ten Predictions for 2025.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "Teradata makes trusted AI possible",
+    "documentId": "y155",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q4",
+    "publishDate": "2024-10-18",
+    "technologies": [
+      "AI",
+      "Trust",
+      "Data Platform"
+    ],
+    "vendors": [
+      "Teradata"
+    ],
+    "keyFindings": [
+      "Trusted AI capabilities",
+      "AI governance"
+    ],
+    "roiClaim": null,
+    "summary": "Teradata enables trusted AI through comprehensive data platform capabilities.",
+    "pdfUrl": "/references/y155 - Teradata makes trusted AI possible.pdf",
+    "primaryVendor": "teradata",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Generative AI agents take focus at Oracle CloudWorld 2024",
+    "documentId": "y157",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q4",
+    "publishDate": "2024-10-22",
+    "technologies": [
+      "Generative AI",
+      "AI Agents",
+      "Cloud"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [
+      "Generative AI integration",
+      "AI agent capabilities"
+    ],
+    "roiClaim": null,
+    "summary": "Oracle CloudWorld 2024 highlights generative AI agents and their enterprise applications.",
+    "pdfUrl": "/references/y157 - Generative AI agents take focus at Oracle CloudWorld 2024.pdf",
+    "primaryVendor": "oracle",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "Embedded Analytics Technology Value Matrix 2024",
+    "documentId": "y160",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q4",
+    "publishDate": "2024-10-25",
+    "technologies": [
+      "Embedded Analytics",
+      "BI",
+      "AI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Embedded analytics evolution",
+      "AI-powered integration"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of embedded analytics vendors and market positioning for 2024.",
+    "pdfUrl": "/references/y160 - Embedded Analytics Technology Value Matrix 2024.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "embedded-analytics"
+    ]
+  },
+  {
+    "title": "Own Data Platform ROI case study - Global Bank",
+    "documentId": "y161",
+    "type": "ROI Study",
+    "year": 2024,
+    "quarter": "Q4",
+    "publishDate": "2024-10-28",
+    "technologies": [
+      "Data Platform",
+      "Banking",
+      "Financial Services"
+    ],
+    "vendors": [
+      "Own"
+    ],
+    "keyFindings": [
+      "Banking data platform ROI",
+      "Financial services analytics"
+    ],
+    "roiClaim": null,
+    "summary": "Own Data Platform ROI case study at global bank demonstrates financial services analytics value.",
+    "pdfUrl": "/references/y161 - Own Data Platform ROI case study - Global Bank.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "data-governance"
+    ]
+  },
+  {
+    "title": "Unified embedded and product analytics with Domo",
+    "documentId": "y162",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q4",
+    "publishDate": "2024-11-01",
+    "technologies": [
+      "Embedded Analytics",
+      "Product Analytics",
+      "Integration"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [
+      "Unified analytics platform",
+      "Product insight integration"
+    ],
+    "roiClaim": null,
+    "summary": "Domo unifies embedded and product analytics for comprehensive business insights.",
+    "pdfUrl": "/references/y162 - Unified embedded and product analytics with Domo.pdf",
+    "primaryVendor": "domo",
+    "market": [
+      "embedded-analytics"
+    ]
+  },
+  {
+    "title": "Simplified PLC program management with Copia",
+    "documentId": "y165",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q4",
+    "publishDate": "2024-11-05",
+    "technologies": [
+      "Industrial IoT",
+      "PLC",
+      "Manufacturing"
+    ],
+    "vendors": [
+      "Copia"
+    ],
+    "keyFindings": [
+      "PLC program management",
+      "Industrial automation"
+    ],
+    "roiClaim": null,
+    "summary": "Copia simplifies PLC program management for industrial automation applications.",
+    "pdfUrl": "/references/y165 - Simplified PLC program management with Copia.pdf",
+    "primaryVendor": "copia",
+    "market": [
+      "mes"
+    ]
+  },
+  {
+    "title": "Unify analytics tools with Google Cloud",
+    "documentId": "y170",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q4",
+    "publishDate": "2024-11-10",
+    "technologies": [
+      "Analytics",
+      "Cloud",
+      "Integration"
+    ],
+    "vendors": [
+      "Google"
+    ],
+    "keyFindings": [
+      "Analytics platform unification",
+      "Cloud integration"
+    ],
+    "roiClaim": null,
+    "summary": "Google Cloud unifies analytics tools for comprehensive data and analytics capabilities.",
+    "pdfUrl": "/references/y170 - Unify analytics tools with Google Cloud.pdf",
+    "primaryVendor": "google",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Product and service differentiation with ThoughtSpot",
+    "documentId": "y178",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q4",
+    "publishDate": "2024-11-15",
+    "technologies": [
+      "Search Analytics",
+      "Product Differentiation",
+      "BI"
+    ],
+    "vendors": [
+      "ThoughtSpot"
+    ],
+    "keyFindings": [
+      "Product differentiation through analytics",
+      "Search-driven BI"
+    ],
+    "roiClaim": null,
+    "summary": "ThoughtSpot enables product and service differentiation through search-driven analytics.",
+    "pdfUrl": "/references/y178 - Product and service differentiation with ThoughtSpot.pdf",
+    "primaryVendor": "thoughtspot",
+    "market": [
+      "embedded-analytics"
+    ]
+  },
+  {
+    "title": "Hot Companies to Watch in 2025",
+    "documentId": "y182",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q4",
+    "publishDate": "2024-12-01",
+    "technologies": [
+      "Market Trends",
+      "Emerging Companies",
+      "AI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Emerging AI companies",
+      "2025 market opportunities"
+    ],
+    "roiClaim": null,
+    "summary": "Identification of hot companies to watch in the technology market for 2025.",
+    "pdfUrl": "/references/y182 - Hot Companies to Watch in 2025.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "general"
+    ]
+  },
+  {
+    "title": "Sales and business intelligence with Tableau",
+    "documentId": "y189",
+    "type": "Research Note",
+    "year": 2024,
+    "quarter": "Q4",
+    "publishDate": "2024-12-05",
+    "technologies": [
+      "Sales Analytics",
+      "BI",
+      "CRM"
+    ],
+    "vendors": [
+      "Tableau"
+    ],
+    "keyFindings": [
+      "Sales intelligence capabilities",
+      "CRM analytics integration"
+    ],
+    "roiClaim": null,
+    "summary": "Tableau enhances sales and business intelligence through advanced analytics capabilities.",
+    "pdfUrl": "/references/y189 - Sales and business intelligence with Tableau.pdf",
+    "primaryVendor": "tableau",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Domo's AI and Data Products Platform returns $6.93 per dollar invested",
+    "documentId": "z11",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q1",
+    "publishDate": "2025-01-15",
+    "technologies": [
+      "AI",
+      "Data Platform",
+      "ROI"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [
+      "AI-powered data platform ROI",
+      "High investment returns"
+    ],
+    "roiClaim": "$6.93 return per dollar invested",
+    "summary": "Domo's AI and Data Products Platform delivers $6.93 return for every dollar invested.",
+    "pdfUrl": "/references/z11 - Domo's AI and Data Products Platform returns $6.93 per dollar invested.pdf",
+    "primaryVendor": "domo",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Dataiku accelerates AI development in Biotechnology",
+    "documentId": "z14",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q1",
+    "publishDate": "2025-01-20",
+    "technologies": [
+      "AI",
+      "Biotechnology",
+      "Data Science"
+    ],
+    "vendors": [
+      "Dataiku"
+    ],
+    "keyFindings": [
+      "Biotech AI acceleration",
+      "Scientific data analytics"
+    ],
+    "roiClaim": null,
+    "summary": "Dataiku accelerates AI development in biotechnology through advanced data science capabilities.",
+    "pdfUrl": "/references/z14 - Dataiku accelerates AI development in Biotechnology.pdf",
+    "primaryVendor": "dataiku",
+    "market": [
+      "dsml"
+    ]
+  },
+  {
+    "title": "The ROI dynamics of enterprise AI",
+    "documentId": "z23",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q1",
+    "publishDate": "2025-01-25",
+    "technologies": [
+      "Enterprise AI",
+      "ROI",
+      "AI Strategy"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "Enterprise AI ROI patterns",
+      "AI investment strategies"
+    ],
+    "roiClaim": null,
+    "summary": "Analysis of ROI dynamics and investment patterns in enterprise AI implementations.",
+    "pdfUrl": "/references/z23 - The ROI dynamics of enterprise AI.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "ROI Case Study - SAS at ING Belgium",
+    "documentId": "z25",
+    "type": "ROI Study",
+    "year": 2025,
+    "quarter": "Q1",
+    "publishDate": "2025-01-28",
+    "technologies": [
+      "Analytics",
+      "Banking",
+      "Risk Management"
+    ],
+    "vendors": [
+      "SAS"
+    ],
+    "keyFindings": [
+      "Banking analytics ROI",
+      "Risk management efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "SAS ROI case study at ING Belgium demonstrates banking analytics and risk management value.",
+    "pdfUrl": "/references/z25 - ROI Case Study - SAS at ING Belgium.pdf",
+    "primaryVendor": "sas",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Data Platform Technology Value Matrix 2025",
+    "documentId": "z28",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q1",
+    "publishDate": "2025-02-01",
+    "technologies": [
+      "Data Platform",
+      "AI",
+      "Cloud"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "AI-ready data platforms",
+      "Cloud-native architectures"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of data platform technology vendors and market positioning for 2025.",
+    "pdfUrl": "/references/z28 - Data Platform Technology Value Matrix 2025.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Connecting global banking data with Denodo",
+    "documentId": "z32",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q1",
+    "publishDate": "2025-03-07",
+    "technologies": [
+      "Data Virtualization",
+      "Banking",
+      "Global Data"
+    ],
+    "vendors": [
+      "Denodo"
+    ],
+    "keyFindings": [
+      "Global banking data integration",
+      "Data virtualization benefits"
+    ],
+    "roiClaim": null,
+    "summary": "Denodo connects global banking data through advanced data virtualization capabilities.",
+    "pdfUrl": "/references/z32 - Connecting global banking data with Denodo.pdf",
+    "primaryVendor": "denodo",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/connecting-global-banking-data-with-denodo/",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "ROI Case Study - Sisense at Bigtincan",
+    "documentId": "z46",
+    "type": "ROI Study",
+    "year": 2025,
+    "quarter": "Q1",
+    "publishDate": "2025-03-27",
+    "technologies": [
+      "Analytics",
+      "Sales Enablement",
+      "BI"
+    ],
+    "vendors": [
+      "Sisense"
+    ],
+    "keyFindings": [
+      "Sales enablement analytics ROI",
+      "Business intelligence value"
+    ],
+    "roiClaim": "215 percent ROI with a payback period of 6.2 months",
+    "summary": "Sisense ROI case study at Bigtincan demonstrates sales enablement analytics value.",
+    "pdfUrl": "/references/z46 - ROI Case Study - Sisense at Bigtincan.pdf",
+    "primaryVendor": "sisense",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/roi-case-study-sisense-at-bigtincan/",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Supporting cloud-native data platforms with Matillion",
+    "documentId": "z47",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q1",
+    "publishDate": "2025-03-27",
+    "technologies": [
+      "Cloud-Native",
+      "Data Platform",
+      "ETL"
+    ],
+    "vendors": [
+      "Matillion"
+    ],
+    "keyFindings": [
+      "Cloud-native data platform support",
+      "Modern ETL capabilities"
+    ],
+    "roiClaim": null,
+    "summary": "Matillion supports cloud-native data platforms with modern ETL and data transformation capabilities.",
+    "pdfUrl": "/references/z47 - Supporting cloud-native data platforms with Matillion.pdf",
+    "primaryVendor": "matillion",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/supporting-cloud-native-data-platforms-with-matillion/",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "iPaaS Technology Value Matrix 2025",
+    "documentId": "z58",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q2",
+    "publishDate": "2025-04-15",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "AI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "AI-powered integration platforms",
+      "Next-generation iPaaS"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of iPaaS technology vendors and market positioning for 2025. Customer interviews showed rapid adoption of AI capabilities, with usability differentiators shifting to AI tools, copilot, and agentic experiences.",
+    "pdfUrl": "/references/z58 - iPaaS Technology Value Matrix 2025.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Delivering AI ready data with an Intelligent Iceberg Lakehouse",
+    "documentId": "z62",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q2",
+    "publishDate": "2025-04-24",
+    "technologies": [
+      "AI",
+      "Data Lakehouse",
+      "Iceberg"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "AI-ready data architecture",
+      "Intelligent lakehouse capabilities"
+    ],
+    "roiClaim": null,
+    "summary": "Intelligent Iceberg Lakehouse architecture delivers AI-ready data for modern analytics workloads.",
+    "pdfUrl": "/references/z62 - Delivering AI ready data with an Intelligent Iceberg Lakehouse.pdf",
+    "primaryVendor": "dremio",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/delivering-ai-ready-data-with-an-intelligent-iceberg-lakehouse/",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "ROI Guidebook - Teradata VantageCloud",
+    "documentId": "z71",
+    "type": "ROI Guidebook",
+    "year": 2025,
+    "quarter": "Q2",
+    "publishDate": "2025-05-19",
+    "technologies": [
+      "Data Platform",
+      "Cloud",
+      "Analytics"
+    ],
+    "vendors": [
+      "Teradata"
+    ],
+    "keyFindings": [
+      "Cloud analytics ROI framework",
+      "Enterprise data platform value"
+    ],
+    "roiClaim": "427% ROI with an 11-month payback",
+    "summary": "Organizations using Teradata VantageCloud achieved an average ROI of 427% over three years, with an average annual benefit of $7.9 million and a payback period of 11 months, based on Nucleus ROI assessments of customers across healthcare, insurance, and telecommunications.",
+    "pdfUrl": "/references/z71 - ROI Guidebook - Teradata VantageCloud.pdf",
+    "primaryVendor": "teradata",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Analytics Technology Value Matrix",
+    "documentId": "z76",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q2",
+    "publishDate": "2025-05-28",
+    "technologies": [
+      "Analytics",
+      "AI",
+      "BI"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "AI-enhanced analytics platforms",
+      "Next-generation BI"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of analytics technology vendors and market positioning for 2025.",
+    "pdfUrl": "/references/z76 - Analytics Technology Value Matrix.pdf",
+    "primaryVendor": "own",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/analytics-technology-value-matrix-2025/",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Salesforce looks to bolster its data cloud with intent to acquire Informatica",
+    "documentId": "z83",
+    "type": "Announcement",
+    "year": 2025,
+    "quarter": "Q2",
+    "publishDate": "2025-06-17",
+    "technologies": [
+      "Data Cloud",
+      "Integration",
+      "M&A"
+    ],
+    "vendors": [
+      "Salesforce",
+      "Informatica"
+    ],
+    "keyFindings": [
+      "Data cloud strategy",
+      "Integration platform acquisition"
+    ],
+    "roiClaim": null,
+    "summary": "Salesforce's intent to acquire Informatica aims to bolster its data cloud capabilities.",
+    "pdfUrl": "/references/z83 - Salesforce looks to bolster its data cloud with intent to acquire Informatica.pdf",
+    "primaryVendor": "informatica",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/salesforce-looks-to-bolster-its-data-cloud-with-intent-to-acquire-informatica/",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Deploying a unified observability stack with Datadog",
+    "documentId": "z84",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q2",
+    "publishDate": "2025-06-17",
+    "technologies": [
+      "Observability",
+      "Monitoring",
+      "DevOps"
+    ],
+    "vendors": [
+      "Datadog"
+    ],
+    "keyFindings": [
+      "Unified observability benefits",
+      "DevOps efficiency"
+    ],
+    "roiClaim": null,
+    "summary": "Datadog enables deployment of unified observability stack for comprehensive monitoring.",
+    "pdfUrl": "/references/z84 - Deploying a unified observability stack with Datadog.pdf",
+    "primaryVendor": "datadog",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/deploying-a-unified-observability-stack-with-datadog/",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "ROI case study - Oracle at SNCF",
+    "documentId": "z86",
+    "type": "ROI Study",
+    "year": 2025,
+    "quarter": "Q2",
+    "publishDate": "2025-06-17",
+    "technologies": [
+      "Database",
+      "Transportation",
+      "Enterprise"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [
+      "Transportation industry ROI",
+      "Enterprise database value"
+    ],
+    "roiClaim": "320 percent ROI and a payback period of 1.1 years",
+    "summary": "Oracle ROI case study at SNCF demonstrates database value in transportation industry.",
+    "pdfUrl": "/references/z86 - ROI case study - Oracle at SNCF.pdf",
+    "primaryVendor": "oracle",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/roi-case-study-oracle-at-sncf/",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "ROI case study - Actian at GEMA",
+    "documentId": "z87",
+    "type": "ROI Study",
+    "year": 2025,
+    "quarter": "Q2",
+    "publishDate": "2025-06-17",
+    "technologies": [
+      "Database",
+      "Analytics",
+      "Data Management"
+    ],
+    "vendors": [
+      "Actian"
+    ],
+    "keyFindings": [
+      "Database analytics ROI",
+      "Data management efficiency"
+    ],
+    "roiClaim": "140 percent ROI and a payback period of 15.1 months",
+    "summary": "Actian ROI case study at GEMA demonstrates database and analytics value.",
+    "pdfUrl": "/references/z87 - ROI case study - Actian at GEMA.pdf",
+    "primaryVendor": "actian",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/roi-case-study-actian-at-gema/",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "APM Technology Value Matrix 2025",
+    "documentId": "z97",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q2",
+    "publishDate": "2025-06-24",
+    "technologies": [
+      "APM",
+      "Application Performance",
+      "Monitoring"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "keyFindings": [
+      "APM market evolution",
+      "AI-powered monitoring"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of Application Performance Monitoring vendors and market positioning for 2025.",
+    "pdfUrl": "/references/z97 - APM Technology Value Matrix 2025.pdf",
+    "primaryVendor": "own",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Embedded Analytics Technology Value Matrix 2025",
+    "documentId": "z175",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-10-28",
+    "technologies": [
+      "Embedded Analytics",
+      "BI",
+      "Analytics"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of embedded analytics vendors and market positioning for 2025. Leaders in this year's Value Matrix include Domo, Looker, Oracle, Power BI, Tableau, and ThoughtSpot.",
+    "primaryVendor": "own",
+    "market": [
+      "embedded-analytics"
+    ]
+  },
+  {
+    "title": "ROI case study: Boomi at a regional bank",
+    "documentId": "z204",
+    "type": "ROI Study",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-03",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "Automation"
+    ],
+    "vendors": [
+      "Boomi"
+    ],
+    "roiClaim": "97% ROI with a 9.9-month payback",
+    "summary": "A regional bank saw a 97% ROI with a payback period of 9.9 months after deploying the Boomi Enterprise Platform to automate core operations, including loan processing, customer onboarding, and account maintenance.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/roi-case-study-boomi-at-a-regional-bank/",
+    "primaryVendor": "boomi",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Oracle AI Database drives 87 percent faster data refresh",
+    "documentId": "26074",
+    "type": "ROI Study",
+    "year": 2026,
+    "quarter": "Q2",
+    "publishDate": "2026-04-22",
+    "technologies": [
+      "Database",
+      "AI",
+      "Data Management"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "roiClaim": null,
+    "summary": "Nucleus interviewed Oracle AI Database customers and found that consolidating transactional, analytical, and integration workloads onto Oracle's converged data platform reduces the data latency, operational overhead, and redundant infrastructure of running AI workloads across fragmented or single-purpose database systems.",
+    "primaryVendor": "oracle"
+  },
+  {
+    "title": "Databricks compute cost savings exceed the lakehouse market average",
+    "documentId": "26057",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q2",
+    "publishDate": "2026-04-29",
+    "technologies": [
+      "Lakehouse",
+      "Analytics",
+      "Cloud"
+    ],
+    "vendors": [
+      "Databricks"
+    ],
+    "roiClaim": null,
+    "summary": "Nucleus reviewed data from multiple lakehouse deployments and found that 85.1 percent of Databricks customers reduced infrastructure and compute costs by a greater extent than the lakehouse market average.",
+    "primaryVendor": "databricks",
+    "market": [
+      "dsml",
+      "analytics"
+    ]
+  },
+  {
+    "title": "BI and Analytics Technology Value Matrix 2026",
+    "documentId": "26096",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q2",
+    "publishDate": "2026-05-26",
+    "technologies": [
+      "BI",
+      "Analytics"
+    ],
+    "vendors": [
+      "Multiple"
+    ],
+    "roiClaim": null,
+    "summary": "Comprehensive analysis of BI and analytics vendors and market positioning for 2026. Leaders in this year's Value Matrix include Domo, Microsoft, Oracle, Qlik, Tableau, and ThoughtSpot.",
+    "primaryVendor": "own"
+  },
+  {
+    "title": "NoSQL DBMS Technology Value Matrix",
+    "documentId": "z106",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q3",
+    "publishDate": "2025-07-15",
+    "technologies": [
+      "NoSQL",
+      "DBMS",
+      "Vector Search",
+      "RAG"
+    ],
+    "vendors": [
+      "AWS",
+      "InterSystems",
+      "Microsoft",
+      "MongoDB",
+      "Oracle"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Value Matrix on NoSQL databases as AI-native SaaS workloads accelerate adoption of multimodel platforms with natural-language interfaces, vector search, RAG, and serverless autoscaling; leaders are AWS, InterSystems, Microsoft, MongoDB, and Oracle.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/nosql-dbms-technology-value-matrix/",
+    "primaryVendor": "own",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "RAG to Robotics: Driving value alongside AI progress",
+    "documentId": "z112",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q3",
+    "publishDate": "2025-07-18",
+    "technologies": [
+      "RAG",
+      "Agentic AI",
+      "Robotics",
+      "Data Infrastructure"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Argues AI value from RAG through agentic reasoning to embodied robotics depends on early investment in an open lakehouse data backbone (Kafka, Flink/Spark, Iceberg) that captures, governs, and serves sensor data to low-latency inference engines.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/rag-to-robotics-driving-value-alongside-ai-progress/",
+    "primaryVendor": "own",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "Anatomy of a decision: Solace Event-Driven Integration",
+    "documentId": "z122",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q3",
+    "publishDate": "2025-08-18",
+    "technologies": [
+      "Event-Driven Architecture",
+      "Integration",
+      "Messaging"
+    ],
+    "vendors": [
+      "Solace"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Interviews with Solace customers found performance, scalability, and event-driven architecture support drove adoption; a global beverage manufacturer cut peak CPU utilization 70 percent while scaling throughput 10x, and an energy conglomerate projected annual savings exceeding $100 million.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/anatomy-of-a-decision-solace-event-driven-integration/",
+    "primaryVendor": "solace",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Anatomy of a decision: ThoughtSpot",
+    "documentId": "z125",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q3",
+    "publishDate": "2025-08-26",
+    "technologies": [
+      "BI",
+      "Natural Language Search",
+      "Self-Service Analytics"
+    ],
+    "vendors": [
+      "ThoughtSpot"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "ThoughtSpot customers cited natural language search, intuitive self-service analytics for non-technical users, and scalable large-volume data processing as primary selection factors; Nucleus anticipates continued gains as enterprises migrate from legacy BI to AI-native analytics.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/anatomy-of-a-decision-thoughtspot/",
+    "primaryVendor": "thoughtspot",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Anatomy of a decision: Teradata",
+    "documentId": "z134",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q3",
+    "publishDate": "2025-09-08",
+    "technologies": [
+      "Data Platform",
+      "Analytics",
+      "AI Infrastructure"
+    ],
+    "vendors": [
+      "Teradata"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Teradata customers cited integration with existing infrastructure, scalability for diverse workloads, and cost efficiency as key selection criteria; a professional sports franchise achieved 6x improved marketing effectiveness and an energy producer cut platform costs 50 percent versus alternatives.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/anatomy-of-a-decision-teradata/",
+    "primaryVendor": "teradata",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Data governance returns $3.20 per dollar invested",
+    "documentId": "z138",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q3",
+    "publishDate": "2025-09-10",
+    "technologies": [
+      "Data Governance",
+      "ROI Benchmark"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": "$3.20 returned per dollar invested with an average payback period of 10.3 months",
+    "summary": "Analysis of three years of ROI case study data found data governance deployments returned $3.20 per dollar spent on average with a 10.3-month payback, including 25 to 45 percent infrastructure cost reductions and a 41 percent average workload reduction for data engineers.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/data-governance-returns-3-20-per-dollar-invested/",
+    "primaryVendor": "own",
+    "market": [
+      "data-governance"
+    ]
+  },
+  {
+    "title": "Anatomy of a decision: Boomi",
+    "documentId": "z137",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q3",
+    "publishDate": "2025-09-10",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "API Management"
+    ],
+    "vendors": [
+      "Boomi"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Boomi customers cited reliable system connectivity, integration development speed versus manual coding, and cloud-based requirements as key selection criteria; a biotechnology company achieved 100 percent execution accuracy and a technology services provider cut integration development time 67 percent, avoiding $500,000 in coding costs.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/anatomy-of-a-decision-boomi/",
+    "primaryVendor": "boomi",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "ROI case study: MongoDB at a global technology provider",
+    "documentId": "z148",
+    "type": "ROI Study",
+    "year": 2025,
+    "quarter": "Q3",
+    "publishDate": "2025-09-24",
+    "technologies": [
+      "NoSQL",
+      "RAG",
+      "Vector Search"
+    ],
+    "vendors": [
+      "MongoDB"
+    ],
+    "keyFindings": [],
+    "roiClaim": "250 percent ROI and a payback period of 4.8 months",
+    "summary": "A global technology provider achieved a 250 percent ROI with a 4.8-month payback after deploying RAG models on MongoDB for support operations, improving case deflection 40 percent and reducing administrative costs 67 percent.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/roi-case-study-mongodb-at-a-global-technology-provider/",
+    "primaryVendor": "mongodb",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Anatomy of a decision: Embeddable",
+    "documentId": "z151",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-10-01",
+    "technologies": [
+      "Embedded Analytics",
+      "Developer Tools"
+    ],
+    "vendors": [
+      "Embeddable"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Embeddable customers cited native integration, extensive customizability, and a partnership-oriented approach as selection criteria, achieving 90 to 95 percent faster feature delivery and 99.9 percent uptime; Nucleus sees developer-first headless vendors gaining share in embedded analytics.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/anatomy-of-a-decision-embeddable/",
+    "primaryVendor": "embeddable",
+    "market": [
+      "embedded-analytics"
+    ]
+  },
+  {
+    "title": "Reduce costs by 14 percent with consumption pricing",
+    "documentId": "z168",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-10-20",
+    "technologies": [
+      "Consumption Pricing",
+      "SaaS Economics",
+      "Cloud Cost"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Nucleus reviewed organizations adopting consumption-based pricing and found direct savings of 14 percent versus fixed-cost subscription models, 52 to 80 percent faster implementation of new capabilities, and productivity gains across technical teams.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/reduce-costs-by-14-percent-with-consumption-pricing/",
+    "primaryVendor": "own",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "Anatomy of a decision: InterSystems IRIS",
+    "documentId": "z167",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-10-20",
+    "technologies": [
+      "Data Platform",
+      "Data Management",
+      "Consolidation"
+    ],
+    "vendors": [
+      "InterSystems"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Enterprises that migrated to InterSystems IRIS cited convergence, enterprise-scale support, and component-solution fatigue as motivators, with adoption driving up to 98 percent improvement in risk and claims filtering accuracy and consolidation of hundreds to thousands of data management services.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/anatomy-of-a-decision-intersystems-iris/",
+    "primaryVendor": "intersystems",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "AI-powered analytics improves productivity by 27 to 43 percent",
+    "documentId": "z184",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-11-06",
+    "technologies": [
+      "AI Analytics",
+      "Generative AI",
+      "Productivity"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Analysis of AI-powered analytics deployments found generative AI drives 43 percent productivity gains for data analysts and 27 percent for analytics consumers, with 80 to 90 percent faster dashboard generation and returns seen within five weeks of deployment.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/ai-powered-analytics-improves-productivity-by-27-to-43-percent/",
+    "primaryVendor": "own",
+    "market": [
+      "analytics",
+      "talent-management"
+    ]
+  },
+  {
+    "title": "ROI case study: Oracle at logistics services",
+    "documentId": "z188",
+    "type": "ROI Study",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-11-10",
+    "technologies": [
+      "HR Analytics",
+      "Cloud Analytics"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [],
+    "roiClaim": "396 percent ROI and a 3.1-month payback period",
+    "summary": "A logistics services provider achieved a 396 percent ROI with a 3.1-month payback by implementing Oracle Analytics in an HR cloud shift, consolidating more than 10 legacy systems and realizing $118.3 million in total benefits over three years, driven primarily by improved employee retention.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/roi-case-study-oracle-at-logistics-services/",
+    "primaryVendor": "oracle",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Anatomy of a decision: Domo",
+    "documentId": "z191",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-11-13",
+    "technologies": [
+      "BI",
+      "Self-Service Analytics",
+      "Data Governance"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Domo customers cited automation and governance capabilities, ease of use for non-technical users, and scalability for data delivery as key selection criteria; Nucleus expects accelerated Domo adoption among enterprises empowering citizen users without sacrificing governance.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/anatomy-of-a-decision-domo/",
+    "primaryVendor": "domo",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Quantifying the value of Data Governance",
+    "documentId": "z215",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-09",
+    "technologies": [
+      "Data Governance",
+      "ROI Framework"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Provides a framework for calculating ROI from data governance investments as governance evolves from a compliance asset to an AI enabler, citing 25 to 45 percent infrastructure cost reductions and 21 to 50 percent data team productivity improvements from prior Nucleus research.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/quantifying-the-value-of-data-governance/",
+    "primaryVendor": "own",
+    "market": [
+      "data-governance"
+    ]
+  },
+  {
+    "title": "Quantifying the value of data integration",
+    "documentId": "z227",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-11",
+    "technologies": [
+      "Data Integration",
+      "ROI Framework"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "A framework for building the business case for modern data integration platforms, translating technical uplifts of integration-as-a-service with managed infrastructure into cost savings, time savings, and profit extension that align technical and financial decision makers.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/quantifying-the-value-of-data-integration/",
+    "primaryVendor": "own",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Improve fraud detection by 24 percent with SAS",
+    "documentId": "z223",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-11",
+    "technologies": [
+      "Fraud Detection",
+      "Risk Analytics",
+      "Financial Services"
+    ],
+    "vendors": [
+      "SAS"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Nucleus research with financial institutions implementing SAS Viya found 24 percent improved fraud detection accuracy for organizations with existing models in production, 92 percent time savings in fraud analysis workflows, and over $20 million in annual cost avoidance.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/improve-fraud-detection-by-24-percent-with-sas/",
+    "primaryVendor": "sas",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Quantifying the value of data preparation platforms",
+    "documentId": "z232",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-13",
+    "technologies": [
+      "Data Preparation",
+      "Analytics Productivity"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "A framework for quantifying the business case for data preparation platforms, which Nucleus interviews show deliver 40 to 60 percent improved analyst productivity and accelerate analytics and AI project timelines by 40 to 50 percent by automating cleaning and transformation tasks.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/quantifying-the-value-of-data-preparation-platforms/",
+    "primaryVendor": "own",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Oracle Analytics returns $4.76 per dollar invested",
+    "documentId": "z236",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-15",
+    "technologies": [
+      "Analytics",
+      "ROI Benchmark"
+    ],
+    "vendors": [
+      "Oracle"
+    ],
+    "keyFindings": [],
+    "roiClaim": "$4.76 returned per dollar spent with an average payback period of 10 months",
+    "summary": "Three years of ROI case study data show Oracle Analytics Cloud and Fusion Data Intelligence deployments returned $4.76 per dollar spent with a 10-month average payback, with analysts seeing up to 80 percent faster query development.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/oracle-analytics-returns-4-76-per-dollar-invested/",
+    "primaryVendor": "oracle"
+  },
+  {
+    "title": "Top 5 analytics trends for 2026",
+    "documentId": "z238",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-17",
+    "technologies": [
+      "Analytics Trends",
+      "Conversational AI",
+      "Unified Platforms"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Outlines the top five analytics trends for 2026 as analytics access becomes expected by business users, frontline workers, and end customers, driving demand for unified platforms combining data preparation, governance, visualization, and conversational AI capabilities.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/top-5-analytics-trends-for-2026/",
+    "primaryVendor": "own",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Analytics deployments in financial services return $2.13 per dollar invested",
+    "documentId": "z249",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-22",
+    "technologies": [
+      "Analytics",
+      "Financial Services",
+      "ROI Benchmark"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": "$2.13 returned per dollar invested with a payback period of 13 months",
+    "summary": "Three years of ROI case study data show analytics deployments in financial services returned $2.13 per dollar spent with a 13-month payback, including 50 to 95 percent productivity gains for analyst and operations teams and 20 to 50 percent technology cost reductions.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/analytics-deployments-in-financial-services-return-2-13-per-dollar-invested/",
+    "primaryVendor": "own",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "The value of Qlik Open Lakehouse",
+    "documentId": "z230",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-22",
+    "technologies": [
+      "Lakehouse",
+      "Apache Iceberg",
+      "Data Integration"
+    ],
+    "vendors": [
+      "Qlik"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Organizations adopting Qlik Open Lakehouse reported 60 to 70 percent improvements in data ingestion processing costs, 25 to 30 percent reductions in query compute costs at up to 5x faster processing, and 30 to 50 percent less platform management time through automated Iceberg optimization.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/the-value-of-qlik-open-lakehouse/",
+    "primaryVendor": "qlik",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "IBM announces intent to acquire Confluent",
+    "documentId": "z244",
+    "type": "Announcement",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-22",
+    "technologies": [
+      "Data Streaming",
+      "Kafka",
+      "M&A"
+    ],
+    "vendors": [
+      "IBM",
+      "Confluent"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Analyzes IBM's $11 billion intent to acquire Confluent, combining IBM MQ with Confluent's Kafka, WarpStream, and managed Flink offerings to provide native MQ-to-Kafka connectivity for AI workloads, with up to 90 percent cost savings versus self-managed streaming.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/ibm-announces-intent-to-acquire-confluent/",
+    "primaryVendor": "ibm",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "iPaaS deployments in financial services return $1.47 per dollar invested",
+    "documentId": "z251",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-22",
+    "technologies": [
+      "iPaaS",
+      "Financial Services",
+      "ROI Benchmark"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": "$1.47 returned per dollar invested with an average payback period of 8.6 months",
+    "summary": "ROI case study data shows iPaaS deployments in financial services returned $1.47 per dollar spent with an 8.6-month average payback, with 60 to 82 percent productivity gains for developer and operations teams and 55 to 66 percent administrative cost reductions.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/ipaas-deployments-in-financial-services-return-1-47-per-dollar-invested/",
+    "primaryVendor": "own",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Power BI improves analyst productivity by 27 percent",
+    "documentId": "26012",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q1",
+    "publishDate": "2026-01-26",
+    "technologies": [
+      "BI",
+      "Analytics",
+      "Data Platforms"
+    ],
+    "vendors": [
+      "Microsoft"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Evaluation of Power BI deployments found customers connecting it to data platforms as a last-mile analytics layer achieved 27 percent analyst time savings, revenue gains of up to six percent, and accelerated insight delivery from real-time dashboards.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/power-bi-improves-analyst-productivity-by-27-percent/",
+    "primaryVendor": "microsoft",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "AI powered integration improves user productivity by 27 to 58 percent",
+    "documentId": "26016",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q1",
+    "publishDate": "2026-01-30",
+    "technologies": [
+      "iPaaS",
+      "Generative AI",
+      "Integration"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Analysis of AI-powered iPaaS deployments found integration developers achieved 27 to 58 percent productivity improvements and up to 90 percent faster deployment via AI-assisted generation, while business users gained self-service integration that compressed delivery from weeks to days.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/ai-powered-integration-improves-user-productivity-by-27-to-58-percent/",
+    "primaryVendor": "own",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Saving data team time with data integration and preparation platforms",
+    "documentId": "26026",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q1",
+    "publishDate": "2026-02-17",
+    "technologies": [
+      "Data Integration",
+      "Data Preparation",
+      "Data Engineering"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Analysis of 13 studies across healthcare, financial services, manufacturing, and retail found organizations spend 40 to 80 percent of data team time connecting, cleaning, and transforming data; deployments addressing the integration layer recovered that capacity and cut infrastructure costs 43 to 76 percent.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/saving-data-team-time-with-data-integration-and-preparation-platforms/",
+    "primaryVendor": "own",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Elastic returns $2.57 per dollar invested",
+    "documentId": "26029",
+    "type": "ROI Study",
+    "year": 2026,
+    "quarter": "Q1",
+    "publishDate": "2026-02-23",
+    "technologies": [
+      "Observability",
+      "Search",
+      "ROI Benchmark"
+    ],
+    "vendors": [
+      "Elastic"
+    ],
+    "keyFindings": [],
+    "roiClaim": "$2.57 returned per dollar spent with an average payback period of 14.5 months",
+    "summary": "Three years of ROI case study data show Elastic observability and search deployments returned $2.57 per dollar spent with a 14.5-month average payback, eliminating $72,000 to $180,000 annually in infrastructure costs and reducing MTTR by up to 80 percent.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/elastic-returns-2-57-per-dollar-invested/",
+    "primaryVendor": "elastic",
+    "market": [
+      "analytics"
+    ]
+  },
+  {
+    "title": "Teradata partners with Unstructured to simplify vector operations",
+    "documentId": "26041",
+    "type": "Announcement",
+    "year": 2026,
+    "quarter": "Q1",
+    "publishDate": "2026-03-09",
+    "technologies": [
+      "Vector Store",
+      "Embeddings",
+      "Agentic AI"
+    ],
+    "vendors": [
+      "Teradata",
+      "Unstructured"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Covers Teradata's March 9, 2026 announcement of agentic and multi-modal capabilities for its Enterprise Vector Store via native integration with Unstructured, automating embedding pipelines and model selection to help enterprises avoid costly re-embedding cycles.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/teradata-partners-with-unstructured-to-simplify-vector-operations/",
+    "primaryVendor": "teradata",
+    "market": [
+      "database"
+    ]
+  },
+  {
+    "title": "Boomi productivity gains exceed the iPaaS market average",
+    "documentId": "26053",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q1",
+    "publishDate": "2026-03-27",
+    "technologies": [
+      "iPaaS",
+      "Integration",
+      "Productivity Benchmark"
+    ],
+    "vendors": [
+      "Boomi"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Review of productivity data from 46 iPaaS deployments found 73.8 percent of Boomi deployments delivered productivity gains above the iPaaS market average, translating to fewer developer hours on connectivity work and shorter integration timelines.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/boomi-productivity-gains-exceed-the-ipaas-market-average/",
+    "primaryVendor": "boomi",
+    "market": [
+      "ipaas"
+    ]
+  },
+  {
+    "title": "Salesforce delivers greater cost savings than the data integration market average",
+    "documentId": "26054",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q1",
+    "publishDate": "2026-03-27",
+    "technologies": [
+      "Data Integration",
+      "TCO",
+      "Benchmark"
+    ],
+    "vendors": [
+      "Salesforce",
+      "Informatica"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Review of 69 data integration deployments found 85.3 percent of Salesforce (Informatica) deployments reduced total cost of ownership by a larger magnitude than the data integration market average.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/salesforce-delivers-greater-cost-savings-than-the-data-integration-market-average/",
+    "primaryVendor": "salesforce",
+    "market": [
+      "data-integration"
+    ]
+  },
+  {
+    "title": "Extending analytics distribution with Domo Everywhere",
+    "documentId": "26061",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q2",
+    "publishDate": "2026-04-10",
+    "technologies": [
+      "Embedded Analytics",
+      "Analytics Distribution"
+    ],
+    "vendors": [
+      "Domo"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Interviews with Domo Everywhere customers found organizations compressed embedded analytics rollout timelines from months to weeks and accelerated data request fulfillment 55 to 70 percent by embedding governed, multi-tenant analytics into existing workflows.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/extending-analytics-distribution-with-domo-everywhere/",
+    "primaryVendor": "domo"
+  },
+  {
+    "title": "iPaaS Technology Value Matrix 2026",
+    "documentId": "26063",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q2",
+    "publishDate": "2026-04-14",
+    "technologies": [
+      "iPaaS",
+      "Agentic AI",
+      "MCP"
+    ],
+    "vendors": [
+      "Boomi",
+      "Salesforce (Informatica)",
+      "Oracle",
+      "Infor",
+      "Tray.ai"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "2026 iPaaS Value Matrix noting agent builders and MCP support have become standard, positioning iPaaS as the orchestration layer for agentic workflows; leaders are Boomi, Salesforce (Informatica), Oracle, Infor, and Tray.ai.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/ipaas-technology-value-matrix-2026/",
+    "primaryVendor": "boomi"
+  },
+  {
+    "title": "Driving agentic consistency with Strategy Mosaic",
+    "documentId": "26066",
+    "type": "ROI Study",
+    "year": 2026,
+    "quarter": "Q2",
+    "publishDate": "2026-04-16",
+    "technologies": [
+      "Semantic Layer",
+      "Agentic AI",
+      "Analytics"
+    ],
+    "vendors": [
+      "Strategy"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Interviews with Strategy customers deploying the Mosaic universal semantic layer found up to 21 percent faster time to insight and 5 to 9 percent accelerated case resolution; Nucleus recommends auditing semantic architecture for AI readiness before scaling agents.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/driving-agentic-consistency-with-strategy-mosaic/",
+    "primaryVendor": "strategy"
+  },
+  {
+    "title": "How AI economics reshape software pricing models",
+    "documentId": "26065",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q2",
+    "publishDate": "2026-04-16",
+    "technologies": [
+      "SaaS Pricing",
+      "AI Economics",
+      "Token Costs"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Argues AI inference and token economics embed marginal cost into every SaaS AI feature, making per-seat licensing defensible only where engagement exceeds the vendor's incremental AI serving costs; buyers should evaluate agreements on engagement and value per seat.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/how-ai-economics-reshape-software-pricing-models/",
+    "primaryVendor": "own"
+  },
+  {
+    "title": "How AI-native translation shifts the ROI of enterprise localization",
+    "documentId": "26072",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q2",
+    "publishDate": "2026-04-22",
+    "technologies": [
+      "AI Translation",
+      "Localization",
+      "Governance"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Examines AI-native translation platforms that restore quality controls and terminology enforcement lost to ungoverned tool sprawl, finding adopters reduce translation spend by 80 to 90 percent and open previously uneconomical language markets.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/how-ai-native-translation-shifts-the-roi-of-enterprise-localization/",
+    "primaryVendor": "own"
+  },
+  {
+    "title": "Nucleus Top Ten Predictions for 2026",
+    "documentId": "z176",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-10-28",
+    "technologies": [
+      "AI",
+      "Predictions"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Nucleus's predictions for 2026, centered around evolving AI technology and its anticipated impacts and consequences.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/nucleus-top-ten-predictions-for-2026/",
+    "primaryVendor": "own",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "Hot Companies to Watch in 2026",
+    "documentId": "z205",
+    "type": "Research Note",
+    "year": 2025,
+    "quarter": "Q4",
+    "publishDate": "2025-12-02",
+    "technologies": [
+      "Enterprise Technology",
+      "Innovation"
+    ],
+    "vendors": [],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "Identifies eleven vendors delivering meaningful innovation and measurable value, positioned to shape enterprise technology in 2026.",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/hot-companies-to-watch-in-2026/",
+    "primaryVendor": "own",
+    "market": [
+      "ai"
+    ]
+  },
+  {
+    "title": "ROI Guidebook - Informatica Cloud Data Integration Services",
+    "documentId": "x24",
+    "type": "ROI Guidebook",
+    "year": 2023,
+    "quarter": "Q1",
+    "publishDate": "2023-02-05",
+    "technologies": [
+      "Data Integration",
+      "Cloud"
+    ],
+    "vendors": [
+      "Informatica"
+    ],
+    "keyFindings": [],
+    "roiClaim": null,
+    "summary": "ROI guidebook for Informatica Cloud Data Integration Services based on Nucleus ROI assessments of customer deployments.",
+    "primaryVendor": "informatica",
+    "market": [
+      "data-integration"
+    ]
+  }
+]

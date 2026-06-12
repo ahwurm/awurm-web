@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://awurm.com/sitemap-index.xml
+
+# LLM-readable summary: https://awurm.com/llms.txt

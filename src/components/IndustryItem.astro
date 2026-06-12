@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+import Tag from './Tag.astro';
+import { getNucleusResearchUrl } from '../lib/research-utils';
+import type { IndustryResearch } from '../lib/types';
+
+interface Props {
+  entry: IndustryResearch;
+  index: number; // stable ledger number (see lib/ledger.ts)
+}
+const { entry, index } = Astro.props;
+const url = getNucleusResearchUrl(entry);
+
+// Primary-vendor favicon (build-time asset; downloaded from each vendor's site).
+const vendorIcons = import.meta.glob<{ default: ImageMetadata }>('../assets/vendors/*.png', {
+  eager: true,
+});
+const vendorIcon = entry.primaryVendor
+  ? vendorIcons[`../assets/vendors/${entry.primaryVendor}.png`]?.default
+  : undefined;
+const vendorName = entry.vendors.find((v) => v.toLowerCase().replace(/[^a-z0-9]+/g, '-') === entry.primaryVendor) ?? entry.primaryVendor;
+// NOTE: entry.pdfUrl points at never-published /references PDFs — kept in data, never rendered.
+// NOTE: the root element must stay display:block — the research filters toggle
+// the `hidden` attribute and a display utility would override it (the card's
+// internal layout lives on the inner div instead).
+---
+
+<article
+  class="rounded-[3px] border border-edge bg-surface"
+  data-year={entry.year}
+  data-type={entry.type}
+  data-no={entry.documentId.toUpperCase()}
+>
+  <div class="flex h-full flex-col p-5">
+    <div class="meta flex items-center justify-between gap-3 text-dim">
+      <span class="flex items-center gap-2">
+        {vendorIcon && (
+          <Image
+            src={vendorIcon}
+            alt={vendorName ? `${vendorName} logo` : 'Vendor logo'}
+            width={32}
+            height={32}
+            class="h-4 w-4 rounded-[2px]"
+          />
+        )}
+        <span>{entry.documentId.toUpperCase()} · {entry.publishDate}</span>
+      </span>
+      <Tag type={entry.type} class="shrink-0" />
+    </div>
+    <h3 class="font-display mt-3 text-[1.08rem] font-semibold leading-snug tracking-tight">
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-accent transition-colors duration-150 hover:underline"
+      >
+        {entry.title}
+      </a>
+    </h3>
+    <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-dim">{entry.summary}</p>
+    {entry.roiClaim && <p class="finding mt-3 text-sm font-medium">{entry.roiClaim}</p>}
+    <p class="mt-auto pt-3.5">
+      <a href={url} target="_blank" rel="noopener noreferrer" class="link-rule text-[0.875rem] font-medium">
+        Read research ↗
+      </a>
+    </p>
+  </div>
+</article>

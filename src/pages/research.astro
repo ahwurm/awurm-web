@@ -1,0 +1,323 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+import IndustryItem from '../components/IndustryItem.astro';
+import { ledgerIndices } from '../lib/ledger';
+import figResponse from '../assets/figures/response-distributions.png';
+import figModel from '../assets/figures/accumulator-model.png';
+
+// Figures from the old site's research assets, paired by paper slug.
+const figures: Record<string, { src: ImageMetadata; label: string; alt: string }> = {
+  '2021-cogsci-timing-anticipatory-decisions': {
+    src: figResponse,
+    label: '~/figures/response-distributions.png',
+    alt: 'Observed vs. model response time distributions for anticipatory decisions',
+  },
+  '2021-psyarxiv-why-am-i-always-late': {
+    src: figModel,
+    label: '~/figures/accumulator-model.png',
+    alt: 'Accumulator model diagram: evidence accumulation to a decision boundary',
+  },
+};
+
+const publications = (await getCollection('publications')).sort(
+  (a, b) => Number(b.data.featured) - Number(a.data.featured) || b.data.year - a.data.year
+);
+
+const industry = (await getCollection('industryResearch')).sort((a, b) =>
+  b.data.publishDate.localeCompare(a.data.publishDate)
+);
+const indices = ledgerIndices(industry);
+
+const count = (pred: (d: (typeof industry)[number]['data']) => boolean) =>
+  industry.filter((e) => pred(e.data)).length;
+
+const years = [...new Set(industry.map((e) => e.data.year))].sort((a, b) => b - a);
+const types = [...new Set(industry.map((e) => e.data.type))].sort();
+
+// Sparkline: notes per quarter, computed from the data at build time.
+const qKey = (y: number, q: string) => y * 4 + (Number(q[1]) - 1);
+const perQuarter = new Map<number, number>();
+for (const e of industry) {
+  const k = qKey(e.data.year, e.data.quarter);
+  perQuarter.set(k, (perQuarter.get(k) ?? 0) + 1);
+}
+const kMin = Math.min(...perQuarter.keys());
+const kMax = Math.max(...perQuarter.keys());
+const series: number[] = [];
+for (let k = kMin; k <= kMax; k++) series.push(perQuarter.get(k) ?? 0);
+const maxC = Math.max(...series);
+const SW = 240;
+const baseY = 42;
+const topY = 6;
+const px = (i: number) => +(2 + (i / (series.length - 1)) * (SW - 4)).toFixed(1);
+const py = (c: number) => +(baseY - (c / maxC) * (baseY - topY)).toFixed(1);
+const sparkPts = series.map((c, i) => `${px(i)},${py(c)}`).join(' ');
+const lastX = px(series.length - 1);
+const lastY = py(series[series.length - 1]);
+const yearStart = Math.floor(kMin / 4);
+const yearEnd = Math.floor(kMax / 4);
+const qEnd = `q${(kMax % 4) + 1}`;
+const sparkAlt = `Industry notes per quarter, ${yearStart} to ${yearEnd}; peak ${maxC} per quarter; current quarter ${qEnd} ${yearEnd}.`;
+
+const description = `Academic publications in decision science and ${industry.length} industry research notes, ROI studies, and value matrices by Alexander H. Wurm, Principal Analyst at Nucleus Research.`;
+---
+
+<Base title="Research — Alexander H. Wurm" description={description} ogImage="/og/research.png">
+  <section class="container-site py-12 sm:py-16">
+    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
+      <h1 class="display-tight text-[clamp(2.8rem,6vw,4.4rem)] font-semibold"><span class="text-accent">~/</span>research</h1>
+      <div class="hidden sm:block">
+        <p class="meta lowercase text-dim">notes / quarter</p>
+        <svg width={SW} height="56" viewBox={`0 0 ${SW} 56`} role="img" aria-label={sparkAlt} fill="none" class="mt-1.5">
+          <line x1="0" y1={baseY} x2={SW} y2={baseY} stroke="var(--color-edge)"></line>
+          <polyline points={sparkPts} stroke="var(--color-dim)" stroke-width="1.4" stroke-linejoin="round"></polyline>
+          <line x1={lastX} y1={lastY} x2={lastX} y2={baseY} stroke="var(--color-accent)" stroke-width="1.5"></line>
+          <circle cx={lastX} cy={lastY} r="2.5" fill="var(--color-accent)"></circle>
+          <text x="0" y="54" fill="var(--color-dim)" class="spark-label">{yearStart}</text>
+          <text x={SW} y="54" text-anchor="end" fill="var(--color-accent)" class="spark-label">{yearEnd}·{qEnd}</text>
+        </svg>
+      </div>
+    </div>
+    <div class="acc-rule mt-5" aria-hidden="true"></div>
+
+    <!-- Controls -->
+    <div class="mt-7 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+      <div
+        role="tablist"
+        aria-label="Research type"
+        class="meta flex w-fit gap-7 lowercase"
+      >
+        <a
+          id="tab-industry"
+          href="/research/"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-industry"
+          class="border-b-2 border-transparent pb-2 text-dim transition-colors hover:text-ink aria-selected:border-accent aria-selected:text-ink"
+        >
+          Industry ({industry.length})
+        </a>
+        <a
+          id="tab-academic"
+          href="/research/?tab=academic"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-academic"
+          class="border-b-2 border-transparent pb-2 text-dim transition-colors hover:text-ink aria-selected:border-accent aria-selected:text-ink"
+        >
+          Academic
+        </a>
+      </div>
+
+      <div id="industry-filters" class="flex flex-wrap items-center gap-x-4 gap-y-3">
+        <p id="industry-count" class="meta lowercase text-dim" aria-live="polite">n = {industry.length}</p>
+        <label class="sr-only" for="filter-type">Filter by type</label>
+        <select
+          id="filter-type"
+          class="rounded-[2px] border border-edge bg-surface px-2.5 py-1.5 font-mono text-[12.5px] lowercase"
+        >
+          <option value="">All types</option>
+          {types.map((t) => <option value={t}>{t} ({count((d) => d.type === t)})</option>)}
+        </select>
+        <label class="sr-only" for="filter-year">Filter by year</label>
+        <select
+          id="filter-year"
+          class="rounded-[2px] border border-edge bg-surface px-2.5 py-1.5 font-mono text-[12.5px] lowercase"
+        >
+          <option value="">All years</option>
+          {years.map((y) => <option value={String(y)}>{y} ({count((d) => d.year === y)})</option>)}
+        </select>
+        <button
+          id="model-decide"
+          type="button"
+          class="meta cursor-pointer rounded-[4px] bg-accent-fill px-3.5 py-2 lowercase text-accent-ink transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+          hidden
+        >
+          Decide for me →
+        </button>
+      </div>
+    </div>
+
+    <!-- Academic panel -->
+    <div id="panel-academic" role="tabpanel" aria-labelledby="tab-academic" class="mt-10" hidden>
+      {publications.map((p) => <PublicationItem publication={p} figure={figures[p.id]} />)}
+    </div>
+
+    <!-- Industry panel (statically rendered for SEO; toggled client-side) -->
+    <div id="panel-industry" role="tabpanel" aria-labelledby="tab-industry" class="mt-4">
+      <div id="model-race" class="plate mb-2 mt-4" hidden>
+        <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
+        <canvas id="model-race-canvas" class="h-36 w-full"></canvas>
+      </div>
+      <p id="model-race-live" class="sr-only" role="status" aria-live="polite"></p>
+      <div id="industry-list" class="grid items-stretch gap-4 sm:grid-cols-2">
+        {industry.map((entry) => <IndustryItem entry={entry.data} index={indices.get(entry.id)!} />)}
+      </div>
+      <p id="industry-empty" class="py-12 text-center text-dim" hidden>No research matches these filters.</p>
+    </div>
+  </section>
+
+  <!-- No-JS: show both panels stacked (tabs degrade to page links). -->
+  <noscript>
+    <style>
+      #panel-academic[hidden] {
+        display: block;
+      }
+      #panel-academic::before {
+        content: 'Academic research';
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-family: var(--font-display);
+        margin-bottom: 1rem;
+      }
+    </style>
+  </noscript>
+
+  <style>
+    .spark-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+  </style>
+
+  <script>
+    import { createRace, type RaceHandle } from '../lib/accumulator';
+
+    // Research filters: URL contract is ?tab=industry (+ optional &year= & type=).
+    const tabs = { academic: document.getElementById('tab-academic')!, industry: document.getElementById('tab-industry')! };
+    const panels = { academic: document.getElementById('panel-academic')!, industry: document.getElementById('panel-industry')! };
+    const filters = document.getElementById('industry-filters')!;
+    const typeSel = document.getElementById('filter-type') as HTMLSelectElement;
+    const yearSel = document.getElementById('filter-year') as HTMLSelectElement;
+    const items = [...document.querySelectorAll<HTMLElement>('#industry-list > article')];
+    const empty = document.getElementById('industry-empty')!;
+    const countEl = document.getElementById('industry-count')!;
+    const modelBtn = document.getElementById('model-decide') as HTMLButtonElement;
+    const raceWrap = document.getElementById('model-race')!;
+    const raceCanvas = document.getElementById('model-race-canvas') as HTMLCanvasElement;
+    const raceLive = document.getElementById('model-race-live')!;
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const visibleItems = () => items.filter((i) => !i.hidden);
+
+    const applyFilters = () => {
+      let visible = 0;
+      for (const item of items) {
+        const show =
+          (!yearSel.value || item.dataset.year === yearSel.value) &&
+          (!typeSel.value || item.dataset.type === typeSel.value);
+        item.hidden = !show;
+        if (show) visible++;
+      }
+      empty.hidden = visible > 0;
+      // sample-size annotation: n = 43 · year = 2024 · type = roi study
+      let s = `n = ${visible}`;
+      if (yearSel.value) s += ` · year = ${yearSel.value}`;
+      if (typeSel.value) s += ` · type = ${typeSel.value.toLowerCase()}`;
+      countEl.textContent = s;
+      modelBtn.disabled = visible === 0;
+      raceWrap.hidden = true;
+    };
+
+    const setTab = (tab: 'academic' | 'industry') => {
+      for (const t of ['academic', 'industry'] as const) {
+        tabs[t].setAttribute('aria-selected', String(t === tab));
+        panels[t].hidden = t !== tab;
+      }
+      filters.hidden = tab !== 'industry';
+    };
+
+    const applyFromUrl = () => {
+      const params = new URLSearchParams(location.search);
+      const tab = params.get('tab') === 'academic' ? 'academic' : 'industry';
+      typeSel.value = params.get('type') ?? '';
+      yearSel.value = params.get('year') ?? '';
+      if ([...typeSel.options].every((o) => o.value !== typeSel.value)) typeSel.value = '';
+      if ([...yearSel.options].every((o) => o.value !== yearSel.value)) yearSel.value = '';
+      setTab(tab);
+      applyFilters();
+    };
+
+    const syncUrl = () => {
+      const params = new URLSearchParams();
+      if (panels.industry.hidden) {
+        params.set('tab', 'academic');
+      } else {
+        if (typeSel.value) params.set('type', typeSel.value);
+        if (yearSel.value) params.set('year', yearSel.value);
+      }
+      const qs = params.toString();
+      history.replaceState(null, '', qs ? `${location.pathname}?${qs}` : location.pathname);
+    };
+
+    tabs.academic.addEventListener('click', (e) => {
+      e.preventDefault();
+      setTab('academic');
+      syncUrl();
+    });
+    tabs.industry.addEventListener('click', (e) => {
+      e.preventDefault();
+      setTab('industry');
+      syncUrl();
+    });
+    typeSel.addEventListener('change', () => {
+      applyFilters();
+      syncUrl();
+    });
+    yearSel.addEventListener('change', () => {
+      applyFilters();
+      syncUrl();
+    });
+    window.addEventListener('popstate', applyFromUrl);
+    applyFromUrl();
+
+    // "Let the model decide": race up to 4 visible notes through the
+    // accumulator; the first to cross the boundary is the one you read.
+    modelBtn.hidden = false;
+    let race: RaceHandle | null = null;
+    let lastHit: HTMLElement | null = null;
+
+    const goTo = (row: HTMLElement) => {
+      lastHit?.classList.remove('row-hit');
+      void row.offsetWidth; // restart the highlight animation
+      row.classList.add('row-hit');
+      lastHit = row;
+      row.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
+    };
+
+    modelBtn.addEventListener('click', () => {
+      if (race?.running()) return; // one trial at a time
+      const pool = visibleItems();
+      if (!pool.length) return;
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+      }
+      const sampled = pool.slice(0, Math.min(4, pool.length));
+      if (reduced || sampled.length === 1) {
+        const w = sampled[Math.floor(Math.random() * sampled.length)];
+        raceLive.textContent = `decision: ${w.dataset.no}`;
+        goTo(w);
+        return;
+      }
+      raceWrap.hidden = false;
+      race?.dispose();
+      race = createRace(raceCanvas, {
+        n: sampled.length,
+        maxMs: 1600,
+        axes: false,
+        labels: sampled.map((s) => s.dataset.no ?? ''),
+        onCommit: (winner, rt) => {
+          raceLive.textContent = `decision: ${sampled[winner].dataset.no} · rt = ${rt} ms`;
+          setTimeout(() => goTo(sampled[winner]), 450);
+        },
+      });
+      race.start();
+    });
+  </script>
+</Base>

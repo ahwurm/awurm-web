@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import TalkCard from '../components/TalkCard.astro';
+import { isUpcoming, groupByYear } from '../lib/dates';
+import { profile } from '../data/profile';
+
+const talks = (await getCollection('talks')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// Upcoming/past derived from date at build time — never stored.
+const upcoming = talks.filter((t) => isUpcoming(t.data.date));
+const past = talks.filter((t) => !isUpcoming(t.data.date));
+const byYear = groupByYear(past, (t) => t.data.date);
+
+const description =
+  'Talks and webinars by Alexander H. Wurm.';
+---
+
+<Base title="Speaking — Alexander H. Wurm" description={description} ogImage="/og/speaking.png">
+  <section class="container-site py-12 sm:py-16">
+    <h1 class="display-tight text-[clamp(2.8rem,6vw,4.4rem)] font-semibold"><span class="text-accent">~/</span>speaking</h1>
+    <div class="acc-rule mt-5" aria-hidden="true"></div>
+  </section>
+
+  {
+    upcoming.length > 0 && (
+      <Section title="Upcoming" tight>
+        <div class="mt-4">
+          {upcoming.map((talk) => (
+            <TalkCard talk={talk} />
+          ))}
+        </div>
+      </Section>
+    )
+  }
+
+  <Section tight>
+    <div class="space-y-10">
+      {
+        byYear.map(([year, yearTalks]) => (
+          <div>
+            <h3 class="meta text-dim">//{year}</h3>
+            <div class="mt-1">
+              {yearTalks.map((talk) => (
+                <TalkCard talk={talk} />
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+</Base>

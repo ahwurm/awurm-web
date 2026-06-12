@@ -1,0 +1,93 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Button from '../components/Button.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import Frame from '../components/Frame.astro';
+import { profile } from '../data/profile';
+import { site } from '../data/site';
+import headshot from '../assets/photos/headshot.jpg';
+
+const [firstName, ...rest] = profile.name.split(' ');
+const lastName = rest.pop();
+---
+
+<Base title={site.title} description={site.description} ogImage="/og/home.png">
+  <!-- Single-viewport landing: name, headshot, two doors. No scroll-through. -->
+  <section class="container-site flex min-h-full items-center py-10 sm:py-12">
+    <div class="grid w-full items-center gap-x-14 gap-y-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+      <div>
+        <p class="kicker text-accent">// ai · data · decision science</p>
+        <h1 class="display-tight mt-5 font-semibold">
+          <span class="block text-[clamp(2.9rem,7.5vw,5.6rem)]">{firstName}</span>
+          <span class="block text-[clamp(2.9rem,7.5vw,5.6rem)]">{lastName}<span class="text-accent">_</span></span>
+        </h1>
+        <p class="mt-6 max-w-[46ch] text-[1.05rem] leading-relaxed text-dim">
+          {profile.oneLiner}
+        </p>
+        <div class="mt-9 flex flex-wrap items-center gap-3">
+          <button
+            id="decide-home"
+            type="button"
+            class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-[4px] bg-accent-fill px-5 py-2.5 font-mono text-[0.8rem] font-medium lowercase tracking-[0.02em] text-accent-ink transition-colors duration-150 hover:opacity-90 disabled:cursor-wait disabled:opacity-70"
+          >
+            decide for me →
+          </button>
+          <Button href="/research/" variant="outline">explore research</Button>
+          <Button href="/projects/" variant="outline">explore projects</Button>
+        </div>
+        <div id="decide-fig" class="mt-7 hidden max-w-md">
+          <canvas id="decide-canvas" class="h-32 w-full"></canvas>
+          <p class="meta mt-1.5 text-dim">fig. — first trace to the boundary picks your page.</p>
+        </div>
+        <div class="mt-8">
+          <SocialLinks />
+        </div>
+      </div>
+      <Frame label="~/headshot.jpg" class="mx-auto w-full max-w-[26rem] lg:max-w-none">
+        <Image
+          src={headshot}
+          alt={profile.name}
+          width={880}
+          class="aspect-[5/6] w-full object-cover"
+          loading="eager"
+        />
+      </Frame>
+    </div>
+  </section>
+
+  <script>
+    import { createRace } from '../lib/accumulator';
+
+    const btn = document.getElementById('decide-home') as HTMLButtonElement | null;
+    const fig = document.getElementById('decide-fig');
+    const canvas = document.getElementById('decide-canvas') as HTMLCanvasElement | null;
+    const DESTS: [string, string][] = [
+      ['research', '/research/'],
+      ['projects', '/projects/'],
+      ['speaking', '/speaking/'],
+      ['contact', '/contact/'],
+    ];
+    let busy = false;
+    btn?.addEventListener('click', () => {
+      if (busy || !canvas || !fig) return;
+      busy = true;
+      btn.disabled = true;
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        location.assign(DESTS[Math.floor(Math.random() * DESTS.length)][1]);
+        return;
+      }
+      fig.classList.remove('hidden');
+      const race = createRace(canvas, {
+        n: DESTS.length,
+        labels: DESTS.map(([l]) => l),
+        maxMs: 1900,
+        axes: false,
+        onCommit: (winner) => {
+          setTimeout(() => location.assign(DESTS[winner][1]), 420);
+        },
+      });
+      race.start();
+    });
+  </script>
+</Base>
