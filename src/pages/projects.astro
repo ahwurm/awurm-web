@@ -6,7 +6,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 
 const description =
-  'Projects by Alexander H. Wurm — Smart Capital Tracker (13F analysis), the Nucleus AI Tool (RAG over 20 years of ROI research), and a Wald accumulator model of anticipatory decisions.';
+  'Projects by Alexander H. Wurm — Smart Capital Tracker (13F analysis), a Wald accumulator model of anticipatory decisions, and open-source local-AI tooling (LocalHarness, LocalShift).';
 ---
 
 <Base title="Projects — Alexander H. Wurm" description={description} ogImage="/og/projects.png">
