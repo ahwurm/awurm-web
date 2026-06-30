@@ -13,13 +13,43 @@ const upcoming = talks.filter((t) => isUpcoming(t.data.date));
 const past = talks.filter((t) => !isUpcoming(t.data.date));
 const byYear = groupByYear(past, (t) => t.data.date);
 
+// Talks-per-year sparkline (mirrors the research notes/quarter spark).
+const talkYears = talks.map((t) => t.data.date.getFullYear());
+const minYear = Math.min(...talkYears);
+const maxYear = Math.max(...talkYears);
+const perYear: number[] = [];
+for (let y = minYear; y <= maxYear; y++) perYear.push(talkYears.filter((yy) => yy === y).length);
+const maxCount = Math.max(...perYear);
+const SW = 240;
+const baseY = 42;
+const topY = 6;
+const px = (i: number) => +(2 + (i / Math.max(1, perYear.length - 1)) * (SW - 4)).toFixed(1);
+const py = (c: number) => +(baseY - (c / maxCount) * (baseY - topY)).toFixed(1);
+const sparkPts = perYear.map((c, i) => `${px(i)},${py(c)}`).join(' ');
+const lastX = px(perYear.length - 1);
+const lastY = py(perYear[perYear.length - 1]);
+const sparkAlt = `Talks per year, ${minYear} to ${maxYear}; peak ${maxCount} in a year; ${perYear[perYear.length - 1]} in ${maxYear}.`;
+
 const description =
   'Talks and webinars by Alexander H. Wurm.';
 ---
 
 <Base title="Speaking — Alexander H. Wurm" description={description} ogImage="/og/speaking.png">
-  <section class="container-site py-12 sm:py-16">
-    <h1 class="display-tight text-[clamp(2.8rem,6vw,4.4rem)] font-semibold"><span class="text-accent">~/</span>speaking</h1>
+  <section class="container-site pt-12 pb-4 sm:pt-16 sm:pb-5">
+    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
+      <h1 class="display-tight text-[clamp(2.8rem,6vw,4.4rem)] font-semibold"><span class="text-accent">~/</span>speaking</h1>
+      <div class="hidden sm:block">
+        <p class="meta lowercase text-dim">talks / year</p>
+        <svg width={SW} height="56" viewBox={`0 0 ${SW} 56`} role="img" aria-label={sparkAlt} fill="none" class="mt-1.5">
+          <line x1="0" y1={baseY} x2={SW} y2={baseY} stroke="var(--color-edge)"></line>
+          <polyline points={sparkPts} stroke="var(--color-dim)" stroke-width="1.4" stroke-linejoin="round"></polyline>
+          <line x1={lastX} y1={lastY} x2={lastX} y2={baseY} stroke="var(--color-accent)" stroke-width="1.5"></line>
+          <circle cx={lastX} cy={lastY} r="2.5" fill="var(--color-accent)"></circle>
+          <text x="0" y="54" fill="var(--color-dim)" class="spark-label">{minYear}</text>
+          <text x={SW} y="54" text-anchor="end" fill="var(--color-accent)" class="spark-label">{maxYear}</text>
+        </svg>
+      </div>
+    </div>
     <div class="acc-rule mt-5" aria-hidden="true"></div>
 
     <!-- Controls: count + "let the model decide" (accumulator race) -->
@@ -80,4 +110,13 @@ const description =
       live: document.getElementById('decide-race-live')!,
     });
   </script>
+
+  <style>
+    .spark-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+  </style>
 </Base>
