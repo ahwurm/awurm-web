@@ -10,6 +10,7 @@ interface Props {
 }
 const { talk, variant = 'row' } = Astro.props;
 const { title, event, format, date, description, links, vendors } = talk.data;
+const decideLabel = vendors[0] ?? event; // race trace label for "decide for me"
 
 const actions = [
   links.video && { href: links.video, label: 'Watch recording ↗', external: true },
@@ -53,7 +54,7 @@ const caption = `${event} · ${monthYearShort(date)}`;
       )}
     </article>
   ) : (
-    <article class="border-b border-edge py-7">
+    <article class="border-b border-edge py-7" data-label={decideLabel}>
       <div class="grid items-start gap-x-8 gap-y-4 sm:grid-cols-[7.5rem_minmax(0,1fr)]">
         <div class="meta flex gap-x-4 text-dim sm:flex-col sm:gap-y-1.5">
           <span>{isoDate(date)}</span>

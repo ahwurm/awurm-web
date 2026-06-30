@@ -13,8 +13,38 @@ const description =
   <section class="container-site py-12 sm:py-16">
     <h1 class="display-tight text-[clamp(2.8rem,6vw,4.4rem)] font-semibold"><span class="text-accent">~/</span>projects</h1>
     <div class="acc-rule mt-5" aria-hidden="true"></div>
+
+    <!-- Controls: count + "let the model decide" (accumulator race) -->
+    <div class="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3">
+      <p class="meta lowercase text-dim">n = {projects.length}</p>
+      <button
+        id="decide"
+        type="button"
+        class="meta cursor-pointer rounded-[4px] bg-accent-fill px-3.5 py-2 lowercase text-accent-ink transition-opacity hover:opacity-90"
+        hidden
+      >
+        Decide for me →
+      </button>
+    </div>
+    <div id="decide-race" class="plate mb-2 mt-4" hidden>
+      <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
+      <canvas id="decide-race-canvas" class="h-36 w-full"></canvas>
+    </div>
+    <p id="decide-race-live" class="sr-only" role="status" aria-live="polite"></p>
+
     <div class="mt-2">
       {projects.map((project) => <ProjectCard project={project} />)}
     </div>
   </section>
+
+  <script>
+    import { wireDecide } from '../lib/decide';
+    wireDecide({
+      items: [...document.querySelectorAll<HTMLElement>('[data-label]')],
+      button: document.getElementById('decide') as HTMLButtonElement,
+      raceWrap: document.getElementById('decide-race')!,
+      canvas: document.getElementById('decide-race-canvas') as HTMLCanvasElement,
+      live: document.getElementById('decide-race-live')!,
+    });
+  </script>
 </Base>
