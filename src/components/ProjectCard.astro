@@ -1,17 +1,14 @@
 ---
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import Frame from './Frame.astro';
 
 interface Props {
   project: CollectionEntry<'projects'>;
 }
 const { project } = Astro.props;
-const { name, description, technologies, status, url, githubUrl, paperUrl, screenshots } = project.data;
+const { name, description, technologies, status, url, githubUrl, paperUrl } = project.data;
 
 const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const decideLabel = slug.split('-').slice(0, 2).join('-'); // short race trace label
-const [shot] = screenshots;
 ---
 
 <article class="rounded-[3px] border border-edge bg-surface" data-label={decideLabel}>
@@ -22,13 +19,6 @@ const [shot] = screenshots;
     </div>
     <p class="mt-2 text-sm leading-relaxed text-dim">{description}</p>
     <p class="meta lowercase mt-3 text-dim" aria-label="Technologies">{technologies.join(' · ')}</p>
-    {shot && (
-      <div class="mt-4">
-        <Frame label={`~/${slug}.png`}>
-          <Image src={shot} alt={`${name} screenshot`} width={880} class="w-full" />
-        </Frame>
-      </div>
-    )}
     <p class="mt-auto flex flex-wrap gap-4 pt-4">
       {url && (
         <a href={url} target="_blank" rel="noopener noreferrer" class="link-rule text-[0.875rem] font-medium">
