@@ -112,12 +112,11 @@ const description = `Academic publications in decision science and ${industry.le
         </a>
       </div>
 
-      <div id="industry-filters" class="flex flex-wrap items-center gap-x-4 gap-y-3">
-        <p id="industry-count" class="meta lowercase text-dim" aria-live="polite">n = {industry.length}</p>
+      <div id="industry-filters" class="flex flex-wrap items-center gap-2.5">
         <label class="sr-only" for="filter-type">Filter by type</label>
         <select
           id="filter-type"
-          class="rounded-[2px] border border-edge bg-surface px-2.5 py-1.5 font-mono text-[12.5px] lowercase"
+          class="min-w-0 flex-1 rounded-[2px] border border-edge bg-surface px-2.5 py-1.5 font-mono text-[12.5px] lowercase sm:flex-none"
         >
           <option value="">All types</option>
           {types.map((t) => <option value={t}>{t} ({count((d) => d.type === t)})</option>)}
@@ -125,7 +124,7 @@ const description = `Academic publications in decision science and ${industry.le
         <label class="sr-only" for="filter-market">Filter by market</label>
         <select
           id="filter-market"
-          class="rounded-[2px] border border-edge bg-surface px-2.5 py-1.5 font-mono text-[12.5px] lowercase"
+          class="min-w-0 flex-1 rounded-[2px] border border-edge bg-surface px-2.5 py-1.5 font-mono text-[12.5px] lowercase sm:flex-none"
         >
           <option value="">All markets</option>
           {markets.map((m) => <option value={m}>{marketLabel(m)} ({count((d) => (d.market ?? []).includes(m))})</option>)}
@@ -133,7 +132,7 @@ const description = `Academic publications in decision science and ${industry.le
         <button
           id="model-decide"
           type="button"
-          class="meta cursor-pointer rounded-[4px] bg-accent-fill px-3.5 py-2 lowercase text-accent-ink transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+          class="meta w-full cursor-pointer rounded-[4px] bg-accent-fill px-3.5 py-2 text-center lowercase text-accent-ink transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           hidden
         >
           Decide for me →
@@ -197,7 +196,6 @@ const description = `Academic publications in decision science and ${industry.le
     const marketSel = document.getElementById('filter-market') as HTMLSelectElement;
     const items = [...document.querySelectorAll<HTMLElement>('#industry-list > article')];
     const empty = document.getElementById('industry-empty')!;
-    const countEl = document.getElementById('industry-count')!;
     const modelBtn = document.getElementById('model-decide') as HTMLButtonElement;
     const raceWrap = document.getElementById('model-race')!;
     const raceCanvas = document.getElementById('model-race-canvas') as HTMLCanvasElement;
@@ -216,11 +214,6 @@ const description = `Academic publications in decision science and ${industry.le
         if (show) visible++;
       }
       empty.hidden = visible > 0;
-      // sample-size annotation: n = 53 · type = value matrix · market = analytics
-      let s = `n = ${visible}`;
-      if (typeSel.value) s += ` · type = ${typeSel.value.toLowerCase()}`;
-      if (marketSel.value) s += ` · market = ${marketSel.value}`;
-      countEl.textContent = s;
       modelBtn.disabled = visible === 0;
       raceWrap.hidden = true;
     };

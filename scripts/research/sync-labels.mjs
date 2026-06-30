@@ -40,6 +40,15 @@ const VENDOR_OVERRIDE = {
 // is normalized into the canonical 8-vocab so the filter stays clean.
 const OLD_TYPE_REMAP = { 'ROI Study': 'ROI Case Study' };
 
+// Known vault type errors (confirmed with Alex): aggregate research notes the
+// vault mis-filed as roi-case-study. Keyed by documentId, applied after the vault
+// lookup so it survives a vault re-export. Final value uses the 8-vocab display.
+const TYPE_OVERRIDE = {
+  '26029': 'Research Note', // "Elastic returns $2.57 per dollar invested"
+  '26066': 'Research Note', // "Driving agentic consistency with Strategy Mosaic"
+  '26074': 'Research Note', // "Oracle AI Database drives 87 percent faster data refresh"
+};
+
 // Outbound nucleusresearch.com links where the title-slug 404s (verified live).
 const NUCLEUS_OVERRIDE = {
   x213: 'https://nucleusresearch.com/research/single/data-integration-return-3-03-for-every-dollar-spent/',
@@ -132,6 +141,7 @@ for (const e of data) {
     entry.type = OLD_TYPE_REMAP[e.type] ?? e.type; // not in vault — normalize label only
     orphans.push(id);
   }
+  entry.type = TYPE_OVERRIDE[id] ?? entry.type; // correct known vault type errors
   if (NUCLEUS_OVERRIDE[id]) entry.nucleusUrl = NUCLEUS_OVERRIDE[id];
   out.push(entry);
 }
