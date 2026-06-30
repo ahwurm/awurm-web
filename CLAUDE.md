@@ -63,4 +63,6 @@ Change one ⇒ change both. Pre-paint inline script in `Base.astro` sets
   abstract goes in the publication body.
 - **Update resume**: replace `public/AW_Resume2025_web.pdf` in place (URL frozen).
 - **Rebrand/OG**: edit `scripts/og/generate.mjs`, run `npm run og`, commit the PNGs.
+- **Favicon**: edit `scripts/favicon/generate.mjs`, run `npm run favicon` (playwright +
+  JetBrains Mono), commit `favicon.svg/.ico`, `apple-touch-icon.png`, `icon.png`.
 - **Enable the contact form**: fill `site.ts` → `emailjs` (PERSONAL-TODO #1).
