@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Tag from './Tag.astro';
-import { getNucleusResearchUrl } from '../lib/research-utils';
+import { getNucleusResearchUrl, marketLabel } from '../lib/research-utils';
 import type { IndustryResearch } from '../lib/types';
 
 interface Props {
@@ -29,6 +29,7 @@ const vendorName = entry.vendors.find((v) => v.toLowerCase().replace(/[^a-z0-9]+
   class="rounded-[3px] border border-edge bg-surface"
   data-year={entry.year}
   data-type={entry.type}
+  data-market={(entry.market ?? []).join(' ')}
   data-no={entry.documentId.toUpperCase()}
 >
   <div class="flex h-full flex-col p-5">
@@ -45,7 +46,12 @@ const vendorName = entry.vendors.find((v) => v.toLowerCase().replace(/[^a-z0-9]+
         )}
         <span>{entry.documentId.toUpperCase()} · {entry.publishDate}</span>
       </span>
-      <Tag type={entry.type} class="shrink-0" />
+      <span class="flex shrink-0 items-center gap-2.5">
+        {(entry.market ?? []).length > 0 && (
+          <span class="lowercase">{(entry.market ?? []).map(marketLabel).join(' · ')}</span>
+        )}
+        <Tag type={entry.type} />
+      </span>
     </div>
     <h3 class="font-display mt-3 text-[1.08rem] font-semibold leading-snug tracking-tight">
       <a

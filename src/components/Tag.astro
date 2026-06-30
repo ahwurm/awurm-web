@@ -8,11 +8,14 @@ interface Props {
 const { type, class: className = '' } = Astro.props;
 
 const toneVar: Record<string, string> = {
-  'ROI Study': '--color-tag-roi',
+  'ROI Case Study': '--color-tag-roi',
   'ROI Guidebook': '--color-tag-guide',
-  Surveys: '--color-tag-survey',
   Announcement: '--color-tag-announce',
-  // 'Research Note' and anything else falls back to --color-dim via .threshold default
+  'Value Matrix': '--color-tag-matrix',
+  'Anatomy of a Decision': '--color-tag-anatomy',
+  Trends: '--color-tag-trends',
+  'Benefit Case Study': '--color-tag-survey',
+  // 'Research Note' (the default) and anything else falls back to --color-dim via .threshold
 };
 const tone = toneVar[type];
 ---

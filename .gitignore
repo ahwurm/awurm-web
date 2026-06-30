@@ -12,3 +12,13 @@ npm-debug.log*
 # Local env files
 .env
 .env*.local
+
+# Local Obsidian research vault — source for scripts/research/sync-labels.mjs.
+# MUST stay out of this PUBLIC repo: it holds other analysts' + draft notes.
+# Anchored to root so scripts/research/ is NOT matched.
+/research/
+
+# Stray Next.js artifacts (this is an Astro project)
+.next/
+out/
+next-env.d.ts

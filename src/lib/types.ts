@@ -2,17 +2,17 @@
 export interface IndustryResearch {
   title: string
   documentId: string
+  // Canonical 8-type vocabulary, derived from the Obsidian vault (see
+  // scripts/research/sync-labels.mjs). `| string` keeps any drift validating.
   type:
+    | 'Research Note'
     | 'ROI Case Study'
-    | 'Technology Value Matrix'
-    | 'Predictions'
-    | 'Hot Companies'
-    | 'Research Report'
-    | 'Benefit Case Study'
+    | 'Value Matrix'
+    | 'Announcement'
+    | 'Anatomy of a Decision'
     | 'ROI Guidebook'
-    | 'Partnership Announcement'
-    | 'M&A Analysis'
-    | 'Solution Analysis'
+    | 'Trends'
+    | 'Benefit Case Study'
     | string
   year: number
   quarter?: string

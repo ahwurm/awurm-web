@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import PublicationItem from '../components/PublicationItem.astro';
 import IndustryItem from '../components/IndustryItem.astro';
 import { ledgerIndices } from '../lib/ledger';
+import { marketLabel } from '../lib/research-utils';
 import figResponse from '../assets/figures/response-distributions.png';
 import figModel from '../assets/figures/accumulator-model.png';
 
@@ -33,8 +34,8 @@ const indices = ledgerIndices(industry);
 const count = (pred: (d: (typeof industry)[number]['data']) => boolean) =>
   industry.filter((e) => pred(e.data)).length;
 
-const years = [...new Set(industry.map((e) => e.data.year))].sort((a, b) => b - a);
 const types = [...new Set(industry.map((e) => e.data.type))].sort();
+const markets = [...new Set(industry.flatMap((e) => e.data.market ?? []))].sort();
 
 // Sparkline: notes per quarter, computed from the data at build time.
 const qKey = (y: number, q: string) => y * 4 + (Number(q[1]) - 1);
@@ -121,13 +122,13 @@ const description = `Academic publications in decision science and ${industry.le
           <option value="">All types</option>
           {types.map((t) => <option value={t}>{t} ({count((d) => d.type === t)})</option>)}
         </select>
-        <label class="sr-only" for="filter-year">Filter by year</label>
+        <label class="sr-only" for="filter-market">Filter by market</label>
         <select
-          id="filter-year"
+          id="filter-market"
           class="rounded-[2px] border border-edge bg-surface px-2.5 py-1.5 font-mono text-[12.5px] lowercase"
         >
-          <option value="">All years</option>
-          {years.map((y) => <option value={String(y)}>{y} ({count((d) => d.year === y)})</option>)}
+          <option value="">All markets</option>
+          {markets.map((m) => <option value={m}>{marketLabel(m)} ({count((d) => (d.market ?? []).includes(m))})</option>)}
         </select>
         <button
           id="model-decide"
@@ -188,12 +189,12 @@ const description = `Academic publications in decision science and ${industry.le
   <script>
     import { createRace, type RaceHandle } from '../lib/accumulator';
 
-    // Research filters: URL contract is ?tab=industry (+ optional &year= & type=).
+    // Research filters: URL contract is ?tab=industry (+ optional &type= & market=).
     const tabs = { academic: document.getElementById('tab-academic')!, industry: document.getElementById('tab-industry')! };
     const panels = { academic: document.getElementById('panel-academic')!, industry: document.getElementById('panel-industry')! };
     const filters = document.getElementById('industry-filters')!;
     const typeSel = document.getElementById('filter-type') as HTMLSelectElement;
-    const yearSel = document.getElementById('filter-year') as HTMLSelectElement;
+    const marketSel = document.getElementById('filter-market') as HTMLSelectElement;
     const items = [...document.querySelectorAll<HTMLElement>('#industry-list > article')];
     const empty = document.getElementById('industry-empty')!;
     const countEl = document.getElementById('industry-count')!;
@@ -209,16 +210,16 @@ const description = `Academic publications in decision science and ${industry.le
       let visible = 0;
       for (const item of items) {
         const show =
-          (!yearSel.value || item.dataset.year === yearSel.value) &&
+          (!marketSel.value || (item.dataset.market ?? '').split(' ').includes(marketSel.value)) &&
           (!typeSel.value || item.dataset.type === typeSel.value);
         item.hidden = !show;
         if (show) visible++;
       }
       empty.hidden = visible > 0;
-      // sample-size annotation: n = 43 · year = 2024 · type = roi study
+      // sample-size annotation: n = 53 · type = value matrix · market = analytics
       let s = `n = ${visible}`;
-      if (yearSel.value) s += ` · year = ${yearSel.value}`;
       if (typeSel.value) s += ` · type = ${typeSel.value.toLowerCase()}`;
+      if (marketSel.value) s += ` · market = ${marketSel.value}`;
       countEl.textContent = s;
       modelBtn.disabled = visible === 0;
       raceWrap.hidden = true;
@@ -236,9 +237,9 @@ const description = `Academic publications in decision science and ${industry.le
       const params = new URLSearchParams(location.search);
       const tab = params.get('tab') === 'academic' ? 'academic' : 'industry';
       typeSel.value = params.get('type') ?? '';
-      yearSel.value = params.get('year') ?? '';
+      marketSel.value = params.get('market') ?? '';
       if ([...typeSel.options].every((o) => o.value !== typeSel.value)) typeSel.value = '';
-      if ([...yearSel.options].every((o) => o.value !== yearSel.value)) yearSel.value = '';
+      if ([...marketSel.options].every((o) => o.value !== marketSel.value)) marketSel.value = '';
       setTab(tab);
       applyFilters();
     };
@@ -249,7 +250,7 @@ const description = `Academic publications in decision science and ${industry.le
         params.set('tab', 'academic');
       } else {
         if (typeSel.value) params.set('type', typeSel.value);
-        if (yearSel.value) params.set('year', yearSel.value);
+        if (marketSel.value) params.set('market', marketSel.value);
       }
       const qs = params.toString();
       history.replaceState(null, '', qs ? `${location.pathname}?${qs}` : location.pathname);
@@ -269,7 +270,7 @@ const description = `Academic publications in decision science and ${industry.le
       applyFilters();
       syncUrl();
     });
-    yearSel.addEventListener('change', () => {
+    marketSel.addEventListener('change', () => {
       applyFilters();
       syncUrl();
     });

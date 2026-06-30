@@ -39,9 +39,7 @@
       "Cloud Database",
       "Analytics"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Database adoption trends",
       "Technology outlook insights"
@@ -66,8 +64,8 @@
       "Enterprise Software"
     ],
     "vendors": [
-      "SAP",
-      "IBM"
+      "IBM",
+      "SAP"
     ],
     "keyFindings": [
       "Strategic cloud partnership expansion",
@@ -84,7 +82,7 @@
   {
     "title": "QAD ROI case study - Noble Biomaterials",
     "documentId": "v118",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2021,
     "quarter": "Q3",
     "publishDate": "2021-08-02",
@@ -121,8 +119,7 @@
     ],
     "vendors": [
       "Salesforce",
-      "MuleSoft",
-      "Servicetrace"
+      "MuleSoft"
     ],
     "keyFindings": [
       "RPA integration capabilities",
@@ -150,7 +147,6 @@
       "Operations"
     ],
     "vendors": [
-      "Oracle",
       "NetSuite"
     ],
     "keyFindings": [
@@ -168,7 +164,7 @@
   {
     "title": "Fivetran ROI case study - Oldcastle Infrastructure",
     "documentId": "v137",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2021,
     "quarter": "Q3",
     "publishDate": "2021-08-26",
@@ -249,7 +245,7 @@
   {
     "title": "LCAP Technology Value Matrix 2021",
     "documentId": "v154",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2021,
     "quarter": "Q4",
     "publishDate": "2021-10-05",
@@ -258,9 +254,7 @@
       "Low-Code",
       "Development"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Low-code platform evaluation",
       "Market positioning"
@@ -366,9 +360,7 @@
       "Market Trends",
       "Technology Predictions"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "2022 technology trends",
       "Market predictions"
@@ -411,7 +403,7 @@
   {
     "title": "Embedded Analytics Technology Value Matrix 2021",
     "documentId": "v171",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2021,
     "quarter": "Q4",
     "publishDate": "2021-11-02",
@@ -420,9 +412,7 @@
       "BI",
       "Analytics"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Embedded analytics market evaluation",
       "Vendor positioning"
@@ -475,8 +465,7 @@
       "Analytics"
     ],
     "vendors": [
-      "Alteryx",
-      "Hyper Anna"
+      "Alteryx"
     ],
     "keyFindings": [
       "BI automation capabilities",
@@ -493,7 +482,7 @@
   {
     "title": "Six trends in data and analytics for 2022",
     "documentId": "v178",
-    "type": "Research Note",
+    "type": "Trends",
     "year": 2021,
     "quarter": "Q4",
     "publishDate": "2021-11-19",
@@ -502,9 +491,7 @@
       "Analytics",
       "Trends"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Data analytics trends",
       "2022 market outlook"
@@ -519,37 +506,9 @@
     ]
   },
   {
-    "title": "Azure OpenAI Service equips apps with GPT-3",
-    "documentId": "v179",
-    "type": "Research Note",
-    "year": 2021,
-    "quarter": "Q4",
-    "publishDate": "2021-11-19",
-    "technologies": [
-      "AI",
-      "GPT",
-      "Cloud"
-    ],
-    "vendors": [
-      "Microsoft",
-      "OpenAI"
-    ],
-    "keyFindings": [
-      "GPT-3 integration",
-      "AI-powered applications"
-    ],
-    "roiClaim": null,
-    "summary": "Azure OpenAI Service enables applications to leverage GPT-3 capabilities.",
-    "pdfUrl": "/references/v179 - Azure OpenAI Service equips apps with GPT-3.pdf",
-    "primaryVendor": "microsoft",
-    "market": [
-      "ai"
-    ]
-  },
-  {
     "title": "CPQ Technology Value Matrix 2021",
     "documentId": "v182",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2021,
     "quarter": "Q4",
     "publishDate": "2021-11-22",
@@ -558,9 +517,7 @@
       "Sales",
       "Configuration"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "CPQ market evaluation",
       "Vendor positioning"
@@ -584,9 +541,7 @@
       "Market Trends",
       "Emerging Companies"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Emerging technology companies",
       "2022 market opportunities"
@@ -655,7 +610,7 @@
   {
     "title": "Database and data warehouse trends for 2022",
     "documentId": "w8",
-    "type": "Research Note",
+    "type": "Trends",
     "year": 2022,
     "quarter": "Q1",
     "publishDate": "2022-01-20",
@@ -664,9 +619,7 @@
       "Data Warehouse",
       "Trends"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Database technology trends",
       "Data warehouse evolution"
@@ -682,7 +635,7 @@
   {
     "title": "Elastic ROI case study - Multi-line Insurer",
     "documentId": "w18",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2022,
     "quarter": "Q1",
     "publishDate": "2022-02-15",
@@ -706,7 +659,7 @@
   {
     "title": "Data Warehouse Technology Value Matrix 2022",
     "documentId": "w21",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2022,
     "quarter": "Q1",
     "publishDate": "2022-02-20",
@@ -715,9 +668,7 @@
       "Analytics",
       "Cloud"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Data warehouse market evaluation",
       "Cloud migration trends"
@@ -841,7 +792,7 @@
   {
     "title": "Elastic ROI case study - Telecom Provider",
     "documentId": "w56",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2022,
     "quarter": "Q2",
     "publishDate": "2022-05-01",
@@ -865,7 +816,7 @@
   {
     "title": "Best vendors set to execute on 2022 iPaaS market trends",
     "documentId": "w57",
-    "type": "Research Note",
+    "type": "Trends",
     "year": 2022,
     "quarter": "Q2",
     "publishDate": "2022-05-05",
@@ -874,9 +825,7 @@
       "Integration",
       "Market Trends"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "iPaaS market trends",
       "Vendor execution capabilities"
@@ -902,8 +851,7 @@
       "Cloud"
     ],
     "vendors": [
-      "Red Hat",
-      "NVIDIA"
+      "Red Hat"
     ],
     "keyFindings": [
       "AI infrastructure partnership",
@@ -920,7 +868,7 @@
   {
     "title": "iPaaS Technology Value Matrix 2022",
     "documentId": "w70",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2022,
     "quarter": "Q2",
     "publishDate": "2022-05-25",
@@ -929,9 +877,7 @@
       "Integration",
       "Cloud"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "iPaaS market evaluation",
       "Integration platform positioning"
@@ -947,7 +893,7 @@
   {
     "title": "SAS ROI case study - Hospitality Provider",
     "documentId": "w78",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2022,
     "quarter": "Q2",
     "publishDate": "2022-06-01",
@@ -1001,7 +947,7 @@
   {
     "title": "Analytics Technology Value Matrix 2022",
     "documentId": "w86",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2022,
     "quarter": "Q2",
     "publishDate": "2022-06-15",
@@ -1010,9 +956,7 @@
       "BI",
       "Data Science"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Analytics market evaluation",
       "BI platform positioning"
@@ -1080,36 +1024,9 @@
     ]
   },
   {
-    "title": "Database technology outlook survey",
-    "documentId": "w102",
-    "type": "Research Note",
-    "year": 2022,
-    "quarter": "Q2",
-    "publishDate": "2022-06-24",
-    "technologies": [
-      "Database",
-      "Survey",
-      "Market Trends"
-    ],
-    "vendors": [
-      "Multiple"
-    ],
-    "keyFindings": [
-      "Database adoption trends",
-      "Technology preferences"
-    ],
-    "roiClaim": null,
-    "summary": "Survey insights on database technology outlook and adoption trends.",
-    "pdfUrl": "/references/w102 - Database technology outlook survey.pdf",
-    "primaryVendor": "own",
-    "market": [
-      "database"
-    ]
-  },
-  {
     "title": "Incorta ROI case study - Bank and Financial Services Provider",
     "documentId": "w108",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2022,
     "quarter": "Q3",
     "publishDate": "2022-07-12",
@@ -1163,7 +1080,7 @@
   {
     "title": "Database Technology Value Matrix 2022",
     "documentId": "w121",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2022,
     "quarter": "Q3",
     "publishDate": "2022-07-25",
@@ -1172,9 +1089,7 @@
       "Cloud",
       "Analytics"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Database market evaluation",
       "Cloud database positioning"
@@ -1200,8 +1115,7 @@
       "Analytics"
     ],
     "vendors": [
-      "Zuora",
-      "Snowflake"
+      "Zuora"
     ],
     "keyFindings": [
       "Secure data sharing",
@@ -1361,9 +1275,7 @@
       "Market Trends",
       "Technology Predictions"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "2023 technology trends",
       "Market predictions"
@@ -1379,7 +1291,7 @@
   {
     "title": "Adobe Marketo Engage ROI case study - Multinational Conglomerate",
     "documentId": "w165",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2022,
     "quarter": "Q4",
     "publishDate": "2022-10-20",
@@ -1389,8 +1301,7 @@
       "Enterprise"
     ],
     "vendors": [
-      "Adobe",
-      "Marketo"
+      "Adobe"
     ],
     "keyFindings": [
       "Marketing automation ROI",
@@ -1417,8 +1328,7 @@
       "Integration"
     ],
     "vendors": [
-      "Infor",
-      "Birst"
+      "Infor"
     ],
     "keyFindings": [
       "Embedded analytics adoption",
@@ -1435,7 +1345,7 @@
   {
     "title": "Infor Birst benefit case study - Financial Services Provider",
     "documentId": "w182",
-    "type": "ROI Study",
+    "type": "Benefit Case Study",
     "year": 2022,
     "quarter": "Q4",
     "publishDate": "2022-11-10",
@@ -1445,8 +1355,7 @@
       "Analytics"
     ],
     "vendors": [
-      "Infor",
-      "Birst"
+      "Infor"
     ],
     "keyFindings": [
       "Financial services BI benefits",
@@ -1463,7 +1372,7 @@
   {
     "title": "Embedded Analytics Technology Value Matrix 2022",
     "documentId": "w184",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2022,
     "quarter": "Q4",
     "publishDate": "2022-11-15",
@@ -1472,9 +1381,7 @@
       "BI",
       "Integration"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Embedded analytics market evaluation",
       "Integration capabilities"
@@ -1517,7 +1424,7 @@
   {
     "title": "Domo ROI case study - Walker Edison",
     "documentId": "w109",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2022,
     "quarter": "Q3",
     "publishDate": "2022-08-19",
@@ -1552,9 +1459,7 @@
       "Market Trends",
       "Emerging Companies"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Emerging technology companies",
       "2023 market opportunities"
@@ -1597,7 +1502,7 @@
   {
     "title": "Oracle ROI case study - Data Science Company",
     "documentId": "x7",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2023,
     "quarter": "Q1",
     "publishDate": "2023-01-20",
@@ -1624,7 +1529,7 @@
   {
     "title": "Verato ROI case study - Nonprofit Health System",
     "documentId": "x23",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2023,
     "quarter": "Q1",
     "publishDate": "2023-02-01",
@@ -1651,7 +1556,7 @@
   {
     "title": "Data Warehouse Technology Value Matrix 2023",
     "documentId": "x32",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2023,
     "quarter": "Q1",
     "publishDate": "2023-02-15",
@@ -1660,9 +1565,7 @@
       "Cloud",
       "Analytics"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Data warehouse market evolution",
       "Cloud-first strategies"
@@ -1678,7 +1581,7 @@
   {
     "title": "Panoply by SQream benefit case study - Fashion Group",
     "documentId": "x40",
-    "type": "ROI Study",
+    "type": "Benefit Case Study",
     "year": 2023,
     "quarter": "Q1",
     "publishDate": "2023-02-25",
@@ -1688,8 +1591,7 @@
       "Retail"
     ],
     "vendors": [
-      "Panoply",
-      "SQream"
+      "Panoply"
     ],
     "keyFindings": [
       "Fashion analytics benefits",
@@ -1706,7 +1608,7 @@
   {
     "title": "Amplitude ROI case study - Education Platform",
     "documentId": "x48",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2023,
     "quarter": "Q1",
     "publishDate": "2023-03-05",
@@ -1743,7 +1645,7 @@
       "Cloud"
     ],
     "vendors": [
-      "Amazon"
+      "AWS"
     ],
     "keyFindings": [
       "ML model development acceleration",
@@ -1815,7 +1717,7 @@
   {
     "title": "Analytics Technology Value Matrix 2023",
     "documentId": "x77",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2023,
     "quarter": "Q2",
     "publishDate": "2023-04-20",
@@ -1824,9 +1726,7 @@
       "BI",
       "AI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Analytics market evolution",
       "AI integration trends"
@@ -1879,8 +1779,8 @@
       "Recovery"
     ],
     "vendors": [
-      "Wasabi",
-      "Veeam"
+      "Veeam",
+      "Wasabi"
     ],
     "keyFindings": [
       "Cost-efficient cloud storage",
@@ -1897,7 +1797,7 @@
   {
     "title": "iPaaS Technology Value Matrix 2023",
     "documentId": "x99",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2023,
     "quarter": "Q2",
     "publishDate": "2023-05-20",
@@ -1906,9 +1806,7 @@
       "Integration",
       "Cloud"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "iPaaS market maturity",
       "Integration platform evolution"
@@ -1924,7 +1822,7 @@
   {
     "title": "Informatica ROI case study - Paycor",
     "documentId": "x100",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2023,
     "quarter": "Q2",
     "publishDate": "2023-05-25",
@@ -1978,7 +1876,7 @@
   {
     "title": "Tray.io ROI case study - Auctane",
     "documentId": "x112",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2023,
     "quarter": "Q2",
     "publishDate": "2023-06-10",
@@ -2032,7 +1930,7 @@
   {
     "title": "LogicMonitor ROI case study - Loyola University Maryland",
     "documentId": "x121",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2023,
     "quarter": "Q3",
     "publishDate": "2023-07-01",
@@ -2059,7 +1957,7 @@
   {
     "title": "Domo ROI case study - Regional One Health",
     "documentId": "x123",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2023,
     "quarter": "Q3",
     "publishDate": "2023-07-05",
@@ -2140,7 +2038,7 @@
   {
     "title": "Alteryx ROI case study - Manufacturer",
     "documentId": "x144",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2023,
     "quarter": "Q3",
     "publishDate": "2023-07-30",
@@ -2167,7 +2065,7 @@
   {
     "title": "Treblle ROI case study - Autopix",
     "documentId": "x151",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2023,
     "quarter": "Q3",
     "publishDate": "2023-08-05",
@@ -2286,9 +2184,7 @@
       "Technology Predictions",
       "AI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "2024 technology trends",
       "AI market evolution"
@@ -2358,7 +2254,7 @@
   {
     "title": "Embedded Analytics Technology Value Matrix 2023",
     "documentId": "x190",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2023,
     "quarter": "Q4",
     "publishDate": "2023-10-30",
@@ -2367,9 +2263,7 @@
       "BI",
       "Integration"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Embedded analytics evolution",
       "Integration capabilities"
@@ -2475,9 +2369,7 @@
       "Emerging Companies",
       "AI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Emerging AI companies",
       "2024 market opportunities"
@@ -2512,7 +2404,8 @@
     "roiClaim": "$3.03 return per dollar invested",
     "summary": "Data integration technology delivers $3.03 return for every dollar invested.",
     "pdfUrl": "/references/x213 - Data integration returns $3.03 for every dollar spent.pdf",
-    "primaryVendor": "own"
+    "primaryVendor": "own",
+    "nucleusUrl": "https://nucleusresearch.com/research/single/data-integration-return-3-03-for-every-dollar-spent/"
   },
   {
     "title": "Extending insights with Oracle Fusion HCM Analytics",
@@ -2554,9 +2447,7 @@
       "Architecture",
       "Best Practices"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Analytics architecture best practices",
       "Technology stack optimization"
@@ -2581,9 +2472,7 @@
       "ROI",
       "BI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Analytics ROI metrics",
       "Investment returns"
@@ -2599,7 +2488,7 @@
   {
     "title": "Rivery ROI case study - Software Company",
     "documentId": "x220",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2023,
     "quarter": "Q4",
     "publishDate": "2023-12-18",
@@ -2635,9 +2524,7 @@
       "Integration",
       "ROI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "iPaaS ROI metrics",
       "Integration platform returns"
@@ -2662,9 +2549,7 @@
       "Value Assessment",
       "Enterprise"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Data management value framework",
       "Enterprise data strategy"
@@ -2744,9 +2629,7 @@
       "Market Research",
       "Buying Intentions"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Analytics buying trends",
       "Market demand patterns"
@@ -2762,7 +2645,7 @@
   {
     "title": "Data Platform Technology Value Matrix 2024",
     "documentId": "y19",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2024,
     "quarter": "Q1",
     "publishDate": "2024-01-25",
@@ -2771,9 +2654,7 @@
       "Analytics",
       "AI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Data platform market evolution",
       "AI integration capabilities"
@@ -2789,7 +2670,7 @@
   {
     "title": "Own Data Platform ROI case study - Education provider",
     "documentId": "y24",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2024,
     "quarter": "Q1",
     "publishDate": "2024-01-30",
@@ -2816,7 +2697,7 @@
   {
     "title": "Zoho Analytics ROI case study - Sparex",
     "documentId": "y28",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2024,
     "quarter": "Q1",
     "publishDate": "2024-02-02",
@@ -2870,7 +2751,7 @@
   {
     "title": "Databricks ROI case study - Texas Rangers",
     "documentId": "y33",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2024,
     "quarter": "Q1",
     "publishDate": "2024-02-08",
@@ -2907,7 +2788,7 @@
       "RDS"
     ],
     "vendors": [
-      "Amazon"
+      "AWS"
     ],
     "keyFindings": [
       "Managed database value",
@@ -2924,7 +2805,7 @@
   {
     "title": "iPaaS Technology Value Matrix 2024",
     "documentId": "y41",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2024,
     "quarter": "Q1",
     "publishDate": "2024-02-15",
@@ -2933,9 +2814,7 @@
       "Integration",
       "AI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "iPaaS market maturity",
       "AI-powered integration"
@@ -3005,7 +2884,7 @@
   {
     "title": "BI and Analytics Technology Value Matrix 2024",
     "documentId": "y58",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2024,
     "quarter": "Q2",
     "publishDate": "2024-03-10",
@@ -3014,9 +2893,7 @@
       "Analytics",
       "AI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "BI market evolution",
       "AI-enhanced analytics"
@@ -3032,7 +2909,7 @@
   {
     "title": "Tray.io ROI case study - AVID Property Group",
     "documentId": "y62",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2024,
     "quarter": "Q2",
     "publishDate": "2024-03-15",
@@ -3059,7 +2936,7 @@
   {
     "title": "Domo ROI case study - Manulife",
     "documentId": "y82",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2024,
     "quarter": "Q2",
     "publishDate": "2024-04-01",
@@ -3221,7 +3098,7 @@
   {
     "title": "Informatica ROI case study - Healthcare Provider",
     "documentId": "y114",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2024,
     "quarter": "Q2",
     "publishDate": "2024-05-01",
@@ -3302,7 +3179,7 @@
   {
     "title": "Informatica ROI case study - Insurance Provider",
     "documentId": "y123",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2024,
     "quarter": "Q2",
     "publishDate": "2024-05-12",
@@ -3338,9 +3215,7 @@
       "Real-time Analytics",
       "ROI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Real-time data ROI",
       "Streaming analytics value"
@@ -3356,7 +3231,7 @@
   {
     "title": "Oracle Fusion Data Intelligence Platform ROI case study - Investment Bank",
     "documentId": "y136",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2024,
     "quarter": "Q3",
     "publishDate": "2024-06-01",
@@ -3392,9 +3267,7 @@
       "ROI",
       "Analytics"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Data warehouse ROI metrics",
       "Analytics investment returns"
@@ -3527,9 +3400,7 @@
       "AI",
       "Technology Predictions"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "2025 technology trends",
       "AI market evolution"
@@ -3599,7 +3470,7 @@
   {
     "title": "Embedded Analytics Technology Value Matrix 2024",
     "documentId": "y160",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2024,
     "quarter": "Q4",
     "publishDate": "2024-10-25",
@@ -3608,9 +3479,7 @@
       "BI",
       "AI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Embedded analytics evolution",
       "AI-powered integration"
@@ -3626,7 +3495,7 @@
   {
     "title": "Own Data Platform ROI case study - Global Bank",
     "documentId": "y161",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2024,
     "quarter": "Q4",
     "publishDate": "2024-10-28",
@@ -3770,9 +3639,7 @@
       "Emerging Companies",
       "AI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Emerging AI companies",
       "2025 market opportunities"
@@ -3878,9 +3745,7 @@
       "ROI",
       "AI Strategy"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "Enterprise AI ROI patterns",
       "AI investment strategies"
@@ -3896,7 +3761,7 @@
   {
     "title": "ROI Case Study - SAS at ING Belgium",
     "documentId": "z25",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2025,
     "quarter": "Q1",
     "publishDate": "2025-01-28",
@@ -3923,7 +3788,7 @@
   {
     "title": "Data Platform Technology Value Matrix 2025",
     "documentId": "z28",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2025,
     "quarter": "Q1",
     "publishDate": "2025-02-01",
@@ -3932,9 +3797,7 @@
       "AI",
       "Cloud"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "AI-ready data platforms",
       "Cloud-native architectures"
@@ -3978,7 +3841,7 @@
   {
     "title": "ROI Case Study - Sisense at Bigtincan",
     "documentId": "z46",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2025,
     "quarter": "Q1",
     "publishDate": "2025-03-27",
@@ -4034,7 +3897,7 @@
   {
     "title": "iPaaS Technology Value Matrix 2025",
     "documentId": "z58",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2025,
     "quarter": "Q2",
     "publishDate": "2025-04-15",
@@ -4043,9 +3906,7 @@
       "Integration",
       "AI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "AI-powered integration platforms",
       "Next-generation iPaaS"
@@ -4071,7 +3932,7 @@
       "Iceberg"
     ],
     "vendors": [
-      "Multiple"
+      "Dremio"
     ],
     "keyFindings": [
       "AI-ready data architecture",
@@ -4116,7 +3977,7 @@
   {
     "title": "Analytics Technology Value Matrix",
     "documentId": "z76",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2025,
     "quarter": "Q2",
     "publishDate": "2025-05-28",
@@ -4125,9 +3986,7 @@
       "AI",
       "BI"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "AI-enhanced analytics platforms",
       "Next-generation BI"
@@ -4154,8 +4013,8 @@
       "M&A"
     ],
     "vendors": [
-      "Salesforce",
-      "Informatica"
+      "Informatica",
+      "Salesforce"
     ],
     "keyFindings": [
       "Data cloud strategy",
@@ -4201,7 +4060,7 @@
   {
     "title": "ROI case study - Oracle at SNCF",
     "documentId": "z86",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2025,
     "quarter": "Q2",
     "publishDate": "2025-06-17",
@@ -4229,7 +4088,7 @@
   {
     "title": "ROI case study - Actian at GEMA",
     "documentId": "z87",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2025,
     "quarter": "Q2",
     "publishDate": "2025-06-17",
@@ -4257,7 +4116,7 @@
   {
     "title": "APM Technology Value Matrix 2025",
     "documentId": "z97",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2025,
     "quarter": "Q2",
     "publishDate": "2025-06-24",
@@ -4266,9 +4125,7 @@
       "Application Performance",
       "Monitoring"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "keyFindings": [
       "APM market evolution",
       "AI-powered monitoring"
@@ -4284,7 +4141,7 @@
   {
     "title": "Embedded Analytics Technology Value Matrix 2025",
     "documentId": "z175",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2025,
     "quarter": "Q4",
     "publishDate": "2025-10-28",
@@ -4293,9 +4150,7 @@
       "BI",
       "Analytics"
     ],
-    "vendors": [
-      "Multiple"
-    ],
+    "vendors": [],
     "roiClaim": null,
     "summary": "Comprehensive analysis of embedded analytics vendors and market positioning for 2025. Leaders in this year's Value Matrix include Domo, Looker, Oracle, Power BI, Tableau, and ThoughtSpot.",
     "primaryVendor": "own",
@@ -4306,7 +4161,7 @@
   {
     "title": "ROI case study: Boomi at a regional bank",
     "documentId": "z204",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2025,
     "quarter": "Q4",
     "publishDate": "2025-12-03",
@@ -4329,7 +4184,7 @@
   {
     "title": "Oracle AI Database drives 87 percent faster data refresh",
     "documentId": "26074",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2026,
     "quarter": "Q2",
     "publishDate": "2026-04-22",
@@ -4343,35 +4198,15 @@
     ],
     "roiClaim": null,
     "summary": "Nucleus interviewed Oracle AI Database customers and found that consolidating transactional, analytical, and integration workloads onto Oracle's converged data platform reduces the data latency, operational overhead, and redundant infrastructure of running AI workloads across fragmented or single-purpose database systems.",
-    "primaryVendor": "oracle"
-  },
-  {
-    "title": "Databricks compute cost savings exceed the lakehouse market average",
-    "documentId": "26057",
-    "type": "Research Note",
-    "year": 2026,
-    "quarter": "Q2",
-    "publishDate": "2026-04-29",
-    "technologies": [
-      "Lakehouse",
-      "Analytics",
-      "Cloud"
-    ],
-    "vendors": [
-      "Databricks"
-    ],
-    "roiClaim": null,
-    "summary": "Nucleus reviewed data from multiple lakehouse deployments and found that 85.1 percent of Databricks customers reduced infrastructure and compute costs by a greater extent than the lakehouse market average.",
-    "primaryVendor": "databricks",
+    "primaryVendor": "oracle",
     "market": [
-      "dsml",
-      "analytics"
+      "database"
     ]
   },
   {
     "title": "BI and Analytics Technology Value Matrix 2026",
     "documentId": "26096",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2026,
     "quarter": "Q2",
     "publishDate": "2026-05-26",
@@ -4380,16 +4215,36 @@
       "Analytics"
     ],
     "vendors": [
-      "Multiple"
+      "Domo",
+      "ThoughtSpot",
+      "Qlik",
+      "Tableau",
+      "Microsoft",
+      "Oracle",
+      "Tellius",
+      "Zoho",
+      "Sigma",
+      "Omni",
+      "Looker",
+      "Strategy",
+      "SAP",
+      "Incorta",
+      "IBM",
+      "GoodData",
+      "Metabase",
+      "insightsoftware"
     ],
     "roiClaim": null,
     "summary": "Comprehensive analysis of BI and analytics vendors and market positioning for 2026. Leaders in this year's Value Matrix include Domo, Microsoft, Oracle, Qlik, Tableau, and ThoughtSpot.",
-    "primaryVendor": "own"
+    "primaryVendor": "own",
+    "market": [
+      "analytics"
+    ]
   },
   {
     "title": "NoSQL DBMS Technology Value Matrix",
     "documentId": "z106",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2025,
     "quarter": "Q3",
     "publishDate": "2025-07-15",
@@ -4399,13 +4254,7 @@
       "Vector Search",
       "RAG"
     ],
-    "vendors": [
-      "AWS",
-      "InterSystems",
-      "Microsoft",
-      "MongoDB",
-      "Oracle"
-    ],
+    "vendors": [],
     "keyFindings": [],
     "roiClaim": null,
     "summary": "Value Matrix on NoSQL databases as AI-native SaaS workloads accelerate adoption of multimodel platforms with natural-language interfaces, vector search, RAG, and serverless autoscaling; leaders are AWS, InterSystems, Microsoft, MongoDB, and Oracle.",
@@ -4441,7 +4290,7 @@
   {
     "title": "Anatomy of a decision: Solace Event-Driven Integration",
     "documentId": "z122",
-    "type": "Research Note",
+    "type": "Anatomy of a Decision",
     "year": 2025,
     "quarter": "Q3",
     "publishDate": "2025-08-18",
@@ -4465,7 +4314,7 @@
   {
     "title": "Anatomy of a decision: ThoughtSpot",
     "documentId": "z125",
-    "type": "Research Note",
+    "type": "Anatomy of a Decision",
     "year": 2025,
     "quarter": "Q3",
     "publishDate": "2025-08-26",
@@ -4489,7 +4338,7 @@
   {
     "title": "Anatomy of a decision: Teradata",
     "documentId": "z134",
-    "type": "Research Note",
+    "type": "Anatomy of a Decision",
     "year": 2025,
     "quarter": "Q3",
     "publishDate": "2025-09-08",
@@ -4534,7 +4383,7 @@
   {
     "title": "Anatomy of a decision: Boomi",
     "documentId": "z137",
-    "type": "Research Note",
+    "type": "Anatomy of a Decision",
     "year": 2025,
     "quarter": "Q3",
     "publishDate": "2025-09-10",
@@ -4558,7 +4407,7 @@
   {
     "title": "ROI case study: MongoDB at a global technology provider",
     "documentId": "z148",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2025,
     "quarter": "Q3",
     "publishDate": "2025-09-24",
@@ -4582,7 +4431,7 @@
   {
     "title": "Anatomy of a decision: Embeddable",
     "documentId": "z151",
-    "type": "Research Note",
+    "type": "Anatomy of a Decision",
     "year": 2025,
     "quarter": "Q4",
     "publishDate": "2025-10-01",
@@ -4627,7 +4476,7 @@
   {
     "title": "Anatomy of a decision: InterSystems IRIS",
     "documentId": "z167",
-    "type": "Research Note",
+    "type": "Anatomy of a Decision",
     "year": 2025,
     "quarter": "Q4",
     "publishDate": "2025-10-20",
@@ -4674,7 +4523,7 @@
   {
     "title": "ROI case study: Oracle at logistics services",
     "documentId": "z188",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2025,
     "quarter": "Q4",
     "publishDate": "2025-11-10",
@@ -4697,7 +4546,7 @@
   {
     "title": "Anatomy of a decision: Domo",
     "documentId": "z191",
-    "type": "Research Note",
+    "type": "Anatomy of a Decision",
     "year": 2025,
     "quarter": "Q4",
     "publishDate": "2025-11-13",
@@ -4828,7 +4677,7 @@
   {
     "title": "Top 5 analytics trends for 2026",
     "documentId": "z238",
-    "type": "Research Note",
+    "type": "Trends",
     "year": 2025,
     "quarter": "Q4",
     "publishDate": "2025-12-17",
@@ -5011,7 +4860,7 @@
   {
     "title": "Elastic returns $2.57 per dollar invested",
     "documentId": "26029",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2026,
     "quarter": "Q1",
     "publishDate": "2026-02-23",
@@ -5045,8 +4894,7 @@
       "Agentic AI"
     ],
     "vendors": [
-      "Teradata",
-      "Unstructured"
+      "Teradata"
     ],
     "keyFindings": [],
     "roiClaim": null,
@@ -5124,12 +4972,16 @@
     "roiClaim": null,
     "summary": "Interviews with Domo Everywhere customers found organizations compressed embedded analytics rollout timelines from months to weeks and accelerated data request fulfillment 55 to 70 percent by embedding governed, multi-tenant analytics into existing workflows.",
     "nucleusUrl": "https://nucleusresearch.com/research/single/extending-analytics-distribution-with-domo-everywhere/",
-    "primaryVendor": "domo"
+    "primaryVendor": "domo",
+    "market": [
+      "embedded-analytics",
+      "analytics"
+    ]
   },
   {
     "title": "iPaaS Technology Value Matrix 2026",
     "documentId": "26063",
-    "type": "Research Note",
+    "type": "Value Matrix",
     "year": 2026,
     "quarter": "Q2",
     "publishDate": "2026-04-14",
@@ -5140,21 +4992,37 @@
     ],
     "vendors": [
       "Boomi",
-      "Salesforce (Informatica)",
+      "Salesforce",
+      "Informatica",
       "Oracle",
       "Infor",
-      "Tray.ai"
+      "Tray.ai",
+      "Zapier",
+      "Workato",
+      "Microsoft",
+      "SnapLogic",
+      "Talend",
+      "TIBCO",
+      "MuleSoft",
+      "IBM",
+      "n8n",
+      "Celigo",
+      "Jitterbit",
+      "SAP"
     ],
     "keyFindings": [],
     "roiClaim": null,
     "summary": "2026 iPaaS Value Matrix noting agent builders and MCP support have become standard, positioning iPaaS as the orchestration layer for agentic workflows; leaders are Boomi, Salesforce (Informatica), Oracle, Infor, and Tray.ai.",
     "nucleusUrl": "https://nucleusresearch.com/research/single/ipaas-technology-value-matrix-2026/",
-    "primaryVendor": "boomi"
+    "primaryVendor": "own",
+    "market": [
+      "ipaas"
+    ]
   },
   {
     "title": "Driving agentic consistency with Strategy Mosaic",
     "documentId": "26066",
-    "type": "ROI Study",
+    "type": "ROI Case Study",
     "year": 2026,
     "quarter": "Q2",
     "publishDate": "2026-04-16",
@@ -5170,7 +5038,11 @@
     "roiClaim": null,
     "summary": "Interviews with Strategy customers deploying the Mosaic universal semantic layer found up to 21 percent faster time to insight and 5 to 9 percent accelerated case resolution; Nucleus recommends auditing semantic architecture for AI readiness before scaling agents.",
     "nucleusUrl": "https://nucleusresearch.com/research/single/driving-agentic-consistency-with-strategy-mosaic/",
-    "primaryVendor": "strategy"
+    "primaryVendor": "strategy",
+    "market": [
+      "analytics",
+      "ai"
+    ]
   },
   {
     "title": "How AI economics reshape software pricing models",
@@ -5189,7 +5061,10 @@
     "roiClaim": null,
     "summary": "Argues AI inference and token economics embed marginal cost into every SaaS AI feature, making per-seat licensing defensible only where engagement exceeds the vendor's incremental AI serving costs; buyers should evaluate agreements on engagement and value per seat.",
     "nucleusUrl": "https://nucleusresearch.com/research/single/how-ai-economics-reshape-software-pricing-models/",
-    "primaryVendor": "own"
+    "primaryVendor": "own",
+    "market": [
+      "ai"
+    ]
   },
   {
     "title": "How AI-native translation shifts the ROI of enterprise localization",
@@ -5203,12 +5078,17 @@
       "Localization",
       "Governance"
     ],
-    "vendors": [],
+    "vendors": [
+      "DeepL"
+    ],
     "keyFindings": [],
     "roiClaim": null,
     "summary": "Examines AI-native translation platforms that restore quality controls and terminology enforcement lost to ungoverned tool sprawl, finding adopters reduce translation spend by 80 to 90 percent and open previously uneconomical language markets.",
     "nucleusUrl": "https://nucleusresearch.com/research/single/how-ai-native-translation-shifts-the-roi-of-enterprise-localization/",
-    "primaryVendor": "own"
+    "primaryVendor": "deepl",
+    "market": [
+      "translation"
+    ]
   },
   {
     "title": "Nucleus Top Ten Predictions for 2026",
@@ -5272,6 +5152,28 @@
     "primaryVendor": "informatica",
     "market": [
       "data-integration"
+    ]
+  },
+  {
+    "title": "Databricks compute cost savings exceed the lakehouse market average",
+    "documentId": "26082",
+    "type": "Research Note",
+    "year": 2026,
+    "quarter": "Q2",
+    "publishDate": "2026-04-29",
+    "technologies": [
+      "Lakehouse",
+      "Analytics",
+      "Cloud"
+    ],
+    "vendors": [
+      "Databricks"
+    ],
+    "roiClaim": null,
+    "summary": "Nucleus reviewed data from multiple lakehouse deployments and found that 85.1 percent of Databricks customers reduced infrastructure and compute costs by a greater extent than the lakehouse market average.",
+    "primaryVendor": "databricks",
+    "market": [
+      "analytics"
     ]
   }
 ]

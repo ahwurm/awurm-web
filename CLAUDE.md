@@ -39,8 +39,9 @@ and PR without deploying.
 - **Libs**: `research-utils.ts` (ported verbatim from old site + vitest tests)
   slug-generates nucleusresearch.com links from titles; `nucleusUrl` field overrides.
   `dates.ts` derives upcoming/past — talk status is never stored.
-- **URL contract**: `/research/?tab=industry` (+ optional `&year=` `&type=`) deep-links
-  the industry tab — preserve it; external links depend on it.
+- **URL contract**: `/research/?tab=industry` (+ optional `&type=` `&market=`) deep-links
+  the industry tab — preserve it; external links depend on it. (Legacy `&year=` is
+  ignored gracefully — the year filter was dropped in favor of market.)
 
 ## Theming
 
@@ -55,10 +56,15 @@ Change one ⇒ change both. Pre-paint inline script in `Base.astro` sets
 - **Add a talk**: md file in `src/content/talks/` (`YYYY-MM-DD-slug.md`), title-card
   PNG in `src/assets/talks/`, frontmatter per `content.config.ts` (no status field —
   derived from `date`). Upcoming section appears automatically when a date is future.
-- **Add industry research**: append to `src/data/industry-research.json` following the
-  existing field conventions (Value Matrix entries are type "Research Note"). The link
-  is slug-generated from the title — verify it resolves, else set `nucleusUrl`.
-  `pdfUrl` is a dead legacy field: keep, never render. `roiClaim` only with a source.
+- **Add industry research**: the three label fields — `type`, `vendors`/`primaryVendor`,
+  `market` — are CANONICAL from the Obsidian vault (`research/`, `analyst: Alexander Wurm`,
+  `status: published`). Regenerate them with `node scripts/research/sync-labels.mjs`
+  (re-runnable; reads the vault by documentId) rather than hand-editing the labels.
+  `type` is the 8-vocab (Research Note · ROI Case Study · Value Matrix · Announcement ·
+  Anatomy of a Decision · ROI Guidebook · Trends · Benefit Case Study); `type` + `market`
+  are the two filters. Narrative fields (summary, roiClaim, publishDate, technologies)
+  stay hand-authored. The link is slug-generated from the title — verify it resolves, else
+  set `nucleusUrl`. `pdfUrl` is a dead legacy field: keep, never render. `roiClaim` only with a source.
 - **Add a publication/project**: md file in `src/content/publications|projects/`;
   abstract goes in the publication body.
 - **Update resume**: replace `public/AW_Resume2025_web.pdf` in place (URL frozen).

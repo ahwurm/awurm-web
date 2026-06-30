@@ -57,3 +57,22 @@ export function getNucleusResearchUrl(research: IndustryResearch): string {
 export function getResearchExternalLink(research: IndustryResearch): string {
   return getNucleusResearchUrl(research)
 }
+
+// Display labels for the vault market slugs (acronyms upper-cased; else Title Case).
+const MARKET_LABELS: Record<string, string> = {
+  ai: 'AI', ipaas: 'iPaaS', erp: 'ERP', cpm: 'CPM', cpq: 'CPQ', scp: 'SCP',
+  hcm: 'HCM', mes: 'MES', rpa: 'RPA', lcap: 'LCAP', dsml: 'DSML', iaas: 'IaaS',
+  crm: 'CRM', wms: 'WMS', tms: 'TMS', sfa: 'SFA', wfm: 'WFM', clm: 'CLM',
+  plm: 'PLM', oms: 'OMS', ccaas: 'CCaaS', iiot: 'IIoT', wfpa: 'WFPA',
+}
+
+/** Maps a market slug (e.g. `data-integration`) to its display label (`Data Integration`). */
+export function marketLabel(slug: string): string {
+  return (
+    MARKET_LABELS[slug] ??
+    slug
+      .split('-')
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ')
+  )
+}
