@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Tag from './Tag.astro';
-import { getNucleusResearchUrl, marketLabel } from '../lib/research-utils';
+import { getNucleusResearchUrl, marketLabel, marketHue } from '../lib/research-utils';
 import type { IndustryResearch } from '../lib/types';
 
 interface Props {
@@ -46,12 +46,7 @@ const vendorName = entry.vendors.find((v) => v.toLowerCase().replace(/[^a-z0-9]+
         )}
         <span>{entry.documentId.toUpperCase()} · {entry.publishDate}</span>
       </span>
-      <span class="flex shrink-0 items-center gap-2.5">
-        {(entry.market ?? []).length > 0 && (
-          <span class="lowercase">{(entry.market ?? []).map(marketLabel).join(' · ')}</span>
-        )}
-        <Tag type={entry.type} />
-      </span>
+      <Tag type={entry.type} class="shrink-0" />
     </div>
     <h3 class="font-display mt-3 text-[1.08rem] font-semibold leading-snug tracking-tight">
       <a
@@ -65,10 +60,15 @@ const vendorName = entry.vendors.find((v) => v.toLowerCase().replace(/[^a-z0-9]+
     </h3>
     <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-dim">{entry.summary}</p>
     {entry.roiClaim && <p class="finding mt-3 text-sm font-medium">{entry.roiClaim}</p>}
-    <p class="mt-auto pt-3.5">
-      <a href={url} target="_blank" rel="noopener noreferrer" class="link-rule text-[0.875rem] font-medium">
+    <div class="mt-auto flex flex-wrap items-center gap-x-3 gap-y-2 pt-3.5">
+      <span class="flex flex-wrap gap-1.5">
+        {(entry.market ?? []).map((m) => (
+          <span class="market-pill" style={`--mhue: ${marketHue(m)}`}>{marketLabel(m)}</span>
+        ))}
+      </span>
+      <a href={url} target="_blank" rel="noopener noreferrer" class="link-rule ml-auto shrink-0 text-[0.875rem] font-medium">
         Read research ↗
       </a>
-    </p>
+    </div>
   </div>
 </article>

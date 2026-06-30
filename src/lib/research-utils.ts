@@ -66,6 +66,13 @@ const MARKET_LABELS: Record<string, string> = {
   plm: 'PLM', oms: 'OMS', ccaas: 'CCaaS', iiot: 'IIoT', wfpa: 'WFPA',
 }
 
+/** Deterministic hue (0–359) for a market slug, so each market pill is consistently colored. */
+export function marketHue(slug: string): number {
+  let h = 0
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) % 360
+  return h
+}
+
 /** Maps a market slug (e.g. `data-integration`) to its display label (`Data Integration`). */
 export function marketLabel(slug: string): string {
   return (

@@ -40,6 +40,9 @@
   --color-tag-matrix: oklch(78% 0.09 90);
   --color-tag-anatomy: oklch(78% 0.095 45);
   --color-tag-trends: oklch(78% 0.08 340);
+  /* lightness/chroma for per-market pill hues (see .market-pill) */
+  --tag-l: 78%;
+  --tag-c: 0.08;
 
   --color-error: oklch(72% 0.15 25);
 }
@@ -63,6 +66,8 @@
   --color-tag-matrix: oklch(45% 0.08 90);
   --color-tag-anatomy: oklch(45% 0.085 45);
   --color-tag-trends: oklch(45% 0.07 340);
+  --tag-l: 45%;
+  --tag-c: 0.07;
   --color-error: oklch(46% 0.16 25);
 }
 
@@ -87,6 +92,8 @@
     --color-tag-matrix: oklch(45% 0.08 90);
     --color-tag-anatomy: oklch(45% 0.085 45);
     --color-tag-trends: oklch(45% 0.07 340);
+    --tag-l: 45%;
+    --tag-c: 0.07;
     --color-error: oklch(46% 0.16 25);
   }
 }
@@ -183,6 +190,25 @@
 .threshold::after {
   content: "]";
   opacity: 0.6;
+}
+
+/* Market-category pills. Hue is per-market (inline --mhue); lightness/chroma
+   track the theme via --tag-l / --tag-c so the same market reads the same color
+   everywhere and adapts to light/dark. */
+.market-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.06rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.45;
+  white-space: nowrap;
+  text-transform: lowercase;
+  color: oklch(var(--tag-l) var(--tag-c) var(--mhue, 250));
+  border: 1px solid oklch(var(--tag-l) var(--tag-c) var(--mhue, 250) / 0.4);
+  background: oklch(var(--tag-l) var(--tag-c) var(--mhue, 250) / 0.08);
 }
 
 /* Green-ruled "finding" line (roiClaim callouts) */
