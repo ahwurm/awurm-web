@@ -1,50 +1,108 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import ProjectSection from '../components/ProjectSection.astro';
+import sctDashboard from '../assets/projects/smart-capital-tracker-dashboard.png';
+import localshiftFlow from '../assets/projects/localshift-flow.png';
+import accumulatorModel from '../assets/figures/accumulator-model.png';
 
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 
 const description =
-  'Projects by Alexander H. Wurm — Smart Capital Tracker (13F analysis), a Wald accumulator model of anticipatory decisions, and open-source local-AI tooling (LocalHarness, LocalShift).';
+  'Projects by Alexander H. Wurm — LocalHarness and LocalShift (open-source local-AI tooling), Smart Capital Tracker (13F analysis), and a Wald accumulator model of anticipatory decisions.';
+
+// Presentation layer for the stacked sections: normalized status, 2-3 curated
+// descriptors, and the section visual. Statuses/descriptors are derived from
+// each project's own frontmatter; the four visuals are real captured assets
+// (LocalHarness demo recording, LocalShift pipeline, live dashboard, paper figure).
+const D = '/projects/localharness-demo';
+const meta: Record<string, { status: string; tags: string[]; visual: any }> = {
+  LocalHarness: {
+    status: 'open source',
+    tags: ['local ai', 'agents', 'python'],
+    visual: {
+      kind: 'video',
+      label: 'demo.mp4',
+      webm: `${D}.webm`,
+      mp4: `${D}.mp4`,
+      poster: `${D}-poster.jpg`,
+      alt: 'LocalHarness REPL mid-session — auto-detecting a local model, then chaining web_search and web_fetch to research a question and return a result table',
+    },
+  },
+  LocalShift: {
+    status: 'open source',
+    tags: ['claude code', 'evals', 'local ai'],
+    visual: {
+      kind: 'image',
+      label: 'pipeline.png',
+      src: localshiftFlow,
+      fit: 'contain',
+      matte: '#12151b',
+      alt: 'LocalShift six-step pipeline: explore, design, build, replicate, evaluate, cut over — every run leaves a receipt in runs/ledger.jsonl',
+    },
+  },
+  'Smart Capital Tracker': {
+    status: 'open source',
+    tags: ['finance', 'streamlit', 'python'],
+    visual: {
+      kind: 'image',
+      label: 'dashboard.png',
+      src: sctDashboard,
+      fit: 'contain',
+      matte: '#ffffff',
+      alt: 'Smart Capital Tracker dashboard — a Top 100 holdings scatter and a Top 20 by portfolio-percentage bar chart across 13F filers',
+    },
+  },
+  'Wald Accumulator Model for Simple Anticipatory Decisions': {
+    status: 'research',
+    tags: ['decision science', 'bayesian', 'R'],
+    visual: {
+      kind: 'image',
+      label: 'accumulator-model.png',
+      src: accumulatorModel,
+      fit: 'contain',
+      matte: '#ffffff',
+      alt: 'Diagram of the Wald accumulator model: evidence accumulates toward a decision threshold, generating the response-time distribution',
+    },
+  },
+};
+
+const linksFor = (d: (typeof projects)[number]['data']) =>
+  [
+    d.url && { label: d.url.includes('streamlit') ? 'Streamlit app ↗' : 'View project ↗', href: d.url },
+    d.githubUrl && { label: 'GitHub ↗', href: d.githubUrl },
+    d.paperUrl && {
+      label: 'Download paper',
+      href: d.paperUrl,
+      download: 'wurm-2021-timing-anticipatory-decisions.pdf',
+    },
+  ].filter(Boolean) as { label: string; href: string; download?: string }[];
 ---
 
 <Base title="Projects — Alexander H. Wurm" description={description} ogImage="/og/projects.png">
   <section class="container-site py-12 sm:py-16">
-    <h1 class="display-tight text-[clamp(2.8rem,6vw,4.4rem)] font-semibold"><span class="text-accent">~/</span>projects</h1>
+    <h1 class="display-tight text-[clamp(2.8rem,6vw,4.4rem)] font-semibold">projects</h1>
     <div class="acc-rule mt-5" aria-hidden="true"></div>
+    <p class="meta lowercase mt-6 text-dim">n = {projects.length}</p>
 
-    <!-- Controls: count + "let the model decide" (accumulator race) -->
-    <div class="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3">
-      <p class="meta lowercase text-dim">n = {projects.length}</p>
-      <button
-        id="decide"
-        type="button"
-        class="meta cursor-pointer rounded-[4px] bg-accent-fill px-3.5 py-2 lowercase text-accent-ink transition-opacity hover:opacity-90"
-        hidden
-      >
-        Decide for me →
-      </button>
-    </div>
-    <div id="decide-race" class="plate mb-2 mt-4" hidden>
-      <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
-      <canvas id="decide-race-canvas" class="h-36 w-full"></canvas>
-    </div>
-    <p id="decide-race-live" class="sr-only" role="status" aria-live="polite"></p>
-
-    <div class="mt-6 grid gap-4 sm:grid-cols-2">
-      {projects.map((project) => <ProjectCard project={project} />)}
+    <div class="mt-4">
+      {
+        projects.map((project, i) => {
+          const m = meta[project.data.name];
+          if (!m) throw new Error(`projects.astro: no section meta for "${project.data.name}"`);
+          return (
+            <ProjectSection
+              index={i + 1}
+              name={project.data.name}
+              description={project.data.description}
+              status={m.status}
+              tags={m.tags}
+              links={linksFor(project.data)}
+              visual={m.visual}
+            />
+          );
+        })
+      }
     </div>
   </section>
-
-  <script>
-    import { wireDecide } from '../lib/decide';
-    wireDecide({
-      items: [...document.querySelectorAll<HTMLElement>('[data-label]')],
-      button: document.getElementById('decide') as HTMLButtonElement,
-      raceWrap: document.getElementById('decide-race')!,
-      canvas: document.getElementById('decide-race-canvas') as HTMLCanvasElement,
-      live: document.getElementById('decide-race-live')!,
-    });
-  </script>
 </Base>

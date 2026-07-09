@@ -1,0 +1,88 @@
+---
+// One project as a full-width stacked section (a la localharness.dev): numbered
+// heading + accent name, one-line description, a normalized status pill plus 2-3
+// descriptor pills, links, and a small 3:2 visual in the terminal-window Frame.
+// Text-left / visual-right on desktop; text-first when stacked on mobile.
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import Frame from './Frame.astro';
+
+type Visual =
+  | { kind: 'video'; label: string; webm: string; mp4: string; poster: string; alt: string }
+  | { kind: 'image'; label: string; src: ImageMetadata; fit: 'cover' | 'contain'; matte?: string; alt: string };
+
+interface Props {
+  index: number;
+  name: string;
+  description: string;
+  status: string;
+  tags: string[];
+  links: { label: string; href: string; download?: string }[];
+  visual: Visual;
+}
+const { index, name, description, status, tags, links, visual } = Astro.props;
+const num = String(index).padStart(2, '0');
+---
+
+<article
+  class="grid items-center gap-x-12 gap-y-6 border-t border-edge py-10 first:border-t-0 sm:py-12 lg:grid-cols-[minmax(0,1fr)_28rem]"
+>
+  <div>
+    <div class="flex items-baseline gap-3">
+      <span class="font-mono text-sm tabular-nums text-dim">{num}</span>
+      <h2 class="font-display text-[clamp(1.5rem,3.5vw,2rem)] font-semibold leading-tight tracking-tight text-accent">
+        {name}
+      </h2>
+    </div>
+    <p class="mt-3 max-w-[48ch] text-[0.95rem] leading-relaxed text-dim">{description}</p>
+    <div class="mt-4 flex flex-wrap gap-2">
+      <span class="pill pill-status">{status}</span>
+      {tags.map((t) => <span class="pill">{t}</span>)}
+    </div>
+    <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            download={l.download}
+            target={l.download ? undefined : '_blank'}
+            rel="noopener noreferrer"
+            class="link-rule text-[0.875rem] font-medium"
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </p>
+  </div>
+
+  <div class="w-full lg:justify-self-end">
+    <Frame label={visual.label}>
+      {
+        visual.kind === 'video' ? (
+          <Fragment>
+            <video
+              class="rm-motion aspect-[3/2] w-full object-cover"
+              autoplay
+              muted
+              loop
+              playsinline
+              poster={visual.poster}
+              aria-label={visual.alt}
+            >
+              <source src={visual.webm} type="video/webm" />
+              <source src={visual.mp4} type="video/mp4" />
+            </video>
+            <img class="rm-still aspect-[3/2] w-full object-cover" src={visual.poster} alt={visual.alt} />
+          </Fragment>
+        ) : visual.fit === 'contain' ? (
+          <div class="grid aspect-[3/2] place-items-center" style={`background:${visual.matte}`}>
+            <Image src={visual.src} alt={visual.alt} class="max-h-full w-full object-contain" loading="lazy" />
+          </div>
+        ) : (
+          <Image src={visual.src} alt={visual.alt} class="aspect-[3/2] w-full object-cover" loading="lazy" />
+        )
+      }
+    </Frame>
+  </div>
+</article>
