@@ -1,5 +1,6 @@
 ---
 import Button from './Button.astro';
+import Icon from './Icon.astro';
 import { site } from '../data/site';
 import { profile } from '../data/profile';
 
@@ -69,7 +70,10 @@ const emailjsReady = Boolean(serviceId && templateId && publicKey);
 
   <p id="cf-status" role="status" aria-live="polite" class="hidden text-sm font-medium"></p>
 
-  <Button type="submit">Send message</Button>
+  <Button type="submit">
+    <Icon name="send" class="h-4 w-4" />
+    Send message
+  </Button>
 </form>
 
 <script>

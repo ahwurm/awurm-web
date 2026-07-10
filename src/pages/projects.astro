@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
 import ProjectSection from '../components/ProjectSection.astro';
 import sctDashboard from '../assets/projects/smart-capital-tracker-dashboard.png';
 import accumulatorModel from '../assets/figures/accumulator-model.png';
@@ -62,13 +63,16 @@ const linksFor = (d: (typeof projects)[number]['data']) =>
       label: 'Download paper',
       href: d.paperUrl,
       download: 'wurm-2021-timing-anticipatory-decisions.pdf',
+      icon: 'download',
     },
-  ].filter(Boolean) as { label: string; href: string; download?: string }[];
+  ].filter(Boolean) as { label: string; href: string; download?: string; icon?: string }[];
 ---
 
 <Base title="Projects — Alexander H. Wurm" description={description} ogImage="/og/projects.png">
-  <section class="container-site py-12 sm:py-16">
-    <h1 class="display-tight text-[clamp(2.8rem,6vw,4.4rem)] font-semibold">projects</h1>
+  <section class="container-site pt-10 pb-12 sm:pt-12 sm:pb-16">
+    <h1 class="display-tight flex items-center gap-3 text-[clamp(1.9rem,4vw,2.7rem)] font-semibold">
+      <Icon name="box" class="h-[0.8em] w-[0.8em] text-accent" />projects
+    </h1>
     <div class="acc-rule mt-5" aria-hidden="true"></div>
     <p class="meta lowercase mt-6 text-dim">n = {projects.length}</p>
 
@@ -77,6 +81,7 @@ const linksFor = (d: (typeof projects)[number]['data']) =>
         projects.map((project, i) => {
           const m = meta[project.data.name];
           if (!m) throw new Error(`projects.astro: no section meta for "${project.data.name}"`);
+          const links = linksFor(project.data);
           return (
             <ProjectSection
               index={i + 1}
@@ -84,7 +89,8 @@ const linksFor = (d: (typeof projects)[number]['data']) =>
               description={project.data.description}
               status={m.status}
               tags={m.tags}
-              links={linksFor(project.data)}
+              links={links}
+              titleHref={links[0]?.href}
               visual={m.visual}
             />
           );

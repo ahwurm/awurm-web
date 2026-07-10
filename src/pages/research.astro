@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
 import PublicationItem from '../components/PublicationItem.astro';
 import IndustryItem from '../components/IndustryItem.astro';
 import { ledgerIndices } from '../lib/ledger';
@@ -66,9 +67,11 @@ const description = `Academic publications in decision science and ${industry.le
 ---
 
 <Base title="Research — Alexander H. Wurm" description={description} ogImage="/og/research.png">
-  <section class="container-site py-12 sm:py-16">
-    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
-      <h1 class="display-tight text-[clamp(2.8rem,6vw,4.4rem)] font-semibold">research</h1>
+  <section class="container-site pt-10 pb-12 sm:pt-12 sm:pb-16">
+    <div class="flex flex-wrap items-start justify-between gap-x-10 gap-y-6">
+      <h1 class="display-tight flex items-center gap-3 text-[clamp(1.9rem,4vw,2.7rem)] font-semibold">
+        <Icon name="flask" class="h-[0.8em] w-[0.8em] text-accent" />research
+      </h1>
       <div class="hidden sm:block">
         <p class="meta lowercase text-dim">notes / quarter</p>
         <svg width={SW} height="56" viewBox={`0 0 ${SW} 56`} role="img" aria-label={sparkAlt} fill="none" class="mt-1.5">
@@ -96,8 +99,9 @@ const description = `Academic publications in decision science and ${industry.le
           role="tab"
           aria-selected="true"
           aria-controls="panel-industry"
-          class="border-b-2 border-transparent pb-2 text-dim transition-colors hover:text-ink aria-selected:border-accent aria-selected:text-ink"
+          class="inline-flex items-center gap-1.5 border-b-2 border-transparent pb-2 text-dim transition-colors hover:text-ink aria-selected:border-accent aria-selected:text-ink"
         >
+          <Icon name="briefcase" class="h-3.5 w-3.5" />
           Industry ({industry.length})
         </a>
         <a
@@ -106,8 +110,9 @@ const description = `Academic publications in decision science and ${industry.le
           role="tab"
           aria-selected="false"
           aria-controls="panel-academic"
-          class="border-b-2 border-transparent pb-2 text-dim transition-colors hover:text-ink aria-selected:border-accent aria-selected:text-ink"
+          class="inline-flex items-center gap-1.5 border-b-2 border-transparent pb-2 text-dim transition-colors hover:text-ink aria-selected:border-accent aria-selected:text-ink"
         >
+          <Icon name="graduation-cap" class="h-3.5 w-3.5" />
           Academic
         </a>
       </div>
@@ -132,9 +137,10 @@ const description = `Academic publications in decision science and ${industry.le
         <button
           id="model-decide"
           type="button"
-          class="meta w-full cursor-pointer rounded-[4px] bg-accent-fill px-3.5 py-2 text-center lowercase text-accent-ink transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+          class="meta inline-flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-[4px] bg-accent-fill px-3.5 py-2 lowercase text-accent-ink transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           hidden
         >
+          <Icon name="activity" class="h-3.5 w-3.5" />
           Decide for me →
         </button>
       </div>

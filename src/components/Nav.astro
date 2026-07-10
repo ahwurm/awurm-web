@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/site';
+import Icon from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 const path = Astro.url.pathname;
@@ -17,15 +18,16 @@ const isActive = (href: string) => path === href || path.startsWith(href);
     </a>
     <div class="flex items-center gap-3 font-mono text-[11px] tracking-[0.01em] sm:gap-6 sm:text-[0.75rem]">
       {
-        site.nav.map(({ label, href }) => (
+        site.nav.map(({ label, href, icon }) => (
           <a
             href={href}
             aria-current={isActive(href) ? 'page' : undefined}
             class:list={[
-              'lowercase transition-colors duration-150',
+              'inline-flex items-center gap-1.5 lowercase transition-colors duration-150',
               isActive(href) ? 'text-accent' : 'text-dim hover:text-ink',
             ]}
           >
+            <Icon name={icon} class="hidden h-3 w-3 sm:block" />
             {label.toLowerCase()}
           </a>
         ))

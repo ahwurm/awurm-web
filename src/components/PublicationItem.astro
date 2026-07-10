@@ -3,6 +3,7 @@ import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import Frame from './Frame.astro';
+import Icon from './Icon.astro';
 
 interface Props {
   publication: CollectionEntry<'publications'>;
@@ -46,8 +47,9 @@ const { Content } = await render(publication);
             <a
               href={pdfUrl}
               download="wurm-2021-timing-anticipatory-decisions.pdf"
-              class="link-rule text-[0.875rem] font-medium"
+              class="link-rule inline-flex items-center gap-1.5 text-[0.875rem] font-medium"
             >
+              <Icon name="download" class="h-3.5 w-3.5" />
               Download PDF
             </a>
           )

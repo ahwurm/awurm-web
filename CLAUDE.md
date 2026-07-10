@@ -12,7 +12,7 @@ and PR without deploying.
 - **URL-frozen, byte-identical in `public/`** (linked externally — never move/rename):
   `/research-papers/wurm-2021-timing-anticipatory-decisions.pdf`,
   `/AW_Resume2025_web.pdf`, `/oracle-generative-ai-slides.pptx`, plus `.nojekyll`.
-- Old-site URLs `/contact/ /talks/ /apps/ /applications/` are meta-refresh redirect
+- Old-site URLs `/about/ /talks/ /apps/ /applications/` are meta-refresh redirect
   stubs (`src/pages/*.astro` via `RedirectStub`) — keep them, keep them out of the
   sitemap (filter in `astro.config.mjs`).
 
@@ -24,8 +24,11 @@ and PR without deploying.
 
 ## Architecture
 
-- **Pages** (`src/pages/`): index, research (dual-tab), speaking, projects, about
-  (+#contact), 404, 4 redirect stubs. All static; zero framework islands.
+- **Pages** (`src/pages/`): index, research (dual-tab), speaking, projects, contact,
+  404, 4 redirect stubs. All static; zero framework islands.
+- **Icons**: `src/components/Icon.astro` — inline lucide-style stroke SVGs keyed by
+  name (build fails on unknown name). Nav icon names live on `site.nav` and are
+  reused by each page's h1.
 - **Interactivity = 4 vanilla scripts**: research filters (research.astro), theme
   toggle (ThemeToggle), contact form (ContactForm), speaker-bio copy (SpeakerBio).
   `<details>` handles abstracts/screenshots JS-free.

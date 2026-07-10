@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
 import { isoDate } from '../lib/dates';
 
 interface Props {
@@ -13,8 +14,8 @@ const decideLabel = vendors[0] ?? event; // race trace label for "decide for me"
 const actions = [
   links.video && { href: links.video, label: 'Watch recording ↗', external: true },
   links.event && { href: links.event, label: 'Event page ↗', external: true },
-  links.slides && { href: links.slides, label: 'Download slides', external: false },
-].filter(Boolean) as { href: string; label: string; external: boolean }[];
+  links.slides && { href: links.slides, label: 'Download slides', external: false, icon: 'download' },
+].filter(Boolean) as { href: string; label: string; external: boolean; icon?: string }[];
 
 // Participant vendor logos (build-time assets, same set as the research cards).
 const vendorIcons = import.meta.glob<{ default: ImageMetadata }>('../assets/vendors/*.png', { eager: true });
@@ -44,8 +45,9 @@ const icons = vendors
             href={a.href}
             target={a.external ? '_blank' : undefined}
             rel={a.external ? 'noopener noreferrer' : undefined}
-            class="link-rule text-[0.875rem] font-medium"
+            class="link-rule inline-flex items-center gap-1.5 text-[0.875rem] font-medium"
           >
+            {a.icon && <Icon name={a.icon} class="h-3.5 w-3.5" />}
             {a.label}
           </a>
         ))}

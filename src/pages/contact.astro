@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import ContactForm from '../components/ContactForm.astro';
+import Icon from '../components/Icon.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import Button from '../components/Button.astro';
 import { profile } from '../data/profile';
@@ -13,8 +14,10 @@ import { profilePageJsonLd } from '../lib/jsonld';
   ogImage="/og/contact.png"
 >
   <script type="application/ld+json" set:html={JSON.stringify(profilePageJsonLd())} slot="head" is:inline />
-  <section class="container-site py-12 sm:py-16">
-    <h1 class="display-tight text-[clamp(2.8rem,6vw,4.4rem)] font-semibold">contact</h1>
+  <section class="container-site pt-10 pb-12 sm:pt-12 sm:pb-16">
+    <h1 class="display-tight flex items-center gap-3 text-[clamp(1.9rem,4vw,2.7rem)] font-semibold">
+      <Icon name="mail" class="h-[0.8em] w-[0.8em] text-accent" />contact
+    </h1>
     <div class="acc-rule mt-5" aria-hidden="true"></div>
     <div class="mt-10 grid items-start gap-x-16 gap-y-10 lg:grid-cols-[3fr_2fr]">
       <ContactForm />
@@ -24,6 +27,7 @@ import { profilePageJsonLd } from '../lib/jsonld';
         <p class="kicker mt-8 text-dim">resume</p>
         <div class="mt-4">
           <Button href="/AW_Resume2025_web.pdf" variant="outline" download="Alexander_Wurm_Resume.pdf">
+            <Icon name="download" class="h-4 w-4" />
             download resume
           </Button>
         </div>
