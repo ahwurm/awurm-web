@@ -3,18 +3,17 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import ProjectSection from '../components/ProjectSection.astro';
 import sctDashboard from '../assets/projects/smart-capital-tracker-dashboard.png';
-import localshiftFlow from '../assets/projects/localshift-flow.png';
 import accumulatorModel from '../assets/figures/accumulator-model.png';
 
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 
 const description =
-  'Projects by Alexander H. Wurm — LocalHarness and LocalShift (open-source local-AI tooling), Smart Capital Tracker (13F analysis), and a Wald accumulator model of anticipatory decisions.';
+  'Projects by Alexander H. Wurm — LocalHarness (open-source local-AI tooling), Smart Capital Tracker (13F analysis), and a Wald accumulator model of anticipatory decisions.';
 
 // Presentation layer for the stacked sections: normalized status, 2-3 curated
 // descriptors, and the section visual. Statuses/descriptors are derived from
 // each project's own frontmatter; the four visuals are real captured assets
-// (LocalHarness demo recording, LocalShift pipeline, live dashboard, paper figure).
+// (LocalHarness demo recording, live dashboard, paper figure).
 const D = '/projects/localharness-demo';
 const meta: Record<string, { status: string; tags: string[]; visual: any }> = {
   LocalHarness: {
@@ -27,18 +26,6 @@ const meta: Record<string, { status: string; tags: string[]; visual: any }> = {
       mp4: `${D}.mp4`,
       poster: `${D}-poster.jpg`,
       alt: 'LocalHarness REPL mid-session — auto-detecting a local model, then chaining web_search and web_fetch to research a question and return a result table',
-    },
-  },
-  LocalShift: {
-    status: 'open source',
-    tags: ['claude code', 'evals', 'local ai'],
-    visual: {
-      kind: 'image',
-      label: 'pipeline.png',
-      src: localshiftFlow,
-      fit: 'contain',
-      matte: '#12151b',
-      alt: 'LocalShift six-step pipeline: explore, design, build, replicate, evaluate, cut over — every run leaves a receipt in runs/ledger.jsonl',
     },
   },
   'Smart Capital Tracker': {
