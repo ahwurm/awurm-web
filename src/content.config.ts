@@ -35,6 +35,7 @@ const projects = defineCollection({
       status: z.string(),
       url: z.string().optional(),
       githubUrl: z.string().optional(),
+      extensionUrl: z.string().optional(), // Chrome Web Store listing
       paperUrl: z.string().optional(), // local path (frozen public/ PDF)
       screenshots: z.array(image()).default([]),
       order: z.number(),

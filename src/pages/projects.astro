@@ -9,17 +9,19 @@ import accumulatorModel from '../assets/figures/accumulator-model.png';
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 
 const description =
-  'Projects by Alexander H. Wurm — LocalHarness (open-source local-AI tooling), Smart Capital Tracker (13F analysis), and a Wald accumulator model of anticipatory decisions.';
+  'Projects by Alexander H. Wurm — LocalHarness (open-source local-AI tooling), fantasytoolbench (backend-free fantasy football draft tools), Smart Capital Tracker (13F analysis), and a Wald accumulator model of anticipatory decisions.';
 
 // Presentation layer for the stacked sections: normalized status, 2-3 curated
 // descriptors, and the section visual. Statuses/descriptors are derived from
 // each project's own frontmatter; the four visuals are real captured assets
 // (LocalHarness demo recording, live dashboard, paper figure).
 const D = '/projects/localharness-demo';
-const meta: Record<string, { status: string; tags: string[]; visual: any }> = {
+const F = '/projects/fantasytoolbench-draft';
+const meta: Record<string, { status: string; tags: string[]; brand?: 'fantasytoolbench' | 'localharness'; visual: any }> = {
   LocalHarness: {
     status: 'open source',
     tags: ['local ai', 'agents', 'python'],
+    brand: 'localharness',
     visual: {
       kind: 'video',
       label: 'demo.mp4',
@@ -27,6 +29,19 @@ const meta: Record<string, { status: string; tags: string[]; visual: any }> = {
       mp4: `${D}.mp4`,
       poster: `${D}-poster.jpg`,
       alt: 'LocalHarness REPL mid-session — auto-detecting a local model, then chaining web_search and web_fetch to research a question and return a result table',
+    },
+  },
+  fantasytoolbench: {
+    status: 'live tool',
+    tags: ['fantasy football', 'chrome extension', 'static site'],
+    brand: 'fantasytoolbench',
+    visual: {
+      kind: 'video',
+      label: 'draft-room.mp4',
+      webm: `${F}.webm`,
+      mp4: `${F}.mp4`,
+      poster: `${F}-poster.jpg`,
+      alt: 'The fantasytoolbench draft room mid-draft — picks landing across twelve teams in real time, the roster panel filling on the left, and live survival-probability percentages on the right rail',
     },
   },
   'Smart Capital Tracker': {
@@ -59,6 +74,7 @@ const linksFor = (d: (typeof projects)[number]['data']) =>
   [
     d.url && { label: d.url.includes('streamlit') ? 'Streamlit app ↗' : 'View project ↗', href: d.url },
     d.githubUrl && { label: 'GitHub ↗', href: d.githubUrl },
+    d.extensionUrl && { label: 'Chrome extension ↗', href: d.extensionUrl },
     d.paperUrl && {
       label: 'Download paper',
       href: d.paperUrl,
@@ -91,6 +107,7 @@ const linksFor = (d: (typeof projects)[number]['data']) =>
               tags={m.tags}
               links={links}
               titleHref={links[0]?.href}
+              brand={m.brand}
               visual={m.visual}
             />
           );

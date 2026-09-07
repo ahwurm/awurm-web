@@ -6,6 +6,7 @@
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import Frame from './Frame.astro';
+import Brand from './Brand.astro';
 import Icon from './Icon.astro';
 
 type Visual =
@@ -20,9 +21,10 @@ interface Props {
   tags: string[];
   links: { label: string; href: string; download?: string; icon?: string }[];
   titleHref?: string; // the project's primary link — makes the green title clickable
+  brand?: 'fantasytoolbench' | 'localharness'; // render the product's own lockup instead of plain text
   visual: Visual;
 }
-const { index, name, description, status, tags, links, titleHref, visual } = Astro.props;
+const { index, name, description, status, tags, links, titleHref, brand, visual } = Astro.props;
 const num = String(index).padStart(2, '0');
 ---
 
@@ -36,10 +38,10 @@ const num = String(index).padStart(2, '0');
         {
           titleHref ? (
             <a href={titleHref} target="_blank" rel="noopener noreferrer" class="transition-colors duration-150 hover:underline">
-              {name}
+              <Brand name={name} brand={brand} />
             </a>
           ) : (
-            name
+            <Brand name={name} brand={brand} />
           )
         }
       </h2>
