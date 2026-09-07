@@ -68,8 +68,16 @@ Change one ⇒ change both. Pre-paint inline script in `Base.astro` sets
   are the two filters. Narrative fields (summary, roiClaim, publishDate, technologies)
   stay hand-authored. The link is slug-generated from the title — verify it resolves, else
   set `nucleusUrl`. `pdfUrl` is a dead legacy field: keep, never render. `roiClaim` only with a source.
-- **Add a publication/project**: md file in `src/content/publications|projects/`;
-  abstract goes in the publication body.
+- **Add a publication**: md file in `src/content/publications/`; abstract goes in the body.
+- **Add a project**: TWO files minimum. (1) md file in `src/content/projects/` per
+  `content.config.ts`; (2) a `meta` entry in `src/pages/projects.astro` keyed by the
+  EXACT `name` — the build throws `no section meta for "<name>"` without it. The
+  rendered status/tags/visual come from that map, NOT from frontmatter (`status`,
+  `technologies`, and `screenshots` are validated but never displayed). Image assets
+  import from `src/assets/projects/`; video lives in `public/projects/` (string paths).
+  Section visuals render in a fixed `aspect-[3/2]` frame — capture at 3:2 (`fit: 'cover'`)
+  or supply a `matte` color with `fit: 'contain'`. Also update the page `description`,
+  which enumerates the projects by name.
 - **Update resume**: replace `public/AW_Resume2025_web.pdf` in place (URL frozen).
 - **Rebrand/OG**: edit `scripts/og/generate.mjs`, run `npm run og`, commit the PNGs.
 - **Favicon**: edit `scripts/favicon/generate.mjs`, run `npm run favicon` (playwright +
