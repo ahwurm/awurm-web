@@ -3,34 +3,85 @@ import { site } from '../data/site';
 import Icon from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
+// Two ribbon modes (owner 2026-09-08). The tab ribbon ate a lot of the visual
+// field for navigation people mostly don't use — "decide for me" is the intended
+// pathing (home → page → home → page), so the tabs earn their space only on the
+// home page. Every other page hands that slot to its own title, which IS the h1,
+// and nav collapses into the hamburger. Below `sm` the hamburger is the only nav
+// anywhere, home included, since four tabs never fit.
+interface Props {
+  pageTitle?: string;
+  pageIcon?: string;
+  /* Pages with a collection to choose from put "decide for me" in the ribbon —
+     it's the primary way through the site, so it lives with the nav, not buried
+     in the page body. Starts hidden; the page's script reveals it, so no-JS
+     users never see a dead control. */
+  decide?: boolean;
+}
+const { pageTitle, pageIcon, decide = false } = Astro.props;
+
 const path = Astro.url.pathname;
 const isActive = (href: string) => path === href || path.startsWith(href);
+const isHome = !pageTitle;
 ---
 
 <header class="sticky top-0 z-50 border-b border-edge bg-bg/90 backdrop-blur">
-  <nav class="container-site flex h-14 items-center justify-between gap-3" aria-label="Main">
+  <nav
+    class="container-site grid h-14 grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-4"
+    aria-label="Main"
+  >
     <a
       href="/"
-      class="flex items-center transition-opacity duration-150 hover:opacity-80"
+      class="flex shrink-0 items-center transition-opacity duration-150 hover:opacity-80"
       aria-label="Alexander H. Wurm — home"
     >
       <img src="/favicon.svg" alt="" width="30" height="30" />
     </a>
-    <div class="flex items-center gap-3 font-mono text-[11px] tracking-[0.01em] sm:gap-6 sm:text-[0.75rem]">
+
+    {/* Center column: the page title and its primary action sit together, centred
+        between the mark and the controls. Empty on home, where the tabs take the
+        right-hand side instead. */}
+    <div class="flex min-w-0 items-center justify-center gap-2 sm:gap-3">
       {
-        site.nav.map(({ label, href, icon }) => (
-          <a
-            href={href}
-            aria-current={isActive(href) ? 'page' : undefined}
-            class:list={[
-              'inline-flex items-center gap-1.5 lowercase transition-colors duration-150',
-              isActive(href) ? 'text-accent' : 'text-dim hover:text-ink',
-            ]}
+        pageTitle && (
+          <h1 class="display-tight flex min-w-0 items-center gap-2 text-[1.15rem] font-semibold sm:text-[1.35rem]">
+            {pageIcon && <Icon name={pageIcon} class="h-[0.8em] w-[0.8em] shrink-0 text-accent" />}
+            <span class="truncate lowercase">{pageTitle}</span>
+          </h1>
+        )
+      }
+      {
+        decide && (
+          <button
+            id="page-decide"
+            type="button"
+            aria-label="Decide for me"
+            class="meta inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-[4px] bg-accent-fill px-2 py-1.5 lowercase text-accent-ink transition-opacity hover:opacity-90 sm:px-3.5 sm:py-2"
+            hidden
           >
-            <Icon name={icon} class="hidden h-3 w-3 sm:block" />
-            {label.toLowerCase()}
-          </a>
-        ))
+            <Icon name="activity" class="h-3.5 w-3.5" />
+            <span class="hidden sm:inline">decide for me →</span>
+          </button>
+        )
+      }
+    </div>
+
+    <div class="flex items-center justify-end gap-3 font-mono text-[11px] tracking-[0.01em] sm:gap-6 sm:text-[0.75rem]">
+      {
+        isHome &&
+          site.nav.map(({ label, href, icon }) => (
+            <a
+              href={href}
+              aria-current={isActive(href) ? 'page' : undefined}
+              class:list={[
+                'hidden items-center gap-1.5 lowercase transition-colors duration-150 sm:inline-flex',
+                isActive(href) ? 'text-accent' : 'text-dim hover:text-ink',
+              ]}
+            >
+              <Icon name={icon} class="hidden h-3 w-3 sm:block" />
+              {label.toLowerCase()}
+            </a>
+          ))
       }
       <button
         id="cmdk-open"
@@ -40,7 +91,62 @@ const isActive = (href: string) => path === href || path.startsWith(href);
       >
         ⌘K
       </button>
-      <ThemeToggle />
+
+      {/* JS-free disclosure, same pattern the site uses elsewhere. Shown on EVERY
+          page at every width — it carries the theme toggle, so hiding it on home
+          at desktop (where the tabs already show) would strand that control. */}
+      <details class="nav-menu relative">
+        <summary
+          class="flex cursor-pointer items-center rounded-lg p-2 text-dim transition-colors duration-150 hover:bg-surface-2 hover:text-ink"
+          aria-label="Open navigation menu"
+        >
+          <Icon name="menu" class="h-4.5 w-4.5" />
+        </summary>
+        <div
+          class="absolute right-0 top-[calc(100%+0.5rem)] z-50 min-w-[11rem] rounded-[4px] border border-edge bg-surface p-1.5 shadow-xl"
+        >
+          {
+            site.nav.map(({ label, href, icon }) => (
+              <a
+                href={href}
+                aria-current={isActive(href) ? 'page' : undefined}
+                class:list={[
+                  'flex items-center gap-2 rounded-[3px] px-2.5 py-2 lowercase transition-colors duration-150',
+                  isActive(href) ? 'text-accent' : 'text-dim hover:bg-surface-2 hover:text-ink',
+                ]}
+              >
+                <Icon name={icon} class="h-3.5 w-3.5" />
+                {label.toLowerCase()}
+              </a>
+            ))
+          }
+          <div class="my-1.5 border-t border-edge"></div>
+          <ThemeToggle variant="menu" />
+        </div>
+      </details>
     </div>
   </nav>
 </header>
+
+<style>
+  /* Strip the default triangle so the hamburger reads as a button. */
+  .nav-menu > summary {
+    list-style: none;
+  }
+  .nav-menu > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
+
+<script>
+  // Click-away / Escape close. The menu still opens and closes without JS —
+  // this only dismisses it, so nothing is gated behind the script.
+  for (const el of document.querySelectorAll<HTMLDetailsElement>('details.nav-menu')) {
+    document.addEventListener('click', (e) => {
+      if (el.open && !el.contains(e.target as Node)) el.open = false;
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && el.open) el.open = false;
+    });
+  }
+</script>

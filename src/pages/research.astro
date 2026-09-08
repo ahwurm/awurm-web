@@ -38,56 +38,20 @@ const count = (pred: (d: (typeof industry)[number]['data']) => boolean) =>
 const types = [...new Set(industry.map((e) => e.data.type))].sort();
 const markets = [...new Set(industry.flatMap((e) => e.data.market ?? []))].sort();
 
-// Sparkline: notes per quarter, computed from the data at build time.
-const qKey = (y: number, q: string) => y * 4 + (Number(q[1]) - 1);
-const perQuarter = new Map<number, number>();
-for (const e of industry) {
-  const k = qKey(e.data.year, e.data.quarter);
-  perQuarter.set(k, (perQuarter.get(k) ?? 0) + 1);
-}
-const kMin = Math.min(...perQuarter.keys());
-const kMax = Math.max(...perQuarter.keys());
-const series: number[] = [];
-for (let k = kMin; k <= kMax; k++) series.push(perQuarter.get(k) ?? 0);
-const maxC = Math.max(...series);
-const SW = 240;
-const baseY = 42;
-const topY = 6;
-const px = (i: number) => +(2 + (i / (series.length - 1)) * (SW - 4)).toFixed(1);
-const py = (c: number) => +(baseY - (c / maxC) * (baseY - topY)).toFixed(1);
-const sparkPts = series.map((c, i) => `${px(i)},${py(c)}`).join(' ');
-const lastX = px(series.length - 1);
-const lastY = py(series[series.length - 1]);
-const yearStart = Math.floor(kMin / 4);
-const yearEnd = Math.floor(kMax / 4);
-const qEnd = `q${(kMax % 4) + 1}`;
-const sparkAlt = `Industry notes per quarter, ${yearStart} to ${yearEnd}; peak ${maxC} per quarter; current quarter ${qEnd} ${yearEnd}.`;
-
 const description = `Academic publications in decision science and ${industry.length} industry research notes, ROI studies, and value matrices by Alexander H. Wurm, Principal Analyst at Nucleus Research.`;
 ---
 
-<Base title="Research — Alexander H. Wurm" description={description} ogImage="/og/research.png">
-  <section class="container-site pt-10 pb-12 sm:pt-12 sm:pb-16">
-    <div class="flex flex-wrap items-start justify-between gap-x-10 gap-y-6">
-      <h1 class="display-tight flex items-center gap-3 text-[clamp(1.9rem,4vw,2.7rem)] font-semibold">
-        <Icon name="flask" class="h-[0.8em] w-[0.8em] text-accent" />research
-      </h1>
-      <div class="hidden sm:block">
-        <p class="meta lowercase text-dim">notes / quarter</p>
-        <svg width={SW} height="56" viewBox={`0 0 ${SW} 56`} role="img" aria-label={sparkAlt} fill="none" class="mt-1.5">
-          <line x1="0" y1={baseY} x2={SW} y2={baseY} stroke="var(--color-edge)"></line>
-          <polyline points={sparkPts} stroke="var(--color-dim)" stroke-width="1.4" stroke-linejoin="round"></polyline>
-          <line x1={lastX} y1={lastY} x2={lastX} y2={baseY} stroke="var(--color-accent)" stroke-width="1.5"></line>
-          <circle cx={lastX} cy={lastY} r="2.5" fill="var(--color-accent)"></circle>
-          <text x="0" y="54" fill="var(--color-dim)" class="spark-label">{yearStart}</text>
-          <text x={SW} y="54" text-anchor="end" fill="var(--color-accent)" class="spark-label">{yearEnd}·{qEnd}</text>
-        </svg>
-      </div>
-    </div>
-    <div class="acc-rule mt-5" aria-hidden="true"></div>
-
+<Base
+  title="Research — Alexander H. Wurm"
+  description={description}
+  ogImage="/og/research.png"
+  pageTitle="research"
+  pageIcon="flask"
+  decide
+>
+  <section class="container-site pt-8 pb-12 sm:pt-10 sm:pb-16">
     <!-- Controls -->
-    <div class="mt-7 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+    <div class="mt-6 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
       <div
         role="tablist"
         aria-label="Research type"
@@ -134,15 +98,6 @@ const description = `Academic publications in decision science and ${industry.le
           <option value="">All markets</option>
           {markets.map((m) => <option value={m}>{marketLabel(m)} ({count((d) => (d.market ?? []).includes(m))})</option>)}
         </select>
-        <button
-          id="model-decide"
-          type="button"
-          class="meta inline-flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-[4px] bg-accent-fill px-3.5 py-2 lowercase text-accent-ink transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
-          hidden
-        >
-          <Icon name="activity" class="h-3.5 w-3.5" />
-          Decide for me →
-        </button>
       </div>
     </div>
 
@@ -182,14 +137,6 @@ const description = `Academic publications in decision science and ${industry.le
     </style>
   </noscript>
 
-  <style>
-    .spark-label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-    }
-  </style>
 
   <script>
     import { createRace, type RaceHandle } from '../lib/accumulator';
@@ -202,7 +149,7 @@ const description = `Academic publications in decision science and ${industry.le
     const marketSel = document.getElementById('filter-market') as HTMLSelectElement;
     const items = [...document.querySelectorAll<HTMLElement>('#industry-list > article')];
     const empty = document.getElementById('industry-empty')!;
-    const modelBtn = document.getElementById('model-decide') as HTMLButtonElement;
+    const modelBtn = document.getElementById('page-decide') as HTMLButtonElement;
     const raceWrap = document.getElementById('model-race')!;
     const raceCanvas = document.getElementById('model-race-canvas') as HTMLCanvasElement;
     const raceLive = document.getElementById('model-race-live')!;

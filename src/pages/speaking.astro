@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import Icon from '../components/Icon.astro';
 import Section from '../components/Section.astro';
 import TalkCard from '../components/TalkCard.astro';
 import { isUpcoming, groupByYear } from '../lib/dates';
@@ -14,60 +13,20 @@ const upcoming = talks.filter((t) => isUpcoming(t.data.date));
 const past = talks.filter((t) => !isUpcoming(t.data.date));
 const byYear = groupByYear(past, (t) => t.data.date);
 
-// Talks-per-year sparkline (mirrors the research notes/quarter spark).
-const talkYears = talks.map((t) => t.data.date.getFullYear());
-const minYear = Math.min(...talkYears);
-const maxYear = Math.max(...talkYears);
-const perYear: number[] = [];
-for (let y = minYear; y <= maxYear; y++) perYear.push(talkYears.filter((yy) => yy === y).length);
-const maxCount = Math.max(...perYear);
-const SW = 240;
-const baseY = 42;
-const topY = 6;
-const px = (i: number) => +(2 + (i / Math.max(1, perYear.length - 1)) * (SW - 4)).toFixed(1);
-const py = (c: number) => +(baseY - (c / maxCount) * (baseY - topY)).toFixed(1);
-const sparkPts = perYear.map((c, i) => `${px(i)},${py(c)}`).join(' ');
-const lastX = px(perYear.length - 1);
-const lastY = py(perYear[perYear.length - 1]);
-const sparkAlt = `Talks per year, ${minYear} to ${maxYear}; peak ${maxCount} in a year; ${perYear[perYear.length - 1]} in ${maxYear}.`;
-
 const description =
   'Talks and webinars by Alexander H. Wurm.';
 ---
 
-<Base title="Speaking — Alexander H. Wurm" description={description} ogImage="/og/speaking.png">
-  <section class="container-site pt-10 pb-4 sm:pt-12 sm:pb-5">
-    <div class="flex flex-wrap items-start justify-between gap-x-10 gap-y-6">
-      <h1 class="display-tight flex items-center gap-3 text-[clamp(1.9rem,4vw,2.7rem)] font-semibold">
-        <Icon name="mic" class="h-[0.8em] w-[0.8em] text-accent" />speaking
-      </h1>
-      <div class="hidden sm:block">
-        <p class="meta lowercase text-dim">talks / year</p>
-        <svg width={SW} height="56" viewBox={`0 0 ${SW} 56`} role="img" aria-label={sparkAlt} fill="none" class="mt-1.5">
-          <line x1="0" y1={baseY} x2={SW} y2={baseY} stroke="var(--color-edge)"></line>
-          <polyline points={sparkPts} stroke="var(--color-dim)" stroke-width="1.4" stroke-linejoin="round"></polyline>
-          <line x1={lastX} y1={lastY} x2={lastX} y2={baseY} stroke="var(--color-accent)" stroke-width="1.5"></line>
-          <circle cx={lastX} cy={lastY} r="2.5" fill="var(--color-accent)"></circle>
-          <text x="0" y="54" fill="var(--color-dim)" class="spark-label">{minYear}</text>
-          <text x={SW} y="54" text-anchor="end" fill="var(--color-accent)" class="spark-label">{maxYear}</text>
-        </svg>
-      </div>
-    </div>
-    <div class="acc-rule mt-5" aria-hidden="true"></div>
-
-    <!-- Controls: count + "let the model decide" (accumulator race) -->
-    <div class="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3">
-      <p class="meta lowercase text-dim">n = {talks.length}</p>
-      <button
-        id="decide"
-        type="button"
-        class="meta inline-flex cursor-pointer items-center gap-1.5 rounded-[4px] bg-accent-fill px-3.5 py-2 lowercase text-accent-ink transition-opacity hover:opacity-90"
-        hidden
-      >
-        <Icon name="activity" class="h-3.5 w-3.5" />
-        Decide for me →
-      </button>
-    </div>
+<Base
+  title="Speaking — Alexander H. Wurm"
+  description={description}
+  ogImage="/og/speaking.png"
+  pageTitle="speaking"
+  pageIcon="mic"
+  decide
+>
+  <section class="container-site pt-8 pb-4 sm:pt-10 sm:pb-5">
+    <!-- "let the model decide" (accumulator race); the button itself is in the ribbon -->
     <div id="decide-race" class="plate mb-2 mt-4" hidden>
       <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
       <canvas id="decide-race-canvas" class="h-36 w-full"></canvas>
@@ -108,19 +67,11 @@ const description =
     import { wireDecide } from '../lib/decide';
     wireDecide({
       items: [...document.querySelectorAll<HTMLElement>('[data-label]')],
-      button: document.getElementById('decide') as HTMLButtonElement,
+      button: document.getElementById('page-decide') as HTMLButtonElement,
       raceWrap: document.getElementById('decide-race')!,
       canvas: document.getElementById('decide-race-canvas') as HTMLCanvasElement,
       live: document.getElementById('decide-race-live')!,
     });
   </script>
 
-  <style>
-    .spark-label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-    }
-  </style>
 </Base>

@@ -10,8 +10,13 @@ interface Props {
   description: string;
   ogImage?: string;
   noindex?: boolean;
+  /* Inner pages hand their title to the ribbon, which renders it as the h1 and
+     swaps the tab row for the hamburger. Omit on home to keep the tab ribbon. */
+  pageTitle?: string;
+  pageIcon?: string;
+  decide?: boolean;
 }
-const { title, description, ogImage = '/og/home.png', noindex = false } = Astro.props;
+const { title, description, ogImage = '/og/home.png', noindex = false, pageTitle, pageIcon, decide } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImageAbs = new URL(ogImage, Astro.site);
@@ -62,7 +67,7 @@ const ogImageAbs = new URL(ogImage, Astro.site);
       class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:border focus:border-edge focus:bg-surface focus:px-3 focus:py-2"
       >Skip to content</a
     >
-    <Nav />
+    <Nav pageTitle={pageTitle} pageIcon={pageIcon} decide={decide} />
     <main id="main" class="flex-1">
       <slot />
     </main>

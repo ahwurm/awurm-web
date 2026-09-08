@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import Icon from '../components/Icon.astro';
 import ProjectSection from '../components/ProjectSection.astro';
 import sctDashboard from '../assets/projects/smart-capital-tracker-dashboard.png';
 import accumulatorModel from '../assets/figures/accumulator-model.png';
@@ -11,16 +10,13 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 const description =
   'Projects by Alexander H. Wurm — LocalHarness (open-source local-AI tooling), fantasytoolbench (backend-free fantasy football draft tools), Smart Capital Tracker (13F analysis), and a Wald accumulator model of anticipatory decisions.';
 
-// Presentation layer for the stacked sections: normalized status, 2-3 curated
-// descriptors, and the section visual. Statuses/descriptors are derived from
-// each project's own frontmatter; the four visuals are real captured assets
-// (LocalHarness demo recording, live dashboard, paper figure).
+// Presentation layer for the stacked sections: the optional brand lockup and the
+// section visual. The four visuals are real captured assets (LocalHarness demo
+// recording, fantasytoolbench draft-room capture, live dashboard, paper figure).
 const D = '/projects/localharness-demo';
 const F = '/projects/fantasytoolbench-draft';
-const meta: Record<string, { status: string; tags: string[]; brand?: 'fantasytoolbench' | 'localharness'; visual: any }> = {
+const meta: Record<string, { brand?: 'fantasytoolbench' | 'localharness'; visual: any }> = {
   LocalHarness: {
-    status: 'open source',
-    tags: ['local ai', 'agents', 'python'],
     brand: 'localharness',
     visual: {
       kind: 'video',
@@ -32,8 +28,6 @@ const meta: Record<string, { status: string; tags: string[]; brand?: 'fantasytoo
     },
   },
   fantasytoolbench: {
-    status: 'live tool',
-    tags: ['fantasy football', 'chrome extension', 'static site'],
     brand: 'fantasytoolbench',
     visual: {
       kind: 'video',
@@ -45,8 +39,6 @@ const meta: Record<string, { status: string; tags: string[]; brand?: 'fantasytoo
     },
   },
   'Smart Capital Tracker': {
-    status: 'open source',
-    tags: ['finance', 'streamlit', 'python'],
     visual: {
       kind: 'image',
       label: 'dashboard.png',
@@ -57,8 +49,6 @@ const meta: Record<string, { status: string; tags: string[]; brand?: 'fantasytoo
     },
   },
   'Wald Accumulator Model for Simple Anticipatory Decisions': {
-    status: 'research',
-    tags: ['decision science', 'bayesian', 'R'],
     visual: {
       kind: 'image',
       label: 'accumulator-model.png',
@@ -84,27 +74,32 @@ const linksFor = (d: (typeof projects)[number]['data']) =>
   ].filter(Boolean) as { label: string; href: string; download?: string; icon?: string }[];
 ---
 
-<Base title="Projects — Alexander H. Wurm" description={description} ogImage="/og/projects.png">
-  <section class="container-site pt-10 pb-12 sm:pt-12 sm:pb-16">
-    <h1 class="display-tight flex items-center gap-3 text-[clamp(1.9rem,4vw,2.7rem)] font-semibold">
-      <Icon name="box" class="h-[0.8em] w-[0.8em] text-accent" />projects
-    </h1>
-    <div class="acc-rule mt-5" aria-hidden="true"></div>
-    <p class="meta lowercase mt-6 text-dim">n = {projects.length}</p>
+<Base
+  title="Projects — Alexander H. Wurm"
+  description={description}
+  ogImage="/og/projects.png"
+  pageTitle="projects"
+  pageIcon="box"
+  decide
+>
+  <section class="container-site pt-8 pb-12 sm:pt-10 sm:pb-16">
+    <div id="model-race" class="plate mb-2 mt-4" hidden>
+      <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
+      <canvas id="model-race-canvas" class="h-36 w-full"></canvas>
+    </div>
+    <p id="model-race-live" class="sr-only" role="status" aria-live="polite"></p>
 
     <div class="mt-4">
       {
-        projects.map((project, i) => {
+        projects.map((project) => {
           const m = meta[project.data.name];
           if (!m) throw new Error(`projects.astro: no section meta for "${project.data.name}"`);
           const links = linksFor(project.data);
           return (
             <ProjectSection
-              index={i + 1}
+              slug={project.id.replace(/\.md$/, '')}
               name={project.data.name}
               description={project.data.description}
-              status={m.status}
-              tags={m.tags}
               links={links}
               titleHref={links[0]?.href}
               brand={m.brand}
@@ -115,4 +110,16 @@ const linksFor = (d: (typeof projects)[number]['data']) =>
       }
     </div>
   </section>
+
+  <script>
+    import { wireDecide } from '../lib/decide';
+
+    wireDecide({
+      items: Array.from(document.querySelectorAll<HTMLElement>('[data-project]')),
+      button: document.getElementById('page-decide') as HTMLButtonElement,
+      raceWrap: document.getElementById('model-race')!,
+      canvas: document.getElementById('model-race-canvas') as HTMLCanvasElement,
+      live: document.getElementById('model-race-live')!,
+    });
+  </script>
 </Base>

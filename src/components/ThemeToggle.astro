@@ -1,17 +1,56 @@
+---
+// Two shapes for the same control. `icon` is the bare square button; `menu` is a
+// labelled row that matches the nav links inside the hamburger panel, where the
+// toggle now lives. The label states what clicking DOES, so it flips with the
+// theme alongside the glyph.
+interface Props {
+  variant?: 'icon' | 'menu';
+}
+const { variant = 'icon' } = Astro.props;
+const isMenu = variant === 'menu';
+---
+
 <button
   id="theme-toggle"
   type="button"
   aria-label="Toggle color theme"
-  class="rounded-lg p-2 text-dim transition-colors duration-150 hover:bg-surface-2 hover:text-ink"
+  class:list={[
+    'transition-colors duration-150',
+    isMenu
+      ? 'flex w-full cursor-pointer items-center gap-2 rounded-[3px] px-2.5 py-2 lowercase text-dim hover:bg-surface-2 hover:text-ink'
+      : 'rounded-lg p-2 text-dim hover:bg-surface-2 hover:text-ink',
+  ]}
 >
   <!-- moon: shown in light mode (click to go dark) -->
-  <svg class="h-4.5 w-4.5 dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+  <svg
+    class:list={['dark:hidden', isMenu ? 'h-3.5 w-3.5 shrink-0' : 'h-4.5 w-4.5']}
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
     <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
   </svg>
   <!-- sun: shown in dark mode (click to go light) -->
-  <svg class="hidden h-4.5 w-4.5 dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+  <svg
+    class:list={['hidden dark:block', isMenu ? 'h-3.5 w-3.5 shrink-0' : 'h-4.5 w-4.5']}
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
     <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1.5m0 15V21m9-9h-1.5M4.5 12H3m15.364-6.364l-1.06 1.06M6.696 17.304l-1.06 1.06m12.728 0l-1.06-1.06M6.696 6.696l-1.06-1.06M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
   </svg>
+  {
+    isMenu && (
+      <Fragment>
+        <span class="dark:hidden">dark mode</span>
+        <span class="hidden dark:inline">light mode</span>
+      </Fragment>
+    )
+  }
 </button>
 
 <script>

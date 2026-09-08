@@ -45,10 +45,24 @@ const banner = [...rows.slice(0, 6), '', ...rows.slice(6)].join('\n');
     </span>
     ) : brand === 'localharness' ? (
     <pre
-      class="overflow-hidden whitespace-pre font-mono text-[length:clamp(0.3rem,0.95vw,0.44rem)] leading-none"
+      class="ascii-lockup overflow-hidden whitespace-pre text-[length:clamp(0.3rem,0.95vw,0.44rem)] leading-none"
       aria-label={name}
     >{banner}</pre>
   ) : (
     name
   )
 }
+
+<style>
+  /* Box-drawing art only aligns if every cell is the same width and the columns
+     butt together exactly. Two things broke that: the h2's `tracking-tight`
+     (inherited negative letter-spacing sheared the glyph columns) and
+     JetBrains Mono, whose box-drawing coverage falls back per-glyph. Same fix
+     localharness.dev uses for the identical banner — force a system mono, kill
+     ligatures, zero the tracking. */
+  .ascii-lockup {
+    font-family: ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', 'Noto Sans Mono', monospace;
+    font-variant-ligatures: none;
+    letter-spacing: 0;
+  }
+</style>

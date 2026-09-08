@@ -12,14 +12,12 @@ import { profilePageJsonLd } from '../lib/jsonld';
   title="Contact — Alexander H. Wurm"
   description="Get in touch with Alexander H. Wurm."
   ogImage="/og/contact.png"
+  pageTitle="contact"
+  pageIcon="mail"
 >
   <script type="application/ld+json" set:html={JSON.stringify(profilePageJsonLd())} slot="head" is:inline />
-  <section class="container-site pt-10 pb-12 sm:pt-12 sm:pb-16">
-    <h1 class="display-tight flex items-center gap-3 text-[clamp(1.9rem,4vw,2.7rem)] font-semibold">
-      <Icon name="mail" class="h-[0.8em] w-[0.8em] text-accent" />contact
-    </h1>
-    <div class="acc-rule mt-5" aria-hidden="true"></div>
-    <div class="mt-10 grid items-start gap-x-16 gap-y-10 lg:grid-cols-[3fr_2fr]">
+  <section class="container-site pt-8 pb-12 sm:pt-10 sm:pb-16">
+    <div class="grid items-start gap-x-16 gap-y-10 lg:grid-cols-[3fr_2fr]">
       <ContactForm />
       <aside>
         <p class="kicker text-dim">elsewhere</p>
