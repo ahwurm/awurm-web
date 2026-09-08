@@ -19,6 +19,14 @@ export const wireDecide = ({ items, button, raceWrap, canvas, live }: DecideOpts
   if (!items.length) return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const label = (el: HTMLElement) => el.dataset.label ?? '';
+  // Canvas labels are drawn at each trace head, so a long one runs off the plot
+  // (project and talk titles are full sentences). Cap what's DRAWN against the
+  // canvas's real width — 24 chars fits a desktop plot but still clipped at
+  // 320px. The spoken announcement below always uses the full name.
+  const short = (s: string) => {
+    const cap = canvas.clientWidth < 420 ? 14 : 24;
+    return s.length > cap ? `${s.slice(0, cap - 1)}…` : s;
+  };
   button.hidden = false;
 
   let race: RaceHandle | null = null;
@@ -55,7 +63,7 @@ export const wireDecide = ({ items, button, raceWrap, canvas, live }: DecideOpts
       n: sampled.length,
       maxMs: 1600,
       axes: false,
-      labels: sampled.map(label),
+      labels: sampled.map((s) => short(label(s))),
       onCommit: (winner, rt) => {
         live.textContent = `decision: ${label(sampled[winner])} · rt = ${rt} ms`;
         setTimeout(() => goTo(sampled[winner]), 450);

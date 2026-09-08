@@ -199,17 +199,30 @@ export const createRace = (canvas: HTMLCanvasElement, opts: RaceOpts = {}): Race
     }
     ctx.restore();
 
-    // per-trace head labels (mini race)
+    // Per-trace head labels (mini race). Heads converge constantly, so labels
+    // drawn at raw head-y blend into each other and read as garbage. Lay them
+    // out with a minimum vertical gap, then shift the whole run back up if the
+    // stack overshot the axis.
     if (labels) {
       ctx.font = mono(10);
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
-      for (let i = 0; i < traces.length; i++) {
-        const tr = traces[i];
-        const hx = x((tr.pts.length - 1) * STEP);
-        const hy = y(tr.pts[tr.pts.length - 1]);
-        ctx.fillStyle = i === winner ? p.gold : p.dim;
-        ctx.fillText(labels[i] ?? '', Math.min(hx, x1) + 5, Math.max(m.t, Math.min(hy, yAxis)));
+      const GAP = 12;
+      const placed = traces
+        .map((tr, i) => ({
+          i,
+          hx: Math.min(x((tr.pts.length - 1) * STEP), x1) + 5,
+          hy: Math.max(m.t, Math.min(y(tr.pts[tr.pts.length - 1]), yAxis)),
+        }))
+        .sort((a, b) => a.hy - b.hy);
+      for (let k = 1; k < placed.length; k++) {
+        if (placed[k].hy - placed[k - 1].hy < GAP) placed[k].hy = placed[k - 1].hy + GAP;
+      }
+      const overshoot = placed.length ? placed[placed.length - 1].hy - yAxis : 0;
+      if (overshoot > 0) for (const q of placed) q.hy -= overshoot;
+      for (const q of placed) {
+        ctx.fillStyle = q.i === winner ? p.gold : p.dim;
+        ctx.fillText(labels[q.i] ?? '', q.hx, q.hy);
       }
     }
 
