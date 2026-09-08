@@ -135,6 +135,22 @@
   }
 }
 
+/* Page chrome carries a light accent wash — the same 6% green tint
+   fantasytoolbench uses on its footer. Mixed against the theme's own bg token,
+   so it reads as a pale green in light mode and a deep one in dark. */
+@utility chrome-tint {
+  background-color: color-mix(in oklab, var(--color-accent) 6%, var(--color-bg));
+}
+/* Same wash, held slightly translucent so the sticky header's backdrop-blur
+   still has something to do. */
+@utility chrome-tint-blur {
+  background-color: color-mix(
+    in oklab,
+    color-mix(in oklab, var(--color-accent) 6%, var(--color-bg)) 90%,
+    transparent
+  );
+}
+
 @utility container-site {
   @apply mx-auto w-full max-w-[1080px] px-5 sm:px-8;
 }

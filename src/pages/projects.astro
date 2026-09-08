@@ -58,16 +58,28 @@ const meta: Record<string, { brand?: 'fantasytoolbench' | 'localharness'; visual
 
 const linksFor = (d: (typeof projects)[number]['data']) =>
   [
-    d.url && { label: d.url.includes('streamlit') ? 'Streamlit app ↗' : 'View project ↗', href: d.url },
-    d.githubUrl && { label: 'GitHub ↗', href: d.githubUrl },
-    d.extensionUrl && { label: 'Chrome extension ↗', href: d.extensionUrl },
+    d.url && {
+      label: d.url.includes('streamlit') ? 'Streamlit app' : 'View project',
+      href: d.url,
+      icon: 'external-link',
+    },
+    // GitHub is the one label the mark says better than the word.
+    d.githubUrl && { label: 'GitHub', href: d.githubUrl, mark: 'github', iconOnly: true },
+    d.extensionUrl && { label: 'Chrome extension', href: d.extensionUrl, icon: 'puzzle' },
     d.paperUrl && {
       label: 'Download paper',
       href: d.paperUrl,
       download: 'wurm-2021-timing-anticipatory-decisions.pdf',
       icon: 'download',
     },
-  ].filter(Boolean) as { label: string; href: string; download?: string; icon?: string }[];
+  ].filter(Boolean) as {
+    label: string;
+    href: string;
+    download?: string;
+    icon?: string;
+    mark?: string;
+    iconOnly?: boolean;
+  }[];
 ---
 
 <Base
