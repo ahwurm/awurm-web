@@ -1,7 +1,8 @@
 ---
-// One project as a full-width stacked section (a la localharness.dev): accent
-// name, one-line description, links, and a small 3:2 visual in the terminal-window
-// Frame. Text-left / visual-right on desktop; text-first when stacked on mobile.
+// One project as a bordered card, matching the research and speaking lists:
+// accent name, one-line description, links, and a small 3:2 visual in the
+// terminal-window Frame. Text-left / visual-right on desktop; text-first when
+// stacked on mobile.
 // No index numbers and no descriptor pills — the pills read as filter affordances
 // but never filtered anything, so they were removed (owner 2026-09-08: "the tags
 // there suck right now, just kill them").
@@ -31,7 +32,7 @@ const { slug, name, description, links, titleHref, brand, visual } = Astro.props
   id={`p-${slug}`}
   data-project
   data-label={name}
-  class="grid items-center gap-x-12 gap-y-6 border-t border-edge py-10 first:border-t-0 sm:py-12 lg:grid-cols-[minmax(0,1fr)_28rem]"
+  class="grid items-center gap-x-12 gap-y-6 rounded-[3px] border border-edge bg-surface p-6 sm:p-8 lg:grid-cols-[minmax(0,1fr)_28rem]"
 >
   <div>
     <div>
