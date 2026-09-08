@@ -1,23 +1,26 @@
 ---
-// Terminal-window media frame: mono filename bar + bordered media slot.
-// The one consistent wrapper for every image on the site — title cards,
-// screenshots, photos, figures — so mixed media reads uniform at a glance.
+// Bordered media slot, optionally topped with a mono filename bar. The one
+// consistent wrapper for every image on the site — title cards, screenshots,
+// photos, figures — so mixed media reads uniform at a glance. Omit `label` for
+// a bare frame (the projects list, where the chrome added nothing).
 interface Props {
-  label: string;
+  label?: string;
   class?: string;
 }
 const { label, class: className } = Astro.props;
 ---
 
 <figure class:list={['overflow-hidden rounded-[3px] border border-edge bg-surface', className]}>
-  <figcaption
-    class="meta flex items-center gap-2 border-b border-edge bg-surface-2/60 px-3 py-1.5 lowercase text-dim"
-  >
-    <span aria-hidden="true" class="inline-flex gap-1.5">
-      <i class="h-2 w-2 rounded-full border border-edge"></i>
-      <i class="h-2 w-2 rounded-full border border-edge"></i>
-    </span>
-    <span class="truncate">{label}</span>
-  </figcaption>
+  {
+    label && (
+      <figcaption class="meta flex items-center gap-2 border-b border-edge bg-surface-2/60 px-3 py-1.5 lowercase text-dim">
+        <span aria-hidden="true" class="inline-flex gap-1.5">
+          <i class="h-2 w-2 rounded-full border border-edge" />
+          <i class="h-2 w-2 rounded-full border border-edge" />
+        </span>
+        <span class="truncate">{label}</span>
+      </figcaption>
+    )
+  }
   <slot />
 </figure>

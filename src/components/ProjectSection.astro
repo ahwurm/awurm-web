@@ -13,8 +13,8 @@ import Brand from './Brand.astro';
 import Icon from './Icon.astro';
 
 type Visual =
-  | { kind: 'video'; label: string; webm: string; mp4: string; poster: string; alt: string }
-  | { kind: 'image'; label: string; src: ImageMetadata; fit: 'cover' | 'contain'; matte?: string; alt: string };
+  | { kind: 'video'; webm: string; mp4: string; poster: string; alt: string }
+  | { kind: 'image'; src: ImageMetadata; fit: 'cover' | 'contain'; matte?: string; alt: string };
 
 interface Props {
   slug: string;
@@ -68,7 +68,7 @@ const { slug, name, description, links, titleHref, brand, visual } = Astro.props
   </div>
 
   <div class="w-full lg:justify-self-end">
-    <Frame label={visual.label}>
+    <Frame>
       {
         visual.kind === 'video' ? (
           <Fragment>
